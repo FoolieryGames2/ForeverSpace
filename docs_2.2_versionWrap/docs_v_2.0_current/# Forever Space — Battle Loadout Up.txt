@@ -1,0 +1,539 @@
+# Forever Space — Battle Loadout Upgrade / Augment Item Plan
+
+## Goal
+
+Add a new battle loadout item type called `upgrade`.
+
+These are not normal weapons, shields, consumables, or blueprints.  
+They are equipped passive battle modifiers.
+
+The player can equip up to **3 upgrade items total** in battle loadout.
+
+Upgrade items affect specific battle stats through metadata.  
+They may affect stats positively or negatively in the future, but first pass should use simple positive effects only.
+
+---
+
+# 1. Add New Item Type
+
+## New item type
+
+```gdscript
+"type": "upgrade",
+"item_type": "upgrade",
+Upgrade subtypes
+
+Add support for these subtypes:
+
+"upgrade_subtype": "armor"
+"upgrade_subtype": "energy"
+"upgrade_subtype": "primary_augment"
+"upgrade_subtype": "secondary_augment"
+
+These subtypes are for organization, UI display, filtering, and future behavior expansion.
+
+2. Add 3 Upgrade Slots To Battle Loadout
+
+The player battle loadout should support:
+
+"equipped_upgrades": []
+
+Rules:
+
+- Max equipped upgrades: 3
+- Upgrade items use the new item type: upgrade
+- Any mix of subtypes is allowed for now
+- Do not allow more than 3 equipped upgrades
+- First pass should probably block duplicate upgrade IDs unless later design allows stacking
+
+Example loadout shape:
+
+"equipped_upgrades": [
+	"hull_polarizer",
+	"generator_heat_sinks",
+	"primary_capacitor"
+]
+3. Upgrade Items Are Reward-Only
+
+Upgrade items should not be craftable.
+
+Upgrade items should not have blueprints.
+
+Upgrade items should not be produced by blueprint systems.
+
+Rules:
+
+"reward_only": true,
+"craftable": false,
+"blueprint_allowed": false,
+"blueprint_id": "",
+
+Design rule:
+
+Blueprints cannot be made for this item type.
+Upgrade items are reward items only.
+4. Add Generic Battle Upgrade Metadata
+
+Each upgrade item should carry a simple metadata block for battle stat changes.
+
+Recommended first-pass shape:
+
+"battle_upgrade_meta": {
+	"max_hull_bonus": 0,
+	"max_energy_bonus": 0,
+	"primary_damage_bonus": 0,
+	"secondary_damage_bonus": 0,
+	"secondary_burst_bonus": 0
+}
+
+Important behavior rule:
+
+Upgrades should modify derived battle stats.
+They should not permanently overwrite base player stats.
+
+Best safe approach:
+
+On loadout refresh or battle start:
+1. Start from base battle stats.
+2. Read equipped upgrade items.
+3. Sum their battle_upgrade_meta values.
+4. Build final derived battle stats.
+
+This prevents repeated stat stacking bugs.
+
+5. First Four Upgrade Items To Add
+5.1 Hull Polarizer
+
+Purpose:
+
+Armor upgrade.
+Increases max hull.
+Does not heal the player.
+Does not create hull points.
+
+Suggested item ID:
+
+"hull_polarizer"
+
+Effect:
+
+"battle_upgrade_meta": {
+	"max_hull_bonus": 25,
+	"max_energy_bonus": 0,
+	"primary_damage_bonus": 0,
+	"secondary_damage_bonus": 0,
+	"secondary_burst_bonus": 0
+}
+
+Behavior rule:
+
+When equipped:
+- Max hull increases by 25.
+- Current hull does not increase.
+- This is not a repair.
+- This is not healing.
+
+Example:
+
+Before equip:
+Current hull: 50
+Max hull: 100
+
+After equip:
+Current hull: 50
+Max hull: 125
+
+If removed:
+
+If current hull is above the new max hull, clamp it down to the new max.
+Otherwise leave current hull alone.
+5.2 Generator Heat Sinks
+
+Purpose:
+
+Energy upgrade.
+Increases max energy.
+Does not create energy.
+Does not refill energy.
+
+Suggested item ID:
+
+"generator_heat_sinks"
+
+Effect:
+
+"battle_upgrade_meta": {
+	"max_hull_bonus": 0,
+	"max_energy_bonus": 25,
+	"primary_damage_bonus": 0,
+	"secondary_damage_bonus": 0,
+	"secondary_burst_bonus": 0
+}
+
+Behavior rule:
+
+When equipped:
+- Max energy increases by 25.
+- Current energy does not increase.
+- This is not an energy restore.
+- This is not a recharge.
+
+Example:
+
+Before equip:
+Current energy: 20
+Max energy: 100
+
+After equip:
+Current energy: 20
+Max energy: 125
+
+If removed:
+
+If current energy is above the new max energy, clamp it down to the new max.
+Otherwise leave current energy alone.
+5.3 Primary Capacitor
+
+Purpose:
+
+Primary weapon augment.
+Increases primary weapon damage.
+
+Suggested item ID:
+
+"primary_capacitor"
+
+Effect:
+
+"battle_upgrade_meta": {
+	"max_hull_bonus": 0,
+	"max_energy_bonus": 0,
+	"primary_damage_bonus": 10,
+	"secondary_damage_bonus": 0,
+	"secondary_burst_bonus": 0
+}
+
+Behavior rule:
+
+When equipped:
+- Add +10 damage to primary weapon attacks.
+- Do not change the base weapon item permanently.
+- Apply this during battle action packet creation or battle damage calculation.
+5.4 Secondary Ammo Extender
+
+Purpose:
+
+Secondary weapon augment.
+Improves secondary burst behavior and secondary damage.
+
+Suggested item ID:
+
+"secondary_ammo_extender"
+
+Effect:
+
+"battle_upgrade_meta": {
+	"max_hull_bonus": 0,
+	"max_energy_bonus": 0,
+	"primary_damage_bonus": 0,
+	"secondary_damage_bonus": 5,
+	"secondary_burst_bonus": 1
+}
+
+Behavior rule:
+
+When equipped:
+- Add +1 to secondary burst count.
+- Add +5 damage to secondary weapon attacks.
+- Do not change the base secondary weapon item permanently.
+
+Important ammo rule:
+
+If secondary burst count increases, ammo cost should naturally increase because each burst TODO spends ammo.
+Example:
+Base burst_count = 2
+Upgrade adds +1
+Final burst_count = 3
+Total ammo cost becomes 3 if ammo_per_burst is 1.
+6. Battle Stat Application Rules
+
+Upgrade effects should be applied carefully.
+
+Required safety rule
+Never apply upgrade bonuses by repeatedly adding onto already-modified stats.
+Always rebuild derived stats from base values.
+
+Correct pattern:
+
+var final_stats = base_stats.duplicate(true)
+
+for upgrade_id in equipped_upgrades:
+	var item = item_db.get(upgrade_id, {})
+	var meta = item.get("battle_upgrade_meta", {})
+
+	final_stats.max_hull += int(meta.get("max_hull_bonus", 0))
+	final_stats.max_energy += int(meta.get("max_energy_bonus", 0))
+	final_stats.primary_damage_bonus += int(meta.get("primary_damage_bonus", 0))
+	final_stats.secondary_damage_bonus += int(meta.get("secondary_damage_bonus", 0))
+	final_stats.secondary_burst_bonus += int(meta.get("secondary_burst_bonus", 0))
+7. UI Requirements
+
+Add upgrade slots to the battle loadout UI.
+
+Display something like:
+
+Upgrades
+[ Slot 1 ] Empty
+[ Slot 2 ] Empty
+[ Slot 3 ] Empty
+
+When filled:
+
+Upgrades
+[ Slot 1 ] Hull Polarizer
+[ Slot 2 ] Generator Heat Sinks
+[ Slot 3 ] Primary Capacitor
+
+UI rules:
+
+- Only upgrade items can go into upgrade slots.
+- Maximum 3 upgrade slots.
+- Show item subtype if useful.
+- Show simple effect text if available.
+
+Example display text:
+
+Hull Polarizer
+Armor Upgrade
++25 Max Hull
+Does not repair hull
+Generator Heat Sinks
+Energy Upgrade
++25 Max Energy
+Does not restore energy
+Primary Capacitor
+Primary Augment
++10 Primary Damage
+Secondary Ammo Extender
+Secondary Augment
++1 Burst Fire
++5 Secondary Damage
+8. Save / Load Requirements
+
+Player save data should preserve equipped upgrades.
+
+Add to player loadout save state:
+
+"equipped_upgrades": []
+
+Rules:
+
+- Save equipped upgrade item IDs.
+- On load, validate that each item still exists in item DB.
+- Remove invalid/missing upgrade IDs safely.
+- Never allow loaded upgrade list to exceed 3.
+
+Validation example:
+
+func sanitize_equipped_upgrades(upgrades: Array) -> Array:
+	var clean := []
+
+	for upgrade_id in upgrades:
+		var id := str(upgrade_id).strip_edges()
+		if id == "":
+			continue
+		if clean.size() >= 3:
+			break
+		if not item_db.has(id):
+			continue
+
+		var item = item_db.get(id, {})
+		if str(item.get("item_type", item.get("type", ""))) != "upgrade":
+			continue
+
+		if clean.has(id):
+			continue
+
+		clean.append(id)
+
+	return clean
+9. Battle Integration Points
+
+The upgrades must affect Battle V2.
+
+First-pass integration targets:
+
+1. Loadout validation
+2. Battle stat packet building
+3. Primary action packet damage
+4. Secondary action packet damage
+5. Secondary burst count
+6. Hull max calculation
+7. Energy max calculation
+8. Battle UI display
+
+Recommended behavior:
+
+- Apply max hull and max energy before battle starts.
+- Apply damage bonuses when building battle action packets.
+- Apply secondary burst bonus before TODO burst packets are created.
+10. Files Likely Touched
+
+Likely owner areas:
+
+Item DB:
+- item_db_* upgrade item holder script
+- item_db_builder.gd if a new item DB slice is added
+
+Inventory / Items:
+- item_handler.gd or current item runtime API
+- inventory equip / unequip logic
+
+Player State:
+- player loadout save shape
+- selected/equipped battle gear state
+
+Main UI / Loadout UI:
+- PlayerStateMainUI or current loadout UI script
+- widget builder/controller if loadout is widget-driven
+
+Battle V2:
+- BattleActionPacketBuilder.gd
+- ActionManager.gd
+- BattleV2UIHandler.gd
+- battle_v2_scene.gd if battle stats are initialized there
+
+Do not blindly edit all files.
+Trace the current source of truth before making changes.
+
+11. First-Pass Test Checklist
+Item DB tests
+[ ] All 4 upgrade items exist in item DB.
+[ ] Each item has type/item_type = upgrade.
+[ ] Each item has upgrade_subtype.
+[ ] Each item has battle_upgrade_meta.
+[ ] Each item is reward_only.
+[ ] No blueprint item exists for these upgrades.
+[ ] Blueprint builder does not generate upgrade blueprints.
+Loadout tests
+[ ] Upgrade item can be equipped into upgrade slot.
+[ ] Non-upgrade item cannot be equipped into upgrade slot.
+[ ] More than 3 upgrades cannot be equipped.
+[ ] Equipped upgrades save.
+[ ] Equipped upgrades load.
+[ ] Missing/invalid upgrade IDs are safely ignored on load.
+Hull Polarizer tests
+[ ] Max hull increases by 25.
+[ ] Current hull does not increase.
+[ ] Item does not heal.
+[ ] Item does not create hull points.
+[ ] Removing item clamps current hull only if above new max.
+Generator Heat Sinks tests
+[ ] Max energy increases by 25.
+[ ] Current energy does not increase.
+[ ] Item does not recharge energy.
+[ ] Item does not create energy.
+[ ] Removing item clamps current energy only if above new max.
+Primary Capacitor tests
+[ ] Primary damage gets +10.
+[ ] Base weapon item is not permanently changed.
+[ ] Bonus does not stack repeatedly from UI refreshes.
+Secondary Ammo Extender tests
+[ ] Secondary damage gets +5.
+[ ] Secondary burst count gets +1.
+[ ] Extra burst creates an extra TODO fire.
+[ ] Extra burst spends ammo correctly.
+[ ] Base secondary weapon item is not permanently changed.
+[ ] Bonus does not stack repeatedly from UI refreshes.
+12. Future Expansion Rule
+
+This system should be broad enough to support more upgrades later.
+
+Future upgrade metadata can support:
+
+"battle_upgrade_meta": {
+	"max_hull_bonus": 25,
+	"max_energy_bonus": 25,
+	"primary_damage_bonus": 10,
+	"secondary_damage_bonus": 5,
+	"secondary_burst_bonus": 1,
+	"shield_power_bonus": 0,
+	"repair_bonus": 0,
+	"energy_cost_modifier": 0,
+	"ammo_cost_modifier": 0,
+	"accuracy_bonus": 0,
+	"cooldown_modifier": 0
+}
+
+Design rule:
+
+Augments should always affect 1 to 3 specific battle metadata values.
+They can be positive or negative later.
+Keep each item focused.
+13. First-Pass Implementation Order
+Step 1
+
+Add the new upgrade item type and upgrade subtype fields.
+
+Step 2
+
+Add the four first-pass upgrade items to the item DB:
+
+- Hull Polarizer
+- Generator Heat Sinks
+- Primary Capacitor
+- Secondary Ammo Extender
+Step 3
+
+Add equipped_upgrades to player loadout/save state.
+
+Step 4
+
+Add upgrade equip/unequip validation.
+
+Step 5
+
+Add 3 upgrade slots to the loadout UI.
+
+Step 6
+
+Add derived battle stat calculation from equipped upgrades.
+
+Step 7
+
+Wire max hull and max energy bonuses into battle/player stat initialization.
+
+Step 8
+
+Wire primary damage bonus into primary attack packet/damage calculation.
+
+Step 9
+
+Wire secondary damage and burst bonus into secondary attack packet/TODO burst creation.
+
+Step 10
+
+Block upgrade blueprints and crafting.
+
+Step 11
+
+Run full test checklist.
+
+Final Design Lock
+
+Battle loadout upgrades are passive reward-only augment items.
+
+They are equipped in one of three upgrade slots.
+
+They modify battle behavior through metadata.
+
+They do not permanently mutate base weapons or base player stats.
+
+Hull and energy max upgrades do not create or restore hull/energy.
+
+Blueprints cannot be made for upgrade items.
+
+This system should be safe, simple, and expandable.
+
+
+One strong recommendation: make this a **derived-stat system**, not an “add directly to player stat” system. That single choice prevent

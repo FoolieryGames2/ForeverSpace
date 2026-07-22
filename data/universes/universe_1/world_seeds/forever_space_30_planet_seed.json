@@ -1,0 +1,1895 @@
+{
+  "seed_id": "forever_space_authored_planet_seed_030",
+  "display_name": "Forever Space Authored Planet Seed 030",
+  "description": "Thirty dev-tool-safe planet seeds placed around the authored tier-spine stars using per-object anchor_star + anchor_offset placement.",
+  "apply_on_new_universe": true,
+  "tier": 1,
+  "objects": {
+    "seed_planet_001_vela": {
+      "owner_type": "planet",
+      "object_type": "planet",
+      "object_id": "seed_planet_001_vela",
+      "display_name": "Vela 1-1",
+      "title": "Vela 1-1",
+      "scan_name": "Vela 1-1",
+      "scan_description": "Authored world-seed planet near Tier 1 Star. Vela 1-1 is a barren contact marked for survey expansion.",
+      "contact_text": "Orbital contact available. Long-range scan recommends survey before approach.",
+      "planet_type": "barren",
+      "planet_role": "ruin_world",
+      "population_state": "silent_infrastructure",
+      "danger_level": 1,
+      "resource_value": 4,
+      "services": [
+        "survey_contact",
+        "archive_relay"
+      ],
+      "planet_board_events": [
+        "vela_orbit_claim_notice_001"
+      ],
+      "quest_messages": [
+        "vela_archive_trace_unread"
+      ],
+      "event_ids": [
+        "vela_archive_signal_001"
+      ],
+      "orbit_event_listeners": [
+        {
+          "id": "vela_archive_orbit_listener_install",
+          "listener_id": "vela_archive_orbit_found_listener",
+          "display_name": "Vela Archive Listener",
+          "title": "Vela Archive Listener",
+          "summary": "Install a normal range listener for the archive event after the planet scan confirms the signal.",
+          "orbit_event_action": "install_event_listener",
+          "event_id": "vela_archive_signal_001",
+          "listener_type": "activate_event_on_range",
+          "start_step": "vela_archive_intro_popup",
+          "trigger_range": 220,
+          "trigger_once": true,
+          "silent": false,
+          "visible_in_orbit": true,
+          "suppress_trigger_popup": true,
+          "position_mode": "anchor_offset",
+          "sector_offset": [
+            0,
+            0,
+            0
+          ],
+          "local_offset": [
+            -232,
+            249,
+            -143
+          ],
+          "message": "A buried archive listener waits inside Vela 1-1 scan noise.",
+          "triggered_message": "Vela archive signal accepted."
+        },
+        {
+          "id": "vela_claim_silent_listener_install",
+          "listener_id": "vela_claim_silent_orbit_listener",
+          "display_name": "Vela Claim Listener",
+          "title": "Vela Claim Listener",
+          "summary": "Silently install a claim-notice listener in the background for later event processing.",
+          "orbit_event_action": "install_event_listener",
+          "event_id": "vela_orbit_claim_notice_001",
+          "listener_type": "seed_event_on_range",
+          "start_step": "vela_claim_notice_intro",
+          "trigger_range": 160,
+          "trigger_once": true,
+          "silent": true,
+          "visible_in_orbit": false,
+          "suppress_trigger_popup": true,
+          "position_mode": "anchor_offset",
+          "sector_offset": [
+            0,
+            0,
+            0
+          ],
+          "local_offset": [
+            -232,
+            249,
+            -143
+          ],
+          "message": "A silent claim listener is staged from orbit.",
+          "triggered_message": "Vela claim notice registered."
+        }
+      ],
+      "orbit_discoveries": [
+        {
+          "id": "vela_subsurface_archive_trace",
+          "title": "Subsurface Archive Trace",
+          "summary": "A repeating archive pulse leaks through fractured basalt below the dark limb.",
+          "category": "archive",
+          "reveal_operation": "scan_planet_orbit",
+          "requires_orbit_items": [],
+          "unlocks_interaction_ids": [
+            "flag_vela_archive_trace",
+            "inspect_vela_dark_limb_relay"
+          ],
+          "linked_event_id": "vela_archive_signal_001",
+          "local_ai_hint": "The pulse cadence is too clean to be weather. Treat it like a machine still trying to speak."
+        },
+        {
+          "id": "vela_old_claim_telemetry",
+          "title": "Old Claim Telemetry",
+          "summary": "Dormant mining claim tags still answer from two crust scars near the planet's terminator.",
+          "category": "mining_claim",
+          "reveal_operation": "scan_planet_orbit",
+          "requires_orbit_items": [],
+          "unlocks_interaction_ids": [
+            "review_vela_claim_telemetry",
+            "register_vela_claim_alpha"
+          ],
+          "linked_event_id": "vela_orbit_claim_notice_001",
+          "local_ai_hint": "These claim tags were not abandoned cleanly. Someone stopped broadcasting before they stopped working."
+        }
+      ],
+      "orbit_interactions": [
+        {
+          "id": "flag_vela_archive_trace",
+          "label": "Flag Archive",
+          "summary": "Mark the archive pulse as an orbit investigation target.",
+          "enabled_from_orbit": true,
+          "reveal_operation": "scan_planet_orbit",
+          "requires_orbit_items": [],
+          "linked_event_id": "vela_archive_signal_001",
+          "outputs": {
+            "orbit_note": "archive_trace_flagged"
+          }
+        },
+        {
+          "id": "review_vela_claim_telemetry",
+          "label": "Review Claims",
+          "summary": "Review dormant mining claim telemetry without leaving orbit.",
+          "enabled_from_orbit": true,
+          "reveal_operation": "scan_planet_orbit",
+          "requires_orbit_items": [],
+          "linked_event_id": "vela_orbit_claim_notice_001",
+          "outputs": {
+            "orbit_note": "claim_telemetry_reviewed"
+          }
+        }
+      ],
+      "orbit_resource_sites": [
+        {
+          "site_id": "vela_subsurface_cobalt_lens",
+          "display_name": "Subsurface Cobalt Lens",
+          "resource_site_type": "subsurface_vein",
+          "latitude_deg": -12.0,
+          "longitude_deg": 74.0,
+          "scan_summary": "A compact cobalt-bearing lens sits below fractured basalt.",
+          "resources": {
+            "cobalt": 42,
+            "nickel": 18
+          },
+          "requires_orbit_items": [
+            "planetary_resource_rover"
+          ],
+          "recovery_requires_orbit_items": [
+            "planet_recovery_launcher"
+          ],
+          "interactions": [
+            {
+              "id": "explore_vela_cobalt_lens",
+              "label": "Deploy Rover",
+              "summary": "Use a Planetary Resource Rover to improve this site's resource data.",
+              "planetary_resource_action": "explore",
+              "requires_orbit_items": [
+                "planetary_resource_rover"
+              ],
+              "consume_orbit_items": [
+                "planetary_resource_rover"
+              ],
+              "consume_on_success": true
+            },
+            {
+              "id": "recover_vela_cobalt_lens",
+              "label": "Recovery Launch",
+              "summary": "Use a Planet Recovery Launcher to send recovered materials to orbit.",
+              "planetary_resource_action": "recover_to_orbit",
+              "requires_orbit_items": [
+                "planet_recovery_launcher"
+              ],
+              "consume_orbit_items": [
+                "planet_recovery_launcher"
+              ],
+              "consume_on_success": true
+            }
+          ]
+        }
+      ],
+      "surface_buildings": [
+        {
+          "building_id": "vela_dark_limb_relay",
+          "display_name": "Dark Limb Relay",
+          "building_type": "relay",
+          "latitude_deg": -18.4,
+          "longitude_deg": 112.7,
+          "scan_summary": "A low-power relay is active inside an old crater wall.",
+          "revealed_by_operation": "scan_planet_orbit",
+          "requires_orbit_items": [],
+          "linked_event_id": "vela_archive_signal_001",
+          "interactions": [
+            {
+              "id": "inspect_vela_dark_limb_relay",
+              "label": "Inspect Relay",
+              "summary": "Inspect the relay's signal pattern from orbit.",
+              "enabled_from_orbit": true,
+              "requires_orbit_items": [],
+              "linked_event_id": "vela_archive_signal_001"
+            },
+            {
+              "id": "mark_vela_dark_limb_relay",
+              "label": "Mark Relay",
+              "summary": "Mark the relay as a persistent surface target for later systems.",
+              "enabled_from_orbit": true,
+              "requires_orbit_items": [],
+              "linked_event_id": "vela_archive_signal_001"
+            }
+          ]
+        },
+        {
+          "building_id": "vela_mining_scar_alpha",
+          "display_name": "Mining Scar Alpha",
+          "building_type": "mine",
+          "latitude_deg": 8.0,
+          "longitude_deg": -44.0,
+          "scan_summary": "An old open-cut mine still carries valid claim-tag telemetry.",
+          "revealed_by_operation": "scan_planet_orbit",
+          "requires_orbit_items": [],
+          "linked_event_id": "vela_orbit_claim_notice_001",
+          "interactions": [
+            {
+              "id": "register_vela_claim_alpha",
+              "label": "Register Claim",
+              "summary": "Register the old claim for later field work.",
+              "enabled_from_orbit": true,
+              "requires_orbit_items": [],
+              "linked_event_id": "vela_orbit_claim_notice_001"
+            }
+          ]
+        }
+      ],
+      "has_planet_interface": true,
+      "can_land": false,
+      "interaction_type": "planet_contact",
+      "tier": 1,
+      "parent_star_id": "tier_1_anchor_star",
+      "parent_star_name": "Tier 1 Star",
+      "anchor_star": {
+        "star_id": "tier_1_anchor_star",
+        "star_name": "Tier 1 Star",
+        "sector_pos": [
+          0,
+          0,
+          0
+        ],
+        "local_pos": [
+          500,
+          500,
+          500
+        ],
+        "required": false,
+        "create_if_missing": false
+      },
+      "position_mode": "anchor_offset",
+      "sector_offset": [
+        0,
+        0,
+        0
+      ],
+      "local_offset": [
+        -232,
+        249,
+        -143
+      ],
+      "labels": [
+        "planet",
+        "world_seed",
+        "authored_planet",
+        "random_planet_seed",
+        "tier_1",
+        "tier_1_anchor_star",
+        "ruin_world"
+      ]
+    },
+    "seed_planet_002_ordin": {
+      "owner_type": "planet",
+      "object_type": "planet",
+      "object_id": "seed_planet_002_ordin",
+      "display_name": "Ordin 1-2",
+      "title": "Ordin 1-2",
+      "scan_name": "Ordin 1-2",
+      "scan_description": "Authored world-seed planet near Tier 1 Star. Ordin 1-2 is a desert contact marked for survey expansion.",
+      "contact_text": "Orbital contact available. Long-range scan recommends survey before approach.",
+      "planet_type": "desert",
+      "planet_role": "silent_world",
+      "population_state": "outpost_trace",
+      "has_planet_interface": true,
+      "can_land": false,
+      "interaction_type": "planet_contact",
+      "tier": 1,
+      "parent_star_id": "tier_1_anchor_star",
+      "parent_star_name": "Tier 1 Star",
+      "anchor_star": {
+        "star_id": "tier_1_anchor_star",
+        "star_name": "Tier 1 Star",
+        "sector_pos": [
+          0,
+          0,
+          0
+        ],
+        "local_pos": [
+          500,
+          500,
+          500
+        ],
+        "required": false,
+        "create_if_missing": false
+      },
+      "position_mode": "anchor_offset",
+      "sector_offset": [
+        0,
+        0,
+        0
+      ],
+      "local_offset": [
+        -168,
+        188,
+        115
+      ],
+      "labels": [
+        "planet",
+        "world_seed",
+        "authored_planet",
+        "random_planet_seed",
+        "tier_1",
+        "tier_1_anchor_star",
+        "silent_world"
+      ]
+    },
+    "seed_planet_003_cairn": {
+      "owner_type": "planet",
+      "object_type": "planet",
+      "object_id": "seed_planet_003_cairn",
+      "display_name": "Cairn 1-3",
+      "title": "Cairn 1-3",
+      "scan_name": "Cairn 1-3",
+      "scan_description": "Authored world-seed planet near Tier 1 Star. Cairn 1-3 is a volcanic contact marked for survey expansion.",
+      "contact_text": "Orbital contact available. Long-range scan recommends survey before approach.",
+      "planet_type": "volcanic",
+      "planet_role": "survey_target",
+      "population_state": "uninhabited",
+      "has_planet_interface": true,
+      "can_land": false,
+      "interaction_type": "planet_contact",
+      "tier": 1,
+      "parent_star_id": "tier_1_anchor_star",
+      "parent_star_name": "Tier 1 Star",
+      "anchor_star": {
+        "star_id": "tier_1_anchor_star",
+        "star_name": "Tier 1 Star",
+        "sector_pos": [
+          0,
+          0,
+          0
+        ],
+        "local_pos": [
+          500,
+          500,
+          500
+        ],
+        "required": false,
+        "create_if_missing": false
+      },
+      "position_mode": "anchor_offset",
+      "sector_offset": [
+        0,
+        0,
+        0
+      ],
+      "local_offset": [
+        200,
+        -75,
+        -170
+      ],
+      "labels": [
+        "planet",
+        "world_seed",
+        "authored_planet",
+        "random_planet_seed",
+        "tier_1",
+        "tier_1_anchor_star",
+        "survey_target"
+      ]
+    },
+    "seed_planet_004_mara": {
+      "owner_type": "planet",
+      "object_type": "planet",
+      "object_id": "seed_planet_004_mara",
+      "display_name": "Mara 1-4",
+      "title": "Mara 1-4",
+      "scan_name": "Mara 1-4",
+      "scan_description": "Authored world-seed planet near Tier 1 Star. Mara 1-4 is a oceanic contact marked for survey expansion.",
+      "contact_text": "Orbital contact available. Long-range scan recommends survey before approach.",
+      "planet_type": "oceanic",
+      "planet_role": "frontier_world",
+      "population_state": "frontier",
+      "has_planet_interface": true,
+      "can_land": false,
+      "interaction_type": "planet_contact",
+      "tier": 1,
+      "parent_star_id": "tier_1_anchor_star",
+      "parent_star_name": "Tier 1 Star",
+      "anchor_star": {
+        "star_id": "tier_1_anchor_star",
+        "star_name": "Tier 1 Star",
+        "sector_pos": [
+          0,
+          0,
+          0
+        ],
+        "local_pos": [
+          500,
+          500,
+          500
+        ],
+        "required": false,
+        "create_if_missing": false
+      },
+      "position_mode": "anchor_offset",
+      "sector_offset": [
+        0,
+        0,
+        0
+      ],
+      "local_offset": [
+        -200,
+        220,
+        146
+      ],
+      "labels": [
+        "planet",
+        "world_seed",
+        "authored_planet",
+        "random_planet_seed",
+        "tier_1",
+        "tier_1_anchor_star",
+        "frontier_world"
+      ]
+    },
+    "seed_planet_005_sable": {
+      "owner_type": "planet",
+      "object_type": "planet",
+      "object_id": "seed_planet_005_sable",
+      "display_name": "Sable 1-5",
+      "title": "Sable 1-5",
+      "scan_name": "Sable 1-5",
+      "scan_description": "Authored world-seed planet near Tier 1 Star. Sable 1-5 is a metallic contact marked for survey expansion.",
+      "contact_text": "Orbital contact available. Long-range scan recommends survey before approach.",
+      "planet_type": "metallic",
+      "planet_role": "mining_world",
+      "population_state": "abandoned",
+      "has_planet_interface": true,
+      "can_land": false,
+      "interaction_type": "planet_contact",
+      "tier": 1,
+      "parent_star_id": "tier_1_anchor_star",
+      "parent_star_name": "Tier 1 Star",
+      "anchor_star": {
+        "star_id": "tier_1_anchor_star",
+        "star_name": "Tier 1 Star",
+        "sector_pos": [
+          0,
+          0,
+          0
+        ],
+        "local_pos": [
+          500,
+          500,
+          500
+        ],
+        "required": false,
+        "create_if_missing": false
+      },
+      "position_mode": "anchor_offset",
+      "sector_offset": [
+        0,
+        1,
+        -1
+      ],
+      "local_offset": [
+        169,
+        175,
+        -344
+      ],
+      "labels": [
+        "planet",
+        "world_seed",
+        "authored_planet",
+        "random_planet_seed",
+        "tier_1",
+        "tier_1_anchor_star",
+        "mining_world"
+      ]
+    },
+    "seed_planet_006_nadir": {
+      "owner_type": "planet",
+      "object_type": "planet",
+      "object_id": "seed_planet_006_nadir",
+      "display_name": "Nadir 1-6",
+      "title": "Nadir 1-6",
+      "scan_name": "Nadir 1-6",
+      "scan_description": "Authored world-seed planet near Tier 1 Star. Nadir 1-6 is a crystal contact marked for survey expansion.",
+      "contact_text": "Orbital contact available. Long-range scan recommends survey before approach.",
+      "planet_type": "crystal",
+      "planet_role": "anomaly_world",
+      "population_state": "sealed",
+      "has_planet_interface": true,
+      "can_land": false,
+      "interaction_type": "planet_contact",
+      "tier": 1,
+      "parent_star_id": "tier_1_anchor_star",
+      "parent_star_name": "Tier 1 Star",
+      "anchor_star": {
+        "star_id": "tier_1_anchor_star",
+        "star_name": "Tier 1 Star",
+        "sector_pos": [
+          0,
+          0,
+          0
+        ],
+        "local_pos": [
+          500,
+          500,
+          500
+        ],
+        "required": false,
+        "create_if_missing": false
+      },
+      "position_mode": "anchor_offset",
+      "sector_offset": [
+        0,
+        0,
+        0
+      ],
+      "local_offset": [
+        -231,
+        -89,
+        -196
+      ],
+      "labels": [
+        "planet",
+        "world_seed",
+        "authored_planet",
+        "random_planet_seed",
+        "tier_1",
+        "tier_1_anchor_star",
+        "anomaly_world"
+      ]
+    },
+    "seed_planet_007_ixo": {
+      "owner_type": "planet",
+      "object_type": "planet",
+      "object_id": "seed_planet_007_ixo",
+      "display_name": "Ixo 2-1",
+      "title": "Ixo 2-1",
+      "scan_name": "Ixo 2-1",
+      "scan_description": "Authored world-seed planet near Tier 2 Star. Ixo 2-1 is a ice contact marked for survey expansion.",
+      "contact_text": "Orbital contact available. Long-range scan recommends survey before approach.",
+      "planet_type": "ice",
+      "planet_role": "frontier_world",
+      "population_state": "frontier",
+      "has_planet_interface": true,
+      "can_land": false,
+      "interaction_type": "planet_contact",
+      "tier": 2,
+      "parent_star_id": "tier_2_anchor_star",
+      "parent_star_name": "Tier 2 Star",
+      "anchor_star": {
+        "star_id": "tier_2_anchor_star",
+        "star_name": "Tier 2 Star",
+        "sector_pos": [
+          10,
+          1,
+          0
+        ],
+        "local_pos": [
+          500,
+          500,
+          500
+        ],
+        "required": false,
+        "create_if_missing": false
+      },
+      "position_mode": "anchor_offset",
+      "sector_offset": [
+        0,
+        0,
+        0
+      ],
+      "local_offset": [
+        -166,
+        235,
+        154
+      ],
+      "labels": [
+        "planet",
+        "world_seed",
+        "authored_planet",
+        "random_planet_seed",
+        "tier_2",
+        "tier_2_anchor_star",
+        "frontier_world"
+      ]
+    },
+    "seed_planet_008_helix": {
+      "owner_type": "planet",
+      "object_type": "planet",
+      "object_id": "seed_planet_008_helix",
+      "display_name": "Helix 2-2",
+      "title": "Helix 2-2",
+      "scan_name": "Helix 2-2",
+      "scan_description": "Authored world-seed planet near Tier 2 Star. Helix 2-2 is a barren contact marked for survey expansion.",
+      "contact_text": "Orbital contact available. Long-range scan recommends survey before approach.",
+      "planet_type": "barren",
+      "planet_role": "mining_world",
+      "population_state": "abandoned",
+      "has_planet_interface": true,
+      "can_land": false,
+      "interaction_type": "planet_contact",
+      "tier": 2,
+      "parent_star_id": "tier_2_anchor_star",
+      "parent_star_name": "Tier 2 Star",
+      "anchor_star": {
+        "star_id": "tier_2_anchor_star",
+        "star_name": "Tier 2 Star",
+        "sector_pos": [
+          10,
+          1,
+          0
+        ],
+        "local_pos": [
+          500,
+          500,
+          500
+        ],
+        "required": false,
+        "create_if_missing": false
+      },
+      "position_mode": "anchor_offset",
+      "sector_offset": [
+        -1,
+        0,
+        0
+      ],
+      "local_offset": [
+        -184,
+        -252,
+        171
+      ],
+      "labels": [
+        "planet",
+        "world_seed",
+        "authored_planet",
+        "random_planet_seed",
+        "tier_2",
+        "tier_2_anchor_star",
+        "mining_world"
+      ]
+    },
+    "seed_planet_009_dusk": {
+      "owner_type": "planet",
+      "object_type": "planet",
+      "object_id": "seed_planet_009_dusk",
+      "display_name": "Dusk 2-3",
+      "title": "Dusk 2-3",
+      "scan_name": "Dusk 2-3",
+      "scan_description": "Authored world-seed planet near Tier 2 Star. Dusk 2-3 is a desert contact marked for survey expansion.",
+      "contact_text": "Orbital contact available. Long-range scan recommends survey before approach.",
+      "planet_type": "desert",
+      "planet_role": "anomaly_world",
+      "population_state": "sealed",
+      "has_planet_interface": true,
+      "can_land": false,
+      "interaction_type": "planet_contact",
+      "tier": 2,
+      "parent_star_id": "tier_2_anchor_star",
+      "parent_star_name": "Tier 2 Star",
+      "anchor_star": {
+        "star_id": "tier_2_anchor_star",
+        "star_name": "Tier 2 Star",
+        "sector_pos": [
+          10,
+          1,
+          0
+        ],
+        "local_pos": [
+          500,
+          500,
+          500
+        ],
+        "required": false,
+        "create_if_missing": false
+      },
+      "position_mode": "anchor_offset",
+      "sector_offset": [
+        0,
+        0,
+        0
+      ],
+      "local_offset": [
+        285,
+        79,
+        113
+      ],
+      "labels": [
+        "planet",
+        "world_seed",
+        "authored_planet",
+        "random_planet_seed",
+        "tier_2",
+        "tier_2_anchor_star",
+        "anomaly_world"
+      ]
+    },
+    "seed_planet_010_pale": {
+      "owner_type": "planet",
+      "object_type": "planet",
+      "object_id": "seed_planet_010_pale",
+      "display_name": "Pale 2-4",
+      "title": "Pale 2-4",
+      "scan_name": "Pale 2-4",
+      "scan_description": "Authored world-seed planet near Tier 2 Star. Pale 2-4 is a volcanic contact marked for survey expansion.",
+      "contact_text": "Orbital contact available. Long-range scan recommends survey before approach.",
+      "planet_type": "volcanic",
+      "planet_role": "resource_world",
+      "population_state": "unknown",
+      "has_planet_interface": true,
+      "can_land": false,
+      "interaction_type": "planet_contact",
+      "tier": 2,
+      "parent_star_id": "tier_2_anchor_star",
+      "parent_star_name": "Tier 2 Star",
+      "anchor_star": {
+        "star_id": "tier_2_anchor_star",
+        "star_name": "Tier 2 Star",
+        "sector_pos": [
+          10,
+          1,
+          0
+        ],
+        "local_pos": [
+          500,
+          500,
+          500
+        ],
+        "required": false,
+        "create_if_missing": false
+      },
+      "position_mode": "anchor_offset",
+      "sector_offset": [
+        0,
+        0,
+        0
+      ],
+      "local_offset": [
+        -137,
+        26,
+        -155
+      ],
+      "labels": [
+        "planet",
+        "world_seed",
+        "authored_planet",
+        "random_planet_seed",
+        "tier_2",
+        "tier_2_anchor_star",
+        "resource_world"
+      ]
+    },
+    "seed_planet_011_korra": {
+      "owner_type": "planet",
+      "object_type": "planet",
+      "object_id": "seed_planet_011_korra",
+      "display_name": "Korra 3-1",
+      "title": "Korra 3-1",
+      "scan_name": "Korra 3-1",
+      "scan_description": "Authored world-seed planet near Tier 3 Star. Korra 3-1 is a metallic contact marked for survey expansion.",
+      "contact_text": "Orbital contact available. Long-range scan recommends survey before approach.",
+      "planet_type": "metallic",
+      "planet_role": "mining_world",
+      "population_state": "abandoned",
+      "has_planet_interface": true,
+      "can_land": false,
+      "interaction_type": "planet_contact",
+      "tier": 3,
+      "parent_star_id": "tier_3_anchor_star",
+      "parent_star_name": "Tier 3 Star",
+      "anchor_star": {
+        "star_id": "tier_3_anchor_star",
+        "star_name": "Tier 3 Star",
+        "sector_pos": [
+          20,
+          -1,
+          0
+        ],
+        "local_pos": [
+          500,
+          500,
+          500
+        ],
+        "required": false,
+        "create_if_missing": false
+      },
+      "position_mode": "anchor_offset",
+      "sector_offset": [
+        0,
+        1,
+        1
+      ],
+      "local_offset": [
+        197,
+        139,
+        -174
+      ],
+      "labels": [
+        "planet",
+        "world_seed",
+        "authored_planet",
+        "random_planet_seed",
+        "tier_3",
+        "tier_3_anchor_star",
+        "mining_world"
+      ]
+    },
+    "seed_planet_012_riven": {
+      "owner_type": "planet",
+      "object_type": "planet",
+      "object_id": "seed_planet_012_riven",
+      "display_name": "Riven 3-2",
+      "title": "Riven 3-2",
+      "scan_name": "Riven 3-2",
+      "scan_description": "Authored world-seed planet near Tier 3 Star. Riven 3-2 is a crystal contact marked for survey expansion.",
+      "contact_text": "Orbital contact available. Long-range scan recommends survey before approach.",
+      "planet_type": "crystal",
+      "planet_role": "anomaly_world",
+      "population_state": "sealed",
+      "has_planet_interface": true,
+      "can_land": false,
+      "interaction_type": "planet_contact",
+      "tier": 3,
+      "parent_star_id": "tier_3_anchor_star",
+      "parent_star_name": "Tier 3 Star",
+      "anchor_star": {
+        "star_id": "tier_3_anchor_star",
+        "star_name": "Tier 3 Star",
+        "sector_pos": [
+          20,
+          -1,
+          0
+        ],
+        "local_pos": [
+          500,
+          500,
+          500
+        ],
+        "required": false,
+        "create_if_missing": false
+      },
+      "position_mode": "anchor_offset",
+      "sector_offset": [
+        0,
+        0,
+        0
+      ],
+      "local_offset": [
+        -387,
+        221,
+        130
+      ],
+      "labels": [
+        "planet",
+        "world_seed",
+        "authored_planet",
+        "random_planet_seed",
+        "tier_3",
+        "tier_3_anchor_star",
+        "anomaly_world"
+      ]
+    },
+    "seed_planet_013_aster": {
+      "owner_type": "planet",
+      "object_type": "planet",
+      "object_id": "seed_planet_013_aster",
+      "display_name": "Aster 3-3",
+      "title": "Aster 3-3",
+      "scan_name": "Aster 3-3",
+      "scan_description": "Authored world-seed planet near Tier 3 Star. Aster 3-3 is a rocky contact marked for survey expansion.",
+      "contact_text": "Orbital contact available. Long-range scan recommends survey before approach.",
+      "planet_type": "rocky",
+      "planet_role": "resource_world",
+      "population_state": "unknown",
+      "has_planet_interface": true,
+      "can_land": false,
+      "interaction_type": "planet_contact",
+      "tier": 3,
+      "parent_star_id": "tier_3_anchor_star",
+      "parent_star_name": "Tier 3 Star",
+      "anchor_star": {
+        "star_id": "tier_3_anchor_star",
+        "star_name": "Tier 3 Star",
+        "sector_pos": [
+          20,
+          -1,
+          0
+        ],
+        "local_pos": [
+          500,
+          500,
+          500
+        ],
+        "required": false,
+        "create_if_missing": false
+      },
+      "position_mode": "anchor_offset",
+      "sector_offset": [
+        0,
+        0,
+        0
+      ],
+      "local_offset": [
+        -383,
+        101,
+        172
+      ],
+      "labels": [
+        "planet",
+        "world_seed",
+        "authored_planet",
+        "random_planet_seed",
+        "tier_3",
+        "tier_3_anchor_star",
+        "resource_world"
+      ]
+    },
+    "seed_planet_014_nyx": {
+      "owner_type": "planet",
+      "object_type": "planet",
+      "object_id": "seed_planet_014_nyx",
+      "display_name": "Nyx 3-4",
+      "title": "Nyx 3-4",
+      "scan_name": "Nyx 3-4",
+      "scan_description": "Authored world-seed planet near Tier 3 Star. Nyx 3-4 is a ice contact marked for survey expansion.",
+      "contact_text": "Orbital contact available. Long-range scan recommends survey before approach.",
+      "planet_type": "ice",
+      "planet_role": "ruin_world",
+      "population_state": "outpost_trace",
+      "has_planet_interface": true,
+      "can_land": false,
+      "interaction_type": "planet_contact",
+      "tier": 3,
+      "parent_star_id": "tier_3_anchor_star",
+      "parent_star_name": "Tier 3 Star",
+      "anchor_star": {
+        "star_id": "tier_3_anchor_star",
+        "star_name": "Tier 3 Star",
+        "sector_pos": [
+          20,
+          -1,
+          0
+        ],
+        "local_pos": [
+          500,
+          500,
+          500
+        ],
+        "required": false,
+        "create_if_missing": false
+      },
+      "position_mode": "anchor_offset",
+      "sector_offset": [
+        1,
+        0,
+        0
+      ],
+      "local_offset": [
+        175,
+        -53,
+        -242
+      ],
+      "labels": [
+        "planet",
+        "world_seed",
+        "authored_planet",
+        "random_planet_seed",
+        "tier_3",
+        "tier_3_anchor_star",
+        "ruin_world"
+      ]
+    },
+    "seed_planet_015_copper": {
+      "owner_type": "planet",
+      "object_type": "planet",
+      "object_id": "seed_planet_015_copper",
+      "display_name": "Copper 4-1",
+      "title": "Copper 4-1",
+      "scan_name": "Copper 4-1",
+      "scan_description": "Authored world-seed planet near Tier 4 Star. Copper 4-1 is a desert contact marked for survey expansion.",
+      "contact_text": "Orbital contact available. Long-range scan recommends survey before approach.",
+      "planet_type": "desert",
+      "planet_role": "anomaly_world",
+      "population_state": "sealed",
+      "has_planet_interface": true,
+      "can_land": false,
+      "interaction_type": "planet_contact",
+      "tier": 4,
+      "parent_star_id": "tier_4_anchor_star",
+      "parent_star_name": "Tier 4 Star",
+      "anchor_star": {
+        "star_id": "tier_4_anchor_star",
+        "star_name": "Tier 4 Star",
+        "sector_pos": [
+          30,
+          2,
+          0
+        ],
+        "local_pos": [
+          500,
+          500,
+          500
+        ],
+        "required": false,
+        "create_if_missing": false
+      },
+      "position_mode": "anchor_offset",
+      "sector_offset": [
+        0,
+        0,
+        0
+      ],
+      "local_offset": [
+        199,
+        253,
+        -135
+      ],
+      "labels": [
+        "planet",
+        "world_seed",
+        "authored_planet",
+        "random_planet_seed",
+        "tier_4",
+        "tier_4_anchor_star",
+        "anomaly_world"
+      ]
+    },
+    "seed_planet_016_glass": {
+      "owner_type": "planet",
+      "object_type": "planet",
+      "object_id": "seed_planet_016_glass",
+      "display_name": "Glass 4-2",
+      "title": "Glass 4-2",
+      "scan_name": "Glass 4-2",
+      "scan_description": "Authored world-seed planet near Tier 4 Star. Glass 4-2 is a volcanic contact marked for survey expansion.",
+      "contact_text": "Orbital contact available. Long-range scan recommends survey before approach.",
+      "planet_type": "volcanic",
+      "planet_role": "resource_world",
+      "population_state": "unknown",
+      "has_planet_interface": true,
+      "can_land": false,
+      "interaction_type": "planet_contact",
+      "tier": 4,
+      "parent_star_id": "tier_4_anchor_star",
+      "parent_star_name": "Tier 4 Star",
+      "anchor_star": {
+        "star_id": "tier_4_anchor_star",
+        "star_name": "Tier 4 Star",
+        "sector_pos": [
+          30,
+          2,
+          0
+        ],
+        "local_pos": [
+          500,
+          500,
+          500
+        ],
+        "required": false,
+        "create_if_missing": false
+      },
+      "position_mode": "anchor_offset",
+      "sector_offset": [
+        0,
+        0,
+        0
+      ],
+      "local_offset": [
+        140,
+        -25,
+        282
+      ],
+      "labels": [
+        "planet",
+        "world_seed",
+        "authored_planet",
+        "random_planet_seed",
+        "tier_4",
+        "tier_4_anchor_star",
+        "resource_world"
+      ]
+    },
+    "seed_planet_017_lowell": {
+      "owner_type": "planet",
+      "object_type": "planet",
+      "object_id": "seed_planet_017_lowell",
+      "display_name": "Lowell 4-3",
+      "title": "Lowell 4-3",
+      "scan_name": "Lowell 4-3",
+      "scan_description": "Authored world-seed planet near Tier 4 Star. Lowell 4-3 is a oceanic contact marked for survey expansion.",
+      "contact_text": "Orbital contact available. Long-range scan recommends survey before approach.",
+      "planet_type": "oceanic",
+      "planet_role": "ruin_world",
+      "population_state": "outpost_trace",
+      "has_planet_interface": true,
+      "can_land": false,
+      "interaction_type": "planet_contact",
+      "tier": 4,
+      "parent_star_id": "tier_4_anchor_star",
+      "parent_star_name": "Tier 4 Star",
+      "anchor_star": {
+        "star_id": "tier_4_anchor_star",
+        "star_name": "Tier 4 Star",
+        "sector_pos": [
+          30,
+          2,
+          0
+        ],
+        "local_pos": [
+          500,
+          500,
+          500
+        ],
+        "required": false,
+        "create_if_missing": false
+      },
+      "position_mode": "anchor_offset",
+      "sector_offset": [
+        0,
+        1,
+        -1
+      ],
+      "local_offset": [
+        250,
+        74,
+        -318
+      ],
+      "labels": [
+        "planet",
+        "world_seed",
+        "authored_planet",
+        "random_planet_seed",
+        "tier_4",
+        "tier_4_anchor_star",
+        "ruin_world"
+      ]
+    },
+    "seed_planet_018_ember": {
+      "owner_type": "planet",
+      "object_type": "planet",
+      "object_id": "seed_planet_018_ember",
+      "display_name": "Ember 4-4",
+      "title": "Ember 4-4",
+      "scan_name": "Ember 4-4",
+      "scan_description": "Authored world-seed planet near Tier 4 Star. Ember 4-4 is a metallic contact marked for survey expansion.",
+      "contact_text": "Orbital contact available. Long-range scan recommends survey before approach.",
+      "planet_type": "metallic",
+      "planet_role": "silent_world",
+      "population_state": "uninhabited",
+      "has_planet_interface": true,
+      "can_land": false,
+      "interaction_type": "planet_contact",
+      "tier": 4,
+      "parent_star_id": "tier_4_anchor_star",
+      "parent_star_name": "Tier 4 Star",
+      "anchor_star": {
+        "star_id": "tier_4_anchor_star",
+        "star_name": "Tier 4 Star",
+        "sector_pos": [
+          30,
+          2,
+          0
+        ],
+        "local_pos": [
+          500,
+          500,
+          500
+        ],
+        "required": false,
+        "create_if_missing": false
+      },
+      "position_mode": "anchor_offset",
+      "sector_offset": [
+        0,
+        0,
+        0
+      ],
+      "local_offset": [
+        -252,
+        162,
+        251
+      ],
+      "labels": [
+        "planet",
+        "world_seed",
+        "authored_planet",
+        "random_planet_seed",
+        "tier_4",
+        "tier_4_anchor_star",
+        "silent_world"
+      ]
+    },
+    "seed_planet_019_hollow": {
+      "owner_type": "planet",
+      "object_type": "planet",
+      "object_id": "seed_planet_019_hollow",
+      "display_name": "Hollow 5-1",
+      "title": "Hollow 5-1",
+      "scan_name": "Hollow 5-1",
+      "scan_description": "Authored world-seed planet near Tier 5 Star. Hollow 5-1 is a rocky contact marked for survey expansion.",
+      "contact_text": "Orbital contact available. Long-range scan recommends survey before approach.",
+      "planet_type": "rocky",
+      "planet_role": "resource_world",
+      "population_state": "unknown",
+      "has_planet_interface": true,
+      "can_land": false,
+      "interaction_type": "planet_contact",
+      "tier": 5,
+      "parent_star_id": "tier_5_anchor_star",
+      "parent_star_name": "Tier 5 Star",
+      "anchor_star": {
+        "star_id": "tier_5_anchor_star",
+        "star_name": "Tier 5 Star",
+        "sector_pos": [
+          40,
+          -2,
+          0
+        ],
+        "local_pos": [
+          500,
+          500,
+          500
+        ],
+        "required": false,
+        "create_if_missing": false
+      },
+      "position_mode": "anchor_offset",
+      "sector_offset": [
+        0,
+        0,
+        0
+      ],
+      "local_offset": [
+        149,
+        -217,
+        219
+      ],
+      "labels": [
+        "planet",
+        "world_seed",
+        "authored_planet",
+        "random_planet_seed",
+        "tier_5",
+        "tier_5_anchor_star",
+        "resource_world"
+      ]
+    },
+    "seed_planet_020_brine": {
+      "owner_type": "planet",
+      "object_type": "planet",
+      "object_id": "seed_planet_020_brine",
+      "display_name": "Brine 5-2",
+      "title": "Brine 5-2",
+      "scan_name": "Brine 5-2",
+      "scan_description": "Authored world-seed planet near Tier 5 Star. Brine 5-2 is a ice contact marked for survey expansion.",
+      "contact_text": "Orbital contact available. Long-range scan recommends survey before approach.",
+      "planet_type": "ice",
+      "planet_role": "ruin_world",
+      "population_state": "outpost_trace",
+      "has_planet_interface": true,
+      "can_land": false,
+      "interaction_type": "planet_contact",
+      "tier": 5,
+      "parent_star_id": "tier_5_anchor_star",
+      "parent_star_name": "Tier 5 Star",
+      "anchor_star": {
+        "star_id": "tier_5_anchor_star",
+        "star_name": "Tier 5 Star",
+        "sector_pos": [
+          40,
+          -2,
+          0
+        ],
+        "local_pos": [
+          500,
+          500,
+          500
+        ],
+        "required": false,
+        "create_if_missing": false
+      },
+      "position_mode": "anchor_offset",
+      "sector_offset": [
+        1,
+        0,
+        0
+      ],
+      "local_offset": [
+        263,
+        158,
+        -96
+      ],
+      "labels": [
+        "planet",
+        "world_seed",
+        "authored_planet",
+        "random_planet_seed",
+        "tier_5",
+        "tier_5_anchor_star",
+        "ruin_world"
+      ]
+    },
+    "seed_planet_021_frost": {
+      "owner_type": "planet",
+      "object_type": "planet",
+      "object_id": "seed_planet_021_frost",
+      "display_name": "Frost 5-3",
+      "title": "Frost 5-3",
+      "scan_name": "Frost 5-3",
+      "scan_description": "Authored world-seed planet near Tier 5 Star. Frost 5-3 is a barren contact marked for survey expansion.",
+      "contact_text": "Orbital contact available. Long-range scan recommends survey before approach.",
+      "planet_type": "barren",
+      "planet_role": "silent_world",
+      "population_state": "uninhabited",
+      "has_planet_interface": true,
+      "can_land": false,
+      "interaction_type": "planet_contact",
+      "tier": 5,
+      "parent_star_id": "tier_5_anchor_star",
+      "parent_star_name": "Tier 5 Star",
+      "anchor_star": {
+        "star_id": "tier_5_anchor_star",
+        "star_name": "Tier 5 Star",
+        "sector_pos": [
+          40,
+          -2,
+          0
+        ],
+        "local_pos": [
+          500,
+          500,
+          500
+        ],
+        "required": false,
+        "create_if_missing": false
+      },
+      "position_mode": "anchor_offset",
+      "sector_offset": [
+        0,
+        0,
+        0
+      ],
+      "local_offset": [
+        156,
+        93,
+        -289
+      ],
+      "labels": [
+        "planet",
+        "world_seed",
+        "authored_planet",
+        "random_planet_seed",
+        "tier_5",
+        "tier_5_anchor_star",
+        "silent_world"
+      ]
+    },
+    "seed_planet_022_ochre": {
+      "owner_type": "planet",
+      "object_type": "planet",
+      "object_id": "seed_planet_022_ochre",
+      "display_name": "Ochre 5-4",
+      "title": "Ochre 5-4",
+      "scan_name": "Ochre 5-4",
+      "scan_description": "Authored world-seed planet near Tier 5 Star. Ochre 5-4 is a desert contact marked for survey expansion.",
+      "contact_text": "Orbital contact available. Long-range scan recommends survey before approach.",
+      "planet_type": "desert",
+      "planet_role": "survey_target",
+      "population_state": "frontier",
+      "has_planet_interface": true,
+      "can_land": false,
+      "interaction_type": "planet_contact",
+      "tier": 5,
+      "parent_star_id": "tier_5_anchor_star",
+      "parent_star_name": "Tier 5 Star",
+      "anchor_star": {
+        "star_id": "tier_5_anchor_star",
+        "star_name": "Tier 5 Star",
+        "sector_pos": [
+          40,
+          -2,
+          0
+        ],
+        "local_pos": [
+          500,
+          500,
+          500
+        ],
+        "required": false,
+        "create_if_missing": false
+      },
+      "position_mode": "anchor_offset",
+      "sector_offset": [
+        0,
+        0,
+        0
+      ],
+      "local_offset": [
+        -140,
+        101,
+        -270
+      ],
+      "labels": [
+        "planet",
+        "world_seed",
+        "authored_planet",
+        "random_planet_seed",
+        "tier_5",
+        "tier_5_anchor_star",
+        "survey_target"
+      ]
+    },
+    "seed_planet_023_vanta": {
+      "owner_type": "planet",
+      "object_type": "planet",
+      "object_id": "seed_planet_023_vanta",
+      "display_name": "Vanta 6-1",
+      "title": "Vanta 6-1",
+      "scan_name": "Vanta 6-1",
+      "scan_description": "Authored world-seed planet near Tier 6 Star. Vanta 6-1 is a oceanic contact marked for survey expansion.",
+      "contact_text": "Orbital contact available. Long-range scan recommends survey before approach.",
+      "planet_type": "oceanic",
+      "planet_role": "ruin_world",
+      "population_state": "outpost_trace",
+      "has_planet_interface": true,
+      "can_land": false,
+      "interaction_type": "planet_contact",
+      "tier": 6,
+      "parent_star_id": "tier_6_anchor_star",
+      "parent_star_name": "Tier 6 Star",
+      "anchor_star": {
+        "star_id": "tier_6_anchor_star",
+        "star_name": "Tier 6 Star",
+        "sector_pos": [
+          50,
+          3,
+          0
+        ],
+        "local_pos": [
+          500,
+          500,
+          500
+        ],
+        "required": false,
+        "create_if_missing": false
+      },
+      "position_mode": "anchor_offset",
+      "sector_offset": [
+        0,
+        -1,
+        -1
+      ],
+      "local_offset": [
+        -170,
+        -112,
+        -399
+      ],
+      "labels": [
+        "planet",
+        "world_seed",
+        "authored_planet",
+        "random_planet_seed",
+        "tier_6",
+        "tier_6_anchor_star",
+        "ruin_world"
+      ]
+    },
+    "seed_planet_024_solace": {
+      "owner_type": "planet",
+      "object_type": "planet",
+      "object_id": "seed_planet_024_solace",
+      "display_name": "Solace 6-2",
+      "title": "Solace 6-2",
+      "scan_name": "Solace 6-2",
+      "scan_description": "Authored world-seed planet near Tier 6 Star. Solace 6-2 is a metallic contact marked for survey expansion.",
+      "contact_text": "Orbital contact available. Long-range scan recommends survey before approach.",
+      "planet_type": "metallic",
+      "planet_role": "silent_world",
+      "population_state": "uninhabited",
+      "has_planet_interface": true,
+      "can_land": false,
+      "interaction_type": "planet_contact",
+      "tier": 6,
+      "parent_star_id": "tier_6_anchor_star",
+      "parent_star_name": "Tier 6 Star",
+      "anchor_star": {
+        "star_id": "tier_6_anchor_star",
+        "star_name": "Tier 6 Star",
+        "sector_pos": [
+          50,
+          3,
+          0
+        ],
+        "local_pos": [
+          500,
+          500,
+          500
+        ],
+        "required": false,
+        "create_if_missing": false
+      },
+      "position_mode": "anchor_offset",
+      "sector_offset": [
+        0,
+        0,
+        0
+      ],
+      "local_offset": [
+        -225,
+        -224,
+        -261
+      ],
+      "labels": [
+        "planet",
+        "world_seed",
+        "authored_planet",
+        "random_planet_seed",
+        "tier_6",
+        "tier_6_anchor_star",
+        "silent_world"
+      ]
+    },
+    "seed_planet_025_drift": {
+      "owner_type": "planet",
+      "object_type": "planet",
+      "object_id": "seed_planet_025_drift",
+      "display_name": "Drift 6-3",
+      "title": "Drift 6-3",
+      "scan_name": "Drift 6-3",
+      "scan_description": "Authored world-seed planet near Tier 6 Star. Drift 6-3 is a crystal contact marked for survey expansion.",
+      "contact_text": "Orbital contact available. Long-range scan recommends survey before approach.",
+      "planet_type": "crystal",
+      "planet_role": "survey_target",
+      "population_state": "frontier",
+      "has_planet_interface": true,
+      "can_land": false,
+      "interaction_type": "planet_contact",
+      "tier": 6,
+      "parent_star_id": "tier_6_anchor_star",
+      "parent_star_name": "Tier 6 Star",
+      "anchor_star": {
+        "star_id": "tier_6_anchor_star",
+        "star_name": "Tier 6 Star",
+        "sector_pos": [
+          50,
+          3,
+          0
+        ],
+        "local_pos": [
+          500,
+          500,
+          500
+        ],
+        "required": false,
+        "create_if_missing": false
+      },
+      "position_mode": "anchor_offset",
+      "sector_offset": [
+        0,
+        0,
+        0
+      ],
+      "local_offset": [
+        -108,
+        57,
+        365
+      ],
+      "labels": [
+        "planet",
+        "world_seed",
+        "authored_planet",
+        "random_planet_seed",
+        "tier_6",
+        "tier_6_anchor_star",
+        "survey_target"
+      ]
+    },
+    "seed_planet_026_mire": {
+      "owner_type": "planet",
+      "object_type": "planet",
+      "object_id": "seed_planet_026_mire",
+      "display_name": "Mire 7-1",
+      "title": "Mire 7-1",
+      "scan_name": "Mire 7-1",
+      "scan_description": "Authored world-seed planet near Tier 7 Star. Mire 7-1 is a ice contact marked for survey expansion.",
+      "contact_text": "Orbital contact available. Long-range scan recommends survey before approach.",
+      "planet_type": "ice",
+      "planet_role": "ruin_world",
+      "population_state": "outpost_trace",
+      "has_planet_interface": true,
+      "can_land": false,
+      "interaction_type": "planet_contact",
+      "tier": 7,
+      "parent_star_id": "tier_7_anchor_star",
+      "parent_star_name": "Tier 7 Star",
+      "anchor_star": {
+        "star_id": "tier_7_anchor_star",
+        "star_name": "Tier 7 Star",
+        "sector_pos": [
+          60,
+          -3,
+          0
+        ],
+        "local_pos": [
+          500,
+          500,
+          500
+        ],
+        "required": false,
+        "create_if_missing": false
+      },
+      "position_mode": "anchor_offset",
+      "sector_offset": [
+        1,
+        0,
+        0
+      ],
+      "local_offset": [
+        112,
+        -32,
+        203
+      ],
+      "labels": [
+        "planet",
+        "world_seed",
+        "authored_planet",
+        "random_planet_seed",
+        "tier_7",
+        "tier_7_anchor_star",
+        "ruin_world"
+      ]
+    },
+    "seed_planet_027_beacon": {
+      "owner_type": "planet",
+      "object_type": "planet",
+      "object_id": "seed_planet_027_beacon",
+      "display_name": "Beacon 7-2",
+      "title": "Beacon 7-2",
+      "scan_name": "Beacon 7-2",
+      "scan_description": "Authored world-seed planet near Tier 7 Star. Beacon 7-2 is a barren contact marked for survey expansion.",
+      "contact_text": "Orbital contact available. Long-range scan recommends survey before approach.",
+      "planet_type": "barren",
+      "planet_role": "silent_world",
+      "population_state": "uninhabited",
+      "has_planet_interface": true,
+      "can_land": false,
+      "interaction_type": "planet_contact",
+      "tier": 7,
+      "parent_star_id": "tier_7_anchor_star",
+      "parent_star_name": "Tier 7 Star",
+      "anchor_star": {
+        "star_id": "tier_7_anchor_star",
+        "star_name": "Tier 7 Star",
+        "sector_pos": [
+          60,
+          -3,
+          0
+        ],
+        "local_pos": [
+          500,
+          500,
+          500
+        ],
+        "required": false,
+        "create_if_missing": false
+      },
+      "position_mode": "anchor_offset",
+      "sector_offset": [
+        0,
+        0,
+        0
+      ],
+      "local_offset": [
+        -179,
+        -203,
+        221
+      ],
+      "labels": [
+        "planet",
+        "world_seed",
+        "authored_planet",
+        "random_planet_seed",
+        "tier_7",
+        "tier_7_anchor_star",
+        "silent_world"
+      ]
+    },
+    "seed_planet_028_tarn": {
+      "owner_type": "planet",
+      "object_type": "planet",
+      "object_id": "seed_planet_028_tarn",
+      "display_name": "Tarn 7-3",
+      "title": "Tarn 7-3",
+      "scan_name": "Tarn 7-3",
+      "scan_description": "Authored world-seed planet near Tier 7 Star. Tarn 7-3 is a desert contact marked for survey expansion.",
+      "contact_text": "Orbital contact available. Long-range scan recommends survey before approach.",
+      "planet_type": "desert",
+      "planet_role": "survey_target",
+      "population_state": "frontier",
+      "has_planet_interface": true,
+      "can_land": false,
+      "interaction_type": "planet_contact",
+      "tier": 7,
+      "parent_star_id": "tier_7_anchor_star",
+      "parent_star_name": "Tier 7 Star",
+      "anchor_star": {
+        "star_id": "tier_7_anchor_star",
+        "star_name": "Tier 7 Star",
+        "sector_pos": [
+          60,
+          -3,
+          0
+        ],
+        "local_pos": [
+          500,
+          500,
+          500
+        ],
+        "required": false,
+        "create_if_missing": false
+      },
+      "position_mode": "anchor_offset",
+      "sector_offset": [
+        0,
+        0,
+        0
+      ],
+      "local_offset": [
+        -258,
+        16,
+        97
+      ],
+      "labels": [
+        "planet",
+        "world_seed",
+        "authored_planet",
+        "random_planet_seed",
+        "tier_7",
+        "tier_7_anchor_star",
+        "survey_target"
+      ]
+    },
+    "seed_planet_029_warden": {
+      "owner_type": "planet",
+      "object_type": "planet",
+      "object_id": "seed_planet_029_warden",
+      "display_name": "Warden 8-1",
+      "title": "Warden 8-1",
+      "scan_name": "Warden 8-1",
+      "scan_description": "Authored world-seed planet near Tier 8 Star. Warden 8-1 is a oceanic contact marked for survey expansion.",
+      "contact_text": "Orbital contact available. Long-range scan recommends survey before approach.",
+      "planet_type": "oceanic",
+      "planet_role": "ruin_world",
+      "population_state": "outpost_trace",
+      "has_planet_interface": true,
+      "can_land": false,
+      "interaction_type": "planet_contact",
+      "tier": 8,
+      "parent_star_id": "tier_8_anchor_star",
+      "parent_star_name": "Tier 8 Star",
+      "anchor_star": {
+        "star_id": "tier_8_anchor_star",
+        "star_name": "Tier 8 Star",
+        "sector_pos": [
+          70,
+          1,
+          0
+        ],
+        "local_pos": [
+          500,
+          500,
+          500
+        ],
+        "required": false,
+        "create_if_missing": false
+      },
+      "position_mode": "anchor_offset",
+      "sector_offset": [
+        0,
+        -1,
+        1
+      ],
+      "local_offset": [
+        -264,
+        -234,
+        -167
+      ],
+      "labels": [
+        "planet",
+        "world_seed",
+        "authored_planet",
+        "random_planet_seed",
+        "tier_8",
+        "tier_8_anchor_star",
+        "ruin_world"
+      ]
+    },
+    "seed_planet_030_kestrel": {
+      "owner_type": "planet",
+      "object_type": "planet",
+      "object_id": "seed_planet_030_kestrel",
+      "display_name": "Kestrel 8-2",
+      "title": "Kestrel 8-2",
+      "scan_name": "Kestrel 8-2",
+      "scan_description": "Authored world-seed planet near Tier 8 Star. Kestrel 8-2 is a metallic contact marked for survey expansion.",
+      "contact_text": "Orbital contact available. Long-range scan recommends survey before approach.",
+      "planet_type": "metallic",
+      "planet_role": "silent_world",
+      "population_state": "uninhabited",
+      "has_planet_interface": true,
+      "can_land": false,
+      "interaction_type": "planet_contact",
+      "tier": 8,
+      "parent_star_id": "tier_8_anchor_star",
+      "parent_star_name": "Tier 8 Star",
+      "anchor_star": {
+        "star_id": "tier_8_anchor_star",
+        "star_name": "Tier 8 Star",
+        "sector_pos": [
+          70,
+          1,
+          0
+        ],
+        "local_pos": [
+          500,
+          500,
+          500
+        ],
+        "required": false,
+        "create_if_missing": false
+      },
+      "position_mode": "anchor_offset",
+      "sector_offset": [
+        0,
+        0,
+        0
+      ],
+      "local_offset": [
+        -230,
+        229,
+        313
+      ],
+      "labels": [
+        "planet",
+        "world_seed",
+        "authored_planet",
+        "random_planet_seed",
+        "tier_8",
+        "tier_8_anchor_star",
+        "silent_world"
+      ]
+    }
+  },
+  "notes": [
+    "Uses owner_type/object_type planet so WorldSeedBuilder routes these through install_planet_seed_objects().",
+    "Each planet carries its own anchor_star so objects can spread across multiple authored stars in one seed file.",
+    "can_land is false; these are contact/survey planets only unless later upgraded."
+  ]
+}

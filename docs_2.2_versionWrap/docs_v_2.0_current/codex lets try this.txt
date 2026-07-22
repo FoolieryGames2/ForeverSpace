@@ -1,0 +1,311 @@
+Forever Space main mode is mostly static data until something meaningful happens:
+
+player clicks event widget
+player starts/stops autopilot
+ship moves
+scan completes
+mine completes
+battle returns
+NPC scene returns
+story popup closes
+inventory changes
+event/world object gets spawned/removed
+
+So the better architecture is not:
+
+main_mode._process
+→ always ask event engine to inspect the universe
+
+The better architecture is:
+
+something meaningful happened
+→ request an event-engine pulse
+→ event engine checks only the lanes relevant to that reason
+
+That is a much cleaner direction.
+
+Important distinction
+
+I would not fully remove the per-frame call instantly.
+
+Instead, I would turn it into a tiny gatekeeper:
+
+func execute_event_checks(delta: float) -> void:
+	if not setup_complete:
+		return
+
+	if Globals.battle_mode or Globals.battle_pending or Globals.swap_battle_v2:
+		return
+
+	if not event_pulse_requested:
+		if not has_pending_battle_result():
+			if not has_pending_npc_event_start():
+				if not event_widget_dirty:
+					if not movement_watch_active:
+						return
+
+	run_requested_event_pulse()
+
+So the function can still be called every frame by main_mode, but 99% of the time it returns immediately.
+
+That is different from running process_active_event_progress() and process_world_event_listeners() every frame.
+
+The better mental model
+
+Not “event checks every 0.10 seconds.”
+
+Instead:
+
+Event engine sleeps until poked.
+
+Then we define the pokes.
+
+Event pulse reasons
+
+I would build around explicit reasons:
+
+request_event_pulse("startup")
+request_event_pulse("event_button")
+request_event_pulse("story_popup_closed")
+request_event_pulse("battle_result_returned")
+request_event_pulse("npc_result_returned")
+request_event_pulse("scan_completed")
+request_event_pulse("mine_completed")
+request_event_pulse("inventory_changed")
+request_event_pulse("movement_started")
+request_event_pulse("movement_distance_bucket")
+request_event_pulse("autopilot_arrived")
+request_event_pulse("manual_stop")
+
+Then inside the event engine:
+
+startup
+→ seed start events
+→ install listeners
+→ restore pending popup
+→ refresh widget if dirty
+
+event_button
+→ handle selected button
+→ advance/claim/start/etc.
+→ refresh widget
+→ save needed section
+
+battle_result_returned
+→ consume battle result once
+→ advance event if needed
+→ refresh widget
+→ save once
+
+movement_distance_bucket
+→ check arrival steps
+→ check range listeners
+
+autopilot_arrived
+→ check arrival steps
+→ check range listeners
+→ maybe run auto scan
+
+scan_completed
+→ check scan-based discovery/event gates
+
+mine_completed
+→ check mining reward/progression gates
+
+That means no more “look at everything all the time.”
+
+Your 5-unit idea is good
+
+This part is strong:
+
+when ship starts to move even a single unit then call it every frame. or not every frame. call it every 5 units and on auto-pilot stop
+
+I would do the 5-unit bucket version before every-frame movement checks.
+
+Something like:
+
+ship did not move
+→ no range/listener checks
+
+ship moved but less than 5 units since last event check
+→ no range/listener checks
+
+ship moved 5+ units
+→ check range listeners
+→ check arrival steps
+
+autopilot stopped / arrived
+→ force final range/listener/arrival check
+
+For range gates, 5 units is tiny. Your event ranges are usually much bigger than that — 45, 60, 70, 120, 180, 1000, etc. So a 5-unit bucket is safe and much cheaper.
+
+Could even start conservative:
+
+movement check interval = 10 units
+force check on autopilot arrival
+force check on manual stop
+force check on scan complete
+force check on event button
+What should still be immediate
+
+Some event work should never wait for movement or a timer:
+
+event button clicked
+story popup closed
+battle result returned
+NPC result returned
+reward claimed
+download completed
+step advanced
+event activated
+
+Those are direct state changes. They should call the event engine immediately.
+
+What should be movement-gated
+
+These should not run unless the player moved or a target changed:
+
+process_world_event_listeners()
+process_event_arrival_step()
+process_go_to_beacon_step()
+is_player_near_step_target()
+map.get_distance_to_target(...)
+
+Those are spatial checks. They are exactly the kind of thing that should be tied to movement.
+
+What should be startup-only
+
+These should not live in the normal runtime loop after boot:
+
+seed_start_events_once()
+install_catalog_event_listeners_once()
+restore_pending_story_popups_after_load()
+load_event_state_from_save_if_available()
+
+Once they run, they should be done unless a new universe/load happens.
+
+What should be dirty-only
+
+This part is still correct:
+
+refresh_event_widget()
+→ only when event_widget_dirty
+
+But even there, I would go farther:
+
+event_widget_dirty = true
+request_event_pulse("event_widget_dirty")
+
+Then the widget does not depend on a polling loop to eventually notice.
+
+Why the interval patch may have made lag worse
+
+This is the important part.
+
+A simple interval patch can accidentally create this behavior:
+
+every frame:
+	pending result still exists
+	debug print still happens
+	widget dirty still true
+	other main_mode work still runs
+
+then every 0.25s:
+	listener scan hits all beacons at once
+	maybe saves
+	maybe prints a lot
+
+So instead of reducing lag, it turns smooth small cost into spikes.
+
+That matches your “doubled lagging” result.
+
+A movement/event pulse model avoids that better because it does not say:
+
+do this every 0.25s forever
+
+It says:
+
+do this when movement or state gives us a reason
+The design I would aim for
+main_mode.gd
+
+Keep this:
+
+if game_event_handler != null:
+	game_event_handler.execute_event_checks(delta)
+
+But make it cheap.
+
+Then add calls like:
+
+game_event_handler.request_event_pulse("movement_distance_bucket")
+game_event_handler.request_event_pulse("autopilot_arrived")
+game_event_handler.request_event_pulse("scan_completed")
+game_event_handler.request_event_pulse("battle_result_returned")
+Game_events_handler.gd
+
+Replace “always inspect everything” with:
+
+var event_pulse_requested := false
+var event_pulse_reasons := {}
+
+func request_event_pulse(reason: String) -> void:
+	event_pulse_requested = true
+	event_pulse_reasons[reason] = true
+
+Then:
+
+func execute_event_checks(delta: float) -> void:
+	if not setup_complete:
+		return
+
+	if Globals.battle_mode or Globals.battle_pending or Globals.swap_battle_v2:
+		return
+
+	var has_result := typeof(Globals.last_battle_v2_result) == TYPE_DICTIONARY and not Globals.last_battle_v2_result.is_empty()
+
+	if not event_pulse_requested and not has_result and pending_npc_event_start.is_empty() and not event_widget_dirty:
+		return
+
+	run_event_pulse(has_result)
+
+And inside run_event_pulse:
+
+if startup:
+	seed/install
+
+if battle_result:
+	process_pending_battle_v2_result
+
+if npc_result:
+	process_pending_npc_event_start
+
+if movement reason:
+	process_active_event_arrival_checks
+	process_world_event_listeners
+
+if direct event reason:
+	process_active_event_progress_once
+
+if event_widget_dirty:
+	refresh_event_widget
+One strong warning
+
+I would not remove all event progress checks until we classify your step types.
+
+Some steps may still depend on on_enter, arrival_range, complete_on_battle_victory, next_step_on_close, or old special-case names like go_to_beacon.
+
+So before code, I would classify:
+
+on_enter steps
+button steps
+arrival steps
+battle-result steps
+NPC-result steps
+listener steps
+reward/claim steps
+scan/mine steps
+
+Then each type gets a trigger reason.
+
+That avoids breaking story progression.

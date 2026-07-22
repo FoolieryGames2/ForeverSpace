@@ -1,0 +1,150 @@
+{
+  "event_id": "wreckage_listener_event_test_001",
+  "display_name": "Wreckage Listener Event Test 001",
+  "event_state": "seeded",
+  "current_step": "go_to_test_wreckage",
+  "start_on_ready": false,
+  "seed_once": true,
+  "event_listeners": {},
+  "event_objects": {
+	"test_wreckage_object_001": {
+	  "owner_type": "space_object",
+	  "object_type": "wreckage",
+	  "object_id": "test_wreckage_object_001",
+	  "id": "test_wreckage_object_001",
+	  "display_name": "Test Drifting Wreckage",
+	  "scan_name": "Test Drifting Wreckage",
+	  "scan_description": "A dead hull section drifting near Aster Local 10. It is safe to salvage, but not mineable.",
+	  "position_mode": "absolute",
+	  "sector_pos": [
+		3,
+		2,
+		-1
+	  ],
+	  "local_pos": [
+		705,
+		455,
+		560
+	  ],
+	  "tier": 1,
+	  "mineable": false,
+	  "event_interactable": true,
+	  "event_ops_enabled": true,
+	  "interaction_type": "salvage",
+	  "resource_type": "salvage",
+	  "danger_level": 0,
+	  "resource_value": 1,
+	  "has_event": true,
+	  "event_id": "wreckage_listener_event_test_001",
+	  "required_step": "go_to_test_wreckage",
+	  "is_visible": true,
+	  "is_discovered": false,
+	  "is_completed": false,
+	  "labels": [
+		"space_object",
+		"wreckage",
+		"event_object",
+		"story_prop",
+		"salvageable",
+		"wreckage_test",
+		"tier_1",
+		"aster_local_10",
+		"near_star_30_tier_1_local",
+        "moved_off_opening_path"
+	  ],
+	  "parent_star_id": "star_30_tier_1_local",
+	  "parent_star_name": "Aster Local 10"
+	}
+  },
+  "steps": {
+	"go_to_test_wreckage": {
+	  "objective_text": "Travel to the drifting wreckage near Aster Local 10.",
+	  "target_object_id": "test_wreckage_object_001",
+	  "target_owner_type": "space_object",
+	  "arrival_range": 999,
+	  "interaction_type": "find",
+	  "next_step": "inspect_test_wreckage",
+	  "on_arrival": [
+		{
+		  "op": "show_story_popup",
+		  "title": "TEST WRECKAGE CONTACT",
+		  "text": "[b]Wreckage object reached.[/b]\n\nThis salvage contact is now placed away from the opening Human Habitat route near Aster Local 10. If this popup appears, the event can target a non-asteroid space_object without breaking the early story flow.",
+		  "position": {
+		    "x": -360,
+		    "y": 0
+		  },
+		  "popup_size": {
+			"x": 560,
+			"y": 360
+		  }
+		},
+		{
+		  "op": "advance_step",
+		  "next_step": "inspect_test_wreckage"
+		}
+	  ]
+	},
+	"inspect_test_wreckage": {
+	  "objective_text": "Inspect the drifting wreckage.",
+	  "target_object_id": "test_wreckage_object_001",
+	  "target_owner_type": "space_object",
+	  "interaction_range": 999,
+	  "interaction_type": "salvage",
+	  "actions": [
+		{
+		  "button_id": "inspect_test_wreckage",
+		  "label": "INSPECT WRECKAGE",
+		  "action_id": "event_operations",
+		  "range": 100,
+		  "operations": [
+			{
+			  "op": "show_story_popup",
+			  "title": "WRECKAGE INSPECTION",
+			  "text": "[b]The wreckage responds as an event prop.[/b]\n\nThis confirms a space_object with object_type wreckage can be installed, targeted, saved, loaded, and interacted with by event ops.",
+			  "position": {
+			    "x": -360,
+			    "y": 0
+			  },
+			  "popup_size": {
+				"x": 560,
+				"y": 360
+			  }
+			},
+			{
+			  "op": "advance_step",
+			  "next_step": "wreckage_test_complete"
+			}
+		  ]
+		}
+	  ],
+	  "next_step": "wreckage_test_complete"
+	},
+	"wreckage_test_complete": {
+	  "objective_text": "Wreckage test complete.",
+	  "target_object_id": "test_wreckage_object_001",
+	  "target_owner_type": "space_object",
+	  "interaction_type": "complete",
+	  "is_complete_step": true,
+	  "complete_event": true
+	}
+  },
+  "handoff_notes": [
+    "Pass 003: event listener removed from this side event so it cannot auto-build from the catalog. Chapter 002 installs the listener as a manual event object after the final reward handoff."
+  ],
+  "anchor_star": {
+	"star_id": "star_30_tier_1_local",
+	"star_name": "Aster Local 10",
+	"sector_pos": [
+	  3,
+	  2,
+	  -1
+	],
+	"local_pos": [
+	  500,
+	  500,
+	  500
+	],
+	"required": true,
+	"create_if_missing": false
+  }
+}

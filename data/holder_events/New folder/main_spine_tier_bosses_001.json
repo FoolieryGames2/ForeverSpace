@@ -1,0 +1,148 @@
+{
+	"event_id": "main_spine_tier_bosses_001",
+	"display_name": "Tide Star Trace Run",
+	"event_state": "seeded",
+	"current_step": "talk_to_tide_contact",
+	"start_on_ready": true,
+	"seed_once": true,
+	"tier": 1,
+	"anchor_star": {
+		"star_id": "tide_star_event_anchor",
+		"star_name": "Tide Star",
+		"star_type": "K",
+		"sector_pos": [0, 1, 1],
+		"local_pos": [500, 500, 500],
+		"brightness": 1.35,
+		"size": 1.45,
+		"tier": 1,
+		"required": true,
+		"create_if_missing": true
+	},
+	"giver": {
+		"owner_type": "npc",
+		"owner_id": "tide_contact_001",
+		"object_id": "tide_contact_001",
+		"template_owner_id": "tide_contact_001",
+		"blueprint_id": "guild_contact_tier_1",
+		"display_name": "Tide Contact",
+		"place_near_anchor_star": true,
+		"local_offset": [35, 0, 0],
+		"labels": ["npc", "event_giver", "tide_star", "trace_event"]
+	},
+	"event_objects": {
+		"tide_test_boss_001": {
+			"owner_type": "enemy",
+			"object_type": "enemy",
+			"object_id": "tide_test_boss_001",
+			"display_name": "Tide Trace Smart Guy",
+			"blueprint_id": "test_smart_guy",
+			"event_id": "main_spine_tier_bosses_001",
+			"active_event_id": "main_spine_tier_bosses_001",
+			"has_event": true,
+			"position_mode": "anchor_offset",
+			"sector_offset": [0, 0, 0],
+			"local_offset": [135, 0, 0],
+			"sector_pos": [0, 0, 0],
+			"local_pos": [635, 500, 500],
+			"required_step": "defeat_tide_test_boss",
+			"event_step": "defeat_tide_test_boss",
+			"current_step": "defeat_tide_test_boss",
+			"event_tags": ["main_spine_tier_bosses_001", "tide_trace", "smart_guy"],
+			"labels": ["enemy", "event_enemy", "tide_trace", "smart_guy"],
+			"overrides": {
+				"ship_name": "Tide Trace Smart Guy",
+				"hp": 160,
+				"max_hp": 160,
+				"attack": 12,
+				"energy_max": 5000,
+				"primary": "smart_guy_focus_lance",
+				"secondary": "smart_guy_calculated_rail",
+				"shield": "smart_guy_mirror_shield",
+				"consumable": "smart_guy_patch_cell",
+				"item_stacks": {
+					"smart_guy_calculated_rounds": 18,
+					"smart_guy_patch_cell": 1,
+					"shield_patch_cell": 2,
+					"reinforced_barrier_mk1": 1
+				},
+				"behavior_profile": "smart_guy",
+				"behavior_values": {
+					"decision_cooldown": 1.25,
+					"low_energy_secondary_threshold": 0.35,
+					"low_hull_evade_threshold": 0.45,
+					"critical_hull_evade_threshold": 0.22,
+					"execute_player_threshold": 0.28,
+					"allow_shield_use": true,
+					"allow_shield_repair": true,
+					"replace_broken_shield": true,
+					"shield_repair_threshold": 0.65
+				},
+				"reward": ["iron", "cobalt", "smart_guy_calculated_rounds"]
+			}
+		}
+	},
+	"required_items": [],
+	"reward_packet": {
+		"credits": 150,
+		"items": [
+			{"item_id": "credits", "amount": 150},
+			{"item_id": "repair_kit", "amount": 1},
+			{"item_id": "recharge_kit", "amount": 1}
+		],
+		"blueprints": [],
+		"lore": [],
+		"unlocks": [],
+		"message": "Tide Star trace complete. The compact event loop is working."
+	},
+	"steps": {
+		"talk_to_tide_contact": {
+			"objective_text": "Talk to Tide Contact beside Tide Star.",
+			"target_owner_id": "tide_contact_001",
+			"interaction_type": "talk",
+			"step_kind": "offer",
+			"next_step": "defeat_tide_test_boss"
+		},
+		"defeat_tide_test_boss": {
+			"objective_text": "Autopilot to the nearby Tide Trace Smart Guy and defeat it.",
+			"target_object_id": "tide_test_boss_001",
+			"enemy_id": "tide_test_boss_001",
+			"interaction_type": "hunt",
+			"arrival_range": 115,
+			"complete_on_battle_victory": true,
+			"next_step": "return_to_tide_contact",
+			"on_arrival": [
+				{
+					"op": "start_battle",
+					"enemy_id": "tide_test_boss_001",
+					"entry_reason": "tide_star_trace_boss",
+					"message": "Tide Trace Smart Guy has engaged near Tide Star."
+				}
+			],
+			"on_battle_victory": [
+				{
+					"op": "write_log",
+					"message": "Tide Trace Smart Guy defeated. Return to Tide Contact."
+				},
+				{
+					"op": "advance_step",
+					"next_step": "return_to_tide_contact"
+				}
+			]
+		},
+		"return_to_tide_contact": {
+			"objective_text": "Return to Tide Contact and claim the trace reward.",
+			"target_owner_id": "tide_contact_001",
+			"interaction_type": "claim",
+			"interaction_range": 90,
+			"next_step": "completed",
+			"actions": [
+				{
+					"button_id": "claim_tide_trace_reward",
+					"label": "CLAIM",
+					"action_id": "claim_event_reward",
+					"range": 90
+				}
+			]
+		}
+	}
+}

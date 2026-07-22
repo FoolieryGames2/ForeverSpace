@@ -1,0 +1,471 @@
+{
+  "seed_id": "tier_1_demo_ambient_npc_traders_v1",
+  "schema_version": 1,
+  "apply_on_new_universe": true,
+  "tier": 1,
+  "description": "Five ambient friendly trader NPCs for the post-Chapter-003 / Chapter-004 demo-open world. Each NPC has a matching npc_handler.gd blueprint id and full JSON trade data for safe world-seed placement. Early trades use existing item IDs only; future blueprint gates are stored as notes, not live rewards.",
+  "objects": {
+    "mara_quell_salvage_001": {
+      "owner_type": "npc",
+      "object_type": "npc",
+      "object_id": "mara_quell_salvage_001",
+      "npc_id": "mara_quell_salvage_001",
+      "blueprint_id": "mara_quell_salvage_001",
+      "source_blueprint_id": "mara_quell_salvage_001",
+      "display_name": "Mara Quell",
+      "name": "Mara Quell",
+      "species": "Human",
+      "role": "salvage trader / parts buyer",
+      "friendly": true,
+      "position_mode": "absolute",
+      "sector_pos": [
+        1,
+        2,
+        1
+      ],
+      "local_pos": [
+        670,
+        640,
+        585
+      ],
+      "parent_star_id": "star_23_tier_1_local",
+      "parent_star_name": "Aster Local 03",
+      "tier": 1,
+      "can_trade": true,
+      "trade": true,
+      "trade_completed": false,
+      "repeatable": true,
+      "retradable": true,
+      "stays_after_meeting": true,
+      "event_state": "ambient",
+      "has_event": false,
+      "interaction_type": "npc_contact",
+      "is_visible": true,
+      "is_discovered": false,
+      "labels": [
+        "npc",
+        "friendly",
+        "ambient_npc",
+        "trade_contact",
+        "world_seed",
+        "authored_object",
+        "tier_1",
+        "post_chapter_003_demo_open",
+        "mara",
+        "salvage_trader",
+        "parts_buyer",
+        "aster_local_03",
+        "resource_field"
+      ],
+      "message": "That hull of yours has the posture of a kicked can.",
+      "offer_title": "Clean Scrap Exchange",
+      "offer_text": "Trade iron x180, nickel x80, and cobalt x40 for small kinetic rounds, a repair kit, and credits.",
+      "success_text": "Mara accepts the scrap without looking impressed. Supplies transferred.",
+      "item_list": [
+        {
+          "item_id": "iron",
+          "amount": 180,
+          "trade_role": "want"
+        },
+        {
+          "item_id": "nickel",
+          "amount": 80,
+          "trade_role": "want"
+        },
+        {
+          "item_id": "cobalt",
+          "amount": 40,
+          "trade_role": "want"
+        },
+        {
+          "item_id": "small_kinetic_rounds",
+          "amount": 24,
+          "trade_role": "reward"
+        },
+        {
+          "item_id": "repair_kit",
+          "amount": 1,
+          "trade_role": "reward"
+        },
+        {
+          "item_id": "credits",
+          "amount": 90,
+          "trade_role": "reward"
+        }
+      ],
+      "dialogue_lines": [
+        "That hull of yours has the posture of a kicked can.",
+        "I buy clean scrap. Dirty scrap. Scrap with bite marks. Just do not hand me anything still blinking.",
+        "Out here, useful is better than pretty."
+      ]
+    },
+    "oren_vale_signal_fix_001": {
+      "owner_type": "npc",
+      "object_type": "npc",
+      "object_id": "oren_vale_signal_fix_001",
+      "npc_id": "oren_vale_signal_fix_001",
+      "blueprint_id": "oren_vale_signal_fix_001",
+      "source_blueprint_id": "oren_vale_signal_fix_001",
+      "display_name": "Oren Vale",
+      "name": "Oren Vale",
+      "species": "Human",
+      "role": "signal fixer / comms tuner",
+      "friendly": true,
+      "position_mode": "absolute",
+      "sector_pos": [
+        1,
+        -3,
+        0
+      ],
+      "local_pos": [
+        720,
+        480,
+        540
+      ],
+      "parent_star_id": "star_28_tier_1_local",
+      "parent_star_name": "Aster Local 08",
+      "tier": 1,
+      "can_trade": true,
+      "trade": true,
+      "trade_completed": false,
+      "repeatable": true,
+      "retradable": true,
+      "stays_after_meeting": true,
+      "event_state": "ambient",
+      "has_event": false,
+      "interaction_type": "npc_contact",
+      "is_visible": true,
+      "is_discovered": false,
+      "labels": [
+        "npc",
+        "friendly",
+        "ambient_npc",
+        "trade_contact",
+        "world_seed",
+        "authored_object",
+        "tier_1",
+        "post_chapter_003_demo_open",
+        "oren",
+        "signal_fixer",
+        "comms",
+        "aster_local_08",
+        "quiet_beacon_pocket"
+      ],
+      "message": "Every signal has a shadow. Most folks only listen to the loud part.",
+      "offer_title": "Noise-Cleaner Exchange",
+      "offer_text": "Trade corrupted nav data, an empty chip, and carbon compounds for signal support gear.",
+      "success_text": "Oren scrubs the feed, mutters at the shadow signal, and transfers the gear.",
+      "item_list": [
+        {
+          "item_id": "corrupted_nav_fragment",
+          "amount": 1,
+          "trade_role": "want"
+        },
+        {
+          "item_id": "data_chip_empty",
+          "amount": 1,
+          "trade_role": "want"
+        },
+        {
+          "item_id": "carbon_compounds",
+          "amount": 60,
+          "trade_role": "want"
+        },
+        {
+          "item_id": "recharge_kit",
+          "amount": 1,
+          "trade_role": "reward"
+        },
+        {
+          "item_id": "signal_filter_drone_mk1",
+          "amount": 1,
+          "trade_role": "reward"
+        }
+      ],
+      "future_trade_notes": [
+        "Later blueprint gate candidate: scan_module_mk1_blueprint.",
+        "Do not add the blueprint reward to the live early-demo item_list until the economy gate is ready."
+      ],
+      "dialogue_lines": [
+        "Every signal has a shadow. Most folks only listen to the loud part.",
+        "I can clean the noise off that feed. I cannot promise you will like what is underneath.",
+        "Do not chase every beacon. Some of them chase back."
+      ]
+    },
+    "juno_brask_repair_tug_001": {
+      "owner_type": "npc",
+      "object_type": "npc",
+      "object_id": "juno_brask_repair_tug_001",
+      "npc_id": "juno_brask_repair_tug_001",
+      "blueprint_id": "juno_brask_repair_tug_001",
+      "source_blueprint_id": "juno_brask_repair_tug_001",
+      "display_name": "Juno Brask",
+      "name": "Juno Brask",
+      "species": "Human",
+      "role": "mobile repair tug / rough fixer",
+      "friendly": true,
+      "position_mode": "absolute",
+      "sector_pos": [
+        3,
+        2,
+        -1
+      ],
+      "local_pos": [
+        820,
+        390,
+        590
+      ],
+      "parent_star_id": "star_30_tier_1_local",
+      "parent_star_name": "Aster Local 10",
+      "tier": 1,
+      "can_trade": true,
+      "trade": true,
+      "trade_completed": false,
+      "repeatable": true,
+      "retradable": true,
+      "stays_after_meeting": true,
+      "event_state": "ambient",
+      "has_event": false,
+      "interaction_type": "npc_contact",
+      "is_visible": true,
+      "is_discovered": false,
+      "labels": [
+        "npc",
+        "friendly",
+        "ambient_npc",
+        "trade_contact",
+        "world_seed",
+        "authored_object",
+        "tier_1",
+        "post_chapter_003_demo_open",
+        "juno",
+        "repair_tug",
+        "mobile_repair",
+        "aster_local_10",
+        "wreckage_route"
+      ],
+      "message": "Pull in slow. If you scratch my tug, I charge emotional damages.",
+      "offer_title": "Mobile Hull Patch",
+      "offer_text": "Trade iron x140 and nickel x60 to restore hull integrity to full.",
+      "success_text": "Juno hammers the hull back into a shape she calls acceptable.",
+      "item_list": [
+        {
+          "item_id": "iron",
+          "amount": 140,
+          "trade_role": "want"
+        },
+        {
+          "item_id": "nickel",
+          "amount": 60,
+          "trade_role": "want"
+        },
+        {
+          "trade_role": "service",
+          "service_type": "repair_hull_to_full",
+          "display_name": "Full Hull Repair",
+          "bonus_hull_max_add": 0.0,
+          "bonus_apply_once": true,
+          "bonus_flag": "juno_brask_repair_tug_001_hull_service_v1"
+        }
+      ],
+      "dialogue_lines": [
+        "Pull in slow. If you scratch my tug, I charge emotional damages.",
+        "Your hull is not dead. It is just making poor life choices.",
+        "One patch job. No speeches. I fix ships, not destinies."
+      ]
+    },
+    "boro_warm_shell_001": {
+      "owner_type": "npc",
+      "object_type": "npc",
+      "object_id": "boro_warm_shell_001",
+      "npc_id": "boro_warm_shell_001",
+      "blueprint_id": "boro_warm_shell_001",
+      "source_blueprint_id": "boro_warm_shell_001",
+      "display_name": "Boro of the Warm Shell",
+      "name": "Boro of the Warm Shell",
+      "species": "Bearnite",
+      "role": "heavy hull mason / shield patch trader",
+      "friendly": true,
+      "position_mode": "absolute",
+      "sector_pos": [
+        -3,
+        -1,
+        1
+      ],
+      "local_pos": [
+        575,
+        710,
+        530
+      ],
+      "parent_star_id": "star_26_tier_1_local",
+      "parent_star_name": "Aster Local 06",
+      "tier": 1,
+      "can_trade": true,
+      "trade": true,
+      "trade_completed": false,
+      "repeatable": true,
+      "retradable": true,
+      "stays_after_meeting": true,
+      "event_state": "ambient",
+      "has_event": false,
+      "interaction_type": "npc_contact",
+      "is_visible": true,
+      "is_discovered": false,
+      "labels": [
+        "npc",
+        "friendly",
+        "ambient_npc",
+        "trade_contact",
+        "world_seed",
+        "authored_object",
+        "tier_1",
+        "post_chapter_003_demo_open",
+        "boro",
+        "bearnite",
+        "shield_patch_trader",
+        "hull_mason",
+        "aster_local_06"
+      ],
+      "message": "Small metal shell. Many wounds. Still moving. Good.",
+      "offer_title": "Shell-Mender Trade",
+      "offer_text": "Trade water ice, silicate dust, and nickel-iron shards for shield patches and repair support.",
+      "success_text": "Boro presses the supplies into careful bundles and calls them arguments against death.",
+      "item_list": [
+        {
+          "item_id": "water_ice",
+          "amount": 80,
+          "trade_role": "want"
+        },
+        {
+          "item_id": "silicate_dust",
+          "amount": 120,
+          "trade_role": "want"
+        },
+        {
+          "item_id": "nickel_iron_shards",
+          "amount": 40,
+          "trade_role": "want"
+        },
+        {
+          "item_id": "shield_patch_cell",
+          "amount": 2,
+          "trade_role": "reward"
+        },
+        {
+          "item_id": "repair_kit",
+          "amount": 1,
+          "trade_role": "reward"
+        }
+      ],
+      "future_trade_notes": [
+        "Later service candidate: shield restore or one-time small hull max bonus.",
+        "Keep early demo trade defensive, not power-spiking."
+      ],
+      "dialogue_lines": [
+        "Small metal shell. Many wounds. Still moving. Good.",
+        "I mend what holds life away from vacuum.",
+        "Trade me ice and stone dust. I will give your shell one more argument against death."
+      ]
+    },
+    "tavi_softstep_courier_001": {
+      "owner_type": "npc",
+      "object_type": "npc",
+      "object_id": "tavi_softstep_courier_001",
+      "npc_id": "tavi_softstep_courier_001",
+      "blueprint_id": "tavi_softstep_courier_001",
+      "source_blueprint_id": "tavi_softstep_courier_001",
+      "display_name": "Tavi Softstep",
+      "name": "Tavi Softstep",
+      "species": "Bearnite",
+      "role": "quiet courier / rare goods barterer",
+      "friendly": true,
+      "position_mode": "absolute",
+      "sector_pos": [
+        3,
+        0,
+        1
+      ],
+      "local_pos": [
+        610,
+        360,
+        560
+      ],
+      "parent_star_id": "star_25_tier_1_local",
+      "parent_star_name": "Aster Local 05",
+      "tier": 1,
+      "can_trade": true,
+      "trade": true,
+      "trade_completed": false,
+      "repeatable": true,
+      "retradable": true,
+      "stays_after_meeting": true,
+      "event_state": "ambient",
+      "has_event": false,
+      "interaction_type": "npc_contact",
+      "is_visible": true,
+      "is_discovered": false,
+      "labels": [
+        "npc",
+        "friendly",
+        "ambient_npc",
+        "trade_contact",
+        "world_seed",
+        "authored_object",
+        "tier_1",
+        "post_chapter_003_demo_open",
+        "tavi",
+        "bearnite",
+        "courier",
+        "rare_goods",
+        "blueprint_gate_later",
+        "aster_local_05"
+      ],
+      "message": "I travel slow. Slow things see what fast things miss.",
+      "offer_title": "Softstep Courier Barter",
+      "offer_text": "Trade carbon compounds, water ice, and silicate dust for emergency travel supplies.",
+      "success_text": "Tavi counts slowly, nods once, and passes over a small useful chance.",
+      "item_list": [
+        {
+          "item_id": "carbon_compounds",
+          "amount": 90,
+          "trade_role": "want"
+        },
+        {
+          "item_id": "water_ice",
+          "amount": 70,
+          "trade_role": "want"
+        },
+        {
+          "item_id": "silicate_dust",
+          "amount": 100,
+          "trade_role": "want"
+        },
+        {
+          "item_id": "recharge_kit",
+          "amount": 1,
+          "trade_role": "reward"
+        },
+        {
+          "item_id": "shield_patch_cell",
+          "amount": 1,
+          "trade_role": "reward"
+        },
+        {
+          "item_id": "small_kinetic_rounds",
+          "amount": 18,
+          "trade_role": "reward"
+        }
+      ],
+      "future_trade_notes": [
+        "Primary later high-cost blueprint gate candidate.",
+        "Possible later rewards: repair_kit_blueprint, basic_shield_mk1_blueprint, pulse_laser_mk1_blueprint.",
+        "Do not add blueprint rewards to the early-demo item_list until story/economy gates are ready."
+      ],
+      "dialogue_lines": [
+        "I travel slow. Slow things see what fast things miss.",
+        "You bring small useful pieces. I bring small useful chances.",
+        "Do not hurry the dark. It is already everywhere."
+      ]
+    }
+  }
+}

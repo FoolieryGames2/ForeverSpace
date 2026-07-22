@@ -1,0 +1,44 @@
+{
+  "seed_id": "starting_cluster_v1",
+  "display_name": "Starting Story Cluster",
+  "schema_version": 1,
+  "apply_on_new_universe": true,
+  "tier": 1,
+  "notes": "Author-owned starting objects. These install only when a fresh universe is built.",
+  "objects": {
+	"aster_gate": {
+	  "owner_type": "star",
+	  "object_type": "star",
+	  "object_id": "aster_gate",
+	  "display_name": "Aster Gate",
+	  "star_name": "Aster Gate",
+	  "star_type": "K",
+	  "sector_pos": [0, 0, 0],
+	  "local_pos": [500, 500, 500],
+	  "brightness": 1.4,
+	  "size": 1.6,
+	  "has_event": false,
+	  "labels": ["star", "story_anchor", "starting_cluster"]
+	},
+	"aster_gate_story_asteroid_001": {
+	  "owner_type": "space_object",
+	  "object_type": "asteroid",
+	  "object_id": "aster_gate_story_asteroid_001",
+	  "display_name": "Guild-Marked Asteroid",
+	  "scan_name": "Guild-Marked Asteroid",
+	  "scan_description": "A small marked asteroid near the starting story route.",
+	  "sector_pos": [0, 0, 0],
+	  "local_pos": [680, 530, 500],
+	  "tier": 1,
+	  "resource_type": "metal",
+	  "iron_total": 600,
+	  "iron_left": 600,
+	  "cobalt_total": 140,
+	  "cobalt_left": 140,
+	  "nickel_total": 120,
+	  "nickel_left": 120,
+	  "mined_out": false,
+	  "labels": ["space_object", "asteroid", "story_seed", "starting_cluster"]
+	}
+  }
+}

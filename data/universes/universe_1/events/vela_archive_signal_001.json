@@ -1,0 +1,105 @@
+{
+  "event_id": "vela_archive_signal_001",
+  "display_name": "Vela Archive Signal",
+  "description": "Orbit-discovered Vela 1-1 archive event. This file is intentionally not installed by a catalog range listener; Vela planet JSON installs the listener after SCAN PLANET.",
+  "event_state": "seeded",
+  "current_step": "vela_archive_intro_popup",
+  "start_on_ready": false,
+  "seed_once": true,
+  "can_cancel_event": true,
+  "tier": 1,
+  "anchor_star": {
+    "star_id": "tier_1_anchor_star",
+    "star_name": "Tier 1 Star",
+    "sector_pos": [
+      0,
+      0,
+      0
+    ],
+    "local_pos": [
+      500,
+      500,
+      500
+    ],
+    "required": true,
+    "create_if_missing": false
+  },
+  "giver": {},
+  "event_objects": {
+    "vela_archive_marker_beacon": {
+      "owner_type": "beacon",
+      "object_type": "beacon",
+      "object_id": "vela_archive_marker_beacon",
+      "display_name": "Vela Archive Marker",
+      "title": "Vela Archive Marker",
+      "beacon_type": "orbit_discovered_archive_beacon",
+      "position_mode": "anchor_offset",
+      "sector_offset": [
+        0,
+        0,
+        0
+      ],
+      "local_offset": [
+        -232,
+        249,
+        -143
+      ],
+      "parent_star_id": "tier_1_anchor_star",
+      "parent_star_name": "Tier 1 Star",
+      "parent_planet_id": "seed_planet_001_vela",
+      "parent_planet_name": "Vela 1-1",
+      "interaction_type": "download",
+      "message": "The archive marker repeats a clean machine cadence from Vela 1-1.",
+      "event_id": "vela_archive_signal_001",
+      "active_event_id": "vela_archive_signal_001",
+      "has_event": true,
+      "required_step": "travel_to_vela_archive_marker",
+      "event_step": "travel_to_vela_archive_marker",
+      "is_visible": true,
+      "is_discovered": true,
+      "labels": [
+        "beacon",
+        "event_beacon",
+        "orbit_discovered",
+        "archive_signal",
+        "vela_1_1",
+        "authored_object"
+      ]
+    }
+  },
+  "steps": {
+    "vela_archive_intro_popup": {
+      "interaction_type": "story_popup",
+      "objective_text": "Inspect the archive signal found from Vela 1-1 orbit.",
+      "next_step": "travel_to_vela_archive_marker",
+      "on_enter": [
+        {
+          "op": "show_story_popup",
+          "title": "Vela Archive Signal",
+          "body": "The orbit scan did not invent a story. It found a listener. The listener woke this event file and marked a real archive signal near Vela 1-1.",
+          "close_mode": "button",
+          "next_step_on_close": "travel_to_vela_archive_marker"
+        }
+      ]
+    },
+    "travel_to_vela_archive_marker": {
+      "interaction_type": "download",
+      "objective_text": "Reach the Vela Archive Marker and download the signal header.",
+      "target_object_id": "vela_archive_marker_beacon",
+      "required_step": "travel_to_vela_archive_marker",
+      "range": 90,
+      "next_step": "vela_archive_complete"
+    },
+    "vela_archive_complete": {
+      "interaction_type": "complete_event",
+      "objective_text": "Archive signal logged.",
+      "complete_event": true
+    }
+  },
+  "reward_packet": {
+    "items": [],
+    "blueprints": [],
+    "credits": 0,
+    "message": "Vela archive signal logged."
+  }
+}

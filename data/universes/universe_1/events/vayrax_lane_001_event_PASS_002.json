@@ -1,0 +1,381 @@
+{
+  "event_id": "vayrax_lane_001_event",
+  "display_name": "Vayrax Lane 001: Claim Warden",
+  "description": "Vayrax Lane 001 event story, Pass 002. Uses an existing Tier 1 planet anchor instead of targeting a star directly: Star 9 Planet 1. Keeps one hidden activate_event_on_range listener at 500 units, installs the visible Vayrax drone before the profile popup, gates READY at 30 units, starts battle with known start_battle flow, then grants repair_kit_blueprint through gives_item on COMPLETE.",
+  "event_state": "seeded",
+  "current_step": "vayrax_lane_001_intro_popup",
+  "start_on_ready": false,
+  "seed_once": true,
+  "can_cancel_event": true,
+  "tier": 1,
+  "anchor_star": {
+	"star_id": "star_09_anchor",
+	"star_name": "Star 9",
+	"sector_pos": [
+	  2,
+	  -2,
+	  0
+	],
+	"local_pos": [
+	  500,
+	  500,
+	  500
+	],
+	"required": true,
+	"create_if_missing": false,
+	"tier": 1
+  },
+  "event_listeners": {
+	"vayrax_lane_001_listener": {
+	  "owner_type": "beacon",
+	  "object_type": "beacon",
+	  "object_id": "vayrax_lane_001_listener",
+	  "display_name": "Vayrax Lane 001 Signal Listener",
+	  "title": "Vayrax Lane 001 Signal Listener",
+	  "beacon_type": "hidden_event_listener_beacon",
+	  "position_mode": "absolute",
+	  "sector_pos": [
+		2,
+		-2,
+		0
+	  ],
+	  "local_pos": [
+		362.477,
+		482.17,
+		517.92
+	  ],
+	  "parent_star_id": "star_09_anchor",
+	  "parent_star_name": "Star 9",
+	  "listener_type": "activate_event_on_range",
+	  "trigger_event_id": "vayrax_lane_001_event",
+	  "start_step": "vayrax_lane_001_intro_popup",
+	  "trigger_range": 500,
+	  "trigger_once": true,
+	  "triggered": false,
+	  "trigger_popup_message": "",
+	  "suppress_trigger_popup": true,
+	  "triggered_message": "Vayrax Lane 001 contact resolved near Star 9 Planet 1.",
+	  "message": "A Vayrax claim pattern hides in the normal scan noise around Star 9 Planet 1.",
+	  "is_visible": false,
+	  "is_discovered": false,
+	  "is_completed": false,
+	  "labels": [
+		"beacon",
+		"event_listener",
+		"activate_event_on_range",
+		"vayrax",
+		"vayrax_lane",
+		"vayrax_lane_001",
+		"hidden_listener",
+		"invisible_listener",
+		"camouflaged_signal",
+		"tier_1",
+		"star_09_anchor",
+		"planet_anchor_listener",
+        "authored_object"
+	  ]
+	}
+  },
+  "event_objects": {
+	"star_09_anchor_planet_01": {
+	  "owner_type": "planet",
+	  "object_type": "planet",
+	  "object_id": "star_09_anchor_planet_01",
+	  "display_name": "Star 9 Planet 1",
+	  "title": "Star 9 Planet 1",
+	  "scan_name": "Star 9 Planet 1",
+	  "scan_description": "Authored anchor planet 1 orbiting Star 9.",
+	  "contact_text": "Orbital contact available. This is an authored anchor planet.",
+	  "position_mode": "absolute",
+	  "sector_pos": [
+		2,
+		-2,
+		0
+	  ],
+	  "local_pos": [
+		362.477,
+		482.17,
+		517.92
+	  ],
+	  "parent_star_id": "star_09_anchor",
+	  "parent_star_name": "Star 9",
+	  "anchor_star_id": "star_09_anchor",
+	  "anchor_star_name": "Star 9",
+	  "tier": 1,
+	  "planet_type": "rocky",
+	  "planet_role": "anchor_planet",
+	  "population_state": "refuge",
+	  "has_planet_interface": true,
+	  "can_land": false,
+	  "contact_range": 180,
+	  "interaction_type": "signal_anchor",
+	  "event_id": "vayrax_lane_001_event",
+	  "active_event_id": "vayrax_lane_001_event",
+	  "has_event": true,
+	  "event_interactable": true,
+	  "event_ops_enabled": true,
+	  "is_visible": true,
+	  "is_discovered": false,
+	  "labels": [
+		"planet",
+		"world_seed",
+		"event_anchor",
+		"vayrax_lane",
+		"vayrax_lane_001",
+		"tier_1",
+		"star_09_anchor",
+		"planet_anchor",
+		"authored_object",
+        "event_object"
+	  ]
+	},
+	"vayrax_lane_001_drone": {
+	  "owner_type": "enemy",
+	  "object_type": "enemy",
+	  "object_id": "vayrax_lane_001_drone",
+	  "enemy_id": "vayrax_lane_001_drone",
+	  "display_name": "Vayrax Claim Drone",
+	  "name": "Vayrax Claim Drone",
+	  "blueprint_id": "vayrax_claim_drone_001",
+	  "spawn_on_step": "vayrax_lane_001_enemy_profile_popup",
+	  "position_mode": "absolute",
+	  "sector_pos": [
+		2,
+		-2,
+		0
+	  ],
+	  "local_pos": [
+		492.477,
+		492.17,
+		517.92
+	  ],
+	  "parent_star_id": "star_09_anchor",
+	  "parent_star_name": "Star 9",
+	  "event_id": "vayrax_lane_001_event",
+	  "active_event_id": "vayrax_lane_001_event",
+	  "required_step": "vayrax_lane_001_start_battle",
+	  "event_step": "vayrax_lane_001_start_battle",
+	  "current_step": "vayrax_lane_001_start_battle",
+	  "has_event": true,
+	  "labels": [
+		"enemy",
+		"event_enemy",
+		"vayrax",
+		"drone",
+		"claim_drone",
+		"vayrax_lane",
+		"vayrax_lane_001",
+		"tier_1",
+		"star_09_anchor",
+        "near_star_09_anchor_planet_01"
+	  ],
+	  "event_tags": [
+		"vayrax_lane_001_event",
+		"vayrax",
+		"vayrax_lane_001",
+        "lane_battle"
+	  ],
+	  "overrides": {
+		"hp": 95,
+		"max_hp": 95,
+		"hull": 95,
+		"max_hull": 95,
+		"attack": 7,
+		"energy_max": 250,
+		"max_energy": 250,
+		"energy": 250,
+		"primary": "e_basic_energy_pew_pew",
+		"primary_weapon": "e_basic_energy_pew_pew",
+		"secondary": "railgun_mk1",
+		"secondary_weapon": "railgun_mk1",
+		"shield": "basic_shield_mk1",
+		"shield_item": "basic_shield_mk1",
+		"consumable": "repair_kit",
+		"consumable_item": "repair_kit",
+		"item_stacks": {
+		  "medium_kinetic_rounds": 4,
+		  "repair_kit": 1
+		},
+		"behavior_profile": "smart_guy_3",
+		"behavior_values": {
+		  "decision_cooldown": 1.75,
+		  "low_hull_evade_threshold": 0.25,
+		  "repair_hull_threshold": 0.3,
+		  "explosive_player_threshold": 0.45
+		},
+		"reward": [
+		  "iron",
+          "nickel"
+		],
+		"reward_items": [
+		  "iron",
+          "nickel"
+		],
+		"ship_name": "Vayrax Claim Drone"
+	  },
+	  "is_visible": true,
+	  "is_discovered": false
+	}
+  },
+  "required_items": [],
+  "reward_packet": {
+	"credits": 0,
+	"items": [],
+	"blueprints": [],
+	"lore": [],
+	"unlocks": [],
+	"message": "Vayrax Lane 001 complete. Repair Kit Blueprint received."
+  },
+  "steps": {
+	"vayrax_lane_001_intro_popup": {
+	  "objective_text": "A Vayrax claim signal has resolved near Star 9 Planet 1.",
+	  "target_object_id": "star_09_anchor_planet_01",
+	  "target_owner_type": "planet",
+	  "interaction_type": "story_popup",
+	  "next_step": "vayrax_lane_001_enemy_profile_popup",
+	  "on_enter": [
+		{
+		  "op": "show_story_popup",
+		  "title": "CLAIM WARDEN: COMPLIANCE CHECK",
+		  "text": "[b]VAYRAX CLAIM DRONE[/b]\n\n\"Unauthorized vessel detected.\"\n\n\"Remain where you are.\"\n\n\"I will now destroy you.\"\n\n\"Comply.\"",
+		  "close_mode": "button",
+		  "next_step_on_close": "vayrax_lane_001_enemy_profile_popup",
+		  "position": {
+		    "x": -360,
+		    "y": 0
+		  },
+		  "popup_size": {
+			"x": 560,
+			"y": 360
+		  }
+		}
+	  ]
+	},
+	"vayrax_lane_001_enemy_profile_popup": {
+	  "objective_text": "Review the Vayrax Claim Drone contact profile.",
+	  "target_object_id": "vayrax_lane_001_drone",
+	  "target_owner_type": "enemy",
+	  "interaction_type": "story_popup",
+	  "next_step": "vayrax_lane_001_ready_to_fight",
+	  "on_enter": [
+		{
+		  "op": "install_event_object",
+		  "object_id": "vayrax_lane_001_drone"
+		},
+		{
+		  "op": "show_story_popup",
+		  "title": "VAYRAX CONTACT PROFILE",
+		  "text": "[b]Enemy Handler Source[/b]\n`vayrax_claim_drone_001`\n\n[b]Battle Object[/b]\n`vayrax_lane_001_drone`\n\n[b]Behavior Profile[/b]\n`smart_guy_3`\n\n[b]Stats[/b]\nHull: 95 / 95\nHP: 95\nEnergy Max: 250\n\n[b]Loadout[/b]\nPrimary: `e_basic_energy_pew_pew`\nSecondary: `railgun_mk1`\nShield: `basic_shield_mk1`\nConsumable: `repair_kit`\n\n[b]Reward On Victory[/b]\n`repair_kit_blueprint`",
+		  "close_mode": "button",
+		  "next_step_on_close": "vayrax_lane_001_ready_to_fight",
+		  "position": {
+		    "x": -330,
+		    "y": 0
+		  },
+		  "popup_size": {
+			"x": 620,
+			"y": 500
+		  }
+		}
+	  ]
+	},
+	"vayrax_lane_001_ready_to_fight": {
+	  "objective_text": "Move within 30 units of the Vayrax Claim Drone, then press READY to engage.",
+	  "target_object_id": "vayrax_lane_001_drone",
+	  "target_owner_type": "enemy",
+	  "interaction_type": "handoff",
+	  "interaction_range": 30,
+	  "next_step": "vayrax_lane_001_start_battle",
+	  "actions": [
+		{
+		  "button_id": "vayrax_lane_001_ready_button",
+		  "label": "READY",
+		  "action_id": "download_beacon_data",
+		  "range": 30
+		}
+	  ],
+	  "success_text": "Vayrax Lane 001 engagement accepted."
+	},
+	"vayrax_lane_001_start_battle": {
+	  "objective_text": "Battle: Vayrax Claim Drone.",
+	  "target_object_id": "vayrax_lane_001_drone",
+	  "target_owner_type": "enemy",
+	  "enemy_id": "vayrax_lane_001_drone",
+	  "interaction_type": "hunt",
+	  "interaction_range": 30,
+	  "complete_on_battle_victory": true,
+	  "next_step": "vayrax_lane_001_victory_popup",
+	  "on_enter": [
+		{
+		  "op": "start_battle",
+		  "enemy_id": "vayrax_lane_001_drone",
+		  "entry_reason": "vayrax_lane_001_claim_warden",
+		  "message": "Vayrax Claim Drone engaged."
+		}
+	  ],
+	  "on_battle_victory": [
+		{
+		  "op": "write_log",
+		  "message": "Vayrax Lane 001 defeated: Claim Warden."
+		},
+		{
+		  "op": "advance_step",
+		  "next_step": "vayrax_lane_001_victory_popup"
+		}
+	  ]
+	},
+	"vayrax_lane_001_victory_popup": {
+	  "objective_text": "Review Vayrax Lane 001 victory report.",
+	  "interaction_type": "story_popup",
+	  "next_step": "vayrax_lane_001_claim_reward",
+	  "on_enter": [
+		{
+		  "op": "show_story_popup",
+		  "title": "VAYRAX LANE 001 CLEARED",
+		  "text": "[b]CLAIM WARDEN DEFEATED[/b]\n\nThe Vayrax claim pattern collapses into local static.\n\nReward ready:\n`repair_kit_blueprint`",
+		  "close_mode": "button",
+		  "next_step_on_close": "vayrax_lane_001_claim_reward",
+		  "position": {
+		    "x": -360,
+		    "y": 0
+		  },
+		  "popup_size": {
+			"x": 560,
+			"y": 360
+		  }
+		}
+	  ]
+	},
+	"vayrax_lane_001_claim_reward": {
+	  "objective_text": "Press COMPLETE near the planet anchor to claim the Repair Kit Blueprint and clear Vayrax Lane 001.",
+	  "target_object_id": "star_09_anchor_planet_01",
+	  "target_owner_type": "planet",
+	  "interaction_type": "handoff",
+	  "interaction_range": 9999,
+	  "next_step": "completed",
+	  "actions": [
+		{
+		  "button_id": "vayrax_lane_001_complete_button",
+		  "label": "COMPLETE",
+		  "action_id": "download_beacon_data",
+		  "range": 9999
+		}
+	  ],
+	  "gives_item": "repair_kit_blueprint",
+	  "success_text": "Repair Kit Blueprint received. Vayrax Lane 001 complete."
+	},
+	"completed": {
+	  "objective_text": "Vayrax Lane 001 complete.",
+	  "interaction_type": "complete",
+	  "is_complete_step": true,
+	  "complete_event": true
+	}
+  },
+  "handoff_notes": [
+	"Pass 002: Changed the event/range/reward target from star_21_tier_1_local to existing planet anchor star_09_anchor_planet_01 so the target exists inside event_objects without using a star as the direct target.",
+	"Pass 002: Aster Local 01 has no planet object in anchor_stars_and_planets_v1.json, so this first safe slice uses Star 9 Planet 1, an existing Tier 1 planet anchor.",
+	"Pass 002: Added install_event_object for vayrax_lane_001_drone before the enemy profile popup so the enemy can be visible before the READY button.",
+	"Pass 002: Kept one hidden activate_event_on_range listener with trigger_range 500. No extra visible beacon anchor was added.",
+    "Pass 002: Reward still uses gives_item: repair_kit_blueprint and reward_packet.blueprints remains empty."
+  ]
+}

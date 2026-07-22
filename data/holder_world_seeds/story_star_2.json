@@ -1,0 +1,104 @@
+{
+	"seed_id": "starter_star_layout_001",
+	"schema_version": 1,
+	"apply_on_new_universe": true,
+	"objects": {
+		"story_star_002": {
+			"owner_type": "star",
+			"object_id": "story_star_002",
+			"display_name": "Story Star",
+			"star_name": "Story Star",
+			"star_type": "K",
+			"sector_pos": [-4, 0, 0],
+			"local_pos": [500, 500, 500],
+			"brightness": 1.3,
+			"size": 1.4,
+			"has_event": false,
+			"labels": [
+				"star",
+				"story_anchor",
+				"authored_object"
+			]
+		},
+
+		"story_star_002_beacon_001": {
+			"owner_type": "beacon",
+			"object_type": "beacon",
+			"object_id": "story_star_002_beacon_001",
+			"display_name": "Story Star Beacon",
+			"title": "Story Star Beacon",
+			"beacon_type": "story_marker_beacon",
+
+			"sector_pos": [-4, 0, 0],
+			"local_pos": [560, 500, 500],
+
+			"parent_star_id": "story_star_002",
+			"parent_star_name": "Story Star",
+
+			"message": "A quiet beacon pulses near Story Star. Its signal is stable, authored, and deliberately placed.",
+			"quest_messages": [],
+
+			"has_event": false,
+			"event_id": "",
+			"active_event_id": "",
+			"required_step": "",
+			"event_step": "",
+			"current_step": "",
+			"interaction_type": "read",
+
+			"is_visible": true,
+			"is_discovered": false,
+			"is_completed": false,
+
+			"labels": [
+				"beacon",
+				"story_seed",
+				"story_star_002",
+				"authored_object"
+			]
+		},
+
+		"story_star_002_event_listener_001": {
+			"owner_type": "beacon",
+			"object_type": "beacon",
+			"object_id": "story_star_002_event_listener_001",
+			"display_name": "Quiet Story Beacon",
+			"title": "Quiet Story Beacon",
+			"beacon_type": "event_listener_beacon",
+
+			"sector_pos": [-4, 0, 0],
+			"local_pos": [600, 500, 500],
+
+			"parent_star_id": "story_star_002",
+			"parent_star_name": "Story Star",
+
+			"message": "A quiet beacon pulses near Story Star.",
+			"triggered_message": "The beacon recognizes your ship signature. A new contact has appeared near Story Star.",
+
+			"listener_type": "seed_event_on_range",
+			"trigger_event_id": "check_on_fred",
+			"trigger_once": true,
+			"triggered": false,
+			"trigger_range": 1000,
+
+			"has_event": false,
+			"event_id": "",
+			"active_event_id": "",
+			"required_step": "",
+			"event_step": "",
+			"current_step": "",
+
+			"is_visible": true,
+			"is_discovered": false,
+			"is_completed": false,
+
+			"labels": [
+				"beacon",
+				"story_seed",
+				"event_listener",
+				"story_star_002",
+				"authored_object"
+			]
+		}
+	}
+}

@@ -1,0 +1,52 @@
+--- BattleV2ProceduralLaneLayer_Drone_pass.gd
++++ BattleV2ProceduralLaneLayer_CoilSpitter_pass.gd
+@@ -4,6 +4,7 @@
+ 
+ const IonThreaderMK1UIScript = preload("res://battle_v2/UI_basket/IonThreaderMK1UI.gd")
+ const DroneOrbitUIScript = preload("res://battle_v2/UI_basket/DroneOrbitUI.gd")
++const CoilSpitterMK1UIScript = preload("res://battle_v2/UI_basket/CoilSpitterMK1UI.gd")
+ 
+ const DEFAULT_SIZE := Vector2(1280, 760)
+ const PLAYER_COLOR := Color(0.10, 0.68, 1.0, 1.0)
+@@ -20,6 +21,7 @@
+ var anim_time: float = 0.0
+ var ion_threader_mk1_ui: RefCounted = null
+ var drone_orbit_ui: RefCounted = null
++var coil_spitter_mk1_ui: RefCounted = null
+ 
+ 
+ func _ready() -> void:
+@@ -48,6 +50,8 @@
+ 		ion_threader_mk1_ui = IonThreaderMK1UIScript.new()
+ 	if drone_orbit_ui == null:
+ 		drone_orbit_ui = DroneOrbitUIScript.new()
++	if coil_spitter_mk1_ui == null:
++		coil_spitter_mk1_ui = CoilSpitterMK1UIScript.new()
+ 
+ 
+ func set_anchor_data(new_anchors: Dictionary) -> void:
+@@ -199,14 +203,22 @@
+ func try_draw_ui_basket_todo_event(event_summary: Dictionary) -> bool:
+ 	setup_ui_basket_handlers()
+ 	if ion_threader_mk1_ui != null and ion_threader_mk1_ui.has_method("draw_todo_event"):
+-		return bool(ion_threader_mk1_ui.draw_todo_event(self, event_summary, anchors, unit_state, anim_time))
++		if bool(ion_threader_mk1_ui.draw_todo_event(self, event_summary, anchors, unit_state, anim_time)):
++			return true
++	if coil_spitter_mk1_ui != null and coil_spitter_mk1_ui.has_method("draw_todo_event"):
++		if bool(coil_spitter_mk1_ui.draw_todo_event(self, event_summary, anchors, unit_state, anim_time)):
++			return true
+ 	return false
+ 
+ 
+ func try_draw_ui_basket_action_pulse(pulse: Dictionary) -> bool:
+ 	setup_ui_basket_handlers()
+ 	if ion_threader_mk1_ui != null and ion_threader_mk1_ui.has_method("draw_action_click"):
+-		return bool(ion_threader_mk1_ui.draw_action_click(self, pulse, anchors, unit_state, anim_time))
++		if bool(ion_threader_mk1_ui.draw_action_click(self, pulse, anchors, unit_state, anim_time)):
++			return true
++	if coil_spitter_mk1_ui != null and coil_spitter_mk1_ui.has_method("draw_action_click"):
++		if bool(coil_spitter_mk1_ui.draw_action_click(self, pulse, anchors, unit_state, anim_time)):
++			return true
+ 	return false
+ 
+ 

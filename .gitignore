@@ -1,0 +1,105 @@
+# ==========================================================
+# GODOT GENERATED FILES
+# ==========================================================
+
+.godot/
+.import/
+
+# Generated translation data
+*.translation
+
+
+# ==========================================================
+# GODOT EXPORT CREDENTIALS / SECRETS
+# ==========================================================
+
+export_credentials.cfg
+.godot/export_credentials.cfg
+
+.env
+.env.*
+*.key
+*.keystore
+
+
+# ==========================================================
+# LOCAL AI MODEL AND BUNDLED RUNTIME
+# These should be distributed separately or in game releases.
+# ==========================================================
+
+local_ai/*.gguf
+local_ai/runtime/
+
+# Optional local AI logs and generated data
+local_ai/logs/
+local_ai/cache/
+local_ai/temp/
+
+
+# ==========================================================
+# GODOT EDITOR EXECUTABLES
+# ==========================================================
+
+Godot_*.exe
+Godot_*.console.exe
+
+
+# ==========================================================
+# EXPORTED GAME BUILDS
+# ==========================================================
+
+build/
+builds/
+export/
+exports/
+dist/
+release/
+release_builds/
+
+*.pck
+*.apk
+*.aab
+*.app
+*.dmg
+*.msi
+
+
+# Ignore exported Windows executables, but allow project tools
+# to be explicitly restored later using !filename.exe if needed.
+*.exe
+
+
+# ==========================================================
+# ARCHIVES AND BACKUPS
+# ==========================================================
+
+*.zip
+*.7z
+*.rar
+*.tar
+*.gz
+
+*.bak
+*.backup
+*.old
+*.tmp
+*.temp
+
+
+# ==========================================================
+# LOGS AND OPERATING SYSTEM FILES
+# ==========================================================
+
+*.log
+
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+
+# ==========================================================
+# IDE FILES
+# ==========================================================
+
+.vscode/
+.idea/

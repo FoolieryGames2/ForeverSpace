@@ -1,0 +1,360 @@
+{
+  "event_id": "vayrax_lane_010_event",
+  "display_name": "Vayrax Lane 010: Closing Bracket",
+  "description": "Pass 004 Vayrax lane event using the proven Lane 001/Pass 003 pattern: existing anchor copied into event_objects, one hidden 500-unit activate_event_on_range listener, explicit enemy install before profile popup, READY button with 30-unit range, battle on next step, victory popup, gives_item reward, then complete. This lane uses planned reward `scatter_pulse_mk2_blueprint`.",
+  "event_state": "seeded",
+  "current_step": "vayrax_lane_010_intro_popup",
+  "start_on_ready": false,
+  "seed_once": true,
+  "can_cancel_event": true,
+  "tier": 1,
+  "anchor_star": {
+    "star_id": "star_30_tier_1_local",
+    "star_name": "Aster Local 10",
+    "sector_pos": [
+      3,
+      2,
+      -1
+    ],
+    "local_pos": [
+      500,
+      500,
+      500
+    ],
+    "required": true,
+    "create_if_missing": false,
+    "tier": 1
+  },
+  "event_listeners": {
+    "vayrax_lane_010_listener": {
+      "owner_type": "beacon",
+      "object_type": "beacon",
+      "object_id": "vayrax_lane_010_listener",
+      "display_name": "Vayrax Lane 010 Signal Listener",
+      "title": "Vayrax Lane 010 Signal Listener",
+      "beacon_type": "hidden_event_listener_beacon",
+      "position_mode": "absolute",
+      "sector_pos": [
+        3,
+        2,
+        -1
+      ],
+      "local_pos": [
+        500,
+        500,
+        500
+      ],
+      "parent_star_id": "star_30_tier_1_local",
+      "parent_star_name": "Aster Local 10",
+      "listener_type": "activate_event_on_range",
+      "trigger_event_id": "vayrax_lane_010_event",
+      "start_step": "vayrax_lane_010_intro_popup",
+      "trigger_range": 500,
+      "trigger_once": true,
+      "triggered": false,
+      "trigger_popup_message": "",
+      "suppress_trigger_popup": true,
+      "triggered_message": "Vayrax Lane 010 contact resolved near Aster Local 10.",
+      "message": "A Vayrax lane signal hides in the normal scan noise around Aster Local 10.",
+      "is_visible": false,
+      "is_discovered": false,
+      "is_completed": false,
+      "labels": [
+        "beacon",
+        "event_listener",
+        "activate_event_on_range",
+        "vayrax",
+        "vayrax_lane",
+        "vayrax_lane_010",
+        "hidden_listener",
+        "invisible_listener",
+        "camouflaged_signal",
+        "tier_1",
+        "star_30_tier_1_local",
+        "star_anchor_listener",
+        "authored_object"
+      ]
+    }
+  },
+  "event_objects": {
+    "star_30_tier_1_local": {
+      "owner_type": "star",
+      "object_type": "star",
+      "object_id": "star_30_tier_1_local",
+      "display_name": "Aster Local 10",
+      "title": "Aster Local 10",
+      "scan_name": "Aster Local 10",
+      "scan_description": "Existing anchor contact for Aster Local 10.",
+      "position_mode": "absolute",
+      "sector_pos": [
+        3,
+        2,
+        -1
+      ],
+      "local_pos": [
+        500,
+        500,
+        500
+      ],
+      "tier": 1,
+      "interaction_type": "signal_anchor",
+      "event_id": "vayrax_lane_010_event",
+      "active_event_id": "vayrax_lane_010_event",
+      "has_event": true,
+      "event_interactable": true,
+      "event_ops_enabled": true,
+      "is_visible": true,
+      "is_discovered": false,
+      "star_name": "Aster Local 10",
+      "star_type": "M",
+      "brightness": 0.98,
+      "size": 1.09,
+      "star_index": 30,
+      "anchor_role": "tier_1_local_anchor",
+      "labels": [
+        "star",
+        "world_seed",
+        "event_anchor",
+        "vayrax_lane",
+        "vayrax_lane_010",
+        "tier_1",
+        "star_30_tier_1_local",
+        "star_anchor",
+        "authored_object",
+        "event_object"
+      ]
+    },
+    "vayrax_lane_010_drone": {
+      "owner_type": "enemy",
+      "object_type": "enemy",
+      "object_id": "vayrax_lane_010_drone",
+      "enemy_id": "vayrax_lane_010_drone",
+      "display_name": "Vayrax Drone 010",
+      "name": "Vayrax Drone 010",
+      "blueprint_id": "vayrax_drone_010",
+      "spawn_on_step": "vayrax_lane_010_enemy_profile_popup",
+      "position_mode": "absolute",
+      "sector_pos": [
+        3,
+        2,
+        -1
+      ],
+      "local_pos": [
+        760.0,
+        500.0,
+        500.0
+      ],
+      "parent_star_id": "star_30_tier_1_local",
+      "parent_star_name": "Aster Local 10",
+      "event_id": "vayrax_lane_010_event",
+      "active_event_id": "vayrax_lane_010_event",
+      "required_step": "vayrax_lane_010_start_battle",
+      "event_step": "vayrax_lane_010_start_battle",
+      "current_step": "vayrax_lane_010_start_battle",
+      "has_event": true,
+      "labels": [
+        "enemy",
+        "event_enemy",
+        "vayrax",
+        "drone",
+        "vayrax_drone_010",
+        "vayrax_lane",
+        "vayrax_lane_010",
+        "tier_2",
+        "star_30_tier_1_local",
+        "near_star_30_tier_1_local"
+      ],
+      "event_tags": [
+        "vayrax_lane_010_event",
+        "vayrax",
+        "vayrax_lane_010",
+        "lane_battle"
+      ],
+      "overrides": {
+        "hp": 375,
+        "max_hp": 375,
+        "hull": 375,
+        "max_hull": 375,
+        "attack": 30,
+        "energy_max": 365.0,
+        "max_energy": 365,
+        "energy": 365,
+        "primary": "raider_arc_stinger_mk2",
+        "primary_weapon": "raider_arc_stinger_mk2",
+        "secondary": "raider_scrap_ripper_mk2",
+        "secondary_weapon": "raider_scrap_ripper_mk2",
+        "shield": "raider_plate_screen_mk2",
+        "shield_item": "raider_plate_screen_mk2",
+        "consumable": "breach_charge",
+        "consumable_item": "breach_charge",
+        "item_stacks": {
+          "small_kinetic_rounds": 22,
+          "medium_kinetic_rounds": 8,
+          "breach_charge": 1
+        },
+        "behavior_profile": "smart_guy_pressure",
+        "behavior_values": {
+          "decision_cooldown": 1.12,
+          "low_hull_evade_threshold": 0.23,
+          "low_energy_secondary_threshold": 0.4,
+          "execute_player_threshold": 0.46
+        },
+        "reward": [
+          "cobalt",
+          "nickel",
+          "small_kinetic_rounds"
+        ],
+        "reward_items": [
+          "cobalt",
+          "nickel",
+          "small_kinetic_rounds"
+        ],
+        "ship_name": "Vayrax Drone 010"
+      },
+      "is_visible": true,
+      "is_discovered": false
+    }
+  },
+  "required_items": [],
+  "reward_packet": {
+    "credits": 0,
+    "items": [],
+    "blueprints": [],
+    "lore": [],
+    "unlocks": [],
+    "message": "Vayrax Lane 010 complete. Reward claimed with gives_item."
+  },
+  "steps": {
+    "vayrax_lane_010_intro_popup": {
+      "objective_text": "A Vayrax lane signal has resolved near Aster Local 10.",
+      "target_object_id": "star_30_tier_1_local",
+      "target_owner_type": "star",
+      "interaction_type": "story_popup",
+      "next_step": "vayrax_lane_010_enemy_profile_popup",
+      "on_enter": [
+        {
+          "op": "show_story_popup",
+          "title": "CLOSING BRACKET: PRESSURE MATH",
+          "text": "[b]VAYRAX DRONE 010[/b]\n\n\"Ten compresses the space between us.\"\n\n\"Pressure is not anger. It is math.\"\n\n\"You are inside the closing bracket.\"",
+          "close_mode": "button",
+          "next_step_on_close": "vayrax_lane_010_enemy_profile_popup",
+          "popup_size": {
+            "x": 560,
+            "y": 360
+          }
+        }
+      ]
+    },
+    "vayrax_lane_010_enemy_profile_popup": {
+      "objective_text": "Review the Vayrax Drone 010 contact profile.",
+      "target_object_id": "vayrax_lane_010_drone",
+      "target_owner_type": "enemy",
+      "interaction_type": "story_popup",
+      "next_step": "vayrax_lane_010_ready_to_fight",
+      "on_enter": [
+        {
+          "op": "install_event_object",
+          "object_id": "vayrax_lane_010_drone"
+        },
+        {
+          "op": "show_story_popup",
+          "title": "VAYRAX CONTACT PROFILE",
+          "text": "[b]Enemy Handler Source[/b]\n`vayrax_drone_010`\n\n[b]Battle Object[/b]\n`vayrax_lane_010_drone`\n\n[b]Behavior Profile[/b]\n`smart_guy_pressure`\n\n[b]Stats[/b]\nHull: 375 / 375\nHP: 375\nEnergy Max: 365\n\n[b]Loadout[/b]\nPrimary: `raider_arc_stinger_mk2`\nSecondary: `raider_scrap_ripper_mk2`\nShield: `raider_plate_screen_mk2`\nConsumable: `breach_charge`\nItem Stacks: `small_kinetic_rounds` x22, `medium_kinetic_rounds` x8, `breach_charge` x1\n\n[b]Reward On Victory[/b]\n`scatter_pulse_mk2_blueprint`",
+          "close_mode": "button",
+          "next_step_on_close": "vayrax_lane_010_ready_to_fight",
+          "popup_size": {
+            "x": 620,
+            "y": 500
+          }
+        }
+      ]
+    },
+    "vayrax_lane_010_ready_to_fight": {
+      "objective_text": "Move within 30 units of Vayrax Drone 010, then press READY to engage.",
+      "target_object_id": "vayrax_lane_010_drone",
+      "target_owner_type": "enemy",
+      "interaction_type": "handoff",
+      "interaction_range": 30,
+      "next_step": "vayrax_lane_010_start_battle",
+      "actions": [
+        {
+          "button_id": "vayrax_lane_010_ready_button",
+          "label": "READY",
+          "action_id": "download_beacon_data",
+          "range": 30
+        }
+      ],
+      "success_text": "Vayrax Lane 010 engagement accepted."
+    },
+    "vayrax_lane_010_start_battle": {
+      "objective_text": "Battle: Vayrax Drone 010.",
+      "target_object_id": "vayrax_lane_010_drone",
+      "target_owner_type": "enemy",
+      "enemy_id": "vayrax_lane_010_drone",
+      "interaction_type": "hunt",
+      "interaction_range": 30,
+      "complete_on_battle_victory": true,
+      "next_step": "vayrax_lane_010_victory_popup",
+      "on_enter": [
+        {
+          "op": "start_battle",
+          "enemy_id": "vayrax_lane_010_drone",
+          "entry_reason": "vayrax_lane_010_closing_bracket",
+          "message": "Vayrax Drone 010 engaged."
+        }
+      ],
+      "on_battle_victory": [
+        {
+          "op": "write_log",
+          "message": "Vayrax Lane 010 defeated: Closing Bracket."
+        },
+        {
+          "op": "advance_step",
+          "next_step": "vayrax_lane_010_victory_popup"
+        }
+      ]
+    },
+    "vayrax_lane_010_victory_popup": {
+      "objective_text": "Review Vayrax Lane 010 victory report.",
+      "interaction_type": "story_popup",
+      "next_step": "vayrax_lane_010_claim_reward",
+      "on_enter": [
+        {
+          "op": "show_story_popup",
+          "title": "VAYRAX LANE 010 CLEARED",
+          "text": "[b]CLOSING BRACKET DEFEATED[/b]\n\nThe Vayrax lane signal collapses into local static.\n\nReward ready:\n`scatter_pulse_mk2_blueprint`",
+          "close_mode": "button",
+          "next_step_on_close": "vayrax_lane_010_claim_reward",
+          "popup_size": {
+            "x": 560,
+            "y": 360
+          }
+        }
+      ]
+    },
+    "vayrax_lane_010_claim_reward": {
+      "objective_text": "Press COMPLETE near Aster Local 10 to claim the Scatter Pulse MK2 Blueprint and clear Vayrax Lane 010.",
+      "target_object_id": "star_30_tier_1_local",
+      "target_owner_type": "star",
+      "interaction_type": "handoff",
+      "interaction_range": 9999,
+      "next_step": "completed",
+      "actions": [
+        {
+          "button_id": "vayrax_lane_010_complete_button",
+          "label": "COMPLETE",
+          "action_id": "download_beacon_data",
+          "range": 9999
+        }
+      ],
+      "gives_item": "scatter_pulse_mk2_blueprint",
+      "success_text": "Scatter Pulse MK2 Blueprint received. Vayrax Lane 010 complete."
+    },
+    "completed": {
+      "objective_text": "Vayrax Lane 010 complete.",
+      "interaction_type": "complete",
+      "is_complete_step": true,
+      "complete_event": true
+    }
+  }
+}

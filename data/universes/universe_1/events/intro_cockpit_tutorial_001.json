@@ -1,0 +1,396 @@
+{
+	"event_id": "intro_cockpit_tutorial_001",
+	"display_name": "Optional Cockpit Tutorial",
+	"description": "Quiet starter event for the opening cockpit rundown. It appears in the event widget at the beginning of Universe 1 and waits until the player presses START TUTORIAL.",
+	"event_state": "seeded",
+	"current_step": "tutorial_available",
+	"start_on_ready": false,
+	"seed_once": true,
+	"can_cancel_event": true,
+	"tier": 1,
+	"anchor_star": {
+		"star_id": "tier_1_anchor_star",
+		"star_name": "Tier 1 Star",
+		"sector_pos": [
+			0,
+			0,
+			0
+		],
+		"local_pos": [
+			500,
+			500,
+			500
+		],
+		"required": true,
+		"create_if_missing": false
+	},
+	"giver": {},
+	"event_listeners": {
+		"intro_cockpit_tutorial_listener_001": {
+			"owner_type": "beacon",
+			"object_type": "beacon",
+			"object_id": "intro_cockpit_tutorial_listener_001",
+			"display_name": "Cockpit Tutorial Listener",
+			"title": "Cockpit Tutorial Listener",
+			"beacon_type": "hidden_event_listener_beacon",
+			"position_mode": "anchor_offset",
+			"sector_offset": [
+				0,
+				0,
+				0
+			],
+			"local_offset": [
+				0,
+				0,
+				0
+			],
+			"sector_pos": [
+				0,
+				0,
+				0
+			],
+			"local_pos": [
+				500,
+				500,
+				500
+			],
+			"listener_type": "activate_event_on_range",
+			"trigger_event_id": "intro_cockpit_tutorial_001",
+			"start_step": "tutorial_available",
+			"trigger_range": 1000,
+			"trigger_once": true,
+			"trigger_popup_message": "",
+			"triggered_message": "Optional cockpit tutorial is ready in the Event Widget.",
+			"message": "A quiet tutorial listener waits at the starting wake point.",
+			"is_visible": false,
+			"labels": [
+				"beacon",
+				"event_listener",
+				"activate_event_on_range",
+				"opening_tutorial",
+				"cockpit_tutorial",
+				"event_discovery",
+				"invisible_listener",
+				"hidden_listener",
+				"tier_1"
+			],
+			"is_discovered": false,
+			"suppress_trigger_popup": true
+		}
+	},
+	"event_objects": {},
+	"reward_packet": {
+		"credits": 0,
+		"items": [],
+		"blueprints": [],
+		"lore": [],
+		"unlocks": [],
+		"message": "Cockpit tutorial complete."
+	},
+	"steps": {
+		"tutorial_available": {
+			"objective_text": "Optional cockpit tutorial is ready. Press START TUTORIAL when you want the cockpit rundown.",
+			"interaction_type": "event_control",
+			"next_step": "start_tutorial_event_widget",
+			"actions": [
+				{
+					"button_id": "start_intro_cockpit_tutorial",
+					"label": "START TUTORIAL",
+					"action_id": "advance_step",
+					"next_step": "start_tutorial_event_widget"
+				}
+			]
+		},
+		"start_tutorial_event_widget": {
+			"objective_text": "Learn the Event Widget.",
+			"interaction_type": "tutorial_popup",
+			"next_step": "start_tutorial_action_widget",
+			"on_enter": [
+				{
+					"op": "show_tutorial_hint",
+					"title": "EVENT WIDGET",
+					"text": "This is your story compass. It shows the current objective, target, distance, Auto Pilot, info, and event buttons like READ, READY, DOWNLOAD, CLAIM, or COMPLETE.",
+					"target_point_id": "event_panel",
+					"line_to_point_id": "event_panel",
+					"duration": 6.2,
+					"popup_size": {
+						"x": 370,
+						"y": 128
+					},
+					"popup_offset": {
+						"x": -382,
+						"y": 4
+					},
+					"draw_line": true,
+					"circle_radius": 24.0,
+					"next_step_after_hint": "start_tutorial_action_widget"
+				}
+			]
+		},
+		"start_tutorial_action_widget": {
+			"objective_text": "Learn the Action Widget.",
+			"interaction_type": "tutorial_popup",
+			"next_step": "start_tutorial_top_rail",
+			"on_enter": [
+				{
+					"op": "show_tutorial_hint",
+					"title": "ACTION WIDGET",
+					"text": "This panel shows local ship actions from what you scan or approach: talk, mine, inspect, scan, and non-story combat. Events guide the mission; Actions handle nearby opportunities.",
+					"target_point_id": "action_panel",
+					"line_to_point_id": "action_panel",
+					"duration": 6.2,
+					"popup_size": {
+						"x": 370,
+						"y": 128
+					},
+					"popup_offset": {
+						"x": -382,
+						"y": 4
+					},
+					"draw_line": true,
+					"circle_radius": 24.0,
+					"next_step_after_hint": "start_tutorial_top_rail"
+				}
+			]
+		},
+		"start_tutorial_top_rail": {
+			"objective_text": "Learn the top cockpit button rail.",
+			"interaction_type": "tutorial_popup",
+			"next_step": "start_tutorial_sub_command_button",
+			"on_enter": [
+				{
+					"op": "show_tutorial_hint",
+					"title": "LEFT PANEL BUTTONS",
+					"text": "These buttons open one shared left panel. Press a button to swap what lives there; press CLOSE to clear the panel when you want open screen space.",
+					"target_point_id": "main_cockpit_button_rail",
+					"line_to_point_id": "main_cockpit_button_rail",
+					"duration": 5.4,
+					"popup_size": {
+						"x": 390,
+						"y": 112
+					},
+					"popup_offset": {
+						"x": 18,
+						"y": 48
+					},
+					"draw_line": true,
+					"circle_radius": 24.0,
+					"next_step_after_hint": "start_tutorial_sub_command_button"
+				}
+			]
+		},
+		"start_tutorial_sub_command_button": {
+			"objective_text": "Learn Sub-Command.",
+			"interaction_type": "tutorial_popup",
+			"next_step": "start_tutorial_local_map_button",
+			"on_enter": [
+				{
+					"op": "show_tutorial_hint",
+					"title": "SUB-COMMAND",
+					"text": "Opens ship command shortcuts in the left panel. Use it for system commands and quick access tools when you do not want to hunt through the cockpit.",
+					"target_point_id": "main_cockpit_button_command",
+					"line_to_point_id": "main_cockpit_button_command",
+					"duration": 5.2,
+					"popup_size": {
+						"x": 350,
+						"y": 112
+					},
+					"popup_offset": {
+						"x": 0,
+						"y": 48
+					},
+					"draw_line": true,
+					"circle_radius": 18.0,
+					"next_step_after_hint": "start_tutorial_local_map_button"
+				}
+			]
+		},
+		"start_tutorial_local_map_button": {
+			"objective_text": "Learn Local Map.",
+			"interaction_type": "tutorial_popup",
+			"next_step": "start_tutorial_flat_map_button",
+			"on_enter": [
+				{
+					"op": "show_tutorial_hint",
+					"title": "LOCAL MAP",
+					"text": "Opens the local radar map in the left panel. It is best for nearby contacts, markers, and short-range target picking.",
+					"target_point_id": "main_cockpit_button_local_map",
+					"line_to_point_id": "main_cockpit_button_local_map",
+					"duration": 4.8,
+					"popup_size": {
+						"x": 330,
+						"y": 104
+					},
+					"popup_offset": {
+						"x": -12,
+						"y": 48
+					},
+					"draw_line": true,
+					"circle_radius": 18.0,
+					"next_step_after_hint": "start_tutorial_flat_map_button"
+				}
+			]
+		},
+		"start_tutorial_flat_map_button": {
+			"objective_text": "Learn Flat Map.",
+			"interaction_type": "tutorial_popup",
+			"next_step": "start_tutorial_sector_nav_button",
+			"on_enter": [
+				{
+					"op": "show_tutorial_hint",
+					"title": "FLAT MAP",
+					"text": "Opens the larger star chart view. Use it to inspect explored space and understand where local contacts sit in the wider route.",
+					"target_point_id": "main_cockpit_button_flat_map",
+					"line_to_point_id": "main_cockpit_button_flat_map",
+					"duration": 4.8,
+					"popup_size": {
+						"x": 330,
+						"y": 104
+					},
+					"popup_offset": {
+						"x": -24,
+						"y": 48
+					},
+					"draw_line": true,
+					"circle_radius": 18.0,
+					"next_step_after_hint": "start_tutorial_sector_nav_button"
+				}
+			]
+		},
+		"start_tutorial_sector_nav_button": {
+			"objective_text": "Learn Sector Navigator.",
+			"interaction_type": "tutorial_popup",
+			"next_step": "start_tutorial_inventory_craft_button",
+			"on_enter": [
+				{
+					"op": "show_tutorial_hint",
+					"title": "SECTOR NAVIGATOR",
+					"text": "Opens the tier/sector list. Filter stars, planets, objects, beacons, hostiles, and NPCs; select rows to set up coordinate travel.",
+					"target_point_id": "main_cockpit_button_tier_map",
+					"line_to_point_id": "main_cockpit_button_tier_map",
+					"duration": 5.4,
+					"popup_size": {
+						"x": 360,
+						"y": 112
+					},
+					"popup_offset": {
+						"x": -42,
+						"y": 48
+					},
+					"draw_line": true,
+					"circle_radius": 18.0,
+					"next_step_after_hint": "start_tutorial_inventory_craft_button"
+				}
+			]
+		},
+		"start_tutorial_inventory_craft_button": {
+			"objective_text": "Learn Inventory and Crafting.",
+			"interaction_type": "tutorial_popup",
+			"next_step": "start_tutorial_loadout_button",
+			"on_enter": [
+				{
+					"op": "show_tutorial_hint",
+					"title": "INVENTORY / CRAFT",
+					"text": "Opens inventory and blueprints together. Use RECOV for repair/recharge items, watch materials, select blueprints, and craft gear before harder fights.",
+					"target_point_id": "main_cockpit_button_inventory_craft",
+					"line_to_point_id": "main_cockpit_button_inventory_craft",
+					"duration": 6.2,
+					"popup_size": {
+						"x": 380,
+						"y": 120
+					},
+					"popup_offset": {
+						"x": -78,
+						"y": 48
+					},
+					"draw_line": true,
+					"circle_radius": 18.0,
+					"next_step_after_hint": "start_tutorial_loadout_button"
+				}
+			]
+		},
+		"start_tutorial_loadout_button": {
+			"objective_text": "Learn Battle Loadout.",
+			"interaction_type": "tutorial_popup",
+			"next_step": "start_tutorial_close_button",
+			"on_enter": [
+				{
+					"op": "show_tutorial_hint",
+					"title": "LOADOUT",
+					"text": "Opens battle preparation. Equip weapons, shields, consumables, and upgrades before pressing READY on event battles or engaging enemies from Actions.",
+					"target_point_id": "main_cockpit_button_loadout",
+					"line_to_point_id": "main_cockpit_button_loadout",
+					"duration": 5.8,
+					"popup_size": {
+						"x": 370,
+						"y": 112
+					},
+					"popup_offset": {
+						"x": -118,
+						"y": 48
+					},
+					"draw_line": true,
+					"circle_radius": 18.0,
+					"next_step_after_hint": "start_tutorial_close_button"
+				}
+			]
+		},
+		"start_tutorial_close_button": {
+			"objective_text": "Learn the left panel close button.",
+			"interaction_type": "tutorial_popup",
+			"next_step": "start_tutorial_battle_crafting_ready",
+			"on_enter": [
+				{
+					"op": "show_tutorial_hint",
+					"title": "CLOSE",
+					"text": "Closes the active left panel. Nothing is lost; reopen any panel from this same rail whenever you need it.",
+					"target_point_id": "main_cockpit_button_close",
+					"line_to_point_id": "main_cockpit_button_close",
+					"duration": 4.6,
+					"popup_size": {
+						"x": 320,
+						"y": 100
+					},
+					"popup_offset": {
+						"x": -168,
+						"y": 48
+					},
+					"draw_line": true,
+					"circle_radius": 18.0,
+					"next_step_after_hint": "start_tutorial_battle_crafting_ready"
+				}
+			]
+		},
+		"start_tutorial_battle_crafting_ready": {
+			"objective_text": "Prepare for battle and crafting.",
+			"interaction_type": "tutorial_popup",
+			"next_step": "tutorial_complete",
+			"on_enter": [
+				{
+					"op": "show_tutorial_hint",
+					"title": "READY CHECK",
+					"text": "Flow to remember: Event Widget tells you what matters. Auto Pilot gets you there. Action Widget handles local work. Inventory/Craft and Loadout get you ready before battle.",
+					"target_point_id": "event_panel",
+					"line_to_point_id": "main_cockpit_button_inventory_craft",
+					"duration": 6.4,
+					"popup_size": {
+						"x": 390,
+						"y": 128
+					},
+					"popup_offset": {
+						"x": -402,
+						"y": 4
+					},
+					"draw_line": true,
+					"circle_radius": 24.0,
+					"next_step_after_hint": "tutorial_complete"
+				}
+			]
+		},
+		"tutorial_complete": {
+			"objective_text": "Cockpit tutorial complete.",
+			"interaction_type": "complete",
+			"next_step": "completed"
+		}
+	}
+}

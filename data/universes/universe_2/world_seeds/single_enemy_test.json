@@ -1,0 +1,57 @@
+{
+  "seed_id": "tier_1_visible_enemy_patrol_test_v1",
+  "schema_version": 1,
+  "apply_on_new_universe": true,
+  "tier": 1,
+  "objects": {
+	"vayrax_patrol_drone_001": {
+	  "owner_type": "enemy",
+	  "object_type": "enemy",
+	  "object_id": "vayrax_patrol_drone_001",
+	  "enemy_id": "vayrax_patrol_drone_001",
+	  "display_name": "Vayrax Patrol Drone",
+	  "name": "Vayrax Patrol Drone",
+	  "blueprint_id": "vayrax_claim_drone_001",
+
+	  "position_mode": "absolute",
+	  "sector_pos": [1, 2, 1],
+	  "local_pos": [400, 500, 500],
+	  "parent_star_id": "star_23_tier_1_local",
+	  "parent_star_name": "Aster Local 03",
+
+	  "tier": 1,
+	  "has_event": false,
+	  "is_visible": true,
+	  "is_discovered": false,
+
+	  "labels": [
+		"enemy",
+		"vayrax",
+		"drone",
+		"world_seed",
+		"authored_object",
+		"tier_1",
+		"free_roam_enemy",
+        "visible_enemy"
+	  ],
+
+	  "overrides": {
+		"hp": 120,
+		"max_hp": 120,
+		"attack": 9,
+		"energy_max": 240,
+		"primary": "smart_guy_focus_lance",
+		"secondary": "smart_guy_calculated_rail",
+		"shield": "smart_guy_mirror_shield",
+		"consumable": "smart_guy_patch_cell",
+		"item_stacks": {
+		  "smart_guy_calculated_rounds": 12,
+		  "smart_guy_patch_cell": 1
+		},
+		"behavior_profile": "smart_guy_balanced",
+		"reward": ["iron", "nickel", "smart_guy_calculated_rounds"],
+		"ship_name": "Vayrax Patrol Drone"
+	  }
+	}
+  }
+}

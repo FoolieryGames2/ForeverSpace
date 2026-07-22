@@ -1,0 +1,55 @@
+{
+	"event_id": "planet_listener_worldseed_autopilot_test_001",
+	"display_name": "Planet Listener Worldseed Autopilot Test",
+	"event_state": "seeded",
+	"current_step": "auto_pilot_to_worldseed_planet",
+	"start_on_ready": false,
+	"seed_once": true,
+	"event_listeners": {
+		"planet_listener_worldseed_autopilot_test_listener_001": {
+			"owner_type": "beacon",
+			"object_type": "beacon",
+			"object_id": "planet_listener_worldseed_autopilot_test_listener_001",
+			"display_name": "Planet Worldseed Autopilot Test Listener",
+			"title": "Planet Worldseed Autopilot Test Listener",
+			"beacon_type": "event_listener_beacon",
+			"sector_pos": [
+				0,
+				0,
+				0
+			],
+			"local_pos": [
+				0,
+				0,
+				0
+			],
+			"listener_type": "activate_event_on_range",
+			"trigger_event_id": "planet_listener_worldseed_autopilot_test_001",
+			"trigger_once": true,
+			"triggered": false,
+			"trigger_range": 1000,
+			"trigger_popup_message": "",
+			"is_visible": true,
+			"is_discovered": true,
+			"is_completed": false,
+			"labels": [
+				"beacon",
+				"event_listener",
+				"activate_event_on_range",
+				"planet_worldseed_test",
+				"authored_object"
+			]
+		}
+	},
+	"event_objects": {},
+	"steps": {
+		"auto_pilot_to_worldseed_planet": {
+			"objective_text": "Use AUTO PILOT to travel to the world-seed authored test planet.",
+			"target_object_id": "test_authored_planet_001",
+			"interaction_type": "travel",
+			"arrival_range": 180,
+			"actions": []
+		}
+	},
+	"reward_packet": {}
+}

@@ -1,0 +1,352 @@
+{
+	"anchor_star": {
+		"brightness": 1.0,
+		"catalog_id": "star_28_tier_1_local",
+		"catalog_source": "world_seed",
+		"create_if_missing": true,
+		"local_pos": [
+			500.0,
+			500.0,
+			500.0
+		],
+		"required": true,
+		"sector_pos": [
+			1.0,
+			-3.0,
+			0.0
+		],
+		"size": 1.16,
+		"source_seed_id": "anchor_stars_and_planets_v1",
+		"source_world_seed_object_id": "star_28_tier_1_local",
+		"star_id": "star_28_tier_1_local",
+		"star_name": "Aster Local 08",
+		"star_type": "K",
+		"tier": 1.0
+	},
+	"current_step": "story_popup",
+	"display_name": "Mystery Signal",
+	"event_id": "mystery_signal_01",
+	"event_listeners": {
+		"mystery_signal_01_listener": {
+			"beacon_type": "event_listener_beacon",
+			"display_name": "Myster Signal 001 Listener 001",
+			"is_completed": false,
+			"is_discovered": true,
+			"is_visible": false,
+			"labels": [
+				"beacon",
+				"event_listener",
+				"activate_event_on_range",
+				"hidden_listener",
+				"invisible_listener",
+				"new_story_event_001",
+				"authored_object",
+				"m",
+				"my",
+				"mys",
+				"myst",
+				"myste",
+				"myster",
+				"mystery",
+				"mystery_",
+				"mystery_s",
+				"mystery_si",
+				"mystery_sig",
+				"mystery_sign",
+				"mystery_signa",
+				"mystery_signal",
+				"mystery_signal_",
+				"mystery_signal_0",
+				"mystery_signal_01",
+				"seed_event_on_range"
+			],
+			"listener_type": "activate_event_on_range",
+			"local_offset": [
+				250.0,
+				80.0,
+				20.0
+			],
+			"message": "Im just wanting some space.  Give me your space!!",
+			"object_id": "mystery_signal_01_listener",
+			"object_type": "beacon",
+			"owner_type": "beacon",
+			"parent_star_id": "story_anchor_star_001",
+			"parent_star_name": "Story Gate",
+			"position_mode": "anchor_offset",
+			"sector_offset": [
+				0.0,
+				0.0,
+				0.0
+			],
+			"start_step": "story_popup",
+			"suppress_trigger_popup": true,
+			"title": "Myster Signal 001 Listener 001",
+			"trigger_event_id": "mystery_signal_01",
+			"trigger_once": true,
+			"trigger_popup_message": "You have crossed into unknown space.  Keep away or Ill use my ray gun",
+			"trigger_range": 1001.0,
+			"triggered": false,
+			"triggered_message": "New event discovered: New Story Event."
+		}
+	},
+	"event_objects": {
+		"mystery_signal_01_beacon_001": {
+			"active_event_id": "mystery_signal_01",
+			"anchor_role": "tier_1_local_anchor",
+			"brightness": 1.0,
+			"catalog_id": "star_28_tier_1_local",
+			"catalog_source": "world_seed",
+			"display_name": "Aster Local 08",
+			"event_id": "mystery_signal_01",
+			"has_event": true,
+			"id": "mystery_signal_01_beacon_001",
+			"labels": [
+				"star",
+				"world_seed",
+				"authored_object",
+				"tier_1_local_anchor",
+				"near_tier_1",
+				"tier_1",
+				"event_object",
+				"mystery_signal_01_beacon_001",
+				"mystery_signal_01",
+				"catalog_world_seed"
+			],
+			"local_pos": [
+				50.0,
+				50.0,
+				50.0
+			],
+			"message": "im out here...listening...",
+			"object_id": "mystery_signal_01_beacon_001",
+			"object_type": "star",
+			"owner_type": "star",
+			"sector_pos": [
+				1.0,
+				-3.0,
+				0.0
+			],
+			"size": 1.16,
+			"source_path": "res://data/world_seeds/anchor_stars_and_planets_v1.json",
+			"source_seed_id": "anchor_stars_and_planets_v1",
+			"source_world_seed_object_id": "star_28_tier_1_local",
+			"star_index": 28.0,
+			"star_name": "Aster Local 08",
+			"star_type": "K",
+			"tier": 1.0
+		},
+		"mystery_signal_01_beacon_001_2": {
+			"active_event_id": "mystery_signal_01",
+			"anchor_role": "tier_1_local_anchor",
+			"brightness": 0.92,
+			"catalog_id": "star_26_tier_1_local",
+			"catalog_source": "world_seed",
+			"display_name": "Aster Local 06",
+			"event_id": "mystery_signal_01",
+			"has_event": true,
+			"id": "mystery_signal_01_beacon_001_2",
+			"labels": [
+				"star",
+				"world_seed",
+				"authored_object",
+				"tier_1_local_anchor",
+				"near_tier_1",
+				"tier_1",
+				"event_object",
+				"mystery_signal_01_beacon_001_2",
+				"mystery_signal_01",
+				"catalog_world_seed"
+			],
+			"local_pos": [
+				500.0,
+				500.0,
+				500.0
+			],
+			"object_id": "mystery_signal_01_beacon_001_2",
+			"object_type": "star",
+			"owner_type": "star",
+			"sector_pos": [
+				-3.0,
+				-1.0,
+				1.0
+			],
+			"size": 1.08,
+			"source_path": "res://data/world_seeds/anchor_stars_and_planets_v1.json",
+			"source_seed_id": "anchor_stars_and_planets_v1",
+			"source_world_seed_object_id": "star_26_tier_1_local",
+			"star_index": 26.0,
+			"star_name": "Aster Local 06",
+			"star_type": "M",
+			"tier": 1.0
+		},
+		"mystery_signal_01_story_beacon": {
+			"active_event_id": "mystery_signal_01",
+			"beacon_type": "event_beacon",
+			"display_name": "Mystery Signal 01 Story Beacon",
+			"event_id": "mystery_signal_01",
+			"has_event": true,
+			"interaction_type": "download",
+			"labels": [
+				"beacon",
+				"event_beacon",
+				"mystery_signal_01",
+				"authored_object"
+			],
+			"local_pos": [
+				500,
+				500,
+				500
+			],
+			"message": "Event beacon signal is active.",
+			"object_id": "mystery_signal_01_story_beacon",
+			"object_type": "beacon",
+			"owner_type": "beacon",
+			"sector_pos": [
+				0,
+				0,
+				0
+			]
+		}
+	},
+	"event_state": "seeded",
+	"giver": {
+		"blueprint_id": "story_contact_001",
+		"display_name": "Story Contact",
+		"labels": [
+			"npc",
+			"event_giver",
+			"story_npc",
+			"story_contact_001",
+			"authored_object"
+		],
+		"local_offset": [
+			25.0,
+			0.0,
+			0.0
+		],
+		"object_id": "story_contact_001",
+		"owner_id": "story_contact_001",
+		"owner_type": "npc",
+		"place_near_anchor_star": true,
+		"template_owner_id": "story_contact_001"
+	},
+	"required_items": [],
+	"reward_packet": {
+		"blueprints": [],
+		"credits": 50.0,
+		"items": [
+			{
+				"amount": 50.0,
+				"item_id": "credits"
+			}
+		],
+		"lore": [],
+		"message": "Story event complete. Reward received.",
+		"unlocks": []
+	},
+	"seed_once": true,
+	"start_on_ready": false,
+	"steps": {
+		"story_popup": {
+			"interaction_type": "story_popup",
+			"next_step": "",
+			"objective_text": "Discover the Mystery!!",
+			"on_enter": [
+				{
+					"close_mode": "button",
+					"duration": 4.0,
+					"image_height": 112.0,
+					"images": [],
+					"next_step_on_close": "find_mystery_signal_01_story_beacon",
+					"op": "show_story_popup",
+					"position": {
+					  "x": -350,
+					  "y": 0
+					},
+					"popup_size": {
+						"x": 580.0,
+						"y": 430.0
+					},
+					"text": "[b]Story beat[/b]\n\nAdd the scene text here.",
+					"title": "Story Beat"
+				},
+				{
+					"draw_line": true,
+					"duration": 5.0,
+					"line_to_point_id": "event_panel",
+					"op": "show_tutorial_hint",
+					"popup_offset": {
+						"x": 30.0,
+						"y": -22.0
+					},
+					"popup_size": {
+						"x": 330.0,
+						"y": 126.0
+					},
+					"target_point_id": "event_panel",
+					"text": "Maybe I have a bug.",
+					"title": "Weird downlload detected"
+				}
+			]
+		},
+		"find_mystery_signal_01_story_beacon": {
+			"arrival_range": 70,
+			"gives_item": "auto_attack_drone_test_mk1",
+			"interaction_type": "find",
+			"next_step": "tutorial_hint",
+			"objective_text": "Find mystery_signal_01_story_beacon.",
+			"on_enter": [
+				{
+					"close_mode": "timer",
+					"duration": 4.0,
+					"image_height": 112,
+					"images": [],
+					"next_step_on_close": "",
+					"op": "show_story_popup",
+					"position": {
+					  "x": -350,
+					  "y": 0
+					},
+					"popup_size": {
+						"x": 580,
+						"y": 430
+					},
+					"text": "[b]Story beat[/b]\n\ndiscovered!",
+					"title": "Story Beat"
+				}
+			],
+			"target_object_id": "mystery_signal_01_beacon_001_2"
+		},
+		"tutorial_hint": {
+			"interaction_type": "tutorial_popup",
+			"next_step": "completed",
+			"objective_text": "Review tutorial hint.",
+			"on_battle_victory": [
+				{
+					"next_step": "completed",
+					"op": "advance_step"
+				}
+			],
+			"on_enter": [
+				{
+					"draw_line": true,
+					"duration": 5.0,
+					"line_to_point_id": "event_panel",
+					"op": "show_tutorial_hint",
+					"popup_offset": {
+						"x": 30,
+						"y": -22
+					},
+					"popup_size": {
+						"x": 330,
+						"y": 126
+					},
+					"target_point_id": "event_panel",
+					"text": "Use the Event panel to follow the active story objective.",
+					"title": "EVENT HELP"
+				}
+			]
+		}
+	},
+	"tier": 1.0
+}

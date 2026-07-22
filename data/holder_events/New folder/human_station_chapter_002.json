@@ -1,0 +1,389 @@
+{
+  "event_id": "human_station_chapter_002",
+  "display_name": "Human Station Chapter 002",
+  "description": "Starter continuation event seeded by opening_wake_sequence_001. Tests JSON-to-JSON handoff via an installed listener, then uses Melissa as the chapter-two widget contact.",
+  "event_state": "seeded",
+  "current_step": "chapter_002_available_at_hab",
+  "start_on_ready": false,
+  "seed_once": true,
+  "can_cancel_event": false,
+  "tier": 1,
+  "anchor_star": {
+	"star_id": "tier_1_anchor_star",
+	"star_name": "Tier 1 Star",
+	"sector_pos": [
+	  0,
+	  0,
+	  0
+	],
+	"local_pos": [
+	  500,
+	  500,
+	  500
+	],
+	"required": true,
+	"create_if_missing": false
+  },
+  "giver": {
+	"owner_type": "npc",
+	"owner_id": "melissa_nudawn_001",
+	"object_id": "melissa_nudawn_001",
+	"blueprint_id": "melissa_nudawn_001",
+	"display_name": "Melissa Nudawn",
+	"sector_pos": [
+	  0,
+	  0,
+	  0
+	],
+	"local_pos": [
+	  865,
+	  522,
+	  514
+	],
+	"template_owner_id": "melissa_nudawn_001"
+  },
+  "event_listeners": {},
+  "event_objects": {
+	"melissa_nudawn_001": {
+	  "owner_type": "npc",
+	  "object_type": "npc",
+	  "object_id": "melissa_nudawn_001",
+	  "npc_id": "melissa_nudawn_001",
+	  "blueprint_id": "melissa_nudawn_001",
+	  "display_name": "Melissa Nudawn",
+	  "name": "Melissa Nudawn",
+	  "species": "human",
+	  "role": "rescued pilot",
+	  "friendly": true,
+	  "can_trade": false,
+	  "position_mode": "anchor_offset",
+	  "sector_offset": [
+		0,
+		0,
+		0
+	  ],
+	  "local_offset": [
+		365,
+		22,
+		14
+	  ],
+	  "sector_pos": [
+		0,
+		0,
+		0
+	  ],
+	  "local_pos": [
+		865,
+		522,
+		514
+	  ],
+	  "message": "Chapter two is ready. Talk to Melissa from the Event panel.",
+	  "dialogue_lines": [
+		"You made it back.",
+		"Good. We can continue from here.",
+        "Use the Event panel to continue this starter handoff test."
+	  ],
+	  "event_id": "human_station_chapter_002",
+	  "active_event_id": "human_station_chapter_002",
+	  "has_event": true,
+	  "event_state": "active",
+	  "required_step": "talk_to_melissa_continuation",
+	  "event_step": "talk_to_melissa_continuation",
+	  "labels": [
+		"npc",
+		"human",
+		"melissa",
+		"rescued_pilot",
+		"chapter_002",
+		"authored_object",
+        "event_object"
+	  ],
+	  "current_step": "talk_to_melissa_continuation",
+	  "interaction_type": "npc_contact"
+	},
+	"hank_marshall_001": {
+	  "owner_type": "npc",
+	  "object_type": "npc",
+	  "object_id": "hank_marshall_001",
+	  "npc_id": "hank_marshall_001",
+	  "blueprint_id": "hank_marshall_001",
+	  "display_name": "Hank Marshall",
+	  "name": "Hank Marshall",
+	  "species": "human",
+	  "role": "station mechanic",
+	  "friendly": true,
+	  "can_trade": false,
+	  "position_mode": "anchor_offset",
+	  "sector_offset": [
+		0,
+		0,
+		0
+	  ],
+	  "local_offset": [
+		335,
+		-18,
+		10
+	  ],
+	  "sector_pos": [
+		0,
+		0,
+		0
+	  ],
+	  "local_pos": [
+		835,
+		482,
+		510
+	  ],
+	  "message": "Melissa has the floor. Talk to her first.",
+	  "dialogue_lines": [
+		"Melissa has the floor.",
+		"Talk to her first.",
+        "I'll be right here pretending I wasn't worried."
+	  ],
+	  "event_id": "human_station_chapter_002",
+	  "active_event_id": "human_station_chapter_002",
+	  "has_event": false,
+	  "event_state": "active",
+	  "required_step": "talk_to_melissa_continuation",
+	  "event_step": "talk_to_melissa_continuation",
+	  "current_step": "talk_to_melissa_continuation",
+	  "interaction_type": "npc_contact",
+	  "labels": [
+		"npc",
+		"human",
+		"hank",
+		"station_mechanic",
+		"chapter_002",
+		"authored_object",
+        "event_object"
+	  ]
+	}
+  },
+  "reward_packet": {
+	"credits": 0,
+	"items": [],
+	"blueprints": [],
+	"lore": [],
+	"unlocks": [],
+	"message": "Chapter 002 starter continuation complete."
+  },
+  "steps": {
+	"chapter_002_available_at_hab": {
+	  "objective_text": "Chapter 002 is available at the Human Station Habitat. Start the continuation from the Event panel near Melissa.",
+	  "target_object_id": "melissa_nudawn_001",
+	  "interaction_type": "event_start",
+	  "interaction_range": 120,
+	  "next_step": "talk_to_melissa_continuation",
+	  "actions": [
+		{
+		  "button_id": "start_human_station_chapter_002",
+		  "label": "START",
+		  "action_id": "start_available_event",
+		  "range": 120,
+		  "next_step": "talk_to_melissa_continuation"
+		}
+	  ]
+	},
+	"talk_to_melissa_continuation": {
+	  "objective_text": "Talk to Melissa at the Human Station Habitat to continue from Chapter 001 into Chapter 002.",
+	  "target_object_id": "melissa_nudawn_001",
+	  "interaction_type": "handoff",
+	  "interaction_range": 95,
+	  "next_step": "chapter_002_continuation_popup",
+	  "on_enter": [
+		{
+		  "op": "refresh_npc",
+		  "target_object_id": "melissa_nudawn_001",
+		  "replacement_object_id": "melissa_nudawn_001",
+		  "force_recreate": false,
+		  "store_event_object": true,
+		  "save_world": true,
+		  "updates": {
+			"owner_type": "npc",
+			"object_type": "npc",
+			"object_id": "melissa_nudawn_001",
+			"npc_id": "melissa_nudawn_001",
+			"blueprint_id": "melissa_nudawn_001",
+			"display_name": "Melissa Nudawn",
+			"name": "Melissa Nudawn",
+			"species": "human",
+			"role": "rescued pilot",
+			"friendly": true,
+			"can_trade": false,
+			"position_mode": "anchor_offset",
+			"sector_offset": [
+			  0,
+			  0,
+			  0
+			],
+			"local_offset": [
+			  365,
+			  22,
+			  14
+			],
+			"sector_pos": [
+			  0,
+			  0,
+			  0
+			],
+			"local_pos": [
+			  865,
+			  522,
+			  514
+			],
+			"message": "Chapter two is ready. Talk to Melissa from the Event panel.",
+			"dialogue_lines": [
+			  "You made it back.",
+			  "Good. We can continue from here.",
+              "Use the Event panel to continue this starter handoff test."
+			],
+			"event_id": "human_station_chapter_002",
+			"active_event_id": "human_station_chapter_002",
+			"has_event": true,
+			"event_state": "active",
+			"required_step": "talk_to_melissa_continuation",
+			"event_step": "talk_to_melissa_continuation",
+			"labels": [
+			  "npc",
+			  "human",
+			  "melissa",
+			  "rescued_pilot",
+			  "chapter_002",
+			  "authored_object",
+              "event_object"
+			],
+			"current_step": "talk_to_melissa_continuation",
+			"interaction_type": "npc_contact"
+		  }
+		},
+		{
+		  "op": "spawn_npc",
+		  "target_object_id": "hank_marshall_001",
+		  "replacement_object_id": "hank_marshall_001",
+		  "store_event_object": true,
+		  "save_world": true,
+		  "updates": {
+			"owner_type": "npc",
+			"object_type": "npc",
+			"object_id": "hank_marshall_001",
+			"npc_id": "hank_marshall_001",
+			"blueprint_id": "hank_marshall_001",
+			"display_name": "Hank Marshall",
+			"name": "Hank Marshall",
+			"species": "human",
+			"role": "station mechanic",
+			"friendly": true,
+			"can_trade": false,
+			"position_mode": "anchor_offset",
+			"sector_offset": [
+			  0,
+			  0,
+			  0
+			],
+			"local_offset": [
+			  335,
+			  -18,
+			  10
+			],
+			"sector_pos": [
+			  0,
+			  0,
+			  0
+			],
+			"local_pos": [
+			  835,
+			  482,
+			  510
+			],
+			"message": "Melissa has the floor. Talk to her first.",
+			"dialogue_lines": [
+			  "Melissa has the floor.",
+			  "Talk to her first.",
+              "I'll be right here pretending I wasn't worried."
+			],
+			"event_id": "human_station_chapter_002",
+			"active_event_id": "human_station_chapter_002",
+			"has_event": false,
+			"event_state": "active",
+			"required_step": "talk_to_melissa_continuation",
+			"event_step": "talk_to_melissa_continuation",
+			"current_step": "talk_to_melissa_continuation",
+			"interaction_type": "npc_contact",
+			"labels": [
+			  "npc",
+			  "human",
+			  "hank",
+			  "station_mechanic",
+			  "chapter_002",
+			  "authored_object",
+              "event_object"
+			]
+		  }
+		},
+		{
+		  "op": "show_tutorial_hint",
+		  "title": "CHAPTER 002 CONTACT",
+		  "text": "Melissa has a continuation contact ready. Move close and press TALK in the Event panel.",
+		  "target_point_id": "event_panel",
+		  "duration": 5.0,
+		  "popup_size": {
+			"x": 330,
+			"y": 126
+		  },
+		  "popup_offset": {
+			"x": 30,
+			"y": -22
+		  }
+		}
+	  ],
+	  "actions": [
+		{
+		  "button_id": "talk_to_melissa_chapter_002",
+		  "label": "TALK",
+		  "action_id": "download_beacon_data",
+		  "range": 95
+		}
+	  ],
+	  "success_text": "Melissa contact accepted."
+	},
+	"chapter_002_continuation_popup": {
+	  "objective_text": "Review story beat: CHAPTER 002 CONTINUATION",
+	  "interaction_type": "story_popup",
+	  "next_step": "complete_chapter_002_starter",
+	  "on_enter": [
+		{
+		  "op": "show_story_popup",
+		  "title": "CHAPTER 002",
+		  "text": "[b]CHAPTER 002[/b]\n\nThis is the continuation of one into two.",
+		  "close_mode": "button",
+		  "next_step_on_close": "complete_chapter_002_starter",
+		  "images": [
+			{
+			  "path": "res://images/Melissa.png"
+			}
+		  ],
+		  "image_height": 140,
+		  "popup_size": {
+			"x": 580,
+			"y": 430
+		  }
+		}
+	  ]
+	},
+	"complete_chapter_002_starter": {
+	  "objective_text": "Complete the Chapter 002 starter continuation test.",
+	  "target_object_id": "melissa_nudawn_001",
+	  "interaction_type": "complete",
+	  "interaction_range": 95,
+	  "next_step": "completed",
+	  "actions": [
+		{
+		  "button_id": "complete_chapter_002_starter",
+		  "label": "COMPLETE",
+		  "action_id": "claim_event_reward",
+		  "range": 95
+		}
+	  ]
+	}
+  }
+}

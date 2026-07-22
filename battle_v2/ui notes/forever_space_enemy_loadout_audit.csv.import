@@ -1,0 +1,19 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://dufsstrkoe4wh"
+
+[deps]
+
+files=["res://battle_v2/ui notes/forever_space_enemy_loadout_audit.event.translation", "res://battle_v2/ui notes/forever_space_enemy_loadout_audit.enemy.translation", "res://battle_v2/ui notes/forever_space_enemy_loadout_audit.name.translation", "res://battle_v2/ui notes/forever_space_enemy_loadout_audit.blueprint.translation", "res://battle_v2/ui notes/forever_space_enemy_loadout_audit.hp.translation", "res://battle_v2/ui notes/forever_space_enemy_loadout_audit.max.translation", "res://battle_v2/ui notes/forever_space_enemy_loadout_audit.attack.translation", "res://battle_v2/ui notes/forever_space_enemy_loadout_audit.energy.translation", "res://battle_v2/ui notes/forever_space_enemy_loadout_audit.primary.translation", "res://battle_v2/ui notes/forever_space_enemy_loadout_audit.secondary.translation", "res://battle_v2/ui notes/forever_space_enemy_loadout_audit.shield.translation", "res://battle_v2/ui notes/forever_space_enemy_loadout_audit.consumable.translation", "res://battle_v2/ui notes/forever_space_enemy_loadout_audit.stack.translation", "res://battle_v2/ui notes/forever_space_enemy_loadout_audit.behavior.translation"]
+
+source_file="res://battle_v2/ui notes/forever_space_enemy_loadout_audit.csv"
+dest_files=["res://battle_v2/ui notes/forever_space_enemy_loadout_audit.event.translation", "res://battle_v2/ui notes/forever_space_enemy_loadout_audit.enemy.translation", "res://battle_v2/ui notes/forever_space_enemy_loadout_audit.name.translation", "res://battle_v2/ui notes/forever_space_enemy_loadout_audit.blueprint.translation", "res://battle_v2/ui notes/forever_space_enemy_loadout_audit.hp.translation", "res://battle_v2/ui notes/forever_space_enemy_loadout_audit.max.translation", "res://battle_v2/ui notes/forever_space_enemy_loadout_audit.attack.translation", "res://battle_v2/ui notes/forever_space_enemy_loadout_audit.energy.translation", "res://battle_v2/ui notes/forever_space_enemy_loadout_audit.primary.translation", "res://battle_v2/ui notes/forever_space_enemy_loadout_audit.secondary.translation", "res://battle_v2/ui notes/forever_space_enemy_loadout_audit.shield.translation", "res://battle_v2/ui notes/forever_space_enemy_loadout_audit.consumable.translation", "res://battle_v2/ui notes/forever_space_enemy_loadout_audit.stack.translation", "res://battle_v2/ui notes/forever_space_enemy_loadout_audit.behavior.translation"]
+
+[params]
+
+compress=1
+delimiter=0
+unescape_keys=false
+unescape_translations=true

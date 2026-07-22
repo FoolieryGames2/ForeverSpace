@@ -1,0 +1,112 @@
+{
+  "event_id": "vela_orbit_claim_notice_001",
+  "display_name": "Vela Orbit Claim Notice",
+  "description": "Silent Orbit-discovered claim notice event. Vela planet JSON installs a hidden seed listener after SCAN PLANET, then normal event listener rules may make this available later.",
+  "event_state": "seeded",
+  "current_step": "vela_claim_notice_intro",
+  "start_on_ready": false,
+  "seed_once": true,
+  "can_cancel_event": true,
+  "tier": 1,
+  "anchor_star": {
+    "star_id": "tier_1_anchor_star",
+    "star_name": "Tier 1 Star",
+    "sector_pos": [
+      0,
+      0,
+      0
+    ],
+    "local_pos": [
+      500,
+      500,
+      500
+    ],
+    "required": true,
+    "create_if_missing": false
+  },
+  "giver": {
+    "owner_type": "npc",
+    "object_id": "vela_claims_contact_001",
+    "owner_id": "vela_claims_contact_001",
+    "template_owner_id": "vela_claims_contact_001",
+    "blueprint_id": "guild_contact_tier_1",
+    "display_name": "Claims Clerk Signal",
+    "place_near_anchor_star": true,
+    "local_offset": [
+      -180,
+      210,
+      -100
+    ],
+    "offer_title": "Vela Claim Notice",
+    "offer_text": "The Vela 1-1 orbit scan surfaced dormant claim telemetry. Review it from the event console.",
+    "success_text": "Claim telemetry recorded."
+  },
+  "event_objects": {
+    "vela_claim_notice_beacon": {
+      "owner_type": "beacon",
+      "object_type": "beacon",
+      "object_id": "vela_claim_notice_beacon",
+      "display_name": "Vela Claim Notice",
+      "title": "Vela Claim Notice",
+      "beacon_type": "orbit_discovered_claim_beacon",
+      "position_mode": "anchor_offset",
+      "sector_offset": [
+        0,
+        0,
+        0
+      ],
+      "local_offset": [
+        -220,
+        250,
+        -120
+      ],
+      "parent_star_id": "tier_1_anchor_star",
+      "parent_star_name": "Tier 1 Star",
+      "parent_planet_id": "seed_planet_001_vela",
+      "parent_planet_name": "Vela 1-1",
+      "interaction_type": "read",
+      "message": "Dormant claim telemetry repeats from an old Vela 1-1 mining scar.",
+      "event_id": "vela_orbit_claim_notice_001",
+      "active_event_id": "vela_orbit_claim_notice_001",
+      "has_event": true,
+      "required_step": "read_vela_claim_notice",
+      "event_step": "read_vela_claim_notice",
+      "is_visible": true,
+      "is_discovered": false,
+      "labels": [
+        "beacon",
+        "event_beacon",
+        "orbit_discovered",
+        "claim_notice",
+        "vela_1_1",
+        "authored_object"
+      ]
+    }
+  },
+  "steps": {
+    "vela_claim_notice_intro": {
+      "interaction_type": "offer",
+      "objective_text": "Review the dormant Vela 1-1 claim notice.",
+      "next_step": "read_vela_claim_notice"
+    },
+    "read_vela_claim_notice": {
+      "interaction_type": "read",
+      "objective_text": "Read the Vela 1-1 claim notice.",
+      "target_object_id": "vela_claim_notice_beacon",
+      "required_step": "read_vela_claim_notice",
+      "range": 90,
+      "next_step": "vela_claim_notice_complete"
+    },
+    "vela_claim_notice_complete": {
+      "interaction_type": "complete_event",
+      "objective_text": "Claim notice recorded.",
+      "complete_event": true
+    }
+  },
+  "reward_packet": {
+    "items": [],
+    "blueprints": [],
+    "credits": 0,
+    "message": "Vela claim notice recorded."
+  }
+}

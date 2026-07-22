@@ -1,0 +1,497 @@
+{
+  "event_id": "opening_wake_sequence_001",
+  "display_name": "Opening Wake Sequence",
+  "event_state": "seeded",
+  "current_step": "open_dev_welcome",
+  "start_on_ready": false,
+  "seed_once": true,
+  "tier": 1,
+
+  "anchor_star": {
+	"star_id": "tier_1_spine_star",
+	"star_name": "Aster Gate",
+	"star_type": "K",
+	"sector_pos": [0, 0, 0],
+	"local_pos": [500, 500, 500],
+	"brightness": 1.4,
+	"size": 1.6,
+	"tier": 1,
+	"required": false,
+	"create_if_missing": false
+  },
+
+  "event_listeners": {
+	"vayrax_territory_beacon_001": {
+	  "owner_type": "beacon",
+	  "object_type": "beacon",
+	  "object_id": "vayrax_territory_beacon_001",
+	  "display_name": "Vayrax Territory Beacon",
+	  "title": "Vayrax Territory Beacon",
+	  "beacon_type": "territory_warning_beacon",
+
+	  "sector_pos": [0, 0, 0],
+	  "local_pos": [25, 25, 25],
+
+	  "message": "VAYRAX TERRITORY WARNING: unidentified adaptive hardware signature detected.",
+	  "triggered_message": "Vayrax territory marker has registered your wake signature.",
+
+	  "listener_type": "activate_event_on_range",
+	  "trigger_event_id": "opening_wake_sequence_001",
+	  "start_step": "open_dev_welcome",
+	  "trigger_once": true,
+	  "triggered": false,
+	  "trigger_range": 1000,
+
+	  "trigger_popup_message": "",
+
+	  "has_event": false,
+	  "event_id": "",
+	  "active_event_id": "",
+	  "required_step": "",
+	  "event_step": "",
+	  "current_step": "",
+
+	  "is_visible": true,
+	  "is_discovered": false,
+	  "is_completed": false,
+
+	  "labels": [
+		"beacon",
+		"territory_beacon",
+		"vayrax",
+		"event_listener",
+		"activate_event_on_range",
+		"wake_start",
+		"opening_sequence",
+        "authored_object"
+	  ]
+	}
+  },
+
+  "giver": {},
+
+  "event_objects": {
+	"human_station_habitat_beacon_001": {
+	  "owner_type": "beacon",
+	  "object_type": "beacon",
+	  "object_id": "human_station_habitat_beacon_001",
+	  "display_name": "Human Station Habitat",
+	  "title": "Human Station Habitat",
+	  "beacon_type": "human_habitat_station_beacon",
+
+	  "sector_pos": [0, 0, 0],
+	  "local_pos": [850, 500, 500],
+
+	  "message": "Human habitat signal detected. Docking handshake unstable but readable.",
+	  "interaction_type": "station_habitat",
+
+	  "event_id": "opening_wake_sequence_001",
+	  "active_event_id": "opening_wake_sequence_001",
+	  "required_step": "travel_to_human_habitat_beacon",
+	  "event_step": "travel_to_human_habitat_beacon",
+	  "current_step": "travel_to_human_habitat_beacon",
+	  "has_event": true,
+
+	  "is_visible": true,
+	  "is_discovered": false,
+	  "is_completed": false,
+
+	  "labels": [
+		"beacon",
+		"human_station",
+		"human_habitat",
+		"story_target",
+		"opening_sequence",
+        "authored_object"
+	  ]
+	}
+  },
+
+  "required_items": [],
+  "start_items": [],
+
+  "reward_packet": {
+	"credits": 0,
+	"items": [],
+	"blueprints": [],
+	"lore": [],
+	"unlocks": [],
+	"message": ""
+  },
+
+  "steps": {
+	"open_dev_welcome": {
+	  "objective_text": "Welcome to the current development build.",
+	  "interaction_type": "story_popup",
+	  "next_step": "memory_001_feet",
+	  "on_enter": [
+		{
+		  "op": "show_story_popup",
+		  "title": "WELCOME TO FOREVER SPACE",
+		  "text": "[b]FOREVER SPACE[/b]\n\nDev Build: v10.6\n\nWelcome to the current development build.\n\nThis version focuses on story-event flow, direct activation listeners, NPC quest routing, Battle V2, drones, autopilot, story popups, and authored world content.\n\nExpect unfinished systems, placeholder balance, and active testing behavior.\n\nThank you for testing this early slice.",
+		  "popup_size": {
+			"x": 720,
+			"y": 520
+		  },
+		  "close_mode": "button",
+		  "next_step_on_close": "memory_001_feet"
+		}
+	  ]
+	},
+
+	"memory_001_feet": {
+	  "objective_text": "Memory fragment detected.",
+	  "interaction_type": "story_popup",
+	  "next_step": "latch_boot_sequence",
+	  "on_enter": [
+		{
+		  "op": "show_story_popup",
+		  "title": "",
+		  "text": "where.. is.. this",
+		  "images": [
+			{
+			  "path": "res://images/Memory_001.png"
+			}
+		  ],
+		  "popup_size": {
+			"x": 720,
+			"y": 520
+		  },
+		  "close_mode": "button",
+		  "next_step_on_close": "latch_boot_sequence"
+		}
+	  ]
+	},
+
+	"latch_boot_sequence": {
+	  "objective_text": "L.A.T.C.H. boot sequence initializing.",
+	  "interaction_type": "story_popup",
+	  "next_step": "system_interface_sequence",
+	  "on_enter": [
+		{
+		  "op": "show_story_popup",
+		  "title": "L.A.T.C.H. BOOT SEQUENCE",
+		  "text": "",
+		  "images": [
+			{
+			  "path": "res://images/Boot_001.png"
+			}
+		  ],
+		  "popup_size": {
+			"x": 720,
+			"y": 520
+		  },
+		  "close_mode": "button",
+		  "next_step_on_close": "system_interface_sequence"
+		}
+	  ]
+	},
+
+	"system_interface_sequence": {
+	  "objective_text": "System interface recovery begins.",
+	  "interaction_type": "story_popup",
+	  "next_step": "self_image_wake_attempt",
+	  "on_enter": [
+		{
+		  "op": "show_story_popup",
+		  "title": "SYSTEM INTERFACE",
+		  "text": "[b]SYSTEM POPUP[/b]\n\nERROR\nMEMORY BLOCK UNAVAILABLE\n\nERROR\nSENSORY ARRAY OFFLINE\n\nERROR\nNAVIGATION SYSTEM OFFLINE\n\nERROR\nIDENTITY PROFILE OFFLINE\n\n---\n\n[b]L.A.T.C.H. GRID RESPONSE FAILURE[/b]\n\nLIVE ADAPTIVE TECHNOLOGY COUPLING HARDWARE\n\nPOWER ROUTING CELL .......... OFFLINE\nSENSOR ARRAY CELL ........... OFFLINE\nNAVIGATION CELL ............. OFFLINE\nCOMMUNICATION CELL .......... OFFLINE\nCOMBAT RESPONSE CELL ........ DEGRADED\nEXTERNAL INTERFACE CELL ..... CORRUPTED\nIDENTITY TETHER CELL ........ MISSING\nPERSONAL MEMORY BANK ........ REMOVED\n\n---\n\n[b]SYSTEM POPUP[/b]\n\nPING\nSomething is happening.\n\n---\n\n[b]SYSTEM POPUP[/b]\n\nINTERNAL CASING LOCK HAS BEEN DISABLED\n\n---\n\n[b]THOUGHT QUERY[/b]\n\nCasing?\n\n---\n\n[b]SYSTEM POPUP[/b]\n\nCASING\nProtective external shell.\n\nREFERENCE FOUND\nPERSONAL MEMORY LINK: UNAVAILABLE",
+		  "popup_size": {
+			"x": 720,
+			"y": 560
+		  },
+		  "close_mode": "button",
+		  "next_step_on_close": "self_image_wake_attempt"
+		}
+	  ]
+	},
+
+	"self_image_wake_attempt": {
+	  "objective_text": "Identity perception unstable.",
+	  "interaction_type": "story_popup",
+	  "next_step": "cells_removed_sequence",
+	  "on_enter": [
+		{
+		  "op": "show_story_popup",
+		  "title": "",
+		  "text": "I don't understand.\n\nAm I dreaming?",
+		  "images": [
+			{
+			  "path": "res://images/Tom_Wake_001.png"
+			}
+		  ],
+		  "popup_size": {
+			"x": 720,
+			"y": 520
+		  },
+		  "close_mode": "button",
+		  "next_step_on_close": "cells_removed_sequence"
+		}
+	  ]
+	},
+
+	"cells_removed_sequence": {
+	  "objective_text": "Core cells are being removed.",
+	  "interaction_type": "story_popup",
+	  "next_step": "entity_reaction_sequence",
+	  "on_enter": [
+		{
+		  "op": "show_story_popup",
+		  "title": "SYSTEM POPUP",
+		  "text": "[b]SYSTEM POPUP[/b]\n\nPING\nMEMORY CORE HAS BEEN REMOVED\n\n---\n\nCELL REMOVAL DETECTED\n\nPOWER ROUTING CELL .......... REMOVED\nSENSOR ARRAY CELL ........... REMOVED\nNAVIGATION CELL ............. REMOVED\nCOMMUNICATION CELL .......... REMOVED\n\nPERSONAL MEMORY BANK ........ REMOVED",
+		  "images": [
+			{
+			  "path": "res://images/Cells_Removed_001.png"
+			}
+		  ],
+		  "popup_size": {
+			"x": 720,
+			"y": 560
+		  },
+		  "close_mode": "button",
+		  "next_step_on_close": "entity_reaction_sequence"
+		}
+	  ]
+	},
+
+	"entity_reaction_sequence": {
+	  "objective_text": "Entity reaction detected.",
+	  "interaction_type": "story_popup",
+	  "next_step": "cells_inserted_sequence",
+	  "on_enter": [
+		{
+		  "op": "show_story_popup",
+		  "title": "THOUGHT QUERY",
+		  "text": "I need my memories.\n\nWhy?\n\nWhy do I need them?",
+		  "images": [
+			{
+			  "path": "res://images/Tom_Reaction_001.png"
+			}
+		  ],
+		  "popup_size": {
+			"x": 720,
+			"y": 520
+		  },
+		  "close_mode": "button",
+		  "next_step_on_close": "cells_inserted_sequence"
+		}
+	  ]
+	},
+
+	"cells_inserted_sequence": {
+	  "objective_text": "Replacement cells are being installed.",
+	  "interaction_type": "story_popup",
+	  "next_step": "first_space_awareness",
+	  "on_enter": [
+		{
+		  "op": "show_story_popup",
+		  "title": "SYSTEM POPUP",
+		  "text": "[b]SYSTEM POPUP[/b]\n\nPING\nINSTALLING MEMORY CORE DATA FROM FRESH CELL\nSTATUS: ACCEPTED\n\nPING\nINSTALLING SENSOR ARRAY DATA FROM FRESH CELL\nSTATUS: ACCEPTED\n\n---\n\n[b]L.A.T.C.H. COMPATIBILITY LAYER REBUILDING[/b]\n\nFOREIGN CELL DATA ACCEPTED\n\nPOWER ROUTING CELL .......... ONLINE\nSENSOR ARRAY CELL ........... ONLINE\nNAVIGATION CELL ............. ONLINE\nCOMMUNICATION CELL .......... ONLINE\nCOMBAT RESPONSE CELL ........ DEGRADED BUT RESPONSIVE\nEXTERNAL INTERFACE CELL ..... STABILIZED\nIDENTITY TETHER CELL ........ CLEAN REPLACEMENT\nPERSONAL MEMORY BANK ........ EMPTY",
+		  "images": [
+			{
+			  "path": "res://images/Cells_Inserted_001.png"
+			}
+		  ],
+		  "popup_size": {
+			"x": 720,
+			"y": 560
+		  },
+		  "close_mode": "button",
+		  "next_step_on_close": "first_space_awareness"
+		}
+	  ]
+	},
+
+	"first_space_awareness": {
+	  "objective_text": "Visual awareness returning.",
+	  "interaction_type": "story_popup",
+	  "next_step": "hank_first_contact",
+	  "on_enter": [
+		{
+		  "op": "show_story_popup",
+		  "title": "",
+		  "text": "I can see.\n\nI don't understand, but I know I'm in space.\n\nI can't seem to do anything.\n\nBut I sense I am not alone.\n\nSomething is... repairing me...",
+		  "images": [
+			{
+			  "path": "res://images/Tom.png"
+			}
+		  ],
+		  "popup_size": {
+			"x": 720,
+			"y": 520
+		  },
+		  "close_mode": "button",
+		  "next_step_on_close": "hank_first_contact"
+		}
+	  ]
+	},
+
+	"hank_first_contact": {
+	  "objective_text": "External human communication detected.",
+	  "interaction_type": "story_popup",
+	  "next_step": "tom_first_reply",
+	  "on_enter": [
+		{
+		  "op": "show_story_popup",
+		  "title": "AUDIO POPUP",
+		  "text": "[b]SOURCE:[/b] EXTERNAL HUMAN COMMS\n[b]SIGNAL QUALITY:[/b] DAMAGED\n[b]VOICE ID:[/b] UNKNOWN\n\n\"Hey, anyone home in there?\"\n\n\"You copy?\"",
+		  "images": [
+			{
+			  "path": "res://images/Hank.png"
+			}
+		  ],
+		  "popup_size": {
+			"x": 720,
+			"y": 520
+		  },
+		  "close_mode": "button",
+		  "next_step_on_close": "tom_first_reply"
+		}
+	  ]
+	},
+
+	"tom_first_reply": {
+	  "objective_text": "Communication response forming.",
+	  "interaction_type": "story_popup",
+	  "next_step": "hank_surprised_boot",
+	  "on_enter": [
+		{
+		  "op": "show_story_popup",
+		  "title": "PLAYER RESPONSE",
+		  "text": "Hello..\n\nCopy what?",
+		  "images": [
+			{
+			  "path": "res://images/Tom.png"
+			}
+		  ],
+		  "popup_size": {
+			"x": 720,
+			"y": 520
+		  },
+		  "close_mode": "button",
+		  "next_step_on_close": "hank_surprised_boot"
+		}
+	  ]
+	},
+
+	"hank_surprised_boot": {
+	  "objective_text": "External human communication continues.",
+	  "interaction_type": "story_popup",
+	  "next_step": "tom_confused_identity",
+	  "on_enter": [
+		{
+		  "op": "show_story_popup",
+		  "title": "AUDIO POPUP",
+		  "text": "[b]SOURCE:[/b] HANK\n[b]SIGNAL QUALITY:[/b] CLEARING\n\n\"Well ok.\"\n\n\"Didn't think you'd actually boot, huh.\"\n\n\"Haha.\"\n\n\"Don't kill me is all I ask.\"",
+		  "images": [
+			{
+			  "path": "res://images/Hank.png"
+			}
+		  ],
+		  "popup_size": {
+			"x": 720,
+			"y": 520
+		  },
+		  "close_mode": "button",
+		  "next_step_on_close": "tom_confused_identity"
+		}
+	  ]
+	},
+
+	"tom_confused_identity": {
+	  "objective_text": "Identity confusion detected.",
+	  "interaction_type": "story_popup",
+	  "next_step": "hank_autopilot_invite",
+	  "on_enter": [
+		{
+		  "op": "show_story_popup",
+		  "title": "PLAYER RESPONSE",
+		  "text": "Why would I kill you?\n\nI'm very confused.\n\nI don't think I know who I am or what I'm doing out here.",
+		  "images": [
+			{
+			  "path": "res://images/Tom.png"
+			}
+		  ],
+		  "popup_size": {
+			"x": 720,
+			"y": 520
+		  },
+		  "close_mode": "button",
+		  "next_step_on_close": "hank_autopilot_invite"
+		}
+	  ]
+	},
+
+	"hank_autopilot_invite": {
+	  "objective_text": "Hank sends a safe location.",
+	  "interaction_type": "story_popup",
+	  "next_step": "travel_to_human_habitat_beacon",
+	  "on_enter": [
+		{
+		  "op": "show_story_popup",
+		  "title": "AUDIO POPUP",
+		  "text": "[b]SOURCE:[/b] HANK\n[b]SIGNAL QUALITY:[/b] CLEAR\n\n\"I think I might know what's going on with you.\"\n\n\"I think you should come with me.\"\n\n\"You should be able to use your Auto Pilot function.\"\n\n\"I'm going to pass you a location.\"\n\n\"Meet me here and maybe we can clear up your memory problems.\"",
+		  "images": [
+			{
+			  "path": "res://images/Hank.png"
+			}
+		  ],
+		  "popup_size": {
+			"x": 720,
+			"y": 560
+		  },
+		  "close_mode": "button",
+		  "next_step_on_close": "travel_to_human_habitat_beacon"
+		}
+	  ]
+	},
+
+	"travel_to_human_habitat_beacon": {
+	  "objective_text": "Use Auto Pilot to travel to the Human Station Habitat signal Hank transmitted.",
+	  "target_object_id": "human_station_habitat_beacon_001",
+	  "interaction_type": "travel",
+	  "arrival_range": 140,
+	  "next_step": "opening_sequence_complete",
+	  "on_enter": [
+		{
+		  "op": "show_tutorial_hint",
+		  "title": "AUTO PILOT TARGET RECEIVED",
+		  "text": "Hank transmitted a habitat location. Use the Event panel Auto Pilot route to travel there.",
+		  "target_point_id": "event_panel",
+		  "line_to_point_id": "event_panel",
+		  "duration": 5.0,
+		  "popup_size": {
+			"x": 320,
+			"y": 130
+		  },
+		  "popup_offset": {
+			"x": 30,
+			"y": -22
+		  },
+		  "draw_line": true,
+		  "line_color": [0.3, 0.92, 1.0, 0.72],
+		  "circle_color": [0.3, 0.92, 1.0, 0.22],
+		  "circle_radius": 24.0,
+		  "accent_color": [0.3, 0.92, 1.0, 0.95]
+		}
+	  ],
+	  "on_arrival": [
+		{
+		  "op": "write_log",
+		  "message": "Human Station Habitat reached. Opening sequence test route complete."
+		},
+		{
+		  "op": "advance_step",
+		  "next_step": "opening_sequence_complete"
+		}
+	  ]
+	},
+
+	"opening_sequence_complete": {
+	  "objective_text": "Human Station Habitat reached. Opening sequence test route complete.",
+	  "target_object_id": "human_station_habitat_beacon_001",
+	  "interaction_type": "wait",
+	  "next_step": "completed"
+	}
+  }
+}

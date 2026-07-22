@@ -1,0 +1,1020 @@
+{
+  "event_id": "human_station_chapter_002",
+  "display_name": "Human Station Chapter 002",
+  "description": "Chapter 002 handoff built directly from FS Main s1.2 Chapter 002 Design Sheet. No added Hank/Melissa/Tom talk objectives; Roino Link Call is the only NPC objective step.",
+  "event_state": "seeded",
+  "current_step": "ch2_2_1_hank_space_chow",
+  "start_on_ready": false,
+  "seed_once": true,
+  "can_cancel_event": false,
+  "tier": 1,
+  "anchor_star": {
+	"star_id": "tier_1_anchor_star",
+	"star_name": "Tier 1 Star",
+	"sector_pos": [
+	  0,
+	  0,
+	  0
+	],
+	"local_pos": [
+	  500,
+	  500,
+	  500
+	],
+	"required": true,
+	"create_if_missing": false
+  },
+  "giver": {
+	"owner_type": "npc",
+	"owner_id": "hank_marshall_001",
+	"object_id": "hank_marshall_001",
+	"blueprint_id": "hank_marshall_001",
+	"display_name": "Hank Marshall",
+	"main_view_icon_id": "hank_nudawn_001",
+	"main_view_icon_path": "res://UI/PortView/main_view/icons/hank_nudawn_001.png",
+	"sector_pos": [
+	  0,
+	  0,
+	  0
+	],
+	"local_pos": [
+	  710,
+	  660,
+	  545
+	],
+	"template_owner_id": "hank_marshall_001",
+	"message": "Had me sick as chief's space chow!",
+	"dialogue_lines": [
+	  "Had me sick as chief's space chow!",
+	  "Dock times is dock times.",
+      "We will have this conversation later."
+	],
+	"event_accept_message": "Chapter 002 handoff accepted.",
+	"sector_offset": [
+	  0,
+	  0,
+	  0
+	],
+	"local_offset": [
+	  210,
+	  160,
+	  45
+	],
+	"labels": [
+      "tier_1"
+	]
+  },
+  "event_listeners": {},
+  "event_objects": {
+	"hank_marshall_001": {
+	  "owner_type": "npc",
+	  "object_type": "npc",
+	  "object_id": "hank_marshall_001",
+	  "npc_id": "hank_marshall_001",
+	  "blueprint_id": "hank_marshall_001",
+	  "display_name": "Hank Marshall",
+	  "name": "Hank Marshall",
+	  "main_view_icon_id": "hank_nudawn_001",
+	  "main_view_icon_path": "res://UI/PortView/main_view/icons/hank_nudawn_001.png",
+	  "species": "human",
+	  "role": "habitat mechanic",
+	  "friendly": true,
+	  "can_trade": false,
+	  "position_mode": "anchor_offset",
+	  "sector_offset": [
+		0,
+		0,
+		0
+	  ],
+	  "local_offset": [
+		210,
+		160,
+		45
+	  ],
+	  "sector_pos": [
+		0,
+		0,
+		0
+	  ],
+	  "local_pos": [
+		710,
+		660,
+		545
+	  ],
+	  "message": "Had me sick as chief's space chow!",
+	  "dialogue_lines": [
+		"Had me sick as chief's space chow!",
+		"Dock times is dock times.",
+        "We will have this conversation later."
+	  ],
+	  "event_id": "human_station_chapter_002",
+	  "active_event_id": "human_station_chapter_002",
+	  "has_event": false,
+	  "event_state": "ambient",
+	  "required_step": "ch2_2_1_hank_space_chow",
+	  "event_step": "ch2_2_1_hank_space_chow",
+	  "current_step": "ch2_2_1_hank_space_chow",
+	  "interaction_type": "npc_contact",
+	  "labels": [
+		"npc",
+		"human",
+		"hank",
+		"chapter_002",
+		"authored_object",
+		"event_object",
+		"tier_1",
+        "human_habitat_pocket"
+	  ],
+	  "is_visible": true
+	},
+	"melissa_nudawn_001": {
+	  "owner_type": "npc",
+	  "object_type": "npc",
+	  "object_id": "melissa_nudawn_001",
+	  "npc_id": "melissa_nudawn_001",
+	  "blueprint_id": "melissa_nudawn_001",
+	  "display_name": "Melissa Nudawn",
+	  "name": "Melissa Nudawn",
+	  "main_view_icon_id": "melissa_nudawn_001",
+	  "main_view_icon_path": "res://UI/PortView/main_view/icons/melissa_nudawn_001.png",
+	  "species": "human",
+	  "role": "rescued pilot",
+	  "friendly": true,
+	  "can_trade": false,
+	  "position_mode": "anchor_offset",
+	  "sector_offset": [
+		0,
+		0,
+		0
+	  ],
+	  "local_offset": [
+		165,
+		235,
+		90
+	  ],
+	  "sector_pos": [
+		0,
+		0,
+		0
+	  ],
+	  "local_pos": [
+		665,
+		735,
+		590
+	  ],
+	  "message": "Don't even...",
+	  "dialogue_lines": [
+		"Don't even...",
+		"Dad, I was...",
+        "Thats what I was trying to tell you!"
+	  ],
+	  "event_id": "human_station_chapter_002",
+	  "active_event_id": "human_station_chapter_002",
+	  "has_event": false,
+	  "event_state": "ambient",
+	  "required_step": "ch2_2_2_melissa_dont_even",
+	  "event_step": "ch2_2_2_melissa_dont_even",
+	  "current_step": "ch2_2_2_melissa_dont_even",
+	  "interaction_type": "npc_contact",
+	  "labels": [
+		"npc",
+		"human",
+		"melissa",
+		"chapter_002",
+		"authored_object",
+		"event_object",
+		"tier_1",
+        "human_habitat_pocket"
+	  ],
+	  "is_visible": true
+	},
+	"roino": {
+	  "owner_type": "npc",
+	  "object_type": "npc",
+	  "object_id": "roino",
+	  "npc_id": "roino",
+	  "blueprint_id": "mechanic_station_test",
+	  "display_name": "Roino",
+	  "name": "Roino",
+	  "species": "human",
+	  "role": "mechanic_station",
+	  "friendly": true,
+	  "can_trade": true,
+	  "position_mode": "anchor_offset",
+	  "sector_offset": [
+		0,
+		0,
+		0
+	  ],
+	  "local_offset": [
+		285,
+		-25,
+		115
+	  ],
+	  "sector_pos": [
+		0,
+		0,
+		0
+	  ],
+	  "local_pos": [
+		785,
+		475,
+		615
+	  ],
+	  "message": "Lets get you fixed up. When your ready to fight. Click event.",
+	  "dialogue_lines": [
+		"Lets get you fixed up.",
+		"When your ready to fight.",
+        "Click event."
+	  ],
+	  "event_id": "human_station_chapter_002",
+	  "active_event_id": "human_station_chapter_002",
+	  "has_event": true,
+	  "event_state": "active",
+	  "required_step": "ch2_2_14_link_call_roino",
+	  "event_step": "ch2_2_14_link_call_roino",
+	  "current_step": "ch2_2_14_link_call_roino",
+	  "interaction_type": "npc_contact",
+	  "labels": [
+		"npc",
+		"human",
+		"roino",
+		"mechanic_station",
+		"chapter_002",
+		"authored_object",
+		"event_object",
+		"tier_1",
+        "human_habitat_pocket"
+	  ],
+	  "spawn_on_step": "ch2_2_7_roino_docking_permission",
+	  "repeatable": true,
+	  "retradable": true,
+	  "stays_after_meeting": true,
+	  "offer_title": "Hull Repair Dock",
+	  "offer_text": "Trade iron x100 to restore your hull to full integrity.",
+	  "success_text": "Repair cycle complete. Hull integrity restored.",
+	  "pre_heal_talk_text": "Lets get you fixed up. One hundred iron buys a full hull patch.",
+	  "post_heal_talk_text": "That should hold. When your ready to fight. Click event.",
+	  "item_list": [
+		{
+		  "item_id": "iron",
+		  "amount": 100,
+		  "trade_role": "want"
+		},
+		{
+		  "trade_role": "service",
+		  "service_type": "repair_hull_to_full",
+		  "display_name": "Full Hull Repair",
+		  "bonus_hull_max_add": 0.0,
+		  "bonus_apply_once": true,
+		  "bonus_flag": "roino_hull_repair_chapter_002_v1"
+		}
+	  ],
+	  "is_visible": true
+	},
+	"vayrax_drone_002": {
+	  "owner_type": "enemy",
+	  "object_type": "enemy",
+	  "object_id": "vayrax_drone_002",
+	  "enemy_id": "vayrax_drone_002",
+	  "display_name": "Vayrax Drone 002",
+	  "name": "Vayrax Drone 002",
+	  "blueprint_id": "vayrax_claim_drone_001",
+	  "spawn_on_step": "ch2_2_16_battle_vayrax_drone_002",
+	  "position_mode": "anchor_offset",
+	  "sector_offset": [
+		0,
+		0,
+		0
+	  ],
+	  "local_offset": [
+		305,
+		220,
+		-70
+	  ],
+	  "sector_pos": [
+		0,
+		0,
+		0
+	  ],
+	  "local_pos": [
+		805,
+		720,
+		430
+	  ],
+	  "event_id": "human_station_chapter_002",
+	  "active_event_id": "human_station_chapter_002",
+	  "required_step": "ch2_2_16_battle_vayrax_drone_002",
+	  "event_step": "ch2_2_16_battle_vayrax_drone_002",
+	  "current_step": "ch2_2_16_battle_vayrax_drone_002",
+	  "has_event": true,
+	  "labels": [
+		"enemy",
+		"event_enemy",
+		"vayrax",
+		"drone",
+		"vayrax_drone_002",
+		"chapter_002",
+		"tier_1",
+        "human_habitat_pocket"
+	  ],
+	  "event_tags": [
+		"human_station_chapter_002",
+		"vayrax",
+		"vayrax_drone_002",
+        "chapter_002_battle"
+	  ],
+	  "overrides": {
+		"hp": 130,
+		"max_hp": 130,
+		"attack": 9,
+		"energy_max": 260,
+		"primary": "smart_guy_focus_lance",
+		"secondary": "smart_guy_calculated_rail",
+		"shield": "smart_guy_mirror_shield",
+		"consumable": "smart_guy_patch_cell",
+		"item_stacks": {
+		  "smart_guy_calculated_rounds": 16,
+		  "smart_guy_patch_cell": 1,
+		  "shield_patch_cell": 1
+		},
+		"behavior_profile": "smart_guy_tactician",
+		"behavior_values": {
+		  "decision_cooldown": 1.65,
+		  "low_hull_evade_threshold": 0.25,
+		  "repair_hull_threshold": 0.45,
+		  "low_energy_ammo_threshold": 0.45,
+		  "evade_health_threshold": 0.22,
+		  "shield_repair_threshold": 0.65,
+		  "explosive_player_threshold": 0.45,
+		  "clear_stale_loaded_consumable": true,
+		  "allow_forced_zero_energy_primary": false,
+		  "preferred_consumable_groups": [
+			"shield_repair",
+			"repair",
+			"explosive",
+			"drone",
+			"signal",
+			"pulse",
+			"recharge"
+		  ]
+		},
+		"reward": [
+		  "iron",
+		  "nickel",
+          "smart_guy_calculated_rounds"
+		],
+		"ship_name": "Vayrax Drone 002"
+	  },
+	  "is_visible": true
+	},
+	"story_star_002_event_listener_001": {
+	  "beacon_type": "hidden_event_listener_beacon",
+	  "display_name": "Quiet Relay Echo",
+	  "is_completed": false,
+	  "is_discovered": false,
+	  "is_visible": false,
+	  "labels": [
+		"beacon",
+		"story_seed",
+		"event_listener",
+		"tier_1_anchor_star",
+		"authored_object",
+		"tier_1",
+		"invisible_listener",
+		"hidden_listener",
+		"camouflaged_signal",
+		"chapter_002_unlock",
+		"post_chapter_002_side_signal",
+        "manual_unlock_listener"
+	  ],
+	  "listener_type": "seed_event_on_range",
+	  "local_offset": [
+		180.0,
+		-120.0,
+		45.0
+	  ],
+	  "message": "A low-power relay echo hides in routine local traffic.",
+	  "object_id": "story_star_002_event_listener_001",
+	  "object_type": "beacon",
+	  "owner_type": "beacon",
+	  "parent_star_id": "tier_1_anchor_star",
+	  "parent_star_name": "Tier 1 Star",
+	  "position_mode": "anchor_offset",
+	  "sector_offset": [
+		0.0,
+		0.0,
+		0.0
+	  ],
+	  "title": "Quiet Relay Echo",
+	  "trigger_event_id": "check_on_fred",
+	  "trigger_once": true,
+	  "trigger_popup_message": "[b]Intercepted Beacon Signal[/b]\n\nA quiet Tier 1 beacon recognizes your ship signature.\n\nNew event contact added: Check on Fred.",
+	  "trigger_range": 110.0,
+	  "triggered": false,
+	  "triggered_message": "A quiet local relay has resolved into a new contact: Check on Fred.",
+	  "sector_pos": [
+		0,
+		0,
+		0
+	  ],
+	  "local_pos": [
+		680,
+		380,
+		545
+	  ],
+	  "suppress_trigger_popup": true,
+	  "spawn_on_step": "chapter_002_complete_unlock"
+	},
+	"wreckage_listener_event_test_listener_001": {
+	  "owner_type": "beacon",
+	  "object_type": "beacon",
+	  "object_id": "wreckage_listener_event_test_listener_001",
+	  "id": "wreckage_listener_event_test_listener_001",
+	  "display_name": "Wreckage Signal Echo",
+	  "title": "Wreckage Signal Echo",
+	  "beacon_type": "hidden_event_listener_beacon",
+	  "position_mode": "absolute",
+	  "sector_pos": [
+		3,
+		2,
+		-1
+	  ],
+	  "local_pos": [
+		660,
+		420,
+		570
+	  ],
+	  "listener_type": "activate_event_on_range",
+	  "trigger_event_id": "wreckage_listener_event_test_001",
+	  "start_step": "go_to_test_wreckage",
+	  "trigger_once": true,
+	  "triggered": false,
+	  "trigger_range": 175.0,
+	  "trigger_popup_message": "[b]WRECKAGE SIGNAL[/b]\n\nA distant drifting wreckage contact has been added near Aster Local 10.",
+	  "is_visible": false,
+	  "is_discovered": false,
+	  "is_completed": false,
+	  "labels": [
+		"beacon",
+		"event_listener",
+		"wreckage_test",
+		"activate_event_on_range",
+		"authored_object",
+		"invisible_listener",
+		"hidden_listener",
+		"camouflaged_signal",
+		"tier_1",
+		"chapter_002_unlock",
+		"post_chapter_002_side_signal",
+		"manual_unlock_listener",
+		"aster_local_10",
+		"near_star_30_tier_1_local",
+        "moved_off_opening_path"
+	  ],
+	  "suppress_trigger_popup": true,
+	  "message": "A buried wreckage signature is folded into background scan noise near Aster Local 10.",
+	  "spawn_on_step": "chapter_002_complete_unlock",
+	  "triggered_message": "A distant wreckage signature near Aster Local 10 has resolved into a local salvage contact.",
+	  "parent_star_id": "star_30_tier_1_local",
+	  "parent_star_name": "Aster Local 10"
+	},
+	"human_habitat_chapter_003_listener_001": {
+	  "owner_type": "beacon",
+	  "object_type": "beacon",
+	  "object_id": "human_habitat_chapter_003_listener_001",
+	  "display_name": "Human Habitat Chapter 003 Listener",
+	  "title": "Human Habitat Chapter 003 Listener",
+	  "beacon_type": "event_listener_beacon",
+	  "position_mode": "anchor_offset",
+	  "sector_offset": [
+		0,
+		0,
+		0
+	  ],
+	  "local_offset": [
+		250,
+		80,
+		20
+	  ],
+	  "sector_pos": [
+		0,
+		0,
+		0
+	  ],
+	  "local_pos": [
+		750,
+		580,
+		520
+	  ],
+	  "spawn_on_step": "chapter_002_complete_unlock",
+	  "listener_type": "activate_event_on_range",
+	  "trigger_event_id": "human_station_chapter_003",
+	  "start_step": "melissa_calling_urgent",
+	  "trigger_range": 180,
+	  "trigger_once": true,
+	  "trigger_popup_message": "",
+	  "suppress_trigger_popup": true,
+	  "triggered_message": "Urgent Link Call received: Melissa Nudawn.",
+	  "is_visible": false,
+	  "is_discovered": false,
+	  "message": "A quiet continuation hook waits at the Human Station Habitat. It is installed only after Chapter 002 completes, then directly activates Chapter 003.",
+	  "labels": [
+		"beacon",
+		"event_listener",
+		"manual_end_of_chapter_002_install",
+		"human_station",
+		"chapter_003",
+		"authored_object",
+		"event_object",
+		"event_activation",
+		"invisible_listener",
+		"hidden_listener",
+		"camouflaged_signal",
+        "tier_1"
+	  ]
+	}
+  },
+  "reward_packet": {
+	"credits": 0,
+	"items": [],
+	"blueprints": [],
+	"lore": [],
+	"unlocks": [],
+	"message": "Chapter 002 complete. Small Kinetic Rounds Blueprint received. Local side signals and Chapter 003 urgent call unlocked."
+  },
+  "steps": {
+	"ch2_2_1_hank_space_chow": {
+	  "objective_text": "Review story beat: HANK",
+	  "interaction_type": "story_popup",
+	  "next_step": "ch2_2_2_melissa_dont_even",
+	  "on_enter": [
+		{
+		  "op": "show_story_popup",
+		  "title": "HANK",
+		  "text": "[b]HANK[/b]\n\n\"Had me sick as chief's space chow!\"",
+		  "close_mode": "button",
+		  "next_step_on_close": "ch2_2_2_melissa_dont_even",
+		  "images": [
+			{
+			  "path": "res://images/Hank.png"
+			}
+		  ],
+		  "image_height": 140,
+		  "popup_size": {
+			"x": 580,
+			"y": 430
+		  }
+		}
+	  ]
+	},
+	"ch2_2_2_melissa_dont_even": {
+	  "objective_text": "Review story beat: MELISSA",
+	  "interaction_type": "story_popup",
+	  "next_step": "ch2_2_3_hank_dock_times",
+	  "on_enter": [
+		{
+		  "op": "show_story_popup",
+		  "title": "MELISSA",
+		  "text": "[b]MELISSA[/b]\n\n\"Don't even...\"",
+		  "close_mode": "button",
+		  "next_step_on_close": "ch2_2_3_hank_dock_times",
+		  "images": [
+			{
+			  "path": "res://images/Melissa.png"
+			}
+		  ],
+		  "image_height": 140,
+		  "popup_size": {
+			"x": 580,
+			"y": 430
+		  }
+		}
+	  ]
+	},
+	"ch2_2_3_hank_dock_times": {
+	  "objective_text": "Review story beat: HANK",
+	  "interaction_type": "story_popup",
+	  "next_step": "ch2_2_4_melissa_dad_i_was",
+	  "on_enter": [
+		{
+		  "op": "show_story_popup",
+		  "title": "HANK",
+		  "text": "[b]HANK[/b]\n\n\"Dock times is dock times, That means your back here when its times to be back here.\"",
+		  "close_mode": "button",
+		  "next_step_on_close": "ch2_2_4_melissa_dad_i_was",
+		  "images": [
+			{
+			  "path": "res://images/Hank.png"
+			}
+		  ],
+		  "image_height": 140,
+		  "popup_size": {
+			"x": 600,
+			"y": 440
+		  }
+		}
+	  ]
+	},
+	"ch2_2_4_melissa_dad_i_was": {
+	  "objective_text": "Review story beat: MELISSA",
+	  "interaction_type": "story_popup",
+	  "next_step": "ch2_2_5_tom_dad",
+	  "on_enter": [
+		{
+		  "op": "show_story_popup",
+		  "title": "MELISSA",
+		  "text": "[b]MELISSA[/b]\n\n\"Dad, I was...\"",
+		  "close_mode": "button",
+		  "next_step_on_close": "ch2_2_5_tom_dad",
+		  "images": [
+			{
+			  "path": "res://images/Melissa.png"
+			}
+		  ],
+		  "image_height": 140,
+		  "popup_size": {
+			"x": 580,
+			"y": 430
+		  }
+		}
+	  ]
+	},
+	"ch2_2_5_tom_dad": {
+	  "objective_text": "Review story beat: TOM",
+	  "interaction_type": "story_popup",
+	  "next_step": "ch2_2_6_hank_link_call",
+	  "on_enter": [
+		{
+		  "op": "show_story_popup",
+		  "title": "TOM",
+		  "text": "[b]TOM[/b]\n\n\"Dad?...\"",
+		  "close_mode": "button",
+		  "next_step_on_close": "ch2_2_6_hank_link_call",
+		  "images": [
+			{
+			  "path": "res://images/Tom.png"
+			}
+		  ],
+		  "image_height": 140,
+		  "popup_size": {
+			"x": 580,
+			"y": 430
+		  }
+		}
+	  ]
+	},
+	"ch2_2_6_hank_link_call": {
+	  "objective_text": "Review story beat: HANK",
+	  "interaction_type": "story_popup",
+	  "next_step": "ch2_2_7_roino_docking_permission",
+	  "on_enter": [
+		{
+		  "op": "show_story_popup",
+		  "title": "HANK",
+		  "text": "[b]HANK[/b]\n\n\"We will have this Conversation later. I'll have to take this [Link] call from the bridge.\"\n\n\"Yah, what is it\"",
+		  "close_mode": "button",
+		  "next_step_on_close": "ch2_2_7_roino_docking_permission",
+		  "images": [
+			{
+			  "path": "res://images/Hank.png"
+			}
+		  ],
+		  "image_height": 140,
+		  "popup_size": {
+			"x": 620,
+			"y": 450
+		  }
+		}
+	  ]
+	},
+	"ch2_2_7_roino_docking_permission": {
+	  "objective_text": "Review story beat: ROINO",
+	  "interaction_type": "story_popup",
+	  "next_step": "ch2_2_8_melissa_good_to_see",
+	  "on_enter": [
+		{
+		  "op": "spawn_npc",
+		  "target_object_id": "roino",
+		  "replacement_object_id": "roino",
+		  "store_event_object": true,
+		  "save_world": true
+		},
+		{
+		  "op": "show_story_popup",
+		  "title": "ROINO",
+		  "text": "[b]ROINO[/b]\n\n\"Roino, requesting docking permissions.\"\n\n\"Looking to unload some goods.\"\n\n\"Oh, hey Melissa, didn't notice you there.\"",
+		  "close_mode": "button",
+		  "next_step_on_close": "ch2_2_8_melissa_good_to_see",
+		  "images": [
+			{
+			  "path": "res://images/Roino.png"
+			}
+		  ],
+		  "image_height": 140,
+		  "popup_size": {
+			"x": 620,
+			"y": 450
+		  }
+		}
+	  ]
+	},
+	"ch2_2_8_melissa_good_to_see": {
+	  "objective_text": "Review story beat: MELISSA",
+	  "interaction_type": "story_popup",
+	  "next_step": "ch2_2_9_hank_hostile_inbound",
+	  "on_enter": [
+		{
+		  "op": "show_story_popup",
+		  "title": "MELISSA",
+		  "text": "[b]MELISSA[/b]\n\n\"Good to see you too Roino\"",
+		  "close_mode": "button",
+		  "next_step_on_close": "ch2_2_9_hank_hostile_inbound",
+		  "images": [
+			{
+			  "path": "res://images/Melissa.png"
+			}
+		  ],
+		  "image_height": 140,
+		  "popup_size": {
+			"x": 580,
+			"y": 430
+		  }
+		}
+	  ]
+	},
+	"ch2_2_9_hank_hostile_inbound": {
+	  "objective_text": "Review story beat: HANK",
+	  "interaction_type": "story_popup",
+	  "next_step": "ch2_2_10_melissa_patrol_drone",
+	  "on_enter": [
+		{
+		  "op": "show_story_popup",
+		  "title": "HANK",
+		  "text": "[b]HANK[/b]\n\n\"Melissa!, Roino!, We have confirmed Vayrax hostile inbound\"",
+		  "close_mode": "button",
+		  "next_step_on_close": "ch2_2_10_melissa_patrol_drone",
+		  "images": [
+			{
+			  "path": "res://images/Hank.png"
+			}
+		  ],
+		  "image_height": 140,
+		  "popup_size": {
+			"x": 600,
+			"y": 440
+		  }
+		}
+	  ]
+	},
+	"ch2_2_10_melissa_patrol_drone": {
+	  "objective_text": "Review story beat: MELISSA",
+	  "interaction_type": "story_popup",
+	  "next_step": "ch2_2_11_tom_has_name_damaged",
+	  "on_enter": [
+		{
+		  "op": "show_story_popup",
+		  "title": "MELISSA",
+		  "text": "[b]MELISSA[/b]\n\n\"Thats what I was trying to tell you!\"\n\n\"Your LATCH unit took out a patrol drone by the outer belt!\"",
+		  "close_mode": "button",
+		  "next_step_on_close": "ch2_2_11_tom_has_name_damaged",
+		  "images": [
+			{
+			  "path": "res://images/Melissa.png"
+			}
+		  ],
+		  "image_height": 140,
+		  "popup_size": {
+			"x": 620,
+			"y": 450
+		  }
+		}
+	  ]
+	},
+	"ch2_2_11_tom_has_name_damaged": {
+	  "objective_text": "Review story beat: TOM",
+	  "interaction_type": "story_popup",
+	  "next_step": "ch2_2_12_hank_evac_repair",
+	  "on_enter": [
+		{
+		  "op": "show_story_popup",
+		  "title": "TOM",
+		  "text": "[b]TOM[/b]\n\n\"I have a name...\"\n\n\"Atleast I think I do\"\n\n\"And if you Asking me to fight again\"\n\n\"Im damaged from the last fight\"",
+		  "close_mode": "button",
+		  "next_step_on_close": "ch2_2_12_hank_evac_repair",
+		  "images": [
+			{
+			  "path": "res://images/Tom.png"
+			}
+		  ],
+		  "image_height": 140,
+		  "popup_size": {
+			"x": 620,
+			"y": 470
+		  }
+		}
+	  ]
+	},
+	"ch2_2_12_hank_evac_repair": {
+	  "objective_text": "Review story beat: HANK",
+	  "interaction_type": "story_popup",
+	  "next_step": "ch2_2_13_roino_link_call_offer",
+	  "on_enter": [
+		{
+		  "op": "show_story_popup",
+		  "title": "HANK",
+		  "text": "[b]HANK[/b]\n\n\"Melissa Im gong to need your help coordinating evac\"\n\n\"Roino, think you could ...\"",
+		  "close_mode": "button",
+		  "next_step_on_close": "ch2_2_13_roino_link_call_offer",
+		  "images": [
+			{
+			  "path": "res://images/Hank.png"
+			}
+		  ],
+		  "image_height": 140,
+		  "popup_size": {
+			"x": 620,
+			"y": 450
+		  }
+		}
+	  ]
+	},
+	"ch2_2_13_roino_link_call_offer": {
+	  "objective_text": "Review story beat: ROINO",
+	  "interaction_type": "story_popup",
+	  "next_step": "ch2_2_14_link_call_roino",
+	  "on_enter": [
+		{
+		  "op": "show_story_popup",
+		  "title": "ROINO",
+		  "text": "[b]ROINO[/b]\n\n\"Yah yah\"\n\n\"Ok, what ever your name is\"\n\n\"Come talk to me via [Link Call]\"\n\n\"I'll see if I can fix you up right Quick\"",
+		  "close_mode": "button",
+		  "on_close_operations": [
+			{
+			  "op": "remove_npc",
+			  "target_object_id": "melissa_nudawn_001",
+			  "allow_missing": true,
+			  "save_world": true
+			},
+			{
+			  "op": "remove_npc",
+			  "target_object_id": "hank_marshall_001",
+			  "allow_missing": true,
+			  "save_world": true
+			},
+			{
+			  "op": "advance_step",
+			  "next_step": "ch2_2_14_link_call_roino"
+			}
+		  ],
+		  "images": [
+			{
+			  "path": "res://images/Roino.png"
+			}
+		  ],
+		  "image_height": 140,
+		  "popup_size": {
+			"x": 620,
+			"y": 470
+		  }
+		}
+	  ]
+	},
+	"ch2_2_14_link_call_roino": {
+	  "objective_text": "Link Call Roino. Use his Hull Repair Dock if needed, then press EVENT when ready to protect the hab.",
+	  "target_object_id": "roino",
+	  "interaction_type": "handoff",
+	  "interaction_range": 95,
+	  "next_step": "ch2_2_15_pre_battle_popup",
+	  "actions": [
+		{
+		  "button_id": "roino_accept_protect_hab",
+		  "label": "EVENT",
+		  "action_id": "download_beacon_data",
+		  "range": 95
+		}
+	  ],
+	  "success_text": "Roino event accepted."
+	},
+	"ch2_2_15_pre_battle_popup": {
+	  "objective_text": "Review story beat: VAYRAX HOSTILE INBOUND",
+	  "interaction_type": "story_popup",
+	  "next_step": "ch2_2_16_battle_vayrax_drone_002",
+	  "on_enter": [
+		{
+		  "op": "show_story_popup",
+		  "title": "VAYRAX HOSTILE INBOUND",
+		  "text": "[b]VAYRAX HOSTILE INBOUND[/b]\n\nProtect the hab.",
+		  "close_mode": "button",
+		  "next_step_on_close": "ch2_2_16_battle_vayrax_drone_002",
+		  "popup_size": {
+			"x": 560,
+			"y": 360
+		  }
+		}
+	  ]
+	},
+	"ch2_2_16_battle_vayrax_drone_002": {
+	  "objective_text": "Battle: Vayrax_Drone_002",
+	  "target_object_id": "vayrax_drone_002",
+	  "enemy_id": "vayrax_drone_002",
+	  "interaction_type": "hunt",
+	  "interaction_range": 180,
+	  "complete_on_battle_victory": true,
+	  "next_step": "ch2_victory_blueprint_reward",
+	  "on_enter": [
+		{
+		  "op": "start_battle",
+		  "enemy_id": "vayrax_drone_002",
+		  "entry_reason": "chapter_002_vayrax_drone_002",
+		  "message": "Vayrax Drone 002 engaged."
+		}
+	  ],
+	  "on_battle_victory": [
+		{
+		  "op": "write_log",
+		  "message": "Vayrax Drone 002 defeated."
+		},
+		{
+		  "op": "advance_step",
+		  "next_step": "ch2_victory_blueprint_reward"
+		}
+	  ]
+	},
+	"ch2_victory_blueprint_reward": {
+	  "objective_text": "Review story beat: VICTORY",
+	  "interaction_type": "story_popup",
+	  "next_step": "ch2_claim_small_kinetic_rounds_blueprint",
+	  "on_enter": [
+		{
+		  "op": "show_story_popup",
+		  "title": "VICTORY",
+		  "text": "[b]VICTORY[/b]\n\nReward:\n* Blueprint",
+		  "close_mode": "button",
+		  "next_step_on_close": "ch2_claim_small_kinetic_rounds_blueprint",
+		  "popup_size": {
+			"x": 560,
+			"y": 360
+		  }
+		}
+	  ]
+	},
+	"ch2_claim_small_kinetic_rounds_blueprint": {
+	  "objective_text": "Claim the Small Kinetic Rounds Blueprint reward.",
+	  "target_object_id": "roino",
+	  "interaction_type": "handoff",
+	  "interaction_range": 180,
+	  "next_step": "ch2_unlock_post_chapter_002_side_signals",
+	  "actions": [
+		{
+		  "button_id": "claim_small_kinetic_rounds_blueprint",
+		  "label": "COMPLETE",
+		  "action_id": "download_beacon_data",
+		  "range": 180
+		}
+	  ],
+	  "gives_item": "small_kinetic_rounds_blueprint"
+	},
+	"ch2_unlock_post_chapter_002_side_signals": {
+	  "objective_text": "Unlock local side signals created after Chapter 002.",
+	  "target_object_id": "roino",
+	  "interaction_type": "system_unlock",
+	  "next_step": "completed",
+	  "on_enter": [
+		{
+		  "op": "install_event_object",
+		  "target_object_id": "story_star_002_event_listener_001"
+		},
+		{
+		  "op": "install_event_object",
+		  "target_object_id": "wreckage_listener_event_test_listener_001"
+		},
+		{
+		  "op": "install_event_object",
+		  "target_object_id": "human_habitat_chapter_003_listener_001"
+		},
+		{
+		  "op": "write_log",
+		  "message": "Post-Chapter 002 local signals unlocked: Check on Fred, Wreckage Signal Echo, and Melissa's urgent Chapter 003 relay call."
+		},
+		{
+		  "op": "advance_step",
+		  "next_step": "completed"
+		}
+	  ]
+	}
+  },
+  "handoff_notes": [
+	"Built from FS Main s1.2 Chapter 002 Design Sheet.",
+	"Chapter 001 should install human_habitat_chapter_002_listener_001 only from the final COMPLETE button.",
+	"Listener start_step should point to ch2_2_1_hank_space_chow for this JSON.",
+	"Roino Link Call is the only NPC talk/objective step in Chapter 002.",
+	"Roino object_id/npc_id is roino; mechanic_station_test is used only as the known working repair-dock template.",
+	"Vayrax event enemy object/enemy id is vayrax_drone_002; vayrax_claim_drone_001 is used only as the known working enemy blueprint template.",
+	"Pass 003: check_on_fred and wreckage listeners are no longer catalog-installed from their own JSON files.",
+	"Pass 003: Chapter 002 installs both side-content listeners from event_objects after the Small Kinetic Rounds Blueprint handoff.",
+	"Pass 003: Small Kinetic Rounds Blueprint is granted by the final step using gives_item/download_beacon_data, then Chapter 002 immediately runs the listener unlock step and completes.",
+	"Pass 003: side listeners are invisible/camouflaged and use smaller trigger ranges so they do not force both side events instantly from the Roino/habitat pocket.",
+    "Pass 004: Chapter 002 final unlock now installs human_habitat_chapter_003_listener_001. That listener activates human_station_chapter_003 at melissa_calling_urgent and stays hidden/suppressed."
+  ]
+}

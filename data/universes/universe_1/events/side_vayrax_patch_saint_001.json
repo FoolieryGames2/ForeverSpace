@@ -1,0 +1,254 @@
+{
+  "event_id": "side_vayrax_patch_saint_001",
+  "display_name": "Vayrax Patch Saint",
+  "description": "Ambient Vayrax side battle. Wide hidden discovery listener opens a briefing popup for Vayrax Patch Saint, then switches directly into Battle V2. Placed at Aster Local 04 to avoid current chapter-touch systems.",
+  "event_state": "seeded",
+  "current_step": "discover_patch_saint",
+  "start_on_ready": false,
+  "seed_once": true,
+  "can_cancel_event": true,
+  "tier": 1,
+  "anchor_star": {
+    "star_id": "star_24_tier_1_local",
+    "star_name": "Aster Local 04",
+    "sector_pos": [
+      2,
+      -1,
+      -1
+    ],
+    "local_pos": [
+      500,
+      500,
+      500
+    ],
+    "required": true,
+    "create_if_missing": false,
+    "tier": 1
+  },
+  "giver": {},
+  "event_listeners": {
+    "vayrax_patch_saint_001_wide_discovery_listener": {
+      "owner_type": "beacon",
+      "object_type": "beacon",
+      "object_id": "vayrax_patch_saint_001_wide_discovery_listener",
+      "display_name": "Vayrax Patch Saint Wide Discovery Listener",
+      "title": "Vayrax Patch Saint Wide Discovery Listener",
+      "beacon_type": "hidden_event_listener_beacon",
+      "position_mode": "absolute",
+      "sector_pos": [
+        2,
+        -1,
+        -1
+      ],
+      "local_pos": [
+        760,
+        820,
+        185
+      ],
+      "parent_star_id": "star_24_tier_1_local",
+      "parent_star_name": "Aster Local 04",
+      "listener_type": "activate_event_on_range",
+      "trigger_event_id": "side_vayrax_patch_saint_001",
+      "start_step": "discover_patch_saint",
+      "trigger_range": 1000.0,
+      "trigger_once": true,
+      "triggered": false,
+      "trigger_popup_message": "",
+      "triggered_message": "Vayrax contact discovered: Vayrax Patch Saint.",
+      "suppress_trigger_popup": true,
+      "is_visible": false,
+      "is_discovered": false,
+      "message": "A camouflaged Vayrax contact field listens near Aster Local 04.",
+      "labels": [
+        "beacon",
+        "event_listener",
+        "activate_event_on_range",
+        "hidden_listener",
+        "invisible_listener",
+        "camouflaged_signal",
+        "wide_discovery",
+        "ambient_vayrax",
+        "side_battle",
+        "tier_1",
+        "post_chapter_003_world_open",
+        "star_24_tier_1_local"
+      ]
+    }
+  },
+  "event_objects": {
+    "vayrax_patch_saint_001": {
+      "owner_type": "enemy",
+      "object_type": "enemy",
+      "object_id": "vayrax_patch_saint_001",
+      "enemy_id": "vayrax_patch_saint_001",
+      "display_name": "Vayrax Patch Saint",
+      "name": "Vayrax Patch Saint",
+      "blueprint_id": "vayrax_claim_drone_001",
+      "spawn_on_step": "battle_patch_saint",
+      "position_mode": "absolute",
+      "sector_pos": [
+        2,
+        -1,
+        -1
+      ],
+      "local_pos": [
+        760,
+        820,
+        185
+      ],
+      "parent_star_id": "star_24_tier_1_local",
+      "parent_star_name": "Aster Local 04",
+      "event_id": "side_vayrax_patch_saint_001",
+      "active_event_id": "side_vayrax_patch_saint_001",
+      "required_step": "battle_patch_saint",
+      "event_step": "battle_patch_saint",
+      "current_step": "battle_patch_saint",
+      "has_event": true,
+      "is_visible": true,
+      "is_discovered": false,
+      "labels": [
+        "enemy",
+        "event_enemy",
+        "vayrax",
+        "drone",
+        "ambient_vayrax",
+        "side_battle",
+        "tier_1",
+        "wide_discovery_battle",
+        "patch_saint",
+        "star_24_tier_1_local"
+      ],
+      "event_tags": [
+        "side_vayrax_patch_saint_001",
+        "vayrax",
+        "vayrax_patch_saint_001",
+        "ambient_vayrax_side_battle",
+        "smart_guy_survivor"
+      ],
+      "overrides": {
+        "hp": 165,
+        "max_hp": 165,
+        "attack": 9,
+        "energy_max": 320,
+        "primary": "smart_guy_focus_lance",
+        "secondary": "smart_guy_calculated_rail",
+        "shield": "smart_guy_mirror_shield",
+        "consumable": "smart_guy_patch_cell",
+        "item_stacks": {
+          "smart_guy_calculated_rounds": 16,
+          "smart_guy_patch_cell": 2,
+          "shield_patch_cell": 2
+        },
+        "behavior_profile": "smart_guy_survivor",
+        "behavior_values": {
+          "decision_cooldown": 1.75,
+          "low_hull_evade_threshold": 0.34,
+          "repair_hull_threshold": 0.68,
+          "low_energy_ammo_threshold": 0.5,
+          "evade_health_threshold": 0.3,
+          "shield_repair_threshold": 0.72,
+          "explosive_player_threshold": 0.42,
+          "clear_stale_loaded_consumable": true,
+          "allow_forced_zero_energy_primary": false,
+          "preferred_consumable_groups": [
+            "repair",
+            "shield_repair",
+            "recharge",
+            "drone",
+            "signal"
+          ]
+        },
+        "reward": [
+          "iron",
+          "nickel",
+          "shield_patch_cell"
+        ],
+        "battle_comment": [
+          "Damage is confession.",
+          "I will mend myself. I will unmake you.",
+          "Your shell opens wrong."
+        ],
+        "ship_name": "Vayrax Patch Saint"
+      }
+    }
+  },
+  "required_items": [],
+  "reward_packet": {
+    "credits": 0,
+    "items": [],
+    "blueprints": [],
+    "lore": [],
+    "unlocks": [],
+    "message": "Ambient Vayrax contact defeated: Vayrax Patch Saint."
+  },
+  "steps": {
+    "discover_patch_saint": {
+      "objective_text": "Wide-range Vayrax contact discovered: Vayrax Patch Saint.",
+      "interaction_type": "story_popup",
+      "target_object_id": "vayrax_patch_saint_001",
+      "target_owner_type": "enemy",
+      "next_step": "battle_patch_saint",
+      "on_enter": [
+        {
+          "op": "show_story_popup",
+          "title": "VAYRAX CONTACT: VAYRAX PATCH SAINT",
+          "text": "[b]VAYRAX CONTACT DISCOVERED[/b]\n\nIdentity: Vayrax Patch Saint\nBehavior Profile: smart_guy_survivor\nLoadout: Focus Lance / Calculated Rail / Mirror Shield / 2 Patch Cells / 2 Shield Patch Cells\nPersonality Twist: repairs early and treats broken hull as sin.\n\n[b]Behavior Read[/b]\nA repair-obsessed drone that talks like damage is a moral failure.\n\nClosing this warning commits to the battle handoff.",
+          "close_mode": "button",
+          "close_label": "ENGAGE",
+          "space_close": true,
+          "next_step_on_close": "battle_patch_saint",
+          "position": {
+            "x": -410,
+            "y": -35
+          },
+          "popup_size": {
+            "x": 460,
+            "y": 520
+          }
+        }
+      ]
+    },
+    "battle_patch_saint": {
+      "objective_text": "Defeat Vayrax Patch Saint.",
+      "target_object_id": "vayrax_patch_saint_001",
+      "target_owner_type": "enemy",
+      "enemy_id": "vayrax_patch_saint_001",
+      "interaction_type": "hunt",
+      "interaction_range": 220,
+      "complete_on_battle_victory": true,
+      "next_step": "complete_patch_saint",
+      "on_enter": [
+        {
+          "op": "start_battle",
+          "enemy_id": "vayrax_patch_saint_001",
+          "entry_reason": "side_vayrax_patch_saint_001",
+          "message": "Vayrax Patch Saint engaged."
+        }
+      ],
+      "on_battle_victory": [
+        {
+          "op": "write_log",
+          "message": "Vayrax Patch Saint defeated near Aster Local 04."
+        },
+        {
+          "op": "advance_step",
+          "next_step": "complete_patch_saint"
+        }
+      ]
+    },
+    "complete_patch_saint": {
+      "objective_text": "Vayrax Patch Saint defeated.",
+      "target_object_id": "vayrax_patch_saint_001",
+      "target_owner_type": "enemy",
+      "interaction_type": "complete",
+      "is_complete_step": true,
+      "complete_event": true
+    }
+  },
+  "handoff_notes": [
+    "Ambient side-battle event. Does not touch Chapter 001, Chapter 002, Chapter 003, Human Hab, Aster Local 03, Aster Local 07, or Aster Local 10.",
+    "Uses wide activate_event_on_range listener with suppress_trigger_popup=true; first authored step opens the briefing popup.",
+    "Battle uses existing enemy blueprint_id vayrax_claim_drone_001 plus event overrides, so no new enemy_handler.gd blueprint is required for this pass.",
+    "All active loadout item IDs are already present in the item DB/source references used by current Vayrax/Smart Guy encounters."
+  ]
+}

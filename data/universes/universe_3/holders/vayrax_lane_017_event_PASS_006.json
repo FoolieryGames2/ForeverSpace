@@ -1,0 +1,371 @@
+{
+  "event_id": "vayrax_lane_017_event",
+  "display_name": "Vayrax Lane 017: Seventeen Elegant",
+  "description": "Pass 006 Vayrax lane event using the proven Lane 001–010 pattern: existing anchor copied into event_objects, one hidden 500-unit activate_event_on_range listener, explicit enemy install before profile popup, READY button with 30-unit range, battle on next step, victory popup, gives_item blueprint reward, then complete. This lane uses planned blueprint reward `anchor_barrier_mk3_blueprint`.",
+  "event_state": "seeded",
+  "current_step": "vayrax_lane_017_intro_popup",
+  "start_on_ready": false,
+  "seed_once": true,
+  "can_cancel_event": true,
+  "tier": 3,
+  "anchor_star": {
+    "star_id": "tier_3_anchor_star",
+    "star_name": "Tier 3 Star",
+    "sector_pos": [
+      20,
+      -1,
+      0
+    ],
+    "local_pos": [
+      627.274,
+      369.72900000000004,
+      466.506
+    ],
+    "required": true,
+    "create_if_missing": false,
+    "tier": 3
+  },
+  "event_listeners": {
+    "vayrax_lane_017_listener": {
+      "owner_type": "beacon",
+      "object_type": "beacon",
+      "object_id": "vayrax_lane_017_listener",
+      "display_name": "Vayrax Lane 017 Signal Listener",
+      "title": "Vayrax Lane 017 Signal Listener",
+      "beacon_type": "hidden_event_listener_beacon",
+      "position_mode": "absolute",
+      "sector_pos": [
+        20,
+        -1,
+        0
+      ],
+      "local_pos": [
+        627.274,
+        369.72900000000004,
+        466.506
+      ],
+      "parent_star_id": "tier_3_anchor_star",
+      "parent_star_name": "Tier 3 Star",
+      "listener_type": "activate_event_on_range",
+      "trigger_event_id": "vayrax_lane_017_event",
+      "start_step": "vayrax_lane_017_intro_popup",
+      "trigger_range": 500,
+      "trigger_once": true,
+      "triggered": false,
+      "trigger_popup_message": "",
+      "suppress_trigger_popup": true,
+      "triggered_message": "Vayrax Lane 017 contact resolved near Tier 3 Star Planet 3.",
+      "message": "A Vayrax lane signal hides in the normal scan noise around Tier 3 Star Planet 3.",
+      "is_visible": false,
+      "is_discovered": false,
+      "is_completed": false,
+      "labels": [
+        "beacon",
+        "event_listener",
+        "activate_event_on_range",
+        "vayrax",
+        "vayrax_lane",
+        "vayrax_lane_017",
+        "hidden_listener",
+        "invisible_listener",
+        "camouflaged_signal",
+        "tier_3",
+        "tier_3_anchor_star",
+        "planet_anchor_listener",
+        "authored_object"
+      ]
+    }
+  },
+  "event_objects": {
+    "tier_3_anchor_star_planet_03": {
+      "owner_type": "planet",
+      "object_type": "planet",
+      "object_id": "tier_3_anchor_star_planet_03",
+      "display_name": "Tier 3 Star Planet 3",
+      "title": "Tier 3 Star Planet 3",
+      "scan_name": "Tier 3 Star Planet 3",
+      "scan_description": "Authored anchor planet 3 orbiting Tier 3 Star.",
+      "position_mode": "absolute",
+      "sector_pos": [
+        20,
+        -1,
+        0
+      ],
+      "local_pos": [
+        627.274,
+        369.72900000000004,
+        466.506
+      ],
+      "tier": 3,
+      "interaction_type": "signal_anchor",
+      "event_id": "vayrax_lane_017_event",
+      "active_event_id": "vayrax_lane_017_event",
+      "has_event": true,
+      "event_interactable": true,
+      "event_ops_enabled": true,
+      "is_visible": true,
+      "is_discovered": false,
+      "planet_type": "ocean",
+      "planet_role": "anchor_planet",
+      "population_state": "quiet",
+      "has_planet_interface": true,
+      "can_land": false,
+      "contact_range": 180,
+      "planet_radius": 5,
+      "orbit_radius": 230,
+      "orbit_angle": 303.6,
+      "services": [
+        "survey_contact"
+      ],
+      "parent_star_id": "tier_3_anchor_star",
+      "parent_star_name": "Tier 3 Star",
+      "anchor_star_id": "tier_3_anchor_star",
+      "anchor_star_name": "Tier 3 Star",
+      "labels": [
+        "planet",
+        "world_seed",
+        "event_anchor",
+        "vayrax_lane",
+        "vayrax_lane_017",
+        "tier_3",
+        "tier_3_anchor_star",
+        "planet_anchor",
+        "authored_object",
+        "event_object"
+      ]
+    },
+    "vayrax_lane_017_drone": {
+      "owner_type": "enemy",
+      "object_type": "enemy",
+      "object_id": "vayrax_lane_017_drone",
+      "enemy_id": "vayrax_lane_017_drone",
+      "display_name": "Vayrax Drone 017",
+      "name": "Vayrax Drone 017",
+      "blueprint_id": "vayrax_drone_017",
+      "spawn_on_step": "vayrax_lane_017_enemy_profile_popup",
+      "position_mode": "absolute",
+      "sector_pos": [
+        20,
+        -1,
+        0
+      ],
+      "local_pos": [
+        757.274,
+        379.729,
+        466.506
+      ],
+      "parent_star_id": "tier_3_anchor_star",
+      "parent_star_name": "Tier 3 Star",
+      "event_id": "vayrax_lane_017_event",
+      "active_event_id": "vayrax_lane_017_event",
+      "required_step": "vayrax_lane_017_enemy_profile_popup",
+      "event_step": "vayrax_lane_017_enemy_profile_popup",
+      "current_step": "vayrax_lane_017_enemy_profile_popup",
+      "has_event": true,
+      "labels": [
+        "enemy",
+        "event_enemy",
+        "vayrax",
+        "drone",
+        "vayrax_drone_017",
+        "vayrax_lane",
+        "vayrax_lane_017",
+        "tier_3",
+        "tier_3_anchor_star_planet_03",
+        "near_tier_3_anchor_star_planet_03"
+      ],
+      "event_tags": [
+        "vayrax_lane_017_event",
+        "vayrax",
+        "vayrax_lane_017",
+        "lane_battle"
+      ],
+      "overrides": {
+        "hp": 675,
+        "max_hp": 675,
+        "hull": 675,
+        "max_hull": 675,
+        "attack": 49,
+        "energy_max": 625.0,
+        "max_energy": 625,
+        "energy": 625,
+        "primary": "guardian_suppression_beam_mk3",
+        "primary_weapon": "guardian_suppression_beam_mk3",
+        "secondary": "guardian_punch_driver_mk3",
+        "secondary_weapon": "guardian_punch_driver_mk3",
+        "shield": "guardian_lock_barrier_mk3",
+        "shield_item": "guardian_lock_barrier_mk3",
+        "consumable": "recharge_kit",
+        "consumable_item": "recharge_kit",
+        "item_stacks": {
+          "medium_kinetic_rounds": 18,
+          "large_kinetic_rounds": 6,
+          "recharge_kit": 1
+        },
+        "behavior_profile": "smart_guy_tactician",
+        "behavior_values": {
+          "decision_cooldown": 0.95,
+          "low_hull_evade_threshold": 0.32,
+          "repair_hull_threshold": 0.37,
+          "shield_switch_min_cooldown_seconds": 8.0,
+          "low_energy_secondary_threshold": 0.46
+        },
+        "reward": [
+          "cobalt",
+          "nickel",
+          "medium_kinetic_rounds"
+        ],
+        "reward_items": [
+          "cobalt",
+          "nickel",
+          "medium_kinetic_rounds"
+        ],
+        "ship_name": "Vayrax Drone 017"
+      },
+      "is_visible": true,
+      "is_discovered": false
+    }
+  },
+  "required_items": [],
+  "reward_packet": {
+    "credits": 0,
+    "items": [],
+    "blueprints": [],
+    "lore": [],
+    "unlocks": [],
+    "message": "Vayrax Lane 017 complete. Blueprint reward claimed with gives_item."
+  },
+  "steps": {
+    "vayrax_lane_017_intro_popup": {
+      "objective_text": "A Vayrax lane signal has resolved near Tier 3 Star Planet 3.",
+      "target_object_id": "tier_3_anchor_star_planet_03",
+      "target_owner_type": "planet",
+      "interaction_type": "story_popup",
+      "next_step": "vayrax_lane_017_enemy_profile_popup",
+      "on_enter": [
+        {
+          "op": "show_story_popup",
+          "title": "SEVENTEEN ELEGANT: ROUTE CLAIMED",
+          "text": "[b]VAYRAX DRONE 017[/b]\n\n\"Seventeen spends nothing twice.\"\n\n\"Your best route now belongs to me.\"\n\n\"Correction has become elegant.\"",
+          "close_mode": "button",
+          "next_step_on_close": "vayrax_lane_017_enemy_profile_popup",
+          "popup_size": {
+            "x": 560,
+            "y": 360
+          }
+        }
+      ]
+    },
+    "vayrax_lane_017_enemy_profile_popup": {
+      "objective_text": "Review the Vayrax Drone 017 contact profile.",
+      "target_object_id": "vayrax_lane_017_drone",
+      "target_owner_type": "enemy",
+      "interaction_type": "story_popup",
+      "next_step": "vayrax_lane_017_ready_to_fight",
+      "on_enter": [
+        {
+          "op": "install_event_object",
+          "object_id": "vayrax_lane_017_drone"
+        },
+        {
+          "op": "show_story_popup",
+          "title": "VAYRAX CONTACT PROFILE",
+          "text": "[b]Enemy Handler Source[/b]\n`vayrax_drone_017`\n\n[b]Battle Object[/b]\n`vayrax_lane_017_drone`\n\n[b]Behavior Profile[/b]\n`smart_guy_tactician`\n\n[b]Stats[/b]\nHull: 675 / 675\nHP: 675\nEnergy Max: 625\n\n[b]Loadout[/b]\nPrimary: `guardian_suppression_beam_mk3`\nSecondary: `guardian_punch_driver_mk3`\nShield: `guardian_lock_barrier_mk3`\nConsumable: `recharge_kit`\nItem Stacks: `medium_kinetic_rounds` x18, `large_kinetic_rounds` x6, `recharge_kit` x1\n\n[b]Reward On Victory[/b]\n`anchor_barrier_mk3_blueprint`",
+          "close_mode": "button",
+          "next_step_on_close": "vayrax_lane_017_ready_to_fight",
+          "popup_size": {
+            "x": 620,
+            "y": 500
+          }
+        }
+      ]
+    },
+    "vayrax_lane_017_ready_to_fight": {
+      "objective_text": "Move within 30 units of Vayrax Drone 017, then press READY to engage.",
+      "target_object_id": "vayrax_lane_017_drone",
+      "target_owner_type": "enemy",
+      "interaction_type": "handoff",
+      "interaction_range": 30,
+      "next_step": "vayrax_lane_017_start_battle",
+      "actions": [
+        {
+          "button_id": "vayrax_lane_017_ready_button",
+          "label": "READY",
+          "action_id": "download_beacon_data",
+          "range": 30
+        }
+      ],
+      "success_text": "Vayrax Lane 017 engagement accepted."
+    },
+    "vayrax_lane_017_start_battle": {
+      "objective_text": "Battle: Vayrax Drone 017.",
+      "target_object_id": "vayrax_lane_017_drone",
+      "target_owner_type": "enemy",
+      "enemy_id": "vayrax_lane_017_drone",
+      "interaction_type": "hunt",
+      "interaction_range": 30,
+      "complete_on_battle_victory": true,
+      "next_step": "vayrax_lane_017_victory_popup",
+      "on_enter": [
+        {
+          "op": "start_battle",
+          "enemy_id": "vayrax_lane_017_drone",
+          "entry_reason": "vayrax_lane_017_seventeen_elegant",
+          "message": "Vayrax Drone 017 engaged."
+        }
+      ],
+      "on_battle_victory": [
+        {
+          "op": "write_log",
+          "message": "Vayrax Lane 017 defeated: Seventeen Elegant."
+        },
+        {
+          "op": "advance_step",
+          "next_step": "vayrax_lane_017_victory_popup"
+        }
+      ]
+    },
+    "vayrax_lane_017_victory_popup": {
+      "objective_text": "Review Vayrax Lane 017 victory report.",
+      "interaction_type": "story_popup",
+      "next_step": "vayrax_lane_017_claim_reward",
+      "on_enter": [
+        {
+          "op": "show_story_popup",
+          "title": "VAYRAX LANE 017 CLEARED",
+          "text": "[b]SEVENTEEN ELEGANT DEFEATED[/b]\n\nThe Vayrax lane signal collapses into local static.\n\nBlueprint reward ready:\n`anchor_barrier_mk3_blueprint`",
+          "close_mode": "button",
+          "next_step_on_close": "vayrax_lane_017_claim_reward",
+          "popup_size": {
+            "x": 560,
+            "y": 360
+          }
+        }
+      ]
+    },
+    "vayrax_lane_017_claim_reward": {
+      "objective_text": "Press COMPLETE near Tier 3 Star Planet 3 to claim the Anchor Barrier MK3 Blueprint and clear Vayrax Lane 017.",
+      "target_object_id": "tier_3_anchor_star_planet_03",
+      "target_owner_type": "planet",
+      "interaction_type": "handoff",
+      "interaction_range": 9999,
+      "next_step": "completed",
+      "actions": [
+        {
+          "button_id": "vayrax_lane_017_complete_button",
+          "label": "COMPLETE",
+          "action_id": "download_beacon_data",
+          "range": 9999
+        }
+      ],
+      "gives_item": "anchor_barrier_mk3_blueprint",
+      "success_text": "Anchor Barrier MK3 Blueprint received. Vayrax Lane 017 complete."
+    },
+    "completed": {
+      "objective_text": "Vayrax Lane 017 complete.",
+      "interaction_type": "complete",
+      "is_complete_step": true,
+      "complete_event": true
+    }
+  }
+}

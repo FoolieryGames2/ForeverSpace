@@ -1,0 +1,371 @@
+{
+  "event_id": "vayrax_lane_013_event",
+  "display_name": "Vayrax Lane 013: Thirteen Proof",
+  "description": "Pass 006 Vayrax lane event using the proven Lane 001–010 pattern: existing anchor copied into event_objects, one hidden 500-unit activate_event_on_range listener, explicit enemy install before profile popup, READY button with 30-unit range, battle on next step, victory popup, gives_item blueprint reward, then complete. This lane uses planned blueprint reward `micro_torpedo_launcher_blueprint`.",
+  "event_state": "seeded",
+  "current_step": "vayrax_lane_013_intro_popup",
+  "start_on_ready": false,
+  "seed_once": true,
+  "can_cancel_event": true,
+  "tier": 2,
+  "anchor_star": {
+    "star_id": "star_10_anchor",
+    "star_name": "Star 10",
+    "sector_pos": [
+      11,
+      -2,
+      0
+    ],
+    "local_pos": [
+      381.266,
+      449.56,
+      517.303
+    ],
+    "required": true,
+    "create_if_missing": false,
+    "tier": 2
+  },
+  "event_listeners": {
+    "vayrax_lane_013_listener": {
+      "owner_type": "beacon",
+      "object_type": "beacon",
+      "object_id": "vayrax_lane_013_listener",
+      "display_name": "Vayrax Lane 013 Signal Listener",
+      "title": "Vayrax Lane 013 Signal Listener",
+      "beacon_type": "hidden_event_listener_beacon",
+      "position_mode": "absolute",
+      "sector_pos": [
+        11,
+        -2,
+        0
+      ],
+      "local_pos": [
+        381.266,
+        449.56,
+        517.303
+      ],
+      "parent_star_id": "star_10_anchor",
+      "parent_star_name": "Star 10",
+      "listener_type": "activate_event_on_range",
+      "trigger_event_id": "vayrax_lane_013_event",
+      "start_step": "vayrax_lane_013_intro_popup",
+      "trigger_range": 500,
+      "trigger_once": true,
+      "triggered": false,
+      "trigger_popup_message": "",
+      "suppress_trigger_popup": true,
+      "triggered_message": "Vayrax Lane 013 contact resolved near Star 10 Planet 1.",
+      "message": "A Vayrax lane signal hides in the normal scan noise around Star 10 Planet 1.",
+      "is_visible": false,
+      "is_discovered": false,
+      "is_completed": false,
+      "labels": [
+        "beacon",
+        "event_listener",
+        "activate_event_on_range",
+        "vayrax",
+        "vayrax_lane",
+        "vayrax_lane_013",
+        "hidden_listener",
+        "invisible_listener",
+        "camouflaged_signal",
+        "tier_2",
+        "star_10_anchor",
+        "planet_anchor_listener",
+        "authored_object"
+      ]
+    }
+  },
+  "event_objects": {
+    "star_10_anchor_planet_01": {
+      "owner_type": "planet",
+      "object_type": "planet",
+      "object_id": "star_10_anchor_planet_01",
+      "display_name": "Star 10 Planet 1",
+      "title": "Star 10 Planet 1",
+      "scan_name": "Star 10 Planet 1",
+      "scan_description": "Authored anchor planet 1 orbiting Star 10.",
+      "position_mode": "absolute",
+      "sector_pos": [
+        11,
+        -2,
+        0
+      ],
+      "local_pos": [
+        381.266,
+        449.56,
+        517.303
+      ],
+      "tier": 2,
+      "interaction_type": "signal_anchor",
+      "event_id": "vayrax_lane_013_event",
+      "active_event_id": "vayrax_lane_013_event",
+      "has_event": true,
+      "event_interactable": true,
+      "event_ops_enabled": true,
+      "is_visible": true,
+      "is_discovered": false,
+      "planet_type": "colony_world",
+      "planet_role": "anchor_planet",
+      "population_state": "outpost",
+      "has_planet_interface": true,
+      "can_land": false,
+      "contact_range": 180,
+      "planet_radius": 6,
+      "orbit_radius": 140,
+      "orbit_angle": 211.99,
+      "services": [
+        "survey_contact"
+      ],
+      "parent_star_id": "star_10_anchor",
+      "parent_star_name": "Star 10",
+      "anchor_star_id": "star_10_anchor",
+      "anchor_star_name": "Star 10",
+      "labels": [
+        "planet",
+        "world_seed",
+        "event_anchor",
+        "vayrax_lane",
+        "vayrax_lane_013",
+        "tier_2",
+        "star_10_anchor",
+        "planet_anchor",
+        "authored_object",
+        "event_object"
+      ]
+    },
+    "vayrax_lane_013_drone": {
+      "owner_type": "enemy",
+      "object_type": "enemy",
+      "object_id": "vayrax_lane_013_drone",
+      "enemy_id": "vayrax_lane_013_drone",
+      "display_name": "Vayrax Drone 013",
+      "name": "Vayrax Drone 013",
+      "blueprint_id": "vayrax_drone_013",
+      "spawn_on_step": "vayrax_lane_013_enemy_profile_popup",
+      "position_mode": "absolute",
+      "sector_pos": [
+        11,
+        -2,
+        0
+      ],
+      "local_pos": [
+        511.266,
+        459.56,
+        517.303
+      ],
+      "parent_star_id": "star_10_anchor",
+      "parent_star_name": "Star 10",
+      "event_id": "vayrax_lane_013_event",
+      "active_event_id": "vayrax_lane_013_event",
+      "required_step": "vayrax_lane_013_enemy_profile_popup",
+      "event_step": "vayrax_lane_013_enemy_profile_popup",
+      "current_step": "vayrax_lane_013_enemy_profile_popup",
+      "has_event": true,
+      "labels": [
+        "enemy",
+        "event_enemy",
+        "vayrax",
+        "drone",
+        "vayrax_drone_013",
+        "vayrax_lane",
+        "vayrax_lane_013",
+        "tier_2",
+        "star_10_anchor_planet_01",
+        "near_star_10_anchor_planet_01"
+      ],
+      "event_tags": [
+        "vayrax_lane_013_event",
+        "vayrax",
+        "vayrax_lane_013",
+        "lane_battle"
+      ],
+      "overrides": {
+        "hp": 485,
+        "max_hp": 485,
+        "hull": 485,
+        "max_hull": 485,
+        "attack": 37,
+        "energy_max": 465.0,
+        "max_energy": 465,
+        "energy": 465,
+        "primary": "guardian_suppression_beam_mk3",
+        "primary_weapon": "guardian_suppression_beam_mk3",
+        "secondary": "raider_spike_mortar_mk2",
+        "secondary_weapon": "raider_spike_mortar_mk2",
+        "shield": "raider_plate_screen_mk2",
+        "shield_item": "raider_plate_screen_mk2",
+        "consumable": "breach_charge",
+        "consumable_item": "breach_charge",
+        "item_stacks": {
+          "large_kinetic_rounds": 6,
+          "medium_kinetic_rounds": 10,
+          "breach_charge": 1
+        },
+        "behavior_profile": "smart_guy_bomber",
+        "behavior_values": {
+          "decision_cooldown": 1.05,
+          "low_hull_evade_threshold": 0.25,
+          "repair_hull_threshold": 0.3,
+          "explosive_player_threshold": 0.58,
+          "execute_player_threshold": 0.5
+        },
+        "reward": [
+          "cobalt",
+          "large_kinetic_rounds",
+          "breach_charge"
+        ],
+        "reward_items": [
+          "cobalt",
+          "large_kinetic_rounds",
+          "breach_charge"
+        ],
+        "ship_name": "Vayrax Drone 013"
+      },
+      "is_visible": true,
+      "is_discovered": false
+    }
+  },
+  "required_items": [],
+  "reward_packet": {
+    "credits": 0,
+    "items": [],
+    "blueprints": [],
+    "lore": [],
+    "unlocks": [],
+    "message": "Vayrax Lane 013 complete. Blueprint reward claimed with gives_item."
+  },
+  "steps": {
+    "vayrax_lane_013_intro_popup": {
+      "objective_text": "A Vayrax lane signal has resolved near Star 10 Planet 1.",
+      "target_object_id": "star_10_anchor_planet_01",
+      "target_owner_type": "planet",
+      "interaction_type": "story_popup",
+      "next_step": "vayrax_lane_013_enemy_profile_popup",
+      "on_enter": [
+        {
+          "op": "show_story_popup",
+          "title": "THIRTEEN PROOF: TRANSLATED CERTAINTY",
+          "text": "[b]VAYRAX DRONE 013[/b]\n\n\"Thirteen carries an ugly proof.\"\n\n\"Distance will not make this gentle.\"\n\n\"Brace for translated certainty.\"",
+          "close_mode": "button",
+          "next_step_on_close": "vayrax_lane_013_enemy_profile_popup",
+          "popup_size": {
+            "x": 560,
+            "y": 360
+          }
+        }
+      ]
+    },
+    "vayrax_lane_013_enemy_profile_popup": {
+      "objective_text": "Review the Vayrax Drone 013 contact profile.",
+      "target_object_id": "vayrax_lane_013_drone",
+      "target_owner_type": "enemy",
+      "interaction_type": "story_popup",
+      "next_step": "vayrax_lane_013_ready_to_fight",
+      "on_enter": [
+        {
+          "op": "install_event_object",
+          "object_id": "vayrax_lane_013_drone"
+        },
+        {
+          "op": "show_story_popup",
+          "title": "VAYRAX CONTACT PROFILE",
+          "text": "[b]Enemy Handler Source[/b]\n`vayrax_drone_013`\n\n[b]Battle Object[/b]\n`vayrax_lane_013_drone`\n\n[b]Behavior Profile[/b]\n`smart_guy_bomber`\n\n[b]Stats[/b]\nHull: 485 / 485\nHP: 485\nEnergy Max: 465\n\n[b]Loadout[/b]\nPrimary: `guardian_suppression_beam_mk3`\nSecondary: `raider_spike_mortar_mk2`\nShield: `raider_plate_screen_mk2`\nConsumable: `breach_charge`\nItem Stacks: `large_kinetic_rounds` x6, `medium_kinetic_rounds` x10, `breach_charge` x1\n\n[b]Reward On Victory[/b]\n`micro_torpedo_launcher_blueprint`",
+          "close_mode": "button",
+          "next_step_on_close": "vayrax_lane_013_ready_to_fight",
+          "popup_size": {
+            "x": 620,
+            "y": 500
+          }
+        }
+      ]
+    },
+    "vayrax_lane_013_ready_to_fight": {
+      "objective_text": "Move within 30 units of Vayrax Drone 013, then press READY to engage.",
+      "target_object_id": "vayrax_lane_013_drone",
+      "target_owner_type": "enemy",
+      "interaction_type": "handoff",
+      "interaction_range": 30,
+      "next_step": "vayrax_lane_013_start_battle",
+      "actions": [
+        {
+          "button_id": "vayrax_lane_013_ready_button",
+          "label": "READY",
+          "action_id": "download_beacon_data",
+          "range": 30
+        }
+      ],
+      "success_text": "Vayrax Lane 013 engagement accepted."
+    },
+    "vayrax_lane_013_start_battle": {
+      "objective_text": "Battle: Vayrax Drone 013.",
+      "target_object_id": "vayrax_lane_013_drone",
+      "target_owner_type": "enemy",
+      "enemy_id": "vayrax_lane_013_drone",
+      "interaction_type": "hunt",
+      "interaction_range": 30,
+      "complete_on_battle_victory": true,
+      "next_step": "vayrax_lane_013_victory_popup",
+      "on_enter": [
+        {
+          "op": "start_battle",
+          "enemy_id": "vayrax_lane_013_drone",
+          "entry_reason": "vayrax_lane_013_thirteen_proof",
+          "message": "Vayrax Drone 013 engaged."
+        }
+      ],
+      "on_battle_victory": [
+        {
+          "op": "write_log",
+          "message": "Vayrax Lane 013 defeated: Thirteen Proof."
+        },
+        {
+          "op": "advance_step",
+          "next_step": "vayrax_lane_013_victory_popup"
+        }
+      ]
+    },
+    "vayrax_lane_013_victory_popup": {
+      "objective_text": "Review Vayrax Lane 013 victory report.",
+      "interaction_type": "story_popup",
+      "next_step": "vayrax_lane_013_claim_reward",
+      "on_enter": [
+        {
+          "op": "show_story_popup",
+          "title": "VAYRAX LANE 013 CLEARED",
+          "text": "[b]THIRTEEN PROOF DEFEATED[/b]\n\nThe Vayrax lane signal collapses into local static.\n\nBlueprint reward ready:\n`micro_torpedo_launcher_blueprint`",
+          "close_mode": "button",
+          "next_step_on_close": "vayrax_lane_013_claim_reward",
+          "popup_size": {
+            "x": 560,
+            "y": 360
+          }
+        }
+      ]
+    },
+    "vayrax_lane_013_claim_reward": {
+      "objective_text": "Press COMPLETE near Star 10 Planet 1 to claim the Micro Torpedo Launcher Blueprint and clear Vayrax Lane 013.",
+      "target_object_id": "star_10_anchor_planet_01",
+      "target_owner_type": "planet",
+      "interaction_type": "handoff",
+      "interaction_range": 9999,
+      "next_step": "completed",
+      "actions": [
+        {
+          "button_id": "vayrax_lane_013_complete_button",
+          "label": "COMPLETE",
+          "action_id": "download_beacon_data",
+          "range": 9999
+        }
+      ],
+      "gives_item": "micro_torpedo_launcher_blueprint",
+      "success_text": "Micro Torpedo Launcher Blueprint received. Vayrax Lane 013 complete."
+    },
+    "completed": {
+      "objective_text": "Vayrax Lane 013 complete.",
+      "interaction_type": "complete",
+      "is_complete_step": true,
+      "complete_event": true
+    }
+  }
+}

@@ -1,0 +1,176 @@
+{
+  "event_id": "faint_distress_wreckage_001",
+  "display_name": "Faint Distress Wreckage",
+  "description": "A quiet side discovery near Aster Local 10. A faint distress beacon resolves into an unidentifiable wreckage. The player can inspect it and recover a small combat blueprint.",
+  "event_state": "seeded",
+  "current_step": "travel_to_faint_distress_wreckage",
+  "start_on_ready": false,
+  "seed_once": true,
+  "can_cancel_event": false,
+  "tier": 1,
+  "anchor_star": {
+	"star_id": "star_30_tier_1_local",
+	"star_name": "Aster Local 10",
+	"sector_pos": [
+	  3,
+	  2,
+	  -1
+	],
+	"local_pos": [
+	  500,
+	  500,
+	  500
+	],
+	"required": true,
+	"create_if_missing": false
+  },
+  "giver": {},
+  "event_listeners": {},
+  "event_objects": {
+	"unidentified_wreckage_001": {
+	  "owner_type": "space_object",
+	  "object_type": "wreckage",
+	  "object_id": "unidentified_wreckage_001",
+	  "id": "unidentified_wreckage_001",
+	  "display_name": "Unidentified Wreckage",
+	  "title": "Unidentified Wreckage",
+	  "scan_name": "Unidentified Wreckage",
+	  "scan_description": "A broken hull fragment drifting near Aster Local 10. No registry returns, and the distress carrier is too degraded to identify.",
+	  "contact_text": "A faint distress beacon is bleeding through the wreckage.",
+	  "position_mode": "absolute",
+	  "sector_pos": [
+		3,
+		2,
+		-1
+	  ],
+	  "local_pos": [
+		705,
+		455,
+		560
+	  ],
+	  "parent_star_id": "star_30_tier_1_local",
+	  "parent_star_name": "Aster Local 10",
+	  "tier": 1,
+	  "mineable": false,
+	  "event_interactable": true,
+	  "event_ops_enabled": true,
+	  "interaction_type": "salvage",
+	  "resource_type": "salvage",
+	  "danger_level": 0,
+	  "resource_value": 1,
+	  "has_event": true,
+	  "event_id": "faint_distress_wreckage_001",
+	  "active_event_id": "faint_distress_wreckage_001",
+	  "required_step": "travel_to_faint_distress_wreckage",
+	  "event_step": "travel_to_faint_distress_wreckage",
+	  "current_step": "travel_to_faint_distress_wreckage",
+	  "is_visible": true,
+	  "is_discovered": false,
+	  "is_completed": false,
+	  "labels": [
+		"space_object",
+		"wreckage",
+		"event_object",
+		"story_prop",
+		"salvageable",
+		"faint_distress_beacon",
+		"unidentified_wreckage",
+		"mysterious_signal",
+		"tier_1",
+		"aster_local_10",
+		"near_star_30_tier_1_local",
+        "moved_off_opening_path"
+	  ]
+	}
+  },
+  "reward_packet": {
+	"credits": 0,
+	"items": [],
+	"blueprints": [],
+	"lore": [],
+	"unlocks": [],
+	"message": "Faint distress wreckage logged. Pulse Laser Mk1 Blueprint recovered."
+  },
+  "steps": {
+	"travel_to_faint_distress_wreckage": {
+	  "objective_text": "A faint distress beacon has been detected near Aster Local 10. Use Auto Pilot to investigate the signal source.",
+	  "target_object_id": "unidentified_wreckage_001",
+	  "target_owner_type": "space_object",
+	  "arrival_range": 50,
+	  "interaction_type": "find",
+	  "next_step": "inspect_unidentified_wreckage",
+	  "on_arrival": [
+		{
+		  "op": "show_story_popup",
+		  "title": "FAINT DISTRESS BEACON",
+		  "text": "[b]SIGNAL SOURCE FOUND[/b]\n\nThe faint beacon resolves into a broken section of hull drifting cold near Aster Local 10.\n\nNo registry returns.\nNo clean transponder.\nNo visible life signs.\n\nThe wreckage is unidentifiable, but something inside it is still answering your scan.",
+		  "close_mode": "button",
+		  "popup_size": {
+			"x": 560,
+			"y": 360
+		  }
+		},
+		{
+		  "op": "advance_step",
+		  "next_step": "inspect_unidentified_wreckage"
+		}
+	  ]
+	},
+	"inspect_unidentified_wreckage": {
+	  "objective_text": "Inspect the unidentified wreckage.",
+	  "target_object_id": "unidentified_wreckage_001",
+	  "target_owner_type": "space_object",
+	  "interaction_range": 75,
+	  "interaction_type": "salvage",
+	  "gives_item": "pulse_laser_mk1_blueprint",
+	  "next_step": "tom_wreckage_reaction",
+	  "success_text": "Pulse Laser Mk1 Blueprint recovered from the wreckage.",
+	  "actions": [
+		{
+		  "button_id": "inspect_unidentified_wreckage",
+		  "label": "INSPECT WRECKAGE",
+		  "action_id": "download_beacon_data",
+		  "range": 75
+		}
+	  ]
+	},
+	"tom_wreckage_reaction": {
+	  "objective_text": "Review story beat: TOM",
+	  "interaction_type": "story_popup",
+	  "target_object_id": "unidentified_wreckage_001",
+	  "target_owner_type": "space_object",
+	  "next_step": "faint_distress_wreckage_complete",
+	  "on_enter": [
+		{
+		  "op": "show_story_popup",
+		  "title": "TOM",
+		  "text": "[b]TOM[/b]\n\nSomething bad happened here...",
+		  "close_mode": "button",
+		  "next_step_on_close": "faint_distress_wreckage_complete",
+		  "images": [
+			{
+			  "path": "res://images/Tom.png"
+			}
+		  ],
+		  "image_height": 140,
+		  "popup_size": {
+			"x": 580,
+			"y": 430
+		  }
+		}
+	  ]
+	},
+	"faint_distress_wreckage_complete": {
+	  "objective_text": "Faint distress wreckage investigated. Pulse Laser Mk1 Blueprint recovered.",
+	  "target_object_id": "unidentified_wreckage_001",
+	  "target_owner_type": "space_object",
+	  "interaction_type": "complete",
+	  "is_complete_step": true,
+	  "complete_event": true
+	}
+  },
+  "handoff_notes": [
+	"Immersive pass: converted the working wreckage side event into a faint distress beacon discovery.",
+    "Blueprint reward uses the proven gives_item path on the inspect step: pulse_laser_mk1_blueprint. reward_packet.blueprints is left empty because the current handler grants reward_packet.items only."
+  ]
+}

@@ -1,0 +1,250 @@
+{
+	"autosave_path": "res://save/universe_save.json",
+	"schema_version": 1,
+	"slots": [
+		{
+			"created_at_text": "2026-06-22 20:45:35",
+			"created_at_unix": 1782175535.0,
+			"display_name": "after_wake_opening",
+			"last_loaded_at_text": "2026-06-23 11:16:12",
+			"last_loaded_at_unix": 1782227772.0,
+			"path": "res://save/named/after_wake_opening_20260622_204535_78896.json",
+			"save_version": 3.0,
+			"slot_id": "after_wake_opening_20260622_204535_78896",
+			"summary": ""
+		},
+		{
+			"created_at_text": "2026-06-22 20:47:41",
+			"created_at_unix": 1782175661.0,
+			"display_name": "trave_to_melissa_beacon",
+			"last_loaded_at_text": "2026-06-22 21:04:08",
+			"last_loaded_at_unix": 1782176648.0,
+			"path": "res://save/named/trave_to_melissa_beacon_20260622_204741_204965.json",
+			"save_version": 3.0,
+			"slot_id": "trave_to_melissa_beacon_20260622_204741_204965",
+			"summary": "testing the notes.  this is step check"
+		},
+		{
+			"created_at_text": "2026-06-22 21:04:58",
+			"created_at_unix": 1782176698.0,
+			"display_name": "accept_melissa_exchange_offer",
+			"last_loaded_at_text": "2026-06-23 08:57:27",
+			"last_loaded_at_unix": 1782219447.0,
+			"path": "res://save/named/accept_melissa_exchange_20260622_210458_120208.json",
+			"save_version": 3.0,
+			"slot_id": "accept_melissa_exchange__20260622_210458_120208",
+			"summary": ""
+		},
+		{
+			"created_at_text": "2026-06-23 09:04:17",
+			"created_at_unix": 1782219857.0,
+			"display_name": "end chapter 2 handoff",
+			"last_loaded_at_text": "2026-06-25 13:35:28",
+			"last_loaded_at_unix": 1782408928.0,
+			"path": "res://save/named/end_chapter_2_handoff_20260623_090417_175641.json",
+			"save_version": 3.0,
+			"slot_id": "end_chapter_2_handoff_20260623_090417_175641",
+			"summary": "right before battle"
+		},
+		{
+			"created_at_text": "2026-06-23 09:32:58",
+			"created_at_unix": 1782221578.0,
+			"display_name": "actually chapter 002 handoff",
+			"last_loaded_at_text": "2026-06-23 13:24:42",
+			"last_loaded_at_unix": 1782235482.0,
+			"path": "res://save/named/actually_chapter_002_han_20260623_093258_168031.json",
+			"save_version": 3.0,
+			"slot_id": "actually_chapter_002_han_20260623_093258_168031",
+			"summary": "just waiting for complete button.  the perfect spot for hand off"
+		},
+		{
+			"created_at_text": "2026-06-23 14:18:19",
+			"created_at_unix": 1782238699.0,
+			"display_name": "first melissa battle",
+			"last_loaded_at_text": "2026-06-26 03:49:58",
+			"last_loaded_at_unix": 1782460198.0,
+			"path": "res://save/named/first_melissa_battle_20260623_141819_129664.json",
+			"save_version": 3.0,
+			"slot_id": "first_melissa_battle_20260623_141819_129664",
+			"summary": "have test items here"
+		},
+		{
+			"created_at_text": "2026-06-23 14:26:26",
+			"created_at_unix": 1782239186.0,
+			"display_name": "1",
+			"last_loaded_at_text": "2026-06-23 14:44:47",
+			"last_loaded_at_unix": 1782240287.0,
+			"path": "res://save/named/1_20260623_142626_118297.json",
+			"save_version": 3.0,
+			"slot_id": "1_20260623_142626_118297",
+			"summary": ""
+		},
+		{
+			"created_at_text": "2026-06-24 08:46:34",
+			"created_at_unix": 1782305194.0,
+			"display_name": "2",
+			"last_loaded_at_text": "2026-06-24 08:48:00",
+			"last_loaded_at_unix": 1782305280.0,
+			"path": "res://save/named/2_20260624_084634_143772.json",
+			"save_version": 3.0,
+			"slot_id": "2_20260624_084634_143772",
+			"summary": ""
+		},
+		{
+			"created_at_text": "2026-06-24 08:50:14",
+			"created_at_unix": 1782305414.0,
+			"display_name": "3",
+			"last_loaded_at_text": "2026-06-26 03:49:30",
+			"last_loaded_at_unix": 1782460170.0,
+			"path": "res://save/named/3_20260624_085014_137280.json",
+			"save_version": 3.0,
+			"slot_id": "3_20260624_085014_137280",
+			"summary": ""
+		},
+		{
+			"created_at_text": "2026-06-24 09:10:50",
+			"created_at_unix": 1782306650.0,
+			"display_name": "after chapter two fight handoff",
+			"path": "res://save/named/after_chapter_two_fight_20260624_091050_567621.json",
+			"save_version": 3.0,
+			"slot_id": "after_chapter_two_fight__20260624_091050_567621",
+			"summary": "all was good.   i like cookies"
+		},
+		{
+			"created_at_text": "2026-06-26 04:17:05",
+			"created_at_unix": 1782461825.0,
+			"display_name": "item testeing. need toheal",
+			"last_loaded_at_text": "2026-06-26 04:24:34",
+			"last_loaded_at_unix": 1782462274.0,
+			"path": "res://save/named/item_testeing_need_tohea_20260626_041705_99563.json",
+			"save_version": 3.0,
+			"slot_id": "item_testeing_need_tohea_20260626_041705_99563",
+			"summary": ""
+		},
+		{
+			"created_at_text": "2026-06-26 04:25:51",
+			"created_at_unix": 1782462351.0,
+			"display_name": "1",
+			"last_loaded_at_text": "2026-06-26 05:10:09",
+			"last_loaded_at_unix": 1782465009.0,
+			"path": "res://save/named/1_20260626_042551_80759.json",
+			"save_version": 3.0,
+			"slot_id": "1_20260626_042551_80759",
+			"summary": ""
+		},
+		{
+			"created_at_text": "2026-06-26 12:48:29",
+			"created_at_unix": 1782492509.0,
+			"display_name": "prebattle melissa first contact",
+			"last_loaded_at_text": "2026-06-26 13:30:53",
+			"last_loaded_at_unix": 1782495053.0,
+			"path": "res://save/named/prebattle_melissa_first_20260626_124829_140811.json",
+			"save_version": 3.0,
+			"slot_id": "prebattle_melissa_first__20260626_124829_140811",
+			"summary": ""
+		},
+		{
+			"created_at_text": "2026-06-26 13:11:56",
+			"created_at_unix": 1782493916.0,
+			"display_name": "chapter 2 handoff",
+			"last_loaded_at_text": "2026-06-26 13:21:03",
+			"last_loaded_at_unix": 1782494463.0,
+			"path": "res://save/named/chapter_2_handoff_20260626_131156_102587.json",
+			"save_version": 3.0,
+			"slot_id": "chapter_2_handoff_20260626_131156_102587",
+			"summary": "v1"
+		},
+		{
+			"created_at_text": "2026-06-26 13:31:51",
+			"created_at_unix": 1782495111.0,
+			"display_name": "1 handoff",
+			"last_loaded_at_text": "2026-06-26 13:34:09",
+			"last_loaded_at_unix": 1782495249.0,
+			"path": "res://save/named/1_handoff_20260626_133151_69283.json",
+			"save_version": 3.0,
+			"slot_id": "1_handoff_20260626_133151_69283",
+			"summary": "v2"
+		},
+		{
+			"created_at_text": "2026-06-27 03:59:51",
+			"created_at_unix": 1782547191.0,
+			"display_name": "a1",
+			"path": "res://save/named/a1_20260627_035951_55162.json",
+			"save_version": 3.0,
+			"slot_id": "a1_20260627_035951_55162",
+			"summary": ""
+		},
+		{
+			"created_at_text": "2026-06-27 06:05:15",
+			"created_at_unix": 1782554715.0,
+			"display_name": "First battle check point",
+			"path": "res://save/named/first_battle_check_point_20260627_060515_179145.json",
+			"save_version": 3.0,
+			"slot_id": "first_battle_check_point_20260627_060515_179145",
+			"summary": ""
+		},
+		{
+			"created_at_text": "2026-06-27 06:06:15",
+			"created_at_unix": 1782554775.0,
+			"display_name": "after first battle",
+			"last_loaded_at_text": "2026-06-27 07:36:49",
+			"last_loaded_at_unix": 1782560209.0,
+			"path": "res://save/named/after_first_battle_20260627_060615_239671.json",
+			"save_version": 3.0,
+			"slot_id": "after_first_battle_20260627_060615_239671",
+			"summary": ""
+		},
+		{
+			"created_at_text": "2026-06-27 06:06:51",
+			"created_at_unix": 1782554811.0,
+			"display_name": "1 handoff - 2",
+			"path": "res://save/named/1_handoff_2_20260627_060651_275705.json",
+			"save_version": 3.0,
+			"slot_id": "1_handoff_2_20260627_060651_275705",
+			"summary": ""
+		},
+		{
+			"created_at_text": "2026-06-27 06:08:07",
+			"created_at_unix": 1782554887.0,
+			"display_name": "2- handoff -3",
+			"path": "res://save/named/2_handoff_3_20260627_060807_351337.json",
+			"save_version": 3.0,
+			"slot_id": "2_handoff_3_20260627_060807_351337",
+			"summary": ""
+		},
+		{
+			"created_at_text": "2026-06-27 06:09:40",
+			"created_at_unix": 1782554980.0,
+			"display_name": "at vayrax beacon",
+			"last_loaded_at_text": "2026-06-27 06:35:16",
+			"last_loaded_at_unix": 1782556516.0,
+			"path": "res://save/named/at_vayrax_beacon_20260627_060940_444766.json",
+			"save_version": 3.0,
+			"slot_id": "at_vayrax_beacon_20260627_060940_444766",
+			"summary": "chapter 3 -  right before the scene flow"
+		},
+		{
+			"created_at_text": "2026-06-27 06:11:21",
+			"created_at_unix": 1782555081.0,
+			"display_name": "after battle 3",
+			"last_loaded_at_text": "2026-06-27 07:43:55",
+			"last_loaded_at_unix": 1782560635.0,
+			"path": "res://save/named/after_battle_3_20260627_061121_545587.json",
+			"save_version": 3.0,
+			"slot_id": "after_battle_3_20260627_061121_545587",
+			"summary": "before heading back for hand off"
+		},
+		{
+			"created_at_text": "2026-06-27 14:15:33",
+			"created_at_unix": 1782584133,
+			"display_name": "dff",
+			"path": "res://save/named/dff_20260627_141533_34935.json",
+			"save_version": 3,
+			"slot_id": "dff_20260627_141533_34935",
+			"summary": ""
+		}
+	],
+	"storage_root": "res://save",
+	"updated_at_text": "2026-06-27 14:15:33",
+	"updated_at_unix": 1782584133
+}

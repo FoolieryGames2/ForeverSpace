@@ -1,0 +1,94 @@
+--- /mnt/data/battle_v2_scene_drone_runtime_current_truth.gd	2026-07-04 08:01:03.055177626 +0000
++++ /mnt/data/battle_v2_scene_breach_charge_damage_patch.gd	2026-07-04 08:33:24.375270911 +0000
+@@ -1246,6 +1246,29 @@
+ 	battle_v2_procedural_lane_layer.pulse_action(packet)
+ 
+ 
++func push_battle_v2_damage_packet_to_procedural_lane(event_packet: Dictionary, damage_result: Dictionary, explosive_hit: bool) -> void:
++	# Summary: Forward resolved damage as a draw-only packet to the procedural lane layer.
++	# BattleManager already resolved the truth before this point; the lane layer only paints the result.
++	if battle_v2_procedural_lane_layer == null or not is_instance_valid(battle_v2_procedural_lane_layer):
++		return
++	if not battle_v2_procedural_lane_layer.has_method("pulse_damage"):
++		return
++
++	var packet := build_battle_v2_todo_ui_event_summary(event_packet)
++	packet["owner_side"] = get_battle_v2_event_owner_side(event_packet)
++	packet["source_side"] = get_battle_v2_event_owner_side(event_packet)
++	packet["target_side"] = get_battle_v2_event_target_side(event_packet)
++	packet["explosive_hit"] = explosive_hit
++	packet["shield_damage"] = float(damage_result.get("shield_damage", 0.0))
++	packet["hull_damage"] = float(damage_result.get("hull_damage", 0.0))
++	packet["overflow_damage"] = float(damage_result.get("overflow_damage", 0.0))
++	packet["damage_applied"] = bool(damage_result.get("damage_applied", true))
++	packet["duration"] = 0.86 if explosive_hit else 0.62
++	packet["tags"] = build_battle_v2_string_list([packet.get("tags", []), ["battle_v2_damage_packet", "procedural_lane_damage_pulse"]])
++	packet["labels"] = build_battle_v2_string_list([packet.get("labels", []), ["battle_v2_damage_packet_forwarded_to_lane"]])
++	battle_v2_procedural_lane_layer.pulse_damage(packet)
++
++
+ func push_battle_v2_drone_runtime_to_procedural_lane(packet: Dictionary) -> void:
+ 	if battle_v2_procedural_lane_layer == null or not is_instance_valid(battle_v2_procedural_lane_layer):
+ 		return
+@@ -1287,20 +1310,51 @@
+ 
+ 
+ func build_battle_v2_procedural_unit_state() -> Dictionary:
++	var loaded_data := get_loaded_consumable_item_data()
++	var loaded_consumable_id := ""
++	if not loaded_data.is_empty():
++		loaded_consumable_id = str(loaded_data.get("item_id", loaded_data.get("id", ""))).strip_edges()
++	if loaded_consumable_id == "" and player_state_packet != null:
++		loaded_consumable_id = get_loadout_item_id(player_state_packet.loaded_consumable)
++
++	var player_loaded_state := get_player_loaded_consumable_state()
++	if loaded_consumable_id == "":
++		player_loaded_state = "none"
++	elif player_loaded_state == "" or player_loaded_state == "none":
++		player_loaded_state = "ready"
++
++	var enemy_loaded_consumable_id := ""
++	var enemy_loaded_consumable_state := "none"
++	if active_enemy is BattleV2UnitAdapter:
++		enemy_loaded_consumable_id = get_loadout_item_id(active_enemy.loaded_consumable)
++		enemy_loaded_consumable_state = str(active_enemy.loaded_consumable_state).strip_edges().to_lower()
++		if enemy_loaded_consumable_id == "":
++			enemy_loaded_consumable_state = "none"
++
+ 	return {
+ 		"player": {
+ 			"shield_current": get_unit_float(player_state_packet, "shield_hp_current", 0.0),
+ 			"shield_max": get_unit_shield_max(player_state_packet),
+ 			"shield_power_level": int(player_state_packet.shield_power_level) if player_state_packet != null else 0,
+ 			"shield_has_energy": energy_handler_has_current_energy(energy_handler_v2),
+-			"shield_state": get_player_shield_visual_state()
++			"shield_state": get_player_shield_visual_state(),
++			"good_lock": bool(player_state_packet.player_good_lock) if player_state_packet != null else false,
++			"lock_pending": bool(player_state_packet.player_lock_pending) if player_state_packet != null else false,
++			"lock_disabled": bool(player_state_packet.player_lock_disabled) if player_state_packet != null else false,
++			"loaded_consumable_id": loaded_consumable_id,
++			"loaded_consumable_state": player_loaded_state
+ 		},
+ 		"enemy": {
+ 			"shield_current": get_unit_float(active_enemy, "shield_hp_current", 0.0),
+ 			"shield_max": get_unit_shield_max(active_enemy),
+ 			"shield_power_level": int(active_enemy.shield_power_level) if active_enemy is BattleV2UnitAdapter else 0,
+ 			"shield_has_energy": energy_handler_has_current_energy(enemy_energy_handler_v2),
+-			"shield_state": get_enemy_shield_visual_state(active_enemy)
++			"shield_state": get_enemy_shield_visual_state(active_enemy),
++			"good_lock": get_unit_bool(active_enemy, "enemy_good_lock", false),
++			"lock_pending": get_unit_bool(active_enemy, "enemy_lock_pending", false),
++			"lock_disabled": get_unit_bool(active_enemy, "enemy_lock_disabled", false),
++			"loaded_consumable_id": enemy_loaded_consumable_id,
++			"loaded_consumable_state": enemy_loaded_consumable_state
+ 		}
+ 	}
+ 
+@@ -6185,6 +6239,7 @@
+ 
+ 
+ func play_battle_v2_damage_endpoint_effect(event_packet: Dictionary, damage_result: Dictionary, explosive_hit: bool) -> void:
++	push_battle_v2_damage_packet_to_procedural_lane(event_packet, damage_result, explosive_hit)
+ 	var target_side := get_battle_v2_event_target_side(event_packet)
+ 	var shield_damage := float(damage_result.get("shield_damage", 0.0))
+ 	var hull_damage := float(damage_result.get("hull_damage", 0.0)) + float(damage_result.get("overflow_damage", 0.0))

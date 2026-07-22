@@ -1,0 +1,371 @@
+{
+  "event_id": "vayrax_lane_015_event",
+  "display_name": "Vayrax Lane 015: Fifteen Closure",
+  "description": "Pass 006 Vayrax lane event using the proven Lane 001–010 pattern: existing anchor copied into event_objects, one hidden 500-unit activate_event_on_range listener, explicit enemy install before profile popup, READY button with 30-unit range, battle on next step, victory popup, gives_item blueprint reward, then complete. This lane uses planned blueprint reward `graviton_needler_mk3_blueprint`.",
+  "event_state": "seeded",
+  "current_step": "vayrax_lane_015_intro_popup",
+  "start_on_ready": false,
+  "seed_once": true,
+  "can_cancel_event": true,
+  "tier": 3,
+  "anchor_star": {
+    "star_id": "tier_3_anchor_star",
+    "star_name": "Tier 3 Star",
+    "sector_pos": [
+      20,
+      -1,
+      0
+    ],
+    "local_pos": [
+      562.253,
+      585.271,
+      509.485
+    ],
+    "required": true,
+    "create_if_missing": false,
+    "tier": 3
+  },
+  "event_listeners": {
+    "vayrax_lane_015_listener": {
+      "owner_type": "beacon",
+      "object_type": "beacon",
+      "object_id": "vayrax_lane_015_listener",
+      "display_name": "Vayrax Lane 015 Signal Listener",
+      "title": "Vayrax Lane 015 Signal Listener",
+      "beacon_type": "hidden_event_listener_beacon",
+      "position_mode": "absolute",
+      "sector_pos": [
+        20,
+        -1,
+        0
+      ],
+      "local_pos": [
+        562.253,
+        585.271,
+        509.485
+      ],
+      "parent_star_id": "tier_3_anchor_star",
+      "parent_star_name": "Tier 3 Star",
+      "listener_type": "activate_event_on_range",
+      "trigger_event_id": "vayrax_lane_015_event",
+      "start_step": "vayrax_lane_015_intro_popup",
+      "trigger_range": 500,
+      "trigger_once": true,
+      "triggered": false,
+      "trigger_popup_message": "",
+      "suppress_trigger_popup": true,
+      "triggered_message": "Vayrax Lane 015 contact resolved near Tier 3 Star Planet 1.",
+      "message": "A Vayrax lane signal hides in the normal scan noise around Tier 3 Star Planet 1.",
+      "is_visible": false,
+      "is_discovered": false,
+      "is_completed": false,
+      "labels": [
+        "beacon",
+        "event_listener",
+        "activate_event_on_range",
+        "vayrax",
+        "vayrax_lane",
+        "vayrax_lane_015",
+        "hidden_listener",
+        "invisible_listener",
+        "camouflaged_signal",
+        "tier_3",
+        "tier_3_anchor_star",
+        "planet_anchor_listener",
+        "authored_object"
+      ]
+    }
+  },
+  "event_objects": {
+    "tier_3_anchor_star_planet_01": {
+      "owner_type": "planet",
+      "object_type": "planet",
+      "object_id": "tier_3_anchor_star_planet_01",
+      "display_name": "Tier 3 Star Planet 1",
+      "title": "Tier 3 Star Planet 1",
+      "scan_name": "Tier 3 Star Planet 1",
+      "scan_description": "Authored anchor planet 1 orbiting Tier 3 Star.",
+      "position_mode": "absolute",
+      "sector_pos": [
+        20,
+        -1,
+        0
+      ],
+      "local_pos": [
+        562.253,
+        585.271,
+        509.485
+      ],
+      "tier": 3,
+      "interaction_type": "signal_anchor",
+      "event_id": "vayrax_lane_015_event",
+      "active_event_id": "vayrax_lane_015_event",
+      "has_event": true,
+      "event_interactable": true,
+      "event_ops_enabled": true,
+      "is_visible": true,
+      "is_discovered": false,
+      "planet_type": "ice",
+      "planet_role": "anchor_planet",
+      "population_state": "refuge",
+      "has_planet_interface": true,
+      "can_land": false,
+      "contact_range": 180,
+      "planet_radius": 6,
+      "orbit_radius": 140,
+      "orbit_angle": 63.6,
+      "services": [
+        "survey_contact"
+      ],
+      "parent_star_id": "tier_3_anchor_star",
+      "parent_star_name": "Tier 3 Star",
+      "anchor_star_id": "tier_3_anchor_star",
+      "anchor_star_name": "Tier 3 Star",
+      "labels": [
+        "planet",
+        "world_seed",
+        "event_anchor",
+        "vayrax_lane",
+        "vayrax_lane_015",
+        "tier_3",
+        "tier_3_anchor_star",
+        "planet_anchor",
+        "authored_object",
+        "event_object"
+      ]
+    },
+    "vayrax_lane_015_drone": {
+      "owner_type": "enemy",
+      "object_type": "enemy",
+      "object_id": "vayrax_lane_015_drone",
+      "enemy_id": "vayrax_lane_015_drone",
+      "display_name": "Vayrax Drone 015",
+      "name": "Vayrax Drone 015",
+      "blueprint_id": "vayrax_drone_015",
+      "spawn_on_step": "vayrax_lane_015_enemy_profile_popup",
+      "position_mode": "absolute",
+      "sector_pos": [
+        20,
+        -1,
+        0
+      ],
+      "local_pos": [
+        692.253,
+        595.271,
+        509.485
+      ],
+      "parent_star_id": "tier_3_anchor_star",
+      "parent_star_name": "Tier 3 Star",
+      "event_id": "vayrax_lane_015_event",
+      "active_event_id": "vayrax_lane_015_event",
+      "required_step": "vayrax_lane_015_start_battle",
+      "event_step": "vayrax_lane_015_start_battle",
+      "current_step": "vayrax_lane_015_start_battle",
+      "has_event": true,
+      "labels": [
+        "enemy",
+        "event_enemy",
+        "vayrax",
+        "drone",
+        "vayrax_drone_015",
+        "vayrax_lane",
+        "vayrax_lane_015",
+        "tier_3",
+        "tier_3_anchor_star_planet_01",
+        "near_tier_3_anchor_star_planet_01"
+      ],
+      "event_tags": [
+        "vayrax_lane_015_event",
+        "vayrax",
+        "vayrax_lane_015",
+        "lane_battle"
+      ],
+      "overrides": {
+        "hp": 570,
+        "max_hp": 570,
+        "hull": 570,
+        "max_hull": 570,
+        "attack": 43,
+        "energy_max": 540.0,
+        "max_energy": 540,
+        "energy": 540,
+        "primary": "guardian_suppression_beam_mk3",
+        "primary_weapon": "guardian_suppression_beam_mk3",
+        "secondary": "raider_spike_mortar_mk2",
+        "secondary_weapon": "raider_spike_mortar_mk2",
+        "shield": "raider_plate_screen_mk2",
+        "shield_item": "raider_plate_screen_mk2",
+        "consumable": "recharge_kit",
+        "consumable_item": "recharge_kit",
+        "item_stacks": {
+          "large_kinetic_rounds": 7,
+          "medium_kinetic_rounds": 12,
+          "recharge_kit": 1
+        },
+        "behavior_profile": "smart_guy_pressure",
+        "behavior_values": {
+          "decision_cooldown": 1.0,
+          "low_hull_evade_threshold": 0.23,
+          "low_energy_secondary_threshold": 0.45,
+          "execute_player_threshold": 0.52,
+          "explosive_player_threshold": 0.55
+        },
+        "reward": [
+          "cobalt",
+          "nickel",
+          "large_kinetic_rounds"
+        ],
+        "reward_items": [
+          "cobalt",
+          "nickel",
+          "large_kinetic_rounds"
+        ],
+        "ship_name": "Vayrax Drone 015"
+      },
+      "is_visible": true,
+      "is_discovered": false
+    }
+  },
+  "required_items": [],
+  "reward_packet": {
+    "credits": 0,
+    "items": [],
+    "blueprints": [],
+    "lore": [],
+    "unlocks": [],
+    "message": "Vayrax Lane 015 complete. Blueprint reward claimed with gives_item."
+  },
+  "steps": {
+    "vayrax_lane_015_intro_popup": {
+      "objective_text": "A Vayrax lane signal has resolved near Tier 3 Star Planet 1.",
+      "target_object_id": "tier_3_anchor_star_planet_01",
+      "target_owner_type": "planet",
+      "interaction_type": "story_popup",
+      "next_step": "vayrax_lane_015_enemy_profile_popup",
+      "on_enter": [
+        {
+          "op": "show_story_popup",
+          "title": "FIFTEEN CLOSURE: QUIET OPTIONS REMOVED",
+          "text": "[b]VAYRAX DRONE 015[/b]\n\n\"Fifteen removes quiet options.\"\n\n\"Every vector now closes.\"\n\n\"You may still choose where it hurts.\"",
+          "close_mode": "button",
+          "next_step_on_close": "vayrax_lane_015_enemy_profile_popup",
+          "popup_size": {
+            "x": 560,
+            "y": 360
+          }
+        }
+      ]
+    },
+    "vayrax_lane_015_enemy_profile_popup": {
+      "objective_text": "Review the Vayrax Drone 015 contact profile.",
+      "target_object_id": "vayrax_lane_015_drone",
+      "target_owner_type": "enemy",
+      "interaction_type": "story_popup",
+      "next_step": "vayrax_lane_015_ready_to_fight",
+      "on_enter": [
+        {
+          "op": "install_event_object",
+          "object_id": "vayrax_lane_015_drone"
+        },
+        {
+          "op": "show_story_popup",
+          "title": "VAYRAX CONTACT PROFILE",
+          "text": "[b]Enemy Handler Source[/b]\n`vayrax_drone_015`\n\n[b]Battle Object[/b]\n`vayrax_lane_015_drone`\n\n[b]Behavior Profile[/b]\n`smart_guy_pressure`\n\n[b]Stats[/b]\nHull: 570 / 570\nHP: 570\nEnergy Max: 540\n\n[b]Loadout[/b]\nPrimary: `guardian_suppression_beam_mk3`\nSecondary: `raider_spike_mortar_mk2`\nShield: `raider_plate_screen_mk2`\nConsumable: `recharge_kit`\nItem Stacks: `large_kinetic_rounds` x7, `medium_kinetic_rounds` x12, `recharge_kit` x1\n\n[b]Reward On Victory[/b]\n`graviton_needler_mk3_blueprint`",
+          "close_mode": "button",
+          "next_step_on_close": "vayrax_lane_015_ready_to_fight",
+          "popup_size": {
+            "x": 620,
+            "y": 500
+          }
+        }
+      ]
+    },
+    "vayrax_lane_015_ready_to_fight": {
+      "objective_text": "Move within 30 units of Vayrax Drone 015, then press READY to engage.",
+      "target_object_id": "vayrax_lane_015_drone",
+      "target_owner_type": "enemy",
+      "interaction_type": "handoff",
+      "interaction_range": 30,
+      "next_step": "vayrax_lane_015_start_battle",
+      "actions": [
+        {
+          "button_id": "vayrax_lane_015_ready_button",
+          "label": "READY",
+          "action_id": "download_beacon_data",
+          "range": 30
+        }
+      ],
+      "success_text": "Vayrax Lane 015 engagement accepted."
+    },
+    "vayrax_lane_015_start_battle": {
+      "objective_text": "Battle: Vayrax Drone 015.",
+      "target_object_id": "vayrax_lane_015_drone",
+      "target_owner_type": "enemy",
+      "enemy_id": "vayrax_lane_015_drone",
+      "interaction_type": "hunt",
+      "interaction_range": 30,
+      "complete_on_battle_victory": true,
+      "next_step": "vayrax_lane_015_victory_popup",
+      "on_enter": [
+        {
+          "op": "start_battle",
+          "enemy_id": "vayrax_lane_015_drone",
+          "entry_reason": "vayrax_lane_015_fifteen_closure",
+          "message": "Vayrax Drone 015 engaged."
+        }
+      ],
+      "on_battle_victory": [
+        {
+          "op": "write_log",
+          "message": "Vayrax Lane 015 defeated: Fifteen Closure."
+        },
+        {
+          "op": "advance_step",
+          "next_step": "vayrax_lane_015_victory_popup"
+        }
+      ]
+    },
+    "vayrax_lane_015_victory_popup": {
+      "objective_text": "Review Vayrax Lane 015 victory report.",
+      "interaction_type": "story_popup",
+      "next_step": "vayrax_lane_015_claim_reward",
+      "on_enter": [
+        {
+          "op": "show_story_popup",
+          "title": "VAYRAX LANE 015 CLEARED",
+          "text": "[b]FIFTEEN CLOSURE DEFEATED[/b]\n\nThe Vayrax lane signal collapses into local static.\n\nBlueprint reward ready:\n`graviton_needler_mk3_blueprint`",
+          "close_mode": "button",
+          "next_step_on_close": "vayrax_lane_015_claim_reward",
+          "popup_size": {
+            "x": 560,
+            "y": 360
+          }
+        }
+      ]
+    },
+    "vayrax_lane_015_claim_reward": {
+      "objective_text": "Press COMPLETE near Tier 3 Star Planet 1 to claim the Graviton Needler MK3 Blueprint and clear Vayrax Lane 015.",
+      "target_object_id": "tier_3_anchor_star_planet_01",
+      "target_owner_type": "planet",
+      "interaction_type": "handoff",
+      "interaction_range": 9999,
+      "next_step": "completed",
+      "actions": [
+        {
+          "button_id": "vayrax_lane_015_complete_button",
+          "label": "COMPLETE",
+          "action_id": "download_beacon_data",
+          "range": 9999
+        }
+      ],
+      "gives_item": "graviton_needler_mk3_blueprint",
+      "success_text": "Graviton Needler MK3 Blueprint received. Vayrax Lane 015 complete."
+    },
+    "completed": {
+      "objective_text": "Vayrax Lane 015 complete.",
+      "interaction_type": "complete",
+      "is_complete_step": true,
+      "complete_event": true
+    }
+  }
+}

@@ -1,0 +1,171 @@
+{
+  "event_id": "generic_vayrax_drone_iron_awareness_test_001",
+  "display_name": "Generic Vayrax Drone Iron Awareness Test",
+  "description": "Generic event-engine awareness test for the Teir Climb universe. An NPC gives a quest, the event waits for existing Vayrax drone defeat intel, then checks iron item discovery intel before returning to the NPC for a credits reward.",
+  "event_state": "seeded",
+  "current_step": "talk_to_test_contact",
+  "start_on_ready": true,
+  "seed_once": true,
+  "requires_giver": true,
+  "can_cancel_event": true,
+  "tier": 1,
+  "anchor_star": {
+    "star_id": "tier_1_anchor_star",
+    "star_name": "Tier 1 Star",
+    "star_type": "K",
+    "sector_pos": [0, 0, 0],
+    "local_pos": [500, 500, 500],
+    "required": true,
+    "create_if_missing": false,
+    "tier": 1
+  },
+  "giver": {
+    "owner_type": "npc",
+    "owner_id": "generic_vayrax_iron_test_contact",
+    "object_id": "generic_vayrax_iron_test_contact",
+    "template_owner_id": "generic_vayrax_iron_test_contact",
+    "blueprint_id": "guild_contact_tier_1",
+    "display_name": "Intel Test Contact",
+    "place_near_anchor_star": true,
+    "local_offset": [25, 0, 0],
+    "allow_blueprint_reuse": false,
+    "dialogue_lines": [
+      "I need a clean event-engine test.",
+      "Drop two known Vayrax drones, then let the story system notice the intel."
+    ],
+    "offer_title": "Awareness Test: Drones And Iron",
+    "offer_text": "Defeat Vayrax Drone 002 and Vayrax Drone 003. The event will wait for a poke, confirm the drone defeat intel, then confirm that iron has already been discovered.",
+    "success_text": "Good. The test event is now watching the intel handlers.",
+    "event_accept_message": "Good. Defeat the two Vayrax drones and let the event console catch up.",
+    "event_decline_message": "No problem. The test can wait.",
+    "event_idle_message": "The event is waiting on two Vayrax drone defeat records.",
+    "event_completed_message": "Awareness test complete. Clean signal.",
+    "labels": [
+      "npc",
+      "event_giver",
+      "story_npc",
+      "generic_vayrax_iron_test_contact",
+      "authored_object"
+    ]
+  },
+  "event_objects": {},
+  "event_listeners": {},
+  "required_items": [],
+  "reward_packet": {
+    "credits": 200,
+    "items": [
+      {
+        "item_id": "credits",
+        "amount": 200
+      }
+    ],
+    "blueprints": [],
+    "lore": [],
+    "unlocks": [],
+    "message": "Awareness test complete. Credits x200 received."
+  },
+  "steps": {
+    "talk_to_test_contact": {
+      "objective_text": "Talk to the Intel Test Contact near Tier 1 Star.",
+      "target_owner_id": "generic_vayrax_iron_test_contact",
+      "interaction_type": "talk",
+      "npc_dialogue_lines": [
+        "This is a generic event-engine awareness test.",
+        "Defeat Vayrax Drone 002 and Vayrax Drone 003. The event will wait until the defeat intel exists."
+      ],
+      "npc_chat_line_delay": 1.65,
+      "npc_chat_character_delay": 0.04,
+      "npc_quest_available": true,
+      "next_step": "wait_for_two_vayrax_drones"
+    },
+    "wait_for_two_vayrax_drones": {
+      "objective_text": "Defeat Vayrax Drone 002 and Vayrax Drone 003. The event will react after the next event poke.",
+      "interaction_type": "complete",
+      "awareness_conditions": [
+        {
+          "type": "enemy_defeated_count",
+          "display_name": "Vayrax Drone 002",
+          "min_count": 1
+        },
+        {
+          "type": "enemy_defeated_count",
+          "display_name": "Vayrax Drone 003",
+          "min_count": 1
+        }
+      ],
+      "next_step": "check_iron_awareness",
+      "on_enter": [
+        {
+          "op": "show_story_popup",
+          "title": "TEST GOOD: VAYRAX DRONE COUNT",
+          "text": "[b]TEST GOOD[/b]\n\nThe event engine saw defeated enemy intel for two existing Vayrax drones:\n\n- Vayrax Drone 002\n- Vayrax Drone 003\n\nClose this popup to check iron discovery next.",
+          "close_mode": "button",
+          "close_label": "CLOSE",
+          "space_close": true,
+          "next_step_on_close": "check_iron_awareness",
+          "popup_size": {
+            "x": 520,
+            "y": 380
+          }
+        }
+      ]
+    },
+    "check_iron_awareness": {
+      "objective_text": "Event engine is checking that iron has already been discovered.",
+      "interaction_type": "complete",
+      "awareness_conditions": [
+        {
+          "type": "intel_discovered",
+          "item_id": "iron"
+        }
+      ],
+      "next_step": "return_to_test_contact",
+      "on_enter": [
+        {
+          "op": "show_story_popup",
+          "title": "TEST GOOD: IRON DISCOVERY",
+          "text": "[b]TEST GOOD[/b]\n\nThe event engine checked item discovery intel and found iron.\n\nReturn to the Intel Test Contact for the reward.",
+          "close_mode": "button",
+          "close_label": "CLOSE",
+          "space_close": true,
+          "next_step_on_close": "return_to_test_contact",
+          "popup_size": {
+            "x": 500,
+            "y": 340
+          }
+        }
+      ]
+    },
+    "return_to_test_contact": {
+      "objective_text": "Return to the Intel Test Contact and claim the awareness test reward.",
+      "target_owner_id": "generic_vayrax_iron_test_contact",
+      "interaction_type": "complete",
+      "interaction_range": 70,
+      "npc_dialogue_lines": [
+        "The event engine saw both checks.",
+        "Claim the test reward and we can call this pass clean."
+      ],
+      "completed_npc_dialogue_lines": [
+        "Awareness test complete.",
+        "Enemy defeat intel and item discovery intel both resolved."
+      ],
+      "npc_chat_line_delay": 1.65,
+      "npc_chat_character_delay": 0.04,
+      "next_step": "completed",
+      "actions": [
+        {
+          "button_id": "claim_generic_vayrax_iron_awareness_test_reward",
+          "label": "CLAIM",
+          "action_id": "claim_event_reward",
+          "range": 70
+        }
+      ]
+    }
+  },
+  "test_notes": [
+    "Placed in universe_2 because the lane display name is Teir Climb.",
+    "This file does not create event enemies. It watches enemy-intel defeat counts for existing enemy display names.",
+    "The current enemy-intel count check is display-name based, so this test waits for Vayrax Drone 002 and Vayrax Drone 003 specifically.",
+    "The reward stores credits: 200 and also grants credits as an inventory item because current reward grant code processes reward_packet.items."
+  ]
+}

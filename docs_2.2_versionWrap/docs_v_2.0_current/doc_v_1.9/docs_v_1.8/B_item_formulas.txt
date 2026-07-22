@@ -1,0 +1,30 @@
+primary_efficiency = damage / energy_cost
+
+energy_strain = energy_cost / energy_max
+
+primary_pressure = damage / duration
+
+enemy_pressure = damage / (duration + 1.25)
+
+remaining_shield_time =
+(current_energy - energy_cost) / shield_drain_per_second
+
+total_burst_damage = damage_per_burst * burst_count
+
+total_burst_time = duration_per_burst * burst_count
+
+burst_pressure = total_burst_damage / total_burst_time
+
+ammo_efficiency = total_burst_damage / total_ammo_cost
+
+burst_commitment = total_burst_time / expected_fight_time
+
+explosive_hull_pressure =
+damage * pass_percent
++ damage * (1.0 - pass_percent) * (1.0 - shield_power_percent)
+
+repair_percent = repair_amount / hull_max
+
+shield_lifetime = energy_available / actual_shield_drain
+
+recharge_percent = energy_restore_amount / energy_max

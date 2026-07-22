@@ -1,0 +1,168 @@
+extends RefCounted
+
+# ==========================================================
+# PRE-S1.4 / BASE SHIELD ITEMS
+# ----------------------------------------------------------
+# Data-only item dictionary slice.
+# Loaded by Control/items/item_db_builder.gd.
+# Do not put behavior in this file.
+# ==========================================================
+
+static func get_items() -> Dictionary:
+	return {
+		# ------------------------------------------------------
+		# SHIELDS
+		# ------------------------------------------------------
+		"basic_shield_mk1": {
+			"id": "basic_shield_mk1",
+			"item_id": "basic_shield_mk1",
+			"name": "Basic Shield MK1",
+			"display_name": "Basic Shield MK1",
+			"type": "shield",
+			"item_type": "shield",
+			"subtype": "shield",
+			"slot": "shield",
+			"shield_hp_max": 45,
+			"base_damage_resist": 0.2,
+			"base_shield_resist": 0.2,
+			"regen_per_second": 2.0,
+			"regen_delay": 2.0,
+			"swap_time": 1.5,
+			"duration": 1.5,
+			"steady_energy_drain": 20.0,
+			"break_consumes_item": true,
+			"repairable_while_active": true,
+			"repairable_when_broken": false,
+			"stackable": false,
+			"max_stack": 1,
+			"consumable": false,
+			"installed_only": true,
+			"grants_actions": ["switch_shield"],
+			"tags": ["shield", "energy_drain", "shield_break_consumes", "shield_repairable_while_active"],
+			"enemy_logic_tags": ["enemy_can_equip", "enemy_can_replace_broken_shield"],
+			"labels": ["unit_shield_equipped", "shield_slider_scaling"],
+			"atlas": "item_sheet_test",
+			"region": Rect2(115, 120, 34, 32)
+		},
+		"reinforced_barrier_mk1": {
+			"id": "reinforced_barrier_mk1",
+			"item_id": "reinforced_barrier_mk1",
+			"name": "Reinforced Barrier MK1",
+			"display_name": "Reinforced Barrier MK1",
+			"type": "shield",
+			"item_type": "shield",
+			"subtype": "shield",
+			"slot": "shield",
+			"shield_hp_max": 90,
+			"base_damage_resist": 0.35,
+			"base_shield_resist": 0.35,
+			"regen_per_second": 4.0,
+			"regen_delay": 2.0,
+			"swap_time": 2.0,
+			"duration": 2.0,
+			"steady_energy_drain": 20.0,
+			"break_consumes_item": true,
+			"repairable_while_active": true,
+			"repairable_when_broken": false,
+			"stackable": false,
+			"max_stack": 1,
+			"consumable": false,
+			"installed_only": true,
+			"grants_actions": ["switch_shield"],
+			"tags": ["shield", "energy_drain", "shield_break_consumes", "shield_repairable_while_active"],
+			"enemy_logic_tags": ["enemy_can_equip", "enemy_can_replace_broken_shield"],
+			"labels": ["unit_shield_equipped", "shield_slider_scaling"],
+			"atlas": "item_sheet_test",
+			"region": Rect2(150, 120, 34, 32)
+		},
+
+		#enemy_items stars here
+		"e_basic_energy_pew_pew": {
+			"id": "e_basic_energy_pew_pew",
+			"item_id": "e_basic_energy_pew_pew",
+			"name": "Zapping Pew Pew",
+			"display_name": "Zapping Pew Pew",
+			"type": "weapon",
+			"item_type": "weapon",
+			"subtype": "energy",
+			"slot": "primary",
+			"damage_type": "energy",
+			"damage_value": 11,
+			"damage": 11,
+			"duration": 5.0,
+			"energy_cost": 40,
+			"weapon_group": "energy",
+			"ammo_group": "",
+			"ammo_per_burst": 0,
+			"burst_count": 1,
+			"stackable": false,
+			"max_stack": 1,
+			"consumable": false,
+			"installed_only": true,
+			"grants_actions": ["fire_zapping_pew_pew"],
+			"atlas": "item_sheet_test",
+			"texture" : preload("res://images/laser_mk_1_resiz.png")
+		###--------------BLUEPRINTS_______###
+		},	
+		"reinforced_barrier_mk1_blueprint": {
+			"id": "reinforced_barrier_mk1_blueprint",
+			"item_id": "reinforced_barrier_mk1_blueprint",
+			"name": "Reinforced Barrier MK1 Blueprint",
+			"display_name": "Reinforced Barrier MK1 Blueprint",
+			"type": "blueprint",
+			"item_type": "blueprint",
+			"subtype": "craft",
+			"consumable_group": "craft",
+			"stackable": false,
+			"max_stack": 1,
+			"consumable": false,
+			"craft_time": 2.0,
+			"craft_cost": {"iron": 25},
+			"craft_result": {"item_id": "reinforced_barrier_mk1", "count": 1},
+			"cost": {"iron": 25},
+			"gain": "reinforced_barrier_mk1",
+			"tags": ["blueprint", "craft"],
+			"labels": ["recraftable_blueprint"]
+		},
+
+		"small_kinetic_rounds_blueprint": {
+			"id": "small_kinetic_rounds_blueprint",
+			"item_id": "small_kinetic_rounds_blueprint",
+			"name": "Small Kinetic Rounds Blueprint",
+			"display_name": "Small Kinetic Rounds Blueprint",
+			"type": "blueprint",
+			"item_type": "blueprint",
+			"subtype": "craft",
+			"consumable_group": "craft",
+			"stackable": false,
+			"max_stack": 1,
+			"consumable": false,
+			"craft_time": 2.0,
+			"craft_cost": {"iron": 250},
+			"craft_result": {"item_id": "small_kinetic_rounds", "count": 10},
+			"cost": {"iron": 250},
+			"gain": "small_kinetic_rounds",
+			"tags": ["blueprint", "craft"],
+			"labels": ["recraftable_blueprint"]
+		},
+		"navigation_relay_coupler_blueprint": {
+			"id": "navigation_relay_coupler_blueprint",
+			"item_id": "navigation_relay_coupler_blueprint",
+			"name": "Navigation Relay Coupler Blueprint",
+			"display_name": "Navigation Relay Coupler Blueprint",
+			"type": "blueprint",
+			"item_type": "blueprint",
+			"subtype": "craft",
+			"consumable_group": "craft",
+			"stackable": false,
+			"max_stack": 1,
+			"consumable": false,
+			"craft_time": 2.0,
+			"craft_cost": {"iron": 800},
+			"craft_result": {"item_id": "navigation_relay_coupler", "count": 1},
+			"cost": {"iron": 800},
+			"gain": "navigation_relay_coupler",
+			"tags": ["blueprint", "craft"],
+			"labels": ["recraftable_blueprint"]
+		},	
+	}

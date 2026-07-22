@@ -1,0 +1,1667 @@
+{
+  "event_id": "opening_wake_sequence_001",
+  "display_name": "Opening Wake Sequence",
+  "description": "Single-file chain merging the wake sequence, Human Station/Hank setup, Melissa rescue handoff, first Vayrax battle, and return to the Human Station Habitat. Manual-widget-action build: story popup steps use CONTINUE actions instead of popup close auto-advance.",
+  "event_state": "seeded",
+  "current_step": "open_dev_welcome",
+  "start_on_ready": false,
+  "seed_once": true,
+  "can_cancel_event": false,
+  "tier": 1,
+  "anchor_star": {
+    "star_id": "tier_1_anchor_star",
+    "star_name": "Tier 1 Star",
+    "sector_pos": [
+      0,
+      0,
+      0
+    ],
+    "local_pos": [
+      500,
+      500,
+      500
+    ],
+    "required": true,
+    "create_if_missing": false
+  },
+  "giver": {},
+  "event_listeners": {
+    "vayrax_territory_beacon_001": {
+      "owner_type": "beacon",
+      "object_type": "beacon",
+      "object_id": "vayrax_territory_beacon_001",
+      "display_name": "Vayrax Territory Beacon",
+      "beacon_type": "territory_warning_beacon",
+      "position_mode": "anchor_offset",
+      "sector_offset": [
+        0,
+        0,
+        0
+      ],
+      "local_offset": [
+        -475,
+        -475,
+        -475
+      ],
+      "sector_pos": [
+        0,
+        0,
+        0
+      ],
+      "local_pos": [
+        25,
+        25,
+        25
+      ],
+      "listener_type": "activate_event_on_range",
+      "trigger_event_id": "opening_wake_sequence_001",
+      "start_step": "open_dev_welcome",
+      "trigger_range": 1000,
+      "trigger_once": true,
+      "trigger_popup_message": "",
+      "triggered_message": "",
+      "message": "Vayrax territory marker is listening for a wake signature.",
+      "is_visible": true,
+      "labels": [
+        "beacon",
+        "territory_beacon",
+        "vayrax",
+        "event_listener",
+        "activate_event_on_range",
+        "wake_start",
+        "opening_sequence",
+        "authored_object",
+        "event_discovery"
+      ]
+    }
+  },
+  "event_objects": {
+    "human_station_habitat_beacon_001": {
+      "owner_type": "beacon",
+      "object_type": "beacon",
+      "object_id": "human_station_habitat_beacon_001",
+      "display_name": "Human Station Habitat",
+      "title": "Human Station Habitat",
+      "beacon_type": "human_habitat_station_beacon",
+      "position_mode": "anchor_offset",
+      "sector_offset": [
+        0,
+        0,
+        0
+      ],
+      "local_offset": [
+        350,
+        0,
+        0
+      ],
+      "sector_pos": [
+        0,
+        0,
+        0
+      ],
+      "local_pos": [
+        850,
+        500,
+        500
+      ],
+      "interaction_type": "station_habitat",
+      "listener_type": "none",
+      "trigger_event_id": "",
+      "trigger_once": false,
+      "message": "Human habitat signal detected. Docking handshake unstable but readable.",
+      "event_id": "opening_wake_sequence_001",
+      "active_event_id": "opening_wake_sequence_001",
+      "has_event": true,
+      "required_step": "travel_to_human_habitat_beacon",
+      "event_step": "travel_to_human_habitat_beacon",
+      "labels": [
+        "beacon",
+        "human_station",
+        "human_habitat",
+        "station_arrival",
+        "hank_story_setup",
+        "authored_object",
+        "event_object"
+      ]
+    },
+    "melissa_active_beacon_001": {
+      "owner_type": "beacon",
+      "object_type": "beacon",
+      "object_id": "melissa_active_beacon_001",
+      "display_name": "Melissa Active Beacon",
+      "title": "Melissa Active Beacon",
+      "beacon_type": "human_personal_beacon",
+      "position_mode": "anchor_offset",
+      "sector_offset": [
+        1,
+        0,
+        0
+      ],
+      "local_offset": [
+        -180,
+        0,
+        0
+      ],
+      "sector_pos": [
+        1,
+        0,
+        0
+      ],
+      "local_pos": [
+        320,
+        500,
+        500
+      ],
+      "interaction_type": "personal_beacon",
+      "message": "Melissa's personal beacon is active near the outer belt.",
+      "event_id": "opening_wake_sequence_001",
+      "active_event_id": "opening_wake_sequence_001",
+      "has_event": true,
+      "required_step": "travel_to_melissa_beacon",
+      "event_step": "travel_to_melissa_beacon",
+      "labels": [
+        "beacon",
+        "human_beacon",
+        "melissa_contact",
+        "authored_object",
+        "event_object"
+      ]
+    },
+    "melissa_contact_listener_001": {
+      "owner_type": "beacon",
+      "object_type": "beacon",
+      "object_id": "melissa_contact_listener_001",
+      "display_name": "Melissa Contact Listener Disabled",
+      "beacon_type": "event_listener_beacon",
+      "position_mode": "anchor_offset",
+      "sector_offset": [
+        1,
+        0,
+        0
+      ],
+      "local_offset": [
+        -180,
+        0,
+        0
+      ],
+      "sector_pos": [
+        1,
+        0,
+        0
+      ],
+      "local_pos": [
+        320,
+        500,
+        500
+      ],
+      "listener_type": "none",
+      "trigger_event_id": "",
+      "trigger_once": false,
+      "is_visible": false,
+      "message": "Disabled in single-chain opening event; Melissa contact is handled inside opening_wake_sequence_001.",
+      "labels": [
+        "beacon",
+        "invisible_listener",
+        "disabled_listener_override",
+        "authored_object",
+        "event_object"
+      ]
+    },
+    "melissa_nudawn_001": {
+      "owner_type": "npc",
+      "object_type": "npc",
+      "object_id": "melissa_nudawn_001",
+      "npc_id": "melissa_nudawn_001",
+      "blueprint_id": "passing_contact",
+      "display_name": "Melissa Nudawn",
+      "name": "Melissa Nudawn",
+      "species": "human",
+      "role": "stranded pilot",
+      "friendly": true,
+      "can_trade": false,
+      "position_mode": "anchor_offset",
+      "sector_offset": [
+        1,
+        0,
+        0
+      ],
+      "local_offset": [
+        -165,
+        18,
+        12
+      ],
+      "sector_pos": [
+        1,
+        0,
+        0
+      ],
+      "local_pos": [
+        335,
+        518,
+        512
+      ],
+      "message": "My father sent you? Good. I need a Navigation Relay Coupler if I'm getting out of here.",
+      "dialogue_lines": [
+        "My father sent you? Good.",
+        "I need a Navigation Relay Coupler if I'm getting out of here.",
+        "There is plenty of iron around in the asteroids."
+      ],
+      "event_id": "opening_wake_sequence_001",
+      "active_event_id": "opening_wake_sequence_001",
+      "has_event": true,
+      "event_state": "active",
+      "required_step": "go_talk_to_melissa",
+      "event_step": "go_talk_to_melissa",
+      "labels": [
+        "npc",
+        "human",
+        "melissa",
+        "stranded_pilot",
+        "authored_object",
+        "event_object"
+      ]
+    },
+    "vayrax_claim_drone_001": {
+      "owner_type": "enemy",
+      "object_type": "enemy",
+      "object_id": "vayrax_claim_drone_001",
+      "display_name": "Vayrax Claim Drone",
+      "blueprint_id": "test_smart_guy",
+      "spawn_on_step": "battle_vayrax_claim_drone",
+      "position_mode": "anchor_offset",
+      "sector_offset": [
+        1,
+        0,
+        0
+      ],
+      "local_offset": [
+        -100,
+        45,
+        -20
+      ],
+      "sector_pos": [
+        1,
+        0,
+        0
+      ],
+      "local_pos": [
+        400,
+        545,
+        480
+      ],
+      "event_id": "opening_wake_sequence_001",
+      "active_event_id": "opening_wake_sequence_001",
+      "required_step": "battle_vayrax_claim_drone",
+      "event_step": "battle_vayrax_claim_drone",
+      "current_step": "battle_vayrax_claim_drone",
+      "has_event": true,
+      "labels": [
+        "enemy",
+        "event_enemy",
+        "vayrax",
+        "claim_drone",
+        "opening_battle"
+      ],
+      "event_tags": [
+        "opening_wake_sequence_001",
+        "vayrax_claim_drone",
+        "opening_battle"
+      ],
+      "overrides": {
+        "hp": 120,
+        "max_hp": 120,
+        "attack": 10,
+        "energy_max": 120,
+        "primary": "pulse_laser_mk1",
+        "secondary": "railgun_mk1",
+        "shield": "",
+        "consumable": "repair_kit",
+        "item_stacks": {
+          "medium_kinetic_rounds": 12,
+          "repair_kit": 1
+        },
+        "behavior_profile": "smart_guy",
+        "behavior_values": {
+          "execute_player_threshold": 0.25,
+          "critical_hull_evade_threshold": 0.2,
+          "low_hull_evade_threshold": 0.4,
+          "low_energy_secondary_threshold": 0.35,
+          "decision_cooldown": 1.25
+        },
+        "reward": [
+          "iron",
+          "cobalt",
+          "medium_kinetic_rounds"
+        ],
+        "ship_name": "Vayrax Claim Drone"
+      }
+    }
+  },
+  "reward_packet": {
+    "credits": 0,
+    "items": [],
+    "blueprints": [],
+    "lore": [],
+    "unlocks": [],
+    "message": "Opening chain complete. Human Station Habitat route cleared."
+  },
+  "steps": {
+    "open_dev_welcome": {
+      "objective_text": "Wake sequence received. Press CONTINUE to begin the opening boot chain.",
+      "interaction_type": "story_popup",
+      "next_step": "memory_001_feet",
+      "actions": [
+        {
+          "button_id": "open_dev_welcome_continue",
+          "label": "CONTINUE",
+          "action_id": "event_operations",
+          "operations": [
+            {
+              "op": "show_story_popup",
+              "title": "WELCOME TO FOREVER SPACE",
+              "text": "[b]FOREVER SPACE[/b]\n\nDev Build: v10.6\n\nWelcome to the current development build.\n\nThis version focuses on story-event flow, direct activation listeners, NPC quest routing, Battle V2, drones, autopilot, story popups, and authored world content.\n\nExpect unfinished systems, placeholder balance, and active testing behavior.\n\nThank you for testing this early slice.",
+              "close_mode": "button",
+              "popup_size": {
+                "x": 560,
+                "y": 360
+              }
+            },
+            {
+              "op": "advance_step",
+              "next_step": "memory_001_feet"
+            }
+          ]
+        }
+      ]
+    },
+    "memory_001_feet": {
+      "objective_text": "Press CONTINUE to read: MEMORY.",
+      "interaction_type": "story_popup",
+      "next_step": "latch_boot_sequence",
+      "actions": [
+        {
+          "button_id": "memory_001_feet_continue",
+          "label": "CONTINUE",
+          "action_id": "event_operations",
+          "operations": [
+            {
+              "op": "show_story_popup",
+              "title": "MEMORY",
+              "text": "where.. is.. this",
+              "close_mode": "button",
+              "images": [
+                {
+                  "path": "res://images/Memory_001.png"
+                }
+              ],
+              "image_height": 140,
+              "popup_size": {
+                "x": 580,
+                "y": 430
+              }
+            },
+            {
+              "op": "advance_step",
+              "next_step": "latch_boot_sequence"
+            }
+          ]
+        }
+      ]
+    },
+    "latch_boot_sequence": {
+      "objective_text": "Press CONTINUE to read: L.A.T.C.H. BOOT SEQUENCE.",
+      "interaction_type": "story_popup",
+      "next_step": "system_interface_sequence",
+      "actions": [
+        {
+          "button_id": "latch_boot_sequence_continue",
+          "label": "CONTINUE",
+          "action_id": "event_operations",
+          "operations": [
+            {
+              "op": "show_story_popup",
+              "title": "L.A.T.C.H. BOOT SEQUENCE",
+              "text": "[b]L.A.T.C.H. BOOT SEQUENCE[/b]\n\nBoot carrier detected.\n\nCompatibility layer waking.",
+              "close_mode": "button",
+              "images": [
+                {
+                  "path": "res://images/Boot_001.png"
+                }
+              ],
+              "image_height": 140,
+              "popup_size": {
+                "x": 580,
+                "y": 430
+              }
+            },
+            {
+              "op": "advance_step",
+              "next_step": "system_interface_sequence"
+            }
+          ]
+        }
+      ]
+    },
+    "system_interface_sequence": {
+      "objective_text": "Press CONTINUE to read: SYSTEM INTERFACE.",
+      "interaction_type": "story_popup",
+      "next_step": "self_image_wake_attempt",
+      "actions": [
+        {
+          "button_id": "system_interface_sequence_continue",
+          "label": "CONTINUE",
+          "action_id": "event_operations",
+          "operations": [
+            {
+              "op": "show_story_popup",
+              "title": "SYSTEM INTERFACE",
+              "text": "[b]SYSTEM POPUP[/b]\n\nERROR\nMEMORY BLOCK UNAVAILABLE\n\nERROR\nSENSORY ARRAY OFFLINE\n\nERROR\nNAVIGATION SYSTEM OFFLINE\n\nERROR\nIDENTITY PROFILE OFFLINE\n\n---\n\n[b]L.A.T.C.H. GRID RESPONSE FAILURE[/b]\n\nLIVE ADAPTIVE TECHNOLOGY COUPLING HARDWARE\n\nPOWER ROUTING CELL .......... OFFLINE\nSENSOR ARRAY CELL ........... OFFLINE\nNAVIGATION CELL ............. OFFLINE\nCOMMUNICATION CELL .......... OFFLINE\nCOMBAT RESPONSE CELL ........ DEGRADED\nEXTERNAL INTERFACE CELL ..... CORRUPTED\nIDENTITY TETHER CELL ........ MISSING\nPERSONAL MEMORY BANK ........ REMOVED\n\n---\n\nSYSTEM POPUP\n\nPING\nSomething is happening.\n\n---\n\nSYSTEM POPUP\n\nINTERNAL CASING LOCK HAS BEEN DISABLED\n\n---\n\n[b]THOUGHT QUERY[/b]\n\nCasing?\n\n---\n\nSYSTEM POPUP\n\nCASING\nProtective external shell.\n\nREFERENCE FOUND\nPERSONAL MEMORY LINK: UNAVAILABLE",
+              "close_mode": "button",
+              "popup_size": {
+                "x": 620,
+                "y": 500
+              }
+            },
+            {
+              "op": "advance_step",
+              "next_step": "self_image_wake_attempt"
+            }
+          ]
+        }
+      ]
+    },
+    "self_image_wake_attempt": {
+      "objective_text": "Press CONTINUE to read: PLAYER RESPONSE.",
+      "interaction_type": "story_popup",
+      "next_step": "cells_removed_sequence",
+      "actions": [
+        {
+          "button_id": "self_image_wake_attempt_continue",
+          "label": "CONTINUE",
+          "action_id": "event_operations",
+          "operations": [
+            {
+              "op": "show_story_popup",
+              "title": "PLAYER RESPONSE",
+              "text": "I don't understand.\n\nAm I dreaming?",
+              "close_mode": "button",
+              "images": [
+                {
+                  "path": "res://images/Tom_Wake_001.png"
+                }
+              ],
+              "image_height": 140,
+              "popup_size": {
+                "x": 580,
+                "y": 430
+              }
+            },
+            {
+              "op": "advance_step",
+              "next_step": "cells_removed_sequence"
+            }
+          ]
+        }
+      ]
+    },
+    "cells_removed_sequence": {
+      "objective_text": "Press CONTINUE to read: SYSTEM POPUP.",
+      "interaction_type": "story_popup",
+      "next_step": "entity_reaction_sequence",
+      "actions": [
+        {
+          "button_id": "cells_removed_sequence_continue",
+          "label": "CONTINUE",
+          "action_id": "event_operations",
+          "operations": [
+            {
+              "op": "show_story_popup",
+              "title": "SYSTEM POPUP",
+              "text": "[b]SYSTEM POPUP[/b]\n\nPING\nMEMORY CORE HAS BEEN REMOVED\n\n---\n\n[b]CELL REMOVAL DETECTED[/b]\n\nPOWER ROUTING CELL .......... REMOVED\nSENSOR ARRAY CELL ........... REMOVED\nNAVIGATION CELL ............. REMOVED\nCOMMUNICATION CELL .......... REMOVED\n\nPERSONAL MEMORY BANK ........ REMOVED",
+              "close_mode": "button",
+              "images": [
+                {
+                  "path": "res://images/Cells_Removed_001.png"
+                }
+              ],
+              "image_height": 140,
+              "popup_size": {
+                "x": 580,
+                "y": 430
+              }
+            },
+            {
+              "op": "advance_step",
+              "next_step": "entity_reaction_sequence"
+            }
+          ]
+        }
+      ]
+    },
+    "entity_reaction_sequence": {
+      "objective_text": "Press CONTINUE to read: THOUGHT QUERY.",
+      "interaction_type": "story_popup",
+      "next_step": "cells_inserted_sequence",
+      "actions": [
+        {
+          "button_id": "entity_reaction_sequence_continue",
+          "label": "CONTINUE",
+          "action_id": "event_operations",
+          "operations": [
+            {
+              "op": "show_story_popup",
+              "title": "THOUGHT QUERY",
+              "text": "I need my memories.\n\nWhy?\n\nWhy do I need them?",
+              "close_mode": "button",
+              "images": [
+                {
+                  "path": "res://images/Tom_Reaction_001.png"
+                }
+              ],
+              "image_height": 140,
+              "popup_size": {
+                "x": 580,
+                "y": 430
+              }
+            },
+            {
+              "op": "advance_step",
+              "next_step": "cells_inserted_sequence"
+            }
+          ]
+        }
+      ]
+    },
+    "cells_inserted_sequence": {
+      "objective_text": "Press CONTINUE to read: SYSTEM POPUP.",
+      "interaction_type": "story_popup",
+      "next_step": "first_space_awareness",
+      "actions": [
+        {
+          "button_id": "cells_inserted_sequence_continue",
+          "label": "CONTINUE",
+          "action_id": "event_operations",
+          "operations": [
+            {
+              "op": "show_story_popup",
+              "title": "SYSTEM POPUP",
+              "text": "[b]SYSTEM POPUP[/b]\n\nPING\nINSTALLING MEMORY CORE DATA FROM FRESH CELL\nSTATUS: ACCEPTED\n\nPING\nINSTALLING SENSOR ARRAY DATA FROM FRESH CELL\nSTATUS: ACCEPTED\n\n---\n\n[b]L.A.T.C.H. COMPATIBILITY LAYER REBUILDING[/b]\n\nFOREIGN CELL DATA ACCEPTED\n\nPOWER ROUTING CELL .......... ONLINE\nSENSOR ARRAY CELL ........... ONLINE\nNAVIGATION CELL ............. ONLINE\nCOMMUNICATION CELL .......... ONLINE\nCOMBAT RESPONSE CELL ........ DEGRADED BUT RESPONSIVE\nEXTERNAL INTERFACE CELL ..... STABILIZED\nIDENTITY TETHER CELL ........ CLEAN REPLACEMENT\nPERSONAL MEMORY BANK ........ EMPTY",
+              "close_mode": "button",
+              "images": [
+                {
+                  "path": "res://images/Cells_Inserted_001.png"
+                }
+              ],
+              "image_height": 140,
+              "popup_size": {
+                "x": 620,
+                "y": 500
+              }
+            },
+            {
+              "op": "advance_step",
+              "next_step": "first_space_awareness"
+            }
+          ]
+        }
+      ]
+    },
+    "first_space_awareness": {
+      "objective_text": "Press CONTINUE to read: PLAYER RESPONSE.",
+      "interaction_type": "story_popup",
+      "next_step": "hank_first_contact",
+      "actions": [
+        {
+          "button_id": "first_space_awareness_continue",
+          "label": "CONTINUE",
+          "action_id": "event_operations",
+          "operations": [
+            {
+              "op": "show_story_popup",
+              "title": "PLAYER RESPONSE",
+              "text": "I can see.\n\nI don't understand, but I know I'm in space.\n\nI can't seem to do anything.\n\nBut I sense I am not alone.\n\nSomething is... repairing me...",
+              "close_mode": "button",
+              "images": [
+                {
+                  "path": "res://images/Tom.png"
+                }
+              ],
+              "image_height": 140,
+              "popup_size": {
+                "x": 580,
+                "y": 430
+              }
+            },
+            {
+              "op": "advance_step",
+              "next_step": "hank_first_contact"
+            }
+          ]
+        }
+      ]
+    },
+    "hank_first_contact": {
+      "objective_text": "Press CONTINUE to read: AUDIO POPUP.",
+      "interaction_type": "story_popup",
+      "next_step": "tom_first_reply",
+      "actions": [
+        {
+          "button_id": "hank_first_contact_continue",
+          "label": "CONTINUE",
+          "action_id": "event_operations",
+          "operations": [
+            {
+              "op": "show_story_popup",
+              "title": "AUDIO POPUP",
+              "text": "SOURCE: EXTERNAL HUMAN COMMS\nSIGNAL QUALITY: DAMAGED\nVOICE ID: UNKNOWN\n\n\"Hey, anyone home in there?\"\n\n\"You copy?\"",
+              "close_mode": "button",
+              "images": [
+                {
+                  "path": "res://images/Hank.png"
+                }
+              ],
+              "image_height": 140,
+              "popup_size": {
+                "x": 580,
+                "y": 430
+              }
+            },
+            {
+              "op": "advance_step",
+              "next_step": "tom_first_reply"
+            }
+          ]
+        }
+      ]
+    },
+    "tom_first_reply": {
+      "objective_text": "Press CONTINUE to read: PLAYER RESPONSE.",
+      "interaction_type": "story_popup",
+      "next_step": "hank_surprised_boot",
+      "actions": [
+        {
+          "button_id": "tom_first_reply_continue",
+          "label": "CONTINUE",
+          "action_id": "event_operations",
+          "operations": [
+            {
+              "op": "show_story_popup",
+              "title": "PLAYER RESPONSE",
+              "text": "Hello..\n\nCopy what?",
+              "close_mode": "button",
+              "images": [
+                {
+                  "path": "res://images/Tom.png"
+                }
+              ],
+              "image_height": 140,
+              "popup_size": {
+                "x": 580,
+                "y": 430
+              }
+            },
+            {
+              "op": "advance_step",
+              "next_step": "hank_surprised_boot"
+            }
+          ]
+        }
+      ]
+    },
+    "hank_surprised_boot": {
+      "objective_text": "Press CONTINUE to read: AUDIO POPUP.",
+      "interaction_type": "story_popup",
+      "next_step": "tom_confused_identity",
+      "actions": [
+        {
+          "button_id": "hank_surprised_boot_continue",
+          "label": "CONTINUE",
+          "action_id": "event_operations",
+          "operations": [
+            {
+              "op": "show_story_popup",
+              "title": "AUDIO POPUP",
+              "text": "SOURCE: HANK\nSIGNAL QUALITY: CLEARING\n\n\"Well ok.\"\n\n\"Didn't think you'd actually boot, huh.\"\n\n\"Haha.\"\n\n\"Don't kill me is all I ask.\"",
+              "close_mode": "button",
+              "images": [
+                {
+                  "path": "res://images/Hank.png"
+                }
+              ],
+              "image_height": 140,
+              "popup_size": {
+                "x": 580,
+                "y": 430
+              }
+            },
+            {
+              "op": "advance_step",
+              "next_step": "tom_confused_identity"
+            }
+          ]
+        }
+      ]
+    },
+    "tom_confused_identity": {
+      "objective_text": "Press CONTINUE to read: PLAYER RESPONSE.",
+      "interaction_type": "story_popup",
+      "next_step": "hank_autopilot_invite",
+      "actions": [
+        {
+          "button_id": "tom_confused_identity_continue",
+          "label": "CONTINUE",
+          "action_id": "event_operations",
+          "operations": [
+            {
+              "op": "show_story_popup",
+              "title": "PLAYER RESPONSE",
+              "text": "Why would I kill you?\n\nI'm very confused.\n\nI don't think I know who I am or what I'm doing out here.",
+              "close_mode": "button",
+              "images": [
+                {
+                  "path": "res://images/Tom.png"
+                }
+              ],
+              "image_height": 140,
+              "popup_size": {
+                "x": 580,
+                "y": 430
+              }
+            },
+            {
+              "op": "advance_step",
+              "next_step": "hank_autopilot_invite"
+            }
+          ]
+        }
+      ]
+    },
+    "hank_autopilot_invite": {
+      "objective_text": "Press CONTINUE to read: AUDIO POPUP.",
+      "interaction_type": "story_popup",
+      "next_step": "travel_to_human_habitat_beacon",
+      "actions": [
+        {
+          "button_id": "hank_autopilot_invite_continue",
+          "label": "CONTINUE",
+          "action_id": "event_operations",
+          "operations": [
+            {
+              "op": "show_story_popup",
+              "title": "AUDIO POPUP",
+              "text": "SOURCE: HANK\nSIGNAL QUALITY: CLEAR\n\n\"I think I might know what's going on with you.\"\n\n\"I think you should come with me.\"\n\n\"You should be able to use your Auto Pilot function.\"\n\n\"I'm going to pass you a location.\"\n\n\"Meet me here and maybe we can clear up your memory problems.\"",
+              "close_mode": "button",
+              "images": [
+                {
+                  "path": "res://images/Hank.png"
+                }
+              ],
+              "image_height": 140,
+              "popup_size": {
+                "x": 580,
+                "y": 430
+              }
+            },
+            {
+              "op": "advance_step",
+              "next_step": "travel_to_human_habitat_beacon"
+            }
+          ]
+        }
+      ]
+    },
+    "travel_to_human_habitat_beacon": {
+      "objective_text": "Hank transmitted a habitat location. Use the Event panel Auto Pilot route to travel to the Human Station Habitat.",
+      "target_object_id": "human_station_habitat_beacon_001",
+      "arrival_range": 140,
+      "next_step": "station_arrival_checkin",
+      "on_enter": [
+        {
+          "op": "show_tutorial_hint",
+          "title": "AUTO PILOT TARGET RECEIVED",
+          "text": "Hank transmitted a habitat location. Use the Event panel Auto Pilot route to travel there.",
+          "target_point_id": "event_panel",
+          "line_to_point_id": "event_panel",
+          "duration": 5.0,
+          "popup_size": {
+            "x": 320,
+            "y": 126
+          },
+          "popup_offset": {
+            "x": 30,
+            "y": -22
+          },
+          "draw_line": true
+        }
+      ],
+      "on_arrival": [
+        {
+          "op": "write_log",
+          "message": "Human Station Habitat reached."
+        },
+        {
+          "op": "advance_step",
+          "next_step": "station_arrival_checkin"
+        }
+      ]
+    },
+    "station_arrival_checkin": {
+      "objective_text": "Press CONTINUE to read: HUMAN STATION HABITAT.",
+      "interaction_type": "story_popup",
+      "next_step": "melissa_missed_checkin",
+      "actions": [
+        {
+          "button_id": "station_arrival_checkin_continue",
+          "label": "CONTINUE",
+          "action_id": "event_operations",
+          "operations": [
+            {
+              "op": "show_story_popup",
+              "title": "HUMAN STATION HABITAT",
+              "text": "[b]STATION RELAY[/b]\n\n\"Hank, docking channel open.\"\n\n\"Where have you been?\"\n\n---\n\n[b]HANK[/b]\n\n\"Long story.\"\n\n\"Got a guest.\"\n\n---\n\n[b]STATION RELAY[/b]\n\n\"You don't bring guests.\"\n\n---\n\n[b]HANK[/b]\n\n\"I know.\"",
+              "close_mode": "button",
+              "images": [
+                {
+                  "path": "res://images/Hank.png"
+                }
+              ],
+              "image_height": 140,
+              "popup_size": {
+                "x": 580,
+                "y": 430
+              }
+            },
+            {
+              "op": "advance_step",
+              "next_step": "melissa_missed_checkin"
+            }
+          ]
+        }
+      ]
+    },
+    "melissa_missed_checkin": {
+      "objective_text": "Press CONTINUE to read: STATION RELAY.",
+      "interaction_type": "story_popup",
+      "next_step": "hank_grumbles_and_requests_help",
+      "actions": [
+        {
+          "button_id": "melissa_missed_checkin_continue",
+          "label": "CONTINUE",
+          "action_id": "event_operations",
+          "operations": [
+            {
+              "op": "show_story_popup",
+              "title": "STATION RELAY",
+              "text": "[b]STATION RELAY[/b]\n\n\"Hank...\"\n\n\"Melissa missed her check-in.\"\n\n\"Her beacon is still active, but she never made dock cycle.\"\n\n\"Last ping is holding near the outer belt.\"",
+              "close_mode": "button",
+              "popup_size": {
+                "x": 560,
+                "y": 360
+              }
+            },
+            {
+              "op": "advance_step",
+              "next_step": "hank_grumbles_and_requests_help"
+            }
+          ]
+        }
+      ]
+    },
+    "hank_grumbles_and_requests_help": {
+      "objective_text": "Press CONTINUE to read: AUDIO POPUP.",
+      "interaction_type": "story_popup",
+      "next_step": "tom_accepts_help",
+      "actions": [
+        {
+          "button_id": "hank_grumbles_and_requests_help_continue",
+          "label": "CONTINUE",
+          "action_id": "event_operations",
+          "operations": [
+            {
+              "op": "show_story_popup",
+              "title": "AUDIO POPUP",
+              "text": "SOURCE: HANK\nSIGNAL QUALITY: CLEAR\n\n\"Melissa.\"\n\n\"Girl's gonna be the death of me.\"\n\n\"She does this. Pushes too far, swears she has it handled, then makes everyone else sweat over the silence.\"\n\n\"I was going to help sort out your memory problems first, but that plan has to wait.\"\n\n\"Your warp signature is stronger than mine. A lot stronger.\"\n\n\"If her beacon is active, you can get there faster than I can.\"\n\n\"I hate asking this after dragging you here half-awake, but I need your help.\"",
+              "close_mode": "button",
+              "images": [
+                {
+                  "path": "res://images/Hank.png"
+                }
+              ],
+              "image_height": 140,
+              "popup_size": {
+                "x": 620,
+                "y": 470
+              }
+            },
+            {
+              "op": "advance_step",
+              "next_step": "tom_accepts_help"
+            }
+          ]
+        }
+      ]
+    },
+    "tom_accepts_help": {
+      "objective_text": "Press CONTINUE to read: PLAYER RESPONSE.",
+      "interaction_type": "story_popup",
+      "next_step": "melissa_beacon_target_received",
+      "actions": [
+        {
+          "button_id": "tom_accepts_help_continue",
+          "label": "CONTINUE",
+          "action_id": "event_operations",
+          "operations": [
+            {
+              "op": "show_story_popup",
+              "title": "PLAYER RESPONSE",
+              "text": "I don't understand all of this.\n\nBut someone needs help.\n\nSo I will help.",
+              "close_mode": "button",
+              "images": [
+                {
+                  "path": "res://images/Tom.png"
+                }
+              ],
+              "image_height": 140,
+              "popup_size": {
+                "x": 580,
+                "y": 430
+              }
+            },
+            {
+              "op": "advance_step",
+              "next_step": "melissa_beacon_target_received"
+            }
+          ]
+        }
+      ]
+    },
+    "melissa_beacon_target_received": {
+      "objective_text": "Press CONTINUE to read: SYSTEM POPUP.",
+      "interaction_type": "story_popup",
+      "next_step": "travel_to_melissa_beacon",
+      "actions": [
+        {
+          "button_id": "melissa_beacon_target_received_continue",
+          "label": "CONTINUE",
+          "action_id": "event_operations",
+          "operations": [
+            {
+              "op": "show_story_popup",
+              "title": "SYSTEM POPUP",
+              "text": "[b]BEACON TARGET RECEIVED[/b]\n\nTARGET NAME: Melissa Active Beacon\nTARGET TYPE: Human Personal Beacon\nSTATUS: Active\nCHECK-IN STATUS: Missed\nDOCK CYCLE: Missed\nROUTE STATUS: AVAILABLE",
+              "close_mode": "button",
+              "popup_size": {
+                "x": 560,
+                "y": 360
+              }
+            },
+            {
+              "op": "advance_step",
+              "next_step": "travel_to_melissa_beacon"
+            }
+          ]
+        }
+      ]
+    },
+    "travel_to_melissa_beacon": {
+      "objective_text": "Melissa's active beacon is now the event target. Use the Event panel Auto Pilot route to travel there.",
+      "target_object_id": "melissa_active_beacon_001",
+      "arrival_range": 80,
+      "next_step": "melissa_beacon_reached",
+      "on_enter": [
+        {
+          "op": "show_tutorial_hint",
+          "title": "AUTO PILOT TARGET RECEIVED",
+          "text": "Melissa's active beacon is now the event target. Use the Event panel Auto Pilot route to travel there.",
+          "target_point_id": "event_panel",
+          "line_to_point_id": "event_panel",
+          "duration": 5.0,
+          "popup_size": {
+            "x": 330,
+            "y": 126
+          },
+          "popup_offset": {
+            "x": 30,
+            "y": -22
+          },
+          "draw_line": true
+        }
+      ],
+      "on_arrival": [
+        {
+          "op": "write_log",
+          "message": "Melissa's active beacon reached."
+        },
+        {
+          "op": "advance_step",
+          "next_step": "melissa_beacon_reached"
+        }
+      ]
+    },
+    "melissa_beacon_reached": {
+      "objective_text": "Press CONTINUE to read: MELISSA ACTIVE BEACON.",
+      "interaction_type": "story_popup",
+      "next_step": "asteroid_scan_notice",
+      "actions": [
+        {
+          "button_id": "melissa_beacon_reached_continue",
+          "label": "CONTINUE",
+          "action_id": "event_operations",
+          "operations": [
+            {
+              "op": "show_story_popup",
+              "title": "MELISSA ACTIVE BEACON",
+              "text": "Melissa's active beacon reached.\n\nLocal scan is waking up around the outer belt.",
+              "close_mode": "button",
+              "popup_size": {
+                "x": 560,
+                "y": 360
+              }
+            },
+            {
+              "op": "advance_step",
+              "next_step": "asteroid_scan_notice"
+            }
+          ]
+        }
+      ]
+    },
+    "asteroid_scan_notice": {
+      "objective_text": "Press CONTINUE to read: SCAN NOTICE.",
+      "interaction_type": "story_popup",
+      "next_step": "tom_focuses_on_melissa",
+      "actions": [
+        {
+          "button_id": "asteroid_scan_notice_continue",
+          "label": "CONTINUE",
+          "action_id": "event_operations",
+          "operations": [
+            {
+              "op": "show_story_popup",
+              "title": "SCAN NOTICE",
+              "text": "[b]SCAN UPDATE[/b]\n\nYour scan has detected several asteroids.\n\nTheir information can be accessed via the Live Radar.\n\nAsteroids are orange.\n\nClicking an active node relays directly to your personal log.",
+              "close_mode": "button",
+              "popup_size": {
+                "x": 560,
+                "y": 360
+              }
+            },
+            {
+              "op": "advance_step",
+              "next_step": "tom_focuses_on_melissa"
+            }
+          ]
+        }
+      ]
+    },
+    "tom_focuses_on_melissa": {
+      "objective_text": "Press CONTINUE to read: PLAYER RESPONSE.",
+      "interaction_type": "story_popup",
+      "next_step": "go_talk_to_melissa",
+      "actions": [
+        {
+          "button_id": "tom_focuses_on_melissa_continue",
+          "label": "CONTINUE",
+          "action_id": "event_operations",
+          "operations": [
+            {
+              "op": "show_story_popup",
+              "title": "PLAYER RESPONSE",
+              "text": "That's really great. Thanks.\n\nBut I need to focus on helping Melissa.\n\nI should be able to link-call her from here...",
+              "close_mode": "button",
+              "images": [
+                {
+                  "path": "res://images/Tom.png"
+                }
+              ],
+              "image_height": 140,
+              "popup_size": {
+                "x": 580,
+                "y": 430
+              }
+            },
+            {
+              "op": "advance_step",
+              "next_step": "go_talk_to_melissa"
+            }
+          ]
+        }
+      ]
+    },
+    "go_talk_to_melissa": {
+      "objective_text": "Link-call Melissa near her active beacon.",
+      "target_object_id": "melissa_nudawn_001",
+      "arrival_range": 95,
+      "next_step": "accept_handoff_tutorial",
+      "on_arrival": [
+        {
+          "op": "show_story_popup",
+          "title": "MELISSA",
+          "text": "[b]MELISSA[/b]\n\n\"My father sent you?\"\n\n\"Good.\"\n\n\"I need a Navigation Relay Coupler if I'm getting out of here.\"\n\n\"Here's the blueprint.\"\n\n\"There is plenty of iron around in the asteroids.\"",
+          "images": [
+            {
+              "path": "res://images/Melissa.png"
+            }
+          ],
+          "image_height": 140,
+          "popup_size": {
+            "x": 580,
+            "y": 430
+          },
+          "close_mode": "button"
+        },
+        {
+          "op": "advance_step",
+          "next_step": "accept_handoff_tutorial"
+        }
+      ]
+    },
+    "accept_handoff_tutorial": {
+      "objective_text": "Press CONTINUE to read: ACCEPT HANDOFF.",
+      "interaction_type": "tutorial_popup",
+      "next_step": "accept_melissa_repair_handoff",
+      "actions": [
+        {
+          "button_id": "accept_handoff_tutorial_continue",
+          "label": "CONTINUE",
+          "action_id": "event_operations",
+          "operations": [
+            {
+              "op": "show_story_popup",
+              "title": "ACCEPT HANDOFF",
+              "text": "Some NPCs can hand off items, blueprints, or mission data.\n\nYou must be within interaction range to accept the handoff.\n\nUse the event action button when you are ready.",
+              "close_mode": "button",
+              "popup_size": {
+                "x": 560,
+                "y": 360
+              }
+            },
+            {
+              "op": "advance_step",
+              "next_step": "accept_melissa_repair_handoff"
+            }
+          ]
+        }
+      ]
+    },
+    "accept_melissa_repair_handoff": {
+      "objective_text": "Accept Melissa's Navigation Relay Coupler blueprint handoff.",
+      "target_object_id": "melissa_nudawn_001",
+      "interaction_type": "handoff",
+      "interaction_range": 95,
+      "gives_item": "navigation_relay_coupler_blueprint",
+      "next_step": "system_navigation_scan_mine_tutorial",
+      "actions": [
+        {
+          "button_id": "accept_melissa_repair_handoff",
+          "label": "ACCEPT",
+          "action_id": "download_beacon_data",
+          "range": 95
+        }
+      ]
+    },
+    "system_navigation_scan_mine_tutorial": {
+      "objective_text": "Press CONTINUE to read: SYSTEM INTERFACE.",
+      "interaction_type": "tutorial_popup",
+      "next_step": "blueprint_overview_tutorial",
+      "actions": [
+        {
+          "button_id": "system_navigation_scan_mine_tutorial_continue",
+          "label": "CONTINUE",
+          "action_id": "event_operations",
+          "operations": [
+            {
+              "op": "update_npc_contact",
+              "target_object_id": "melissa_nudawn_001",
+              "npc_dialogue_lines": [
+                "OK.",
+                "I'll trust you to help me out.",
+                "If you can build that Navigation Relay Coupler, I can get this ship moving again."
+              ],
+              "message": "OK. I'll trust you to help me out."
+            },
+            {
+              "op": "show_story_popup",
+              "title": "SYSTEM INTERFACE",
+              "text": "[b]NEW TASK DETECTED[/b]\n\nBLUEPRINT REQUIREMENTS INCOMPLETE\n\n[b]SUGGESTED ACTIONS[/b]\n\n1. Navigate to nearby resource nodes.\n\n2. Scan objects to determine composition.\n\n3. Mine required resources.\n\n4. Return resources for fabrication.\n\n---\n\n[b]NAVIGATION[/b]\n\nThe Auto Pilot can route to known targets.\n\n---\n\n[b]SCAN[/b]\n\nScanning reveals information about objects, contacts, and resources.\n\n---\n\n[b]MINING[/b]\n\nAsteroids may contain usable materials.\n\nRequired materials can be collected and stored in inventory.",
+              "close_mode": "button",
+              "popup_size": {
+                "x": 560,
+                "y": 360
+              }
+            },
+            {
+              "op": "advance_step",
+              "next_step": "blueprint_overview_tutorial"
+            }
+          ]
+        }
+      ]
+    },
+    "blueprint_overview_tutorial": {
+      "objective_text": "Press CONTINUE to read: SYSTEM INTERFACE.",
+      "interaction_type": "tutorial_popup",
+      "next_step": "tom_blueprint_acknowledgment",
+      "actions": [
+        {
+          "button_id": "blueprint_overview_tutorial_continue",
+          "label": "CONTINUE",
+          "action_id": "event_operations",
+          "operations": [
+            {
+              "op": "show_story_popup",
+              "title": "SYSTEM INTERFACE",
+              "text": "[b]BLUEPRINT INFORMATION[/b]\n\nBlueprints contain fabrication instructions.\n\nRequired materials must be present before fabrication can begin.\n\nWhen sufficient materials are available:\n\n1. Open the Crafting Interface.\n\n2. Select a known blueprint.\n\n3. Verify required materials.\n\n4. Fabricate the item.\n\nFabricated items may be delivered to NPCs, installed, traded, or stored.",
+              "close_mode": "button",
+              "popup_size": {
+                "x": 560,
+                "y": 360
+              }
+            },
+            {
+              "op": "advance_step",
+              "next_step": "tom_blueprint_acknowledgment"
+            }
+          ]
+        }
+      ]
+    },
+    "tom_blueprint_acknowledgment": {
+      "objective_text": "Press CONTINUE to read: PLAYER RESPONSE.",
+      "interaction_type": "story_popup",
+      "next_step": "return_to_melissa_with_coupler",
+      "actions": [
+        {
+          "button_id": "tom_blueprint_acknowledgment_continue",
+          "label": "CONTINUE",
+          "action_id": "event_operations",
+          "operations": [
+            {
+              "op": "show_story_popup",
+              "title": "PLAYER RESPONSE",
+              "text": "That's strange.\n\nI don't remember learning any of this.\n\nBut I understand it.",
+              "close_mode": "button",
+              "images": [
+                {
+                  "path": "res://images/Tom.png"
+                }
+              ],
+              "image_height": 140,
+              "popup_size": {
+                "x": 580,
+                "y": 430
+              }
+            },
+            {
+              "op": "advance_step",
+              "next_step": "return_to_melissa_with_coupler"
+            }
+          ]
+        }
+      ]
+    },
+    "return_to_melissa_with_coupler": {
+      "objective_text": "Fabricate a Navigation Relay Coupler, then deliver it to Melissa.",
+      "target_object_id": "melissa_nudawn_001",
+      "interaction_type": "turn_in",
+      "interaction_range": 95,
+      "requires_item": "navigation_relay_coupler",
+      "next_step": "melissa_bogey_inbound",
+      "on_enter": [
+        {
+          "op": "show_tutorial_hint",
+          "title": "BUILD AND RETURN",
+          "text": "If you can build the Navigation Relay Coupler, Melissa can get moving again. Bring it back when it is finished.",
+          "target_point_id": "event_panel",
+          "duration": 5.0,
+          "popup_size": {
+            "x": 330,
+            "y": 126
+          },
+          "popup_offset": {
+            "x": 30,
+            "y": -22
+          }
+        }
+      ],
+      "actions": [
+        {
+          "button_id": "deliver_navigation_relay_coupler",
+          "label": "DELIVER",
+          "action_id": "download_beacon_data",
+          "range": 95
+        }
+      ]
+    },
+    "melissa_bogey_inbound": {
+      "objective_text": "Press CONTINUE to read: MELISSA.",
+      "interaction_type": "story_popup",
+      "next_step": "tom_asks_about_bogey",
+      "actions": [
+        {
+          "button_id": "melissa_bogey_inbound_continue",
+          "label": "CONTINUE",
+          "action_id": "event_operations",
+          "operations": [
+            {
+              "op": "show_story_popup",
+              "title": "MELISSA",
+              "text": "[b]MELISSA[/b]\n\n\"Damn.\"\n\n\"We have a bogey inbound.\"",
+              "close_mode": "button",
+              "images": [
+                {
+                  "path": "res://images/Melissa.png"
+                }
+              ],
+              "image_height": 140,
+              "popup_size": {
+                "x": 580,
+                "y": 430
+              }
+            },
+            {
+              "op": "advance_step",
+              "next_step": "tom_asks_about_bogey"
+            }
+          ]
+        }
+      ]
+    },
+    "tom_asks_about_bogey": {
+      "objective_text": "Press CONTINUE to read: PLAYER RESPONSE.",
+      "interaction_type": "story_popup",
+      "next_step": "melissa_explains_vayrax_space",
+      "actions": [
+        {
+          "button_id": "tom_asks_about_bogey_continue",
+          "label": "CONTINUE",
+          "action_id": "event_operations",
+          "operations": [
+            {
+              "op": "show_story_popup",
+              "title": "PLAYER RESPONSE",
+              "text": "A.. bogey?",
+              "close_mode": "button",
+              "images": [
+                {
+                  "path": "res://images/Tom.png"
+                }
+              ],
+              "image_height": 140,
+              "popup_size": {
+                "x": 580,
+                "y": 430
+              }
+            },
+            {
+              "op": "advance_step",
+              "next_step": "melissa_explains_vayrax_space"
+            }
+          ]
+        }
+      ]
+    },
+    "melissa_explains_vayrax_space": {
+      "objective_text": "Press CONTINUE to read: MELISSA.",
+      "interaction_type": "story_popup",
+      "next_step": "vayrax_claim_drone_warning",
+      "actions": [
+        {
+          "button_id": "melissa_explains_vayrax_space_continue",
+          "label": "CONTINUE",
+          "action_id": "event_operations",
+          "operations": [
+            {
+              "op": "show_story_popup",
+              "title": "MELISSA",
+              "text": "[b]MELISSA[/b]\n\n\"This is Vayrax space.\"\n\n\"Humans are not meant to have presence here.\"\n\n\"Tell me you can fight.\"",
+              "close_mode": "button",
+              "images": [
+                {
+                  "path": "res://images/Melissa.png"
+                }
+              ],
+              "image_height": 140,
+              "popup_size": {
+                "x": 580,
+                "y": 430
+              }
+            },
+            {
+              "op": "advance_step",
+              "next_step": "vayrax_claim_drone_warning"
+            }
+          ]
+        }
+      ]
+    },
+    "vayrax_claim_drone_warning": {
+      "objective_text": "Press CONTINUE to read: VAYRAX CLAIM DRONE.",
+      "interaction_type": "story_popup",
+      "next_step": "battle_entry_tutorial",
+      "actions": [
+        {
+          "button_id": "vayrax_claim_drone_warning_continue",
+          "label": "CONTINUE",
+          "action_id": "event_operations",
+          "operations": [
+            {
+              "op": "show_story_popup",
+              "title": "VAYRAX CLAIM DRONE",
+              "text": "[b]UNAUTHORIZED VESSEL[/b]\n\nRemain where you are.\n\nI will now destroy you.\n\nComply.",
+              "close_mode": "button",
+              "popup_size": {
+                "x": 560,
+                "y": 360
+              }
+            },
+            {
+              "op": "advance_step",
+              "next_step": "battle_entry_tutorial"
+            }
+          ]
+        }
+      ]
+    },
+    "battle_entry_tutorial": {
+      "objective_text": "Press CONTINUE to read: BATTLE WARNING.",
+      "interaction_type": "tutorial_popup",
+      "next_step": "tom_does_not_know_fight",
+      "actions": [
+        {
+          "button_id": "battle_entry_tutorial_continue",
+          "label": "CONTINUE",
+          "action_id": "event_operations",
+          "operations": [
+            {
+              "op": "show_story_popup",
+              "title": "BATTLE WARNING",
+              "text": "You are about to enter a battle.",
+              "close_mode": "button",
+              "popup_size": {
+                "x": 560,
+                "y": 360
+              }
+            },
+            {
+              "op": "advance_step",
+              "next_step": "tom_does_not_know_fight"
+            }
+          ]
+        }
+      ]
+    },
+    "tom_does_not_know_fight": {
+      "objective_text": "Press CONTINUE to read: PLAYER RESPONSE.",
+      "interaction_type": "story_popup",
+      "next_step": "latch_battle_rundown",
+      "actions": [
+        {
+          "button_id": "tom_does_not_know_fight_continue",
+          "label": "CONTINUE",
+          "action_id": "event_operations",
+          "operations": [
+            {
+              "op": "show_story_popup",
+              "title": "PLAYER RESPONSE",
+              "text": "Wait, what?\n\nI don't know how to fight.",
+              "close_mode": "button",
+              "images": [
+                {
+                  "path": "res://images/Tom.png"
+                }
+              ],
+              "image_height": 140,
+              "popup_size": {
+                "x": 580,
+                "y": 430
+              }
+            },
+            {
+              "op": "advance_step",
+              "next_step": "latch_battle_rundown"
+            }
+          ]
+        }
+      ]
+    },
+    "latch_battle_rundown": {
+      "objective_text": "Press CONTINUE to read: SYSTEM INTERFACE.",
+      "interaction_type": "story_popup",
+      "next_step": "battle_vayrax_claim_drone",
+      "actions": [
+        {
+          "button_id": "latch_battle_rundown_continue",
+          "label": "CONTINUE",
+          "action_id": "event_operations",
+          "operations": [
+            {
+              "op": "show_story_popup",
+              "title": "SYSTEM INTERFACE",
+              "text": "[b]L.A.T.C.H. RESPONSE[/b]\n\nYou are a L.A.T.C.H. ship.\n\nYou are made for battle.\n\n---\n\n[b]BASIC BATTLE RUNDOWN[/b]\n\nPrimary weapons are reliable direct attacks.\n\nSecondary weapons may use ammunition or stronger firing lanes.\n\nShields reduce incoming damage while powered.\n\nConsumables can repair, recharge, or create tactical effects.\n\nEnemies may carry weapons, shields, consumables, behavior profiles, and rewards.\n\nSurvive the enemy action cycle.\n\nDisable the hostile vessel.",
+              "close_mode": "button",
+              "popup_size": {
+                "x": 620,
+                "y": 470
+              }
+            },
+            {
+              "op": "advance_step",
+              "next_step": "battle_vayrax_claim_drone"
+            }
+          ]
+        }
+      ]
+    },
+    "battle_vayrax_claim_drone": {
+      "objective_text": "Defeat the Vayrax Claim Drone.",
+      "target_object_id": "vayrax_claim_drone_001",
+      "enemy_id": "vayrax_claim_drone_001",
+      "interaction_type": "hunt",
+      "complete_on_battle_victory": true,
+      "next_step": "melissa_after_battle",
+      "on_enter": [
+        {
+          "op": "start_battle",
+          "enemy_id": "vayrax_claim_drone_001",
+          "entry_reason": "opening_chain_vayrax_claim_drone",
+          "message": "Vayrax Claim Drone engaged."
+        }
+      ],
+      "on_battle_victory": [
+        {
+          "op": "write_log",
+          "message": "Vayrax Claim Drone defeated."
+        },
+        {
+          "op": "advance_step",
+          "next_step": "melissa_after_battle"
+        }
+      ]
+    },
+    "melissa_after_battle": {
+      "objective_text": "Press CONTINUE to read: MELISSA.",
+      "interaction_type": "story_popup",
+      "next_step": "return_to_human_habitat",
+      "actions": [
+        {
+          "button_id": "melissa_after_battle_continue",
+          "label": "CONTINUE",
+          "action_id": "event_operations",
+          "operations": [
+            {
+              "op": "show_story_popup",
+              "title": "MELISSA",
+              "text": "[b]MELISSA[/b]\n\n\"You actually won.\"\n\n\"Okay... wow.\"\n\n\"Thank you.\"\n\n\"I'll meet you back at the hab.\"\n\n\"We have a lot to discuss.\"",
+              "close_mode": "button",
+              "images": [
+                {
+                  "path": "res://images/Melissa.png"
+                }
+              ],
+              "image_height": 140,
+              "popup_size": {
+                "x": 580,
+                "y": 430
+              }
+            },
+            {
+              "op": "advance_step",
+              "next_step": "return_to_human_habitat"
+            }
+          ]
+        }
+      ]
+    },
+    "return_to_human_habitat": {
+      "objective_text": "Return to the Human Station Habitat.",
+      "target_object_id": "human_station_habitat_beacon_001",
+      "arrival_range": 140,
+      "next_step": "melissa_contact_complete",
+      "on_enter": [
+        {
+          "op": "show_tutorial_hint",
+          "title": "RETURN TO HABITATION",
+          "text": "Return to the Human Station Habitat. Use the Event panel Auto Pilot route to travel back.",
+          "target_point_id": "event_panel",
+          "line_to_point_id": "event_panel",
+          "duration": 5.0,
+          "popup_size": {
+            "x": 330,
+            "y": 126
+          },
+          "popup_offset": {
+            "x": 30,
+            "y": -22
+          },
+          "draw_line": true
+        }
+      ],
+      "on_arrival": [
+        {
+          "op": "write_log",
+          "message": "Human Station Habitat reached."
+        },
+        {
+          "op": "advance_step",
+          "next_step": "melissa_contact_complete"
+        }
+      ]
+    },
+    "melissa_contact_complete": {
+      "objective_text": "Human Station Habitat reached. Complete the opening rescue chain.",
+      "target_object_id": "human_station_habitat_beacon_001",
+      "interaction_type": "complete",
+      "interaction_range": 160,
+      "next_step": "completed",
+      "actions": [
+        {
+          "button_id": "complete_opening_chain",
+          "label": "COMPLETE",
+          "action_id": "claim_event_reward",
+          "range": 160
+        }
+      ]
+    }
+  }
+}

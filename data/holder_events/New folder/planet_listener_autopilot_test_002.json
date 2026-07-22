@@ -1,0 +1,104 @@
+{
+  "event_id": "planet_listener_autopilot_test_002",
+  "display_name": "Planet Autopilot Listener Test 002",
+  "event_state": "seeded",
+  "current_step": "auto_pilot_to_test_planet_002",
+  "start_on_ready": false,
+  "seed_once": true,
+  "tier": 1,
+  "event_listeners": {
+	"planet_listener_autopilot_test_listener_002": {
+	  "owner_type": "beacon",
+	  "object_type": "beacon",
+	  "object_id": "planet_listener_autopilot_test_listener_002",
+	  "display_name": "Planet Test Listener 002",
+	  "title": "Planet Test Listener 002",
+	  "beacon_type": "event_listener_beacon",
+	  "position_mode": "absolute",
+	  "sector_pos": [
+		0,
+		0,
+		0
+	  ],
+	  "local_pos": [
+		0,
+		0,
+		0
+	  ],
+	  "sector_offset": [
+		0,
+		0,
+		0
+	  ],
+	  "local_offset": [
+		0,
+		0,
+		0
+	  ],
+	  "listener_type": "activate_event_on_range",
+	  "trigger_event_id": "planet_listener_autopilot_test_002",
+	  "start_step": "auto_pilot_to_test_planet_002",
+	  "trigger_once": true,
+	  "triggered": false,
+	  "trigger_range": 1000,
+	  "trigger_popup_message": "",
+	  "is_visible": true,
+	  "is_discovered": false,
+	  "is_completed": false,
+	  "labels": [
+		"beacon",
+		"event_listener",
+		"planet_test",
+		"activate_event_on_range",
+        "authored_object"
+	  ]
+	}
+  },
+  "event_objects": {
+	"test_authored_planet_002": {
+	  "owner_type": "planet",
+	  "object_type": "planet",
+	  "object_id": "test_authored_planet_002",
+	  "display_name": "Test Authored Planet 002",
+	  "title": "Test Authored Planet 002",
+	  "planet_type": "test_world",
+	  "planet_role": "autopilot_test_target",
+	  "population_state": "test_signal_only",
+	  "position_mode": "absolute",
+	  "sector_pos": [
+		0,
+		0,
+		0
+	  ],
+	  "local_pos": [
+		320,
+		0,
+		0
+	  ],
+	  "scan_description": "A small authored test planet used to verify event autopilot targeting.",
+	  "contact_text": "Orbital contact available. This planet exists only for the planet-event target smoke test.",
+	  "services": [
+        "event_board"
+	  ],
+	  "planet_board_events": [],
+	  "is_visible": true,
+	  "is_discovered": true,
+	  "labels": [
+		"planet",
+		"event_object",
+		"planet_test",
+		"autopilot_target",
+        "authored_object"
+	  ]
+	}
+  },
+  "steps": {
+	"auto_pilot_to_test_planet_002": {
+	  "objective_text": "Use AUTO PILOT to travel to the authored test planet.",
+	  "target_object_id": "test_authored_planet_002",
+	  "interaction_type": "travel",
+	  "arrival_range": 160
+	}
+  },
+  "reward_packet": {}
+}

@@ -1,0 +1,383 @@
+{
+  "event_id": "vayrax_lane_012_event",
+  "display_name": "Vayrax Lane 012: Twelve Reply",
+  "description": "Pass 006 Vayrax lane event using the proven Lane 001–010 pattern: existing anchor copied into event_objects, one hidden 500-unit activate_event_on_range listener, explicit enemy install before profile popup, READY button with 30-unit range, battle on next step, victory popup, gives_item blueprint reward, then complete. This lane uses planned blueprint reward `mass_driver_blueprint`.",
+  "event_state": "seeded",
+  "current_step": "vayrax_lane_012_intro_popup",
+  "start_on_ready": false,
+  "seed_once": true,
+  "can_cancel_event": true,
+  "tier": 2,
+  "anchor_star": {
+    "star_id": "tier_2_anchor_star",
+    "star_name": "Tier 2 Star",
+    "sector_pos": [
+      10,
+      1,
+      0
+    ],
+    "local_pos": [
+      363.38300000000004,
+      415.175,
+      558.782
+    ],
+    "required": true,
+    "create_if_missing": false,
+    "tier": 2
+  },
+  "event_listeners": {
+    "vayrax_lane_012_listener": {
+      "owner_type": "beacon",
+      "object_type": "beacon",
+      "object_id": "vayrax_lane_012_listener",
+      "display_name": "Vayrax Lane 012 Signal Listener",
+      "title": "Vayrax Lane 012 Signal Listener",
+      "beacon_type": "hidden_event_listener_beacon",
+      "position_mode": "absolute",
+      "sector_pos": [
+        10,
+        1,
+        0
+      ],
+      "local_pos": [
+        363.38300000000004,
+        415.175,
+        558.782
+      ],
+      "parent_star_id": "tier_2_anchor_star",
+      "parent_star_name": "Tier 2 Star",
+      "listener_type": "activate_event_on_range",
+      "trigger_event_id": "vayrax_lane_012_event",
+      "start_step": "vayrax_lane_012_intro_popup",
+      "trigger_range": 500,
+      "trigger_once": true,
+      "triggered": false,
+      "trigger_popup_message": "",
+      "suppress_trigger_popup": true,
+      "triggered_message": "Vayrax Lane 012 contact resolved near Tier 2 Star Planet 2.",
+      "message": "A Vayrax lane signal hides in the normal scan noise around Tier 2 Star Planet 2.",
+      "is_visible": false,
+      "is_discovered": false,
+      "is_completed": false,
+      "labels": [
+        "beacon",
+        "event_listener",
+        "activate_event_on_range",
+        "vayrax",
+        "vayrax_lane",
+        "vayrax_lane_012",
+        "hidden_listener",
+        "invisible_listener",
+        "camouflaged_signal",
+        "tier_2",
+        "tier_2_anchor_star",
+        "planet_anchor_listener",
+        "authored_object"
+      ]
+    }
+  },
+  "event_objects": {
+    "tier_2_anchor_star_planet_02": {
+      "owner_type": "planet",
+      "object_type": "planet",
+      "object_id": "tier_2_anchor_star_planet_02",
+      "display_name": "Tier 2 Star Planet 2",
+      "title": "Tier 2 Star Planet 2",
+      "scan_name": "Tier 2 Star Planet 2",
+      "scan_description": "Authored anchor planet 2 orbiting Tier 2 Star.",
+      "position_mode": "absolute",
+      "sector_pos": [
+        10,
+        1,
+        0
+      ],
+      "local_pos": [
+        363.38300000000004,
+        415.175,
+        558.782
+      ],
+      "tier": 2,
+      "interaction_type": "signal_anchor",
+      "event_id": "vayrax_lane_012_event",
+      "active_event_id": "vayrax_lane_012_event",
+      "has_event": true,
+      "event_interactable": true,
+      "event_ops_enabled": true,
+      "is_visible": true,
+      "is_discovered": false,
+      "planet_type": "ice",
+      "planet_role": "anchor_planet",
+      "population_state": "refuge",
+      "has_planet_interface": true,
+      "can_land": false,
+      "contact_range": 180,
+      "planet_radius": 7,
+      "orbit_radius": 185,
+      "orbit_angle": 222.4,
+      "services": [
+        "survey_contact"
+      ],
+      "parent_star_id": "tier_2_anchor_star",
+      "parent_star_name": "Tier 2 Star",
+      "anchor_star_id": "tier_2_anchor_star",
+      "anchor_star_name": "Tier 2 Star",
+      "labels": [
+        "planet",
+        "world_seed",
+        "event_anchor",
+        "vayrax_lane",
+        "vayrax_lane_012",
+        "tier_2",
+        "tier_2_anchor_star",
+        "planet_anchor",
+        "authored_object",
+        "event_object"
+      ]
+    },
+    "vayrax_lane_012_drone": {
+      "owner_type": "enemy",
+      "object_type": "enemy",
+      "object_id": "vayrax_lane_012_drone",
+      "enemy_id": "vayrax_lane_012_drone",
+      "display_name": "Vayrax Drone 012",
+      "name": "Vayrax Drone 012",
+      "blueprint_id": "vayrax_drone_012",
+      "spawn_on_step": "vayrax_lane_012_enemy_profile_popup",
+      "position_mode": "absolute",
+      "sector_pos": [
+        10,
+        1,
+        0
+      ],
+      "local_pos": [
+        493.383,
+        425.175,
+        558.782
+      ],
+      "parent_star_id": "tier_2_anchor_star",
+      "parent_star_name": "Tier 2 Star",
+      "event_id": "vayrax_lane_012_event",
+      "active_event_id": "vayrax_lane_012_event",
+      "required_step": "vayrax_lane_012_start_battle",
+      "event_step": "vayrax_lane_012_start_battle",
+      "current_step": "vayrax_lane_012_start_battle",
+      "has_event": true,
+      "labels": [
+        "enemy",
+        "event_enemy",
+        "vayrax",
+        "drone",
+        "vayrax_drone_012",
+        "vayrax_lane",
+        "vayrax_lane_012",
+        "tier_2",
+        "tier_2_anchor_star_planet_02",
+        "near_tier_2_anchor_star_planet_02"
+      ],
+      "event_tags": [
+        "vayrax_lane_012_event",
+        "vayrax",
+        "vayrax_lane_012",
+        "lane_battle"
+      ],
+      "overrides": {
+        "hp": 445,
+        "max_hp": 445,
+        "hull": 445,
+        "max_hull": 445,
+        "attack": 34,
+        "energy_max": 430.0,
+        "max_energy": 430,
+        "energy": 430,
+        "primary": "guardian_suppression_beam_mk3",
+        "primary_weapon": "guardian_suppression_beam_mk3",
+        "secondary": "raider_scrap_ripper_mk2",
+        "secondary_weapon": "raider_scrap_ripper_mk2",
+        "shield": "raider_plate_screen_mk2",
+        "shield_item": "raider_plate_screen_mk2",
+        "consumable": "recharge_kit",
+        "consumable_item": "recharge_kit",
+        "item_stacks": {
+          "small_kinetic_rounds": 24,
+          "medium_kinetic_rounds": 10,
+          "recharge_kit": 1
+        },
+        "behavior_profile": "smart_guy_tactician",
+        "behavior_values": {
+          "decision_cooldown": 1.08,
+          "low_hull_evade_threshold": 0.31,
+          "repair_hull_threshold": 0.36,
+          "shield_switch_min_cooldown_seconds": 8.5,
+          "low_energy_secondary_threshold": 0.44
+        },
+        "reward": [
+          "cobalt",
+          "nickel",
+          "small_kinetic_rounds"
+        ],
+        "reward_items": [
+          "cobalt",
+          "nickel",
+          "small_kinetic_rounds"
+        ],
+        "ship_name": "Vayrax Drone 012"
+      },
+      "is_visible": true,
+      "is_discovered": false
+    }
+  },
+  "required_items": [],
+  "reward_packet": {
+    "credits": 0,
+    "items": [],
+    "blueprints": [],
+    "lore": [],
+    "unlocks": [],
+    "message": "Vayrax Lane 012 complete. Blueprint reward claimed with gives_item."
+  },
+  "steps": {
+    "vayrax_lane_012_intro_popup": {
+      "objective_text": "A Vayrax lane signal has resolved near Tier 2 Star Planet 2.",
+      "target_object_id": "tier_2_anchor_star_planet_02",
+      "target_owner_type": "planet",
+      "interaction_type": "story_popup",
+      "next_step": "vayrax_lane_012_enemy_profile_popup",
+      "on_enter": [
+        {
+          "op": "show_story_popup",
+          "title": "TWELVE REPLY: OBSERVED AND RANKED",
+          "text": "[b]VAYRAX DRONE 012[/b]\n\n\"Twelve opens with an answer you have not earned.\"\n\n\"Observed. Ranked. Replied.\"\n\n\"Your pattern is now a tool.\"",
+          "close_mode": "button",
+          "next_step_on_close": "vayrax_lane_012_enemy_profile_popup",
+          "position": {
+            "x": -360,
+            "y": 0
+          },
+          "popup_size": {
+            "x": 560,
+            "y": 360
+          }
+        }
+      ]
+    },
+    "vayrax_lane_012_enemy_profile_popup": {
+      "objective_text": "Review the Vayrax Drone 012 contact profile.",
+      "target_object_id": "vayrax_lane_012_drone",
+      "target_owner_type": "enemy",
+      "interaction_type": "story_popup",
+      "next_step": "vayrax_lane_012_ready_to_fight",
+      "on_enter": [
+        {
+          "op": "install_event_object",
+          "object_id": "vayrax_lane_012_drone"
+        },
+        {
+          "op": "show_story_popup",
+          "title": "VAYRAX CONTACT PROFILE",
+          "text": "[b]Enemy Handler Source[/b]\n`vayrax_drone_012`\n\n[b]Battle Object[/b]\n`vayrax_lane_012_drone`\n\n[b]Behavior Profile[/b]\n`smart_guy_tactician`\n\n[b]Stats[/b]\nHull: 445 / 445\nHP: 445\nEnergy Max: 430\n\n[b]Loadout[/b]\nPrimary: `guardian_suppression_beam_mk3`\nSecondary: `raider_scrap_ripper_mk2`\nShield: `raider_plate_screen_mk2`\nConsumable: `recharge_kit`\nItem Stacks: `small_kinetic_rounds` x24, `medium_kinetic_rounds` x10, `recharge_kit` x1\n\n[b]Reward On Victory[/b]\n`mass_driver_blueprint`",
+          "close_mode": "button",
+          "next_step_on_close": "vayrax_lane_012_ready_to_fight",
+          "position": {
+            "x": -330,
+            "y": 0
+          },
+          "popup_size": {
+            "x": 620,
+            "y": 500
+          }
+        }
+      ]
+    },
+    "vayrax_lane_012_ready_to_fight": {
+      "objective_text": "Move within 30 units of Vayrax Drone 012, then press READY to engage.",
+      "target_object_id": "vayrax_lane_012_drone",
+      "target_owner_type": "enemy",
+      "interaction_type": "handoff",
+      "interaction_range": 30,
+      "next_step": "vayrax_lane_012_start_battle",
+      "actions": [
+        {
+          "button_id": "vayrax_lane_012_ready_button",
+          "label": "READY",
+          "action_id": "download_beacon_data",
+          "range": 30
+        }
+      ],
+      "success_text": "Vayrax Lane 012 engagement accepted."
+    },
+    "vayrax_lane_012_start_battle": {
+      "objective_text": "Battle: Vayrax Drone 012.",
+      "target_object_id": "vayrax_lane_012_drone",
+      "target_owner_type": "enemy",
+      "enemy_id": "vayrax_lane_012_drone",
+      "interaction_type": "hunt",
+      "interaction_range": 30,
+      "complete_on_battle_victory": true,
+      "next_step": "vayrax_lane_012_victory_popup",
+      "on_enter": [
+        {
+          "op": "start_battle",
+          "enemy_id": "vayrax_lane_012_drone",
+          "entry_reason": "vayrax_lane_012_twelve_reply",
+          "message": "Vayrax Drone 012 engaged."
+        }
+      ],
+      "on_battle_victory": [
+        {
+          "op": "write_log",
+          "message": "Vayrax Lane 012 defeated: Twelve Reply."
+        },
+        {
+          "op": "advance_step",
+          "next_step": "vayrax_lane_012_victory_popup"
+        }
+      ]
+    },
+    "vayrax_lane_012_victory_popup": {
+      "objective_text": "Review Vayrax Lane 012 victory report.",
+      "interaction_type": "story_popup",
+      "next_step": "vayrax_lane_012_claim_reward",
+      "on_enter": [
+        {
+          "op": "show_story_popup",
+          "title": "VAYRAX LANE 012 CLEARED",
+          "text": "[b]TWELVE REPLY DEFEATED[/b]\n\nThe Vayrax lane signal collapses into local static.\n\nBlueprint reward ready:\n`mass_driver_blueprint`",
+          "close_mode": "button",
+          "next_step_on_close": "vayrax_lane_012_claim_reward",
+          "position": {
+            "x": -360,
+            "y": 0
+          },
+          "popup_size": {
+            "x": 560,
+            "y": 360
+          }
+        }
+      ]
+    },
+    "vayrax_lane_012_claim_reward": {
+      "objective_text": "Press COMPLETE near Tier 2 Star Planet 2 to claim the Mass Driver Blueprint and clear Vayrax Lane 012.",
+      "target_object_id": "tier_2_anchor_star_planet_02",
+      "target_owner_type": "planet",
+      "interaction_type": "handoff",
+      "interaction_range": 9999,
+      "next_step": "completed",
+      "actions": [
+        {
+          "button_id": "vayrax_lane_012_complete_button",
+          "label": "COMPLETE",
+          "action_id": "download_beacon_data",
+          "range": 9999
+        }
+      ],
+      "gives_item": "mass_driver_blueprint",
+      "success_text": "Mass Driver Blueprint received. Vayrax Lane 012 complete."
+    },
+    "completed": {
+      "objective_text": "Vayrax Lane 012 complete.",
+      "interaction_type": "complete",
+      "is_complete_step": true,
+      "complete_event": true
+    }
+  }
+}

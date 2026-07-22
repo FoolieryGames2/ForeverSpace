@@ -1,0 +1,290 @@
+{
+  "event_id": "wake_talk_to_hank_001",
+  "display_name": "Wake",
+  "event_state": "seeded",
+  "current_step": "talk_to_hank",
+  "start_on_ready": false,
+  "seed_once": true,
+  "tier": 1,
+
+  "anchor_star": {
+	"star_id": "wake_star_001",
+	"star_name": "Wake Star",
+	"star_type": "K",
+	"sector_pos": [0, 0, 0],
+	"local_pos": [500, 500, 500],
+	"brightness": 1.4,
+	"size": 1.5,
+	"tier": 1,
+	"required": true,
+	"create_if_missing": true
+  },
+
+  "event_listeners": {
+	"wake_listener_001": {
+	  "owner_type": "beacon",
+	  "object_type": "beacon",
+	  "object_id": "wake_listener_001",
+	  "display_name": "Wake Listener",
+	  "title": "Wake Listener",
+	  "beacon_type": "event_listener_beacon",
+
+	  "position_mode": "anchor_offset",
+	  "sector_offset": [0, 0, 0],
+	  "local_offset": [0, 0, 0],
+
+	  "message": "A hidden wake listener waits at the origin point.",
+	  "triggered_message": "Wake sequence detected.",
+	  "trigger_popup_message": "[b]WAKE[/b]\n\nERROR\nMEMORY BLOCK UNAVAILABLE\n\nERROR\nSENSORY ARRAY OFFLINE\n\nERROR\nNAVIGATION SYSTEM OFFLINE\n\nYou are awake, but the ship does not know what you are yet.\n\n[b]FIRST TASK[/b]\nTalk to Hank.",
+
+	  "listener_type": "seed_event_on_range",
+	  "trigger_event_id": "wake_talk_to_hank_001",
+	  "trigger_once": true,
+	  "triggered": false,
+	  "trigger_range": 1000,
+
+	  "is_visible": false,
+	  "is_discovered": false,
+	  "is_completed": false,
+
+	  "labels": [
+		"beacon",
+		"event_listener",
+		"wake_start",
+        "authored_object"
+	  ]
+	}
+  },
+
+  "giver": {
+	"owner_type": "npc",
+	"owner_id": "hank",
+	"object_id": "hank",
+	"template_owner_id": "hank",
+	"blueprint_id": "hank",
+	"display_name": "Hank",
+	"place_near_anchor_star": true,
+	"local_offset": [30, 0, 0],
+	"labels": [
+	  "npc",
+	  "event_giver",
+	  "story_npc",
+	  "hank",
+      "authored_object"
+	]
+  },
+
+  "event_objects": {},
+
+  "required_items": [],
+  "start_items": [],
+
+  "reward_packet": {
+	"credits": 0,
+	"items": [],
+	"blueprints": [],
+	"lore": [],
+	"unlocks": [],
+	"message": "Wake showcase complete."
+  },
+
+  "steps": {
+	"talk_to_hank": {
+	  "objective_text": "Talk to Hank.",
+	  "target_owner_id": "hank",
+	  "interaction_type": "talk",
+	  "step_kind": "offer",
+
+	  "npc_dialogue_lines": [
+		"Easy. Easy. You are awake.",
+		"Do not try to move too fast. Your memory core is damaged.",
+		"I had to pull the burned one and bridge in a blank controller.",
+		"You still have basic function. Scanner, movement, response.",
+        "Stay with me. I need to walk you through the interface."
+	  ],
+	  "npc_chat_line_delay": 1.65,
+	  "npc_chat_character_delay": 0.04,
+	  "npc_quest_available": true,
+
+	  "next_step": "wake_popup_step"
+	},
+
+	"wake_popup_step": {
+	  "objective_text": "Wake sequence initializing.",
+	  "interaction_type": "story_popup",
+	  "next_step": "conversation_player_fragment",
+
+	  "on_enter": [
+		{
+		  "op": "show_story_popup",
+		  "title": "WAKE",
+		  "text": "[b]SYSTEM WAKE PLACEHOLDER[/b]\n\nYour memory is damaged.\nYour identity tether is offline.\nYour sensory array is rebuilding one window at a time.\n\nYou do not remember a name.\nYou do not remember a body.\nYou remember only that something is wrong.\n\nPLACEHOLDER:\nLater this can become the real wake-up cinematic, memory fragment, or ship-interface boot scene.",
+		  "popup_size": {"x": 580, "y": 430},
+		  "image_height": 120,
+		  "close_mode": "button",
+		  "next_step_on_close": "conversation_player_fragment"
+		}
+	  ]
+	},
+
+	"conversation_player_fragment": {
+	  "objective_text": "Listen to the first recovered thoughts.",
+	  "interaction_type": "story_popup",
+	  "next_step": "conversation_hank_first",
+
+	  "on_enter": [
+		{
+		  "op": "show_story_popup",
+		  "title": "YOU",
+		  "text": "[b]Internal Thought[/b]\n\nWhere am I?\n\nNo. That is not the right question.\n\nWhat am I?\n\nThe words feel borrowed. The fear feels real. Somewhere inside the broken core, a damaged fragment tries to become a person.",
+		  "popup_size": {"x": 560, "y": 380},
+		  "image_height": 110,
+		  "close_mode": "button",
+		  "next_step_on_close": "conversation_hank_first"
+		}
+	  ]
+	},
+
+	"conversation_hank_first": {
+	  "objective_text": "Hank responds.",
+	  "interaction_type": "story_popup",
+	  "next_step": "conversation_computer_status",
+
+	  "on_enter": [
+		{
+		  "op": "show_story_popup",
+		  "title": "HANK",
+		  "text": "[b]Hank[/b]\n\nEasy. Easy.\n\nYou are awake, but not steady.\n\nI had to pull a burned memory core out of your frame. I patched in a blank controller just to keep you from going dark.\n\nIf you can understand me, focus on the panel. One step at a time.",
+		  "images": [
+			{"path": "res://images/Hank.png"}
+		  ],
+		  "popup_size": {"x": 580, "y": 430},
+		  "image_height": 150,
+		  "close_mode": "button",
+		  "next_step_on_close": "conversation_computer_status"
+		}
+	  ]
+	},
+
+	"conversation_computer_status": {
+	  "objective_text": "The ship computer reports system status.",
+	  "interaction_type": "story_popup",
+	  "next_step": "events_autopilot_tutorial_step",
+
+	  "on_enter": [
+		{
+		  "op": "show_story_popup",
+		  "title": "SHIP COMPUTER",
+		  "text": "[b]Interface System[/b]\n\nERROR\nMEMORY BLOCK UNAVAILABLE\n\nERROR\nSENSORY ARRAY OFFLINE\n\nERROR\nNAVIGATION SYSTEM OFFLINE\n\nPARTIAL COMMUNICATION LINK DETECTED\n\nExternal speaker identified: Hank.\n\nSuggested action: continue listening.",
+		  "images": [
+			{"path": "res://images/Holographic AI core with glowing rings.png"}
+		  ],
+		  "popup_size": {"x": 580, "y": 430},
+		  "image_height": 150,
+		  "close_mode": "button",
+		  "next_step_on_close": "events_autopilot_tutorial_step"
+		}
+	  ]
+	},
+
+	"events_autopilot_tutorial_step": {
+	  "objective_text": "Learn the event panel and autopilot basics.",
+	  "interaction_type": "story_popup",
+	  "next_step": "press_info_button",
+
+	  "on_enter": [
+		{
+		  "op": "show_story_popup",
+		  "title": "EVENT PANEL / AUTO PILOT",
+		  "text": "[b]EVENT PANEL[/b]\n\nThe event panel tells you what the current story objective is.\n\nIt can show:\n- the event name\n- the current step\n- the current target\n- story action buttons\n- INFO\n- AUTO PILOT\n\n[b]AUTO PILOT[/b]\n\nWhen an event has a target, AUTO PILOT can route the ship toward that target.\n\nFor now, just learn the idea:\nEvent target → AUTO PILOT → arrive near objective → scan or interact.",
+		  "popup_size": {"x": 580, "y": 430},
+		  "image_height": 110,
+		  "close_mode": "button",
+		  "next_step_on_close": "press_info_button"
+		}
+	  ]
+	},
+
+	"press_info_button": {
+	  "objective_text": "Try clicking the INFO button.",
+	  "target_owner_id": "hank",
+	  "interaction_type": "tutorial",
+	  "step_kind": "button_tutorial",
+
+	  "actions": [
+		{
+		  "button_id": "press_info_button",
+		  "label": "INFO",
+		  "action_id": "event_operations",
+		  "operations": [
+			{
+			  "op": "show_tutorial_hint",
+			  "title": "INFO BUTTON",
+			  "text": "Good. This kind of button can teach the player one system at a time.",
+			  "target_point_id": "event_panel",
+			  "line_to_point_id": "event_panel",
+			  "duration": 10.0,
+			  "popup_size": {"x": 300, "y": 118},
+			  "popup_offset": {"x": 30, "y": -22},
+			  "draw_line": true,
+			  "line_color": [0.3, 0.92, 1.0, 0.72],
+			  "circle_color": [0.3, 0.92, 1.0, 0.22],
+			  "circle_radius": 24.0,
+			  "accent_color": [0.3, 0.92, 1.0, 0.95]
+			},
+			{
+			  "op": "advance_step",
+			  "next_step": "talk_to_hank_after_popup"
+			}
+		  ]
+		}
+	  ]
+	},
+
+	"talk_to_hank_after_popup": {
+	  "objective_text": "Talk to Hank again.",
+	  "target_owner_id": "hank",
+	  "interaction_type": "talk",
+	  "step_kind": "talk",
+
+	  "npc_dialogue_lines": [
+		"Good. The story panel is responding.",
+		"The event system can pace information now instead of dumping it all at once.",
+		"That means I can teach you one thing at a time.",
+        "For now, this test is complete."
+	  ],
+	  "completed_npc_dialogue_lines": [
+		"The wake test is complete.",
+        "Next time, we add the scanner handoff."
+	  ],
+	  "npc_chat_line_delay": 1.65,
+	  "npc_chat_character_delay": 0.04,
+	  "npc_quest_available": true,
+
+	  "next_step": "finish_test"
+	},
+
+	"finish_test": {
+	  "objective_text": "Wake tutorial test complete.",
+	  "interaction_type": "story_popup",
+	  "next_step": "complete_placeholder",
+
+	  "on_enter": [
+		{
+		  "op": "show_story_popup",
+		  "title": "WAKE TEST COMPLETE",
+		  "text": "[b]Wake Test Complete[/b]\n\nThis fresh test demonstrated:\n\n- first-load listener popup\n- Hank as a real crafted NPC giver\n- story popup step pacing\n- player/internal thought popup\n- Hank speaker popup with image\n- ship computer/system popup\n- event/autopilot tutorial popup\n- custom INFO button as a step\n- tutorial helper popup\n- step advance after button press\n\nPLACEHOLDER:\nLater Hank gives:\n- scanner\n- MK controller\n- starter energy weapon\n- first battle warning",
+		  "popup_size": {"x": 580, "y": 430},
+		  "close_mode": "button",
+		  "next_step_on_close": "complete_placeholder"
+		}
+	  ]
+	},
+
+	"complete_placeholder": {
+	  "objective_text": "Wake showcase complete. Next build: Hank gives the scanner.",
+	  "target_owner_id": "hank",
+	  "interaction_type": "complete_placeholder"
+	}
+  }
+}

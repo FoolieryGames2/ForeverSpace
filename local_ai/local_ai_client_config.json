@@ -1,0 +1,42 @@
+{
+	"enabled": true,
+	"client_debug_prints": true,
+	"base_url": "http://127.0.0.1:8767",
+	"chat_path": "/v1/chat/completions",
+	"health_path": "/health",
+	"api_mode": "llama_server_openai",
+	"model_id": "forever-space-local",
+	"timeout_seconds": 240.0,
+	"server": {
+		"autostart": true,
+		"debug_prints": true,
+		"runtime_mode": "llama_server_direct",
+		"install_runtime_to_user": true,
+		"command": "local_ai/runtime/llama-server.exe",
+		"script_path": "res://local_ai/local_ai_server.py",
+		"host": "127.0.0.1",
+		"port": 8767,
+		"backend": "llama_server",
+		"model": "local_ai/smoll.gguf",
+		"restart_on_config_mismatch": true,
+		"backend_options": {
+			"n_ctx": 2048,
+			"n_threads": 0,
+			"n_gpu_layers": 0,
+			"max_tokens": 256,
+			"temperature": 0.7,
+			"llama_server_path": "local_ai/runtime/llama-server.exe",
+			"llama_server_host": "127.0.0.1",
+			"llama_server_port": 8767,
+			"startup_timeout_seconds": 180.0,
+			"request_timeout_seconds": 240.0,
+			"llama_server_log_path": "local_ai/llama_server.log"
+		},
+		"allow_lan": false,
+		"health_interval_seconds": 0.5,
+		"health_timeout_seconds": 5.0,
+		"process_bind_timeout_seconds": 180.0,
+		"max_health_attempts": 360,
+		"extra_args": []
+	}
+}

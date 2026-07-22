@@ -1,0 +1,881 @@
+{
+  "event_id": "side_moonpie_guardian_recovery_001",
+  "display_name": "MoonPie",
+  "description": "Side quest. A hidden distress listener leads Tom and AMI to a damaged saucer-like ancient guardian unit. Tom repairs it, nicknames it MoonPie, clears three Vayrax Raiders from the guardian's ancient home site, returns MoonPie home, and receives the Auto Moon Pie blueprint.",
+  "event_state": "seeded",
+  "current_step": "moonpie_01_distress_call",
+  "start_on_ready": false,
+  "seed_once": true,
+  "can_cancel_event": true,
+  "tier": 1,
+  "anchor_star": {
+    "star_id": "tier_1_anchor_star",
+    "star_name": "Tier 1 Star",
+    "sector_pos": [
+      0,
+      0,
+      0
+    ],
+    "local_pos": [
+      500,
+      500,
+      500
+    ],
+    "required": false,
+    "create_if_missing": false
+  },
+  "giver": {},
+  "event_listeners": {
+    "moonpie_distress_listener_001": {
+      "owner_type": "beacon",
+      "object_type": "beacon",
+      "object_id": "moonpie_distress_listener_001",
+      "id": "moonpie_distress_listener_001",
+      "display_name": "MoonPie Distress Listener",
+      "title": "MoonPie Distress Listener",
+      "beacon_type": "hidden_event_listener_beacon",
+      "position_mode": "anchor_offset",
+      "sector_offset": [
+        2,
+        1,
+        0
+      ],
+      "local_offset": [
+        80,
+        -40,
+        60
+      ],
+      "sector_pos": [
+        2,
+        1,
+        0
+      ],
+      "local_pos": [
+        580,
+        460,
+        560
+      ],
+      "listener_type": "activate_event_on_range",
+      "trigger_event_id": "side_moonpie_guardian_recovery_001",
+      "start_step": "moonpie_01_distress_call",
+      "trigger_range": 850,
+      "trigger_once": true,
+      "trigger_popup_message": "",
+      "triggered_message": "A tiny broken distress signal has been caught in local static.",
+      "message": "A hidden listener waits in broken guardian static.",
+      "is_visible": false,
+      "is_discovered": false,
+      "suppress_trigger_popup": true,
+      "labels": [
+        "beacon",
+        "event_listener",
+        "hidden_listener",
+        "invisible_listener",
+        "moonpie",
+        "side_quest",
+        "activate_event_on_range",
+        "tier_1"
+      ]
+    }
+  },
+  "event_objects": {
+    "moonpie_damaged_saucer_001": {
+      "owner_type": "space_object",
+      "object_type": "artifact",
+      "object_id": "moonpie_damaged_saucer_001",
+      "id": "moonpie_damaged_saucer_001",
+      "display_name": "Damaged Saucer Unit",
+      "title": "Damaged Saucer Unit",
+      "event_id": "side_moonpie_guardian_recovery_001",
+      "active_event_id": "side_moonpie_guardian_recovery_001",
+      "has_event": true,
+      "tier": 1,
+      "is_visible": true,
+      "position_mode": "anchor_offset",
+      "sector_offset": [
+        2,
+        1,
+        0
+      ],
+      "local_offset": [
+        120,
+        -10,
+        80
+      ],
+      "sector_pos": [
+        2,
+        1,
+        0
+      ],
+      "local_pos": [
+        620,
+        490,
+        580
+      ],
+      "space_object_type": "artifact",
+      "scan_name": "Damaged Saucer Unit",
+      "scan_description": "A three-foot saucer-shaped guardian unit. Localized damage makes it look like something bit into the hull.",
+      "interaction_type": "inspect",
+      "mineable": false,
+      "event_interactable": true,
+      "event_ops_enabled": true,
+      "spawn_on_step": "moonpie_02_travel_to_signal",
+      "required_step": "moonpie_02_travel_to_signal",
+      "event_step": "moonpie_02_travel_to_signal",
+      "main_view_icon_id": "moonpie_damaged_saucer_001",
+      "main_view_icon_path": "res://images/Moonpie_first_look.png",
+      "message": "A tiny damaged saucer unit drifts without maneuvering power.",
+      "labels": [
+        "space_object",
+        "artifact",
+        "moonpie",
+        "damaged_guardian",
+        "authored_object",
+        "event_object",
+        "side_quest",
+        "tier_1"
+      ]
+    },
+    "moonpie_ancient_site_001": {
+      "owner_type": "planet",
+      "object_type": "planet",
+      "object_id": "moonpie_ancient_site_001",
+      "id": "moonpie_ancient_site_001",
+      "display_name": "MoonPie Ancient Site",
+      "title": "MoonPie Ancient Site",
+      "event_id": "side_moonpie_guardian_recovery_001",
+      "active_event_id": "side_moonpie_guardian_recovery_001",
+      "has_event": true,
+      "tier": 1,
+      "is_visible": true,
+      "position_mode": "anchor_offset",
+      "sector_offset": [
+        3,
+        1,
+        1
+      ],
+      "local_offset": [
+        260,
+        -110,
+        35
+      ],
+      "sector_pos": [
+        3,
+        1,
+        1
+      ],
+      "local_pos": [
+        760,
+        390,
+        535
+      ],
+      "interaction_type": "ancient_site",
+      "spawn_on_step": "moonpie_08_travel_to_ancient_site",
+      "required_step": "moonpie_08_travel_to_ancient_site",
+      "event_step": "moonpie_08_travel_to_ancient_site",
+      "main_view_icon_id": "moonpie_ancient_site_001",
+      "main_view_icon_path": "res://images/Moonpie.png",
+      "message": "A quiet planet-side ancient site. The signal feels old, looted, and unfinished.",
+      "labels": [
+        "planet",
+        "ancient_site",
+        "moonpie_home",
+        "authored_object",
+        "event_object",
+        "side_quest",
+        "guardian_site",
+        "tier_1"
+      ],
+      "planet_type": "rocky",
+      "planet_role": "ancient_guardian_site",
+      "population_state": "ruined_guardian_site",
+      "scan_name": "MoonPie Ancient Site",
+      "scan_description": "A quiet planet-side ancient guardian site. Its vault scars still carry fresh Vayrax extraction burns.",
+      "contact_text": "The ancient guardian site waits in a damaged holding pattern.",
+      "has_planet_interface": true,
+      "can_land": false
+    },
+    "moonpie_vayrax_raider_001": {
+      "owner_type": "enemy",
+      "object_type": "enemy",
+      "object_id": "moonpie_vayrax_raider_001",
+      "id": "moonpie_vayrax_raider_001",
+      "display_name": "Vayrax Raider",
+      "title": "Vayrax Raider",
+      "event_id": "side_moonpie_guardian_recovery_001",
+      "active_event_id": "side_moonpie_guardian_recovery_001",
+      "has_event": true,
+      "tier": 1,
+      "is_visible": true,
+      "position_mode": "anchor_offset",
+      "sector_offset": [
+        3,
+        1,
+        1
+      ],
+      "local_offset": [
+        180,
+        -55,
+        30
+      ],
+      "sector_pos": [
+        3,
+        1,
+        1
+      ],
+      "local_pos": [
+        680,
+        445,
+        530
+      ],
+      "blueprint_id": "vayrax_raider",
+      "enemy_blueprint_id": "vayrax_raider",
+      "source_blueprint_id": "vayrax_raider",
+      "catalog_source": "enemy_blueprints",
+      "catalog_id": "vayrax_raider",
+      "template_owner_id": "moonpie_vayrax_raider_001",
+      "spawn_on_step": "moonpie_10_defeat_vayrax_raiders",
+      "required_step": "moonpie_10_defeat_vayrax_raiders",
+      "event_step": "moonpie_10_defeat_vayrax_raiders",
+      "current_step": "moonpie_10_defeat_vayrax_raiders",
+      "interaction_type": "hunt",
+      "main_view_icon_id": "moonpie_vayrax_raider_001",
+      "main_view_icon_path": "res://UI/PortView/main_view/icons/enemy.png",
+      "event_tags": [
+        "side_moonpie_guardian_recovery_001",
+        "moonpie_vayrax_raider",
+        "vayrax",
+        "guardian_site_raider",
+        "moonpie_raider"
+      ],
+      "labels": [
+        "enemy",
+        "event_enemy",
+        "moonpie_vayrax_raider_001",
+        "side_moonpie_guardian_recovery_001",
+        "vayrax_raider",
+        "catalog_enemy",
+        "authored_object",
+        "vayrax",
+        "moonpie_vayrax_raider",
+        "tier_1"
+      ]
+    },
+    "moonpie_vayrax_raider_002": {
+      "owner_type": "enemy",
+      "object_type": "enemy",
+      "object_id": "moonpie_vayrax_raider_002",
+      "id": "moonpie_vayrax_raider_002",
+      "display_name": "Vayrax Raider",
+      "title": "Vayrax Raider",
+      "event_id": "side_moonpie_guardian_recovery_001",
+      "active_event_id": "side_moonpie_guardian_recovery_001",
+      "has_event": true,
+      "tier": 1,
+      "is_visible": true,
+      "position_mode": "anchor_offset",
+      "sector_offset": [
+        3,
+        1,
+        1
+      ],
+      "local_offset": [
+        315,
+        -120,
+        95
+      ],
+      "sector_pos": [
+        3,
+        1,
+        1
+      ],
+      "local_pos": [
+        815,
+        380,
+        595
+      ],
+      "blueprint_id": "vayrax_raider",
+      "enemy_blueprint_id": "vayrax_raider",
+      "source_blueprint_id": "vayrax_raider",
+      "catalog_source": "enemy_blueprints",
+      "catalog_id": "vayrax_raider",
+      "template_owner_id": "moonpie_vayrax_raider_002",
+      "spawn_on_step": "moonpie_10_defeat_vayrax_raiders",
+      "required_step": "moonpie_10_defeat_vayrax_raiders",
+      "event_step": "moonpie_10_defeat_vayrax_raiders",
+      "current_step": "moonpie_10_defeat_vayrax_raiders",
+      "interaction_type": "hunt",
+      "main_view_icon_id": "moonpie_vayrax_raider_002",
+      "main_view_icon_path": "res://UI/PortView/main_view/icons/enemy.png",
+      "event_tags": [
+        "side_moonpie_guardian_recovery_001",
+        "moonpie_vayrax_raider",
+        "vayrax",
+        "guardian_site_raider",
+        "moonpie_raider"
+      ],
+      "labels": [
+        "enemy",
+        "event_enemy",
+        "moonpie_vayrax_raider_002",
+        "side_moonpie_guardian_recovery_001",
+        "vayrax_raider",
+        "catalog_enemy",
+        "authored_object",
+        "vayrax",
+        "moonpie_vayrax_raider",
+        "tier_1"
+      ]
+    },
+    "moonpie_vayrax_raider_003": {
+      "owner_type": "enemy",
+      "object_type": "enemy",
+      "object_id": "moonpie_vayrax_raider_003",
+      "id": "moonpie_vayrax_raider_003",
+      "display_name": "Vayrax Raider",
+      "title": "Vayrax Raider",
+      "event_id": "side_moonpie_guardian_recovery_001",
+      "active_event_id": "side_moonpie_guardian_recovery_001",
+      "has_event": true,
+      "tier": 1,
+      "is_visible": true,
+      "position_mode": "anchor_offset",
+      "sector_offset": [
+        3,
+        1,
+        1
+      ],
+      "local_offset": [
+        410,
+        -35,
+        -40
+      ],
+      "sector_pos": [
+        3,
+        1,
+        1
+      ],
+      "local_pos": [
+        910,
+        465,
+        460
+      ],
+      "blueprint_id": "vayrax_raider",
+      "enemy_blueprint_id": "vayrax_raider",
+      "source_blueprint_id": "vayrax_raider",
+      "catalog_source": "enemy_blueprints",
+      "catalog_id": "vayrax_raider",
+      "template_owner_id": "moonpie_vayrax_raider_003",
+      "spawn_on_step": "moonpie_10_defeat_vayrax_raiders",
+      "required_step": "moonpie_10_defeat_vayrax_raiders",
+      "event_step": "moonpie_10_defeat_vayrax_raiders",
+      "current_step": "moonpie_10_defeat_vayrax_raiders",
+      "interaction_type": "hunt",
+      "main_view_icon_id": "moonpie_vayrax_raider_003",
+      "main_view_icon_path": "res://UI/PortView/main_view/icons/enemy.png",
+      "event_tags": [
+        "side_moonpie_guardian_recovery_001",
+        "moonpie_vayrax_raider",
+        "vayrax",
+        "guardian_site_raider",
+        "moonpie_raider"
+      ],
+      "labels": [
+        "enemy",
+        "event_enemy",
+        "moonpie_vayrax_raider_003",
+        "side_moonpie_guardian_recovery_001",
+        "vayrax_raider",
+        "catalog_enemy",
+        "authored_object",
+        "vayrax",
+        "moonpie_vayrax_raider",
+        "tier_1"
+      ]
+    }
+  },
+  "reward_packet": {
+    "credits": 0,
+    "items": [],
+    "blueprints": [],
+    "lore": [],
+    "unlocks": [],
+    "message": "MoonPie side signal complete. The guardian unit has returned home. Auto Moon Pie blueprint received."
+  },
+  "steps": {
+    "moonpie_01_distress_call": {
+      "objective_text": "A faint distress signal breaks through local static.",
+      "interaction_type": "story_popup",
+      "next_step": "moonpie_02_travel_to_signal",
+      "on_enter": [
+        {
+          "op": "install_event_object",
+          "target_object_id": "moonpie_damaged_saucer_001"
+        },
+        {
+          "op": "write_log",
+          "message": "MoonPie distress call detected."
+        },
+        {
+          "op": "show_story_popup",
+          "title": "DISTRESS CALL",
+          "text": "[b]DISTRESS CALL[/b]\n\nThe signal is faint, broken, but definitely there.\n\nAMI: The source is too small to be a normal ship. Signal damage is heavy. It may be bait.\n\nTOM: Or it may need help.\n\nAMI: That is the dangerous interpretation.\n\nTOM: Then we investigate carefully.",
+          "close_mode": "button",
+          "position": {
+            "x": -350,
+            "y": 0
+          },
+          "popup_size": {
+            "x": 580,
+            "y": 430
+          },
+          "next_step_on_close": "moonpie_02_travel_to_signal",
+          "images": [
+            {
+              "path": "res://images/Moonpie_first_look.png"
+            }
+          ],
+          "image_height": 150
+        }
+      ]
+    },
+    "moonpie_02_travel_to_signal": {
+      "objective_text": "Travel to the tiny damaged signal source.",
+      "target_object_id": "moonpie_damaged_saucer_001",
+      "interaction_type": "find",
+      "arrival_range": 150,
+      "next_step": "moonpie_03_inspect_damaged_unit",
+      "on_arrival": [
+        {
+          "op": "write_log",
+          "message": "Damaged saucer unit reached."
+        },
+        {
+          "op": "advance_step",
+          "next_step": "moonpie_03_inspect_damaged_unit"
+        }
+      ]
+    },
+    "moonpie_03_inspect_damaged_unit": {
+      "objective_text": "Inspect the damaged saucer-shaped unit.",
+      "target_object_id": "moonpie_damaged_saucer_001",
+      "interaction_type": "inspect",
+      "interaction_range": 120,
+      "next_step": "moonpie_04_repair_unit",
+      "actions": [
+        {
+          "button_id": "inspect_moonpie_damaged_unit",
+          "label": "INSPECT UNIT",
+          "action_id": "event_operations",
+          "range": 120,
+          "operations": [
+            {
+              "op": "show_story_popup",
+              "title": "DAMAGED SAUCER UNIT",
+              "text": "[b]AMI SCAN[/b]\n\nNot human. Not Vayrax. Not inert either.\n\nThe object is roughly three feet across. Its hull is smooth except for one violent breach, like something bit a chunk from the rim.\n\nManeuvering system: disabled.\nPower: intermittent.\nInternal repair lattice: dormant.\n\nAMI: It cannot travel under its own power.",
+              "close_mode": "button",
+              "position": {
+                "x": -350,
+                "y": 0
+              },
+              "popup_size": {
+                "x": 580,
+                "y": 430
+              },
+              "images": [
+                {
+                  "path": "res://images/Moonpie_first_look.png"
+                }
+              ],
+              "image_height": 150
+            },
+            {
+              "op": "write_log",
+              "message": "MoonPie damaged unit inspected."
+            },
+            {
+              "op": "advance_step",
+              "next_step": "moonpie_04_repair_unit"
+            }
+          ]
+        }
+      ]
+    },
+    "moonpie_04_repair_unit": {
+      "objective_text": "Use one Repair Kit to stabilize the damaged saucer unit.",
+      "target_object_id": "moonpie_damaged_saucer_001",
+      "interaction_type": "handoff",
+      "interaction_range": 90,
+      "requires_item": "repair_kit",
+      "gives_item": "moonpie_damaged_guardian_unit",
+      "next_step": "moonpie_05_cargo_hold_decode",
+      "actions": [
+        {
+          "button_id": "use_repair_kit_on_moonpie",
+          "label": "USE REPAIR KIT",
+          "action_id": "download_beacon_data",
+          "range": 90
+        }
+      ]
+    },
+    "moonpie_05_cargo_hold_decode": {
+      "objective_text": "AMI decodes broken guardian data from the unit in cargo.",
+      "interaction_type": "story_popup",
+      "next_step": "moonpie_06_name_moonpie",
+      "on_enter": [
+        {
+          "op": "show_story_popup",
+          "title": "CARGO HOLD DECODE",
+          "text": "[b]CARGO HOLD[/b]\n\nThe small saucer sits in the cargo bay, humming like a wounded tool trying to remember its purpose.\n\nAMI: Internal auto-repair has activated. Communication remains damaged. I can decode fragments only.\n\nguardian...\nsite...\nbuilders silent...\nvault broken...\nVayrax extraction...\ndefense failed...\nrelics removed...\nhome marker follows...",
+          "close_mode": "button",
+          "position": {
+            "x": -340,
+            "y": 0
+          },
+          "popup_size": {
+            "x": 600,
+            "y": 450
+          },
+          "next_step_on_close": "moonpie_06_name_moonpie",
+          "images": [
+            {
+              "path": "res://images/Moonpie.png"
+            }
+          ],
+          "image_height": 150
+        }
+      ]
+    },
+    "moonpie_06_name_moonpie": {
+      "objective_text": "Tom gives the damaged guardian unit a nickname.",
+      "interaction_type": "story_popup",
+      "next_step": "moonpie_07_decode_home_location",
+      "on_enter": [
+        {
+          "op": "show_story_popup",
+          "title": "MOONPIE",
+          "text": "TOM: You are round, stubborn, and somehow still alive.\n\nAMI: That is not a classification.\n\nTOM: MoonPie it is.\n\nAMI: I will log the guardian unit under your informal designation. Against my better judgment.",
+          "close_mode": "button",
+          "position": {
+            "x": -350,
+            "y": 0
+          },
+          "popup_size": {
+            "x": 580,
+            "y": 430
+          },
+          "next_step_on_close": "moonpie_07_decode_home_location",
+          "images": [
+            {
+              "path": "res://images/Moonpie.png"
+            }
+          ],
+          "image_height": 150
+        },
+        {
+          "op": "write_log",
+          "message": "Tom nicknamed the damaged guardian unit MoonPie."
+        }
+      ]
+    },
+    "moonpie_07_decode_home_location": {
+      "objective_text": "Decode MoonPie\u2019s damaged home-location packet.",
+      "interaction_type": "story_popup",
+      "next_step": "moonpie_08_travel_to_ancient_site",
+      "on_enter": [
+        {
+          "op": "install_event_object",
+          "target_object_id": "moonpie_ancient_site_001"
+        },
+        {
+          "op": "show_story_popup",
+          "title": "HOME MARKER",
+          "text": "AMI: The location packet is damaged, but the emotional weighting is unusually strong.\n\nTOM: Emotional weighting?\n\nAMI: Closest translation: home.\n\nMoonPie is pointing us toward an old site. The packet also repeats a Vayrax extraction warning.",
+          "close_mode": "button",
+          "position": {
+            "x": -350,
+            "y": 0
+          },
+          "popup_size": {
+            "x": 580,
+            "y": 430
+          },
+          "next_step_on_close": "moonpie_08_travel_to_ancient_site",
+          "images": [
+            {
+              "path": "res://images/Moonpie.png"
+            }
+          ],
+          "image_height": 150
+        },
+        {
+          "op": "write_log",
+          "message": "MoonPie ancient site location decoded."
+        }
+      ]
+    },
+    "moonpie_08_travel_to_ancient_site": {
+      "objective_text": "Travel to MoonPie\u2019s ancient home site.",
+      "target_object_id": "moonpie_ancient_site_001",
+      "interaction_type": "find",
+      "arrival_range": 220,
+      "next_step": "moonpie_09_site_warning",
+      "on_arrival": [
+        {
+          "op": "write_log",
+          "message": "MoonPie ancient site reached."
+        },
+        {
+          "op": "advance_step",
+          "next_step": "moonpie_09_site_warning"
+        }
+      ]
+    },
+    "moonpie_09_site_warning": {
+      "objective_text": "Vayrax Raiders are active near the ancient site.",
+      "interaction_type": "story_popup",
+      "next_step": "moonpie_10_defeat_vayrax_raiders",
+      "on_enter": [
+        {
+          "op": "show_story_popup",
+          "title": "SITE WARNING",
+          "text": "[b]ANCIENT SITE[/b]\n\nThe planet-side marker is quiet, but not dead. The orbital debris field shows clean cut marks and recent extraction burns.\n\nMoonPie emits a warped tone from cargo.\n\ntaken...\nvault-breach...\nguard failed...\nreturn...\n\nAMI: Three Vayrax Raiders are holding position around the site. Same signature, separate serials. Clear them, then return to the planet marker.",
+          "close_mode": "button",
+          "position": {
+            "x": -340,
+            "y": 0
+          },
+          "popup_size": {
+            "x": 600,
+            "y": 450
+          },
+          "next_step_on_close": "moonpie_10_defeat_vayrax_raiders",
+          "images": [
+            {
+              "path": "res://images/Moonpie.png"
+            }
+          ],
+          "image_height": 150
+        }
+      ]
+    },
+    "moonpie_10_defeat_vayrax_raiders": {
+      "objective_text": "Defeat three Vayrax Raiders around MoonPie's ancient site, then return to the planet marker.",
+      "target_object_id": "moonpie_ancient_site_001",
+      "interaction_type": "hunt",
+      "interaction_range": 220,
+      "next_step": "moonpie_16_relic_recovery_confirm",
+      "on_enter": [
+        {
+          "op": "install_event_object",
+          "target_object_id": "moonpie_vayrax_raider_001"
+        },
+        {
+          "op": "install_event_object",
+          "target_object_id": "moonpie_vayrax_raider_002"
+        },
+        {
+          "op": "install_event_object",
+          "target_object_id": "moonpie_vayrax_raider_003"
+        },
+        {
+          "op": "write_log",
+          "message": "Three Vayrax Raiders deployed around MoonPie's ancient site."
+        }
+      ],
+      "actions": [
+        {
+          "button_id": "moonpie_confirm_vayrax_raiders_defeated",
+          "label": "CONFIRM SWEEP",
+          "action_id": "event_operations",
+          "target_object_id": "moonpie_ancient_site_001",
+          "range": 220,
+          "requires_position_gate": true,
+          "blocked_message": "Raider sweep incomplete. Defeat three Vayrax Raiders around the ancient site, then return to the planet marker.",
+          "conditions": [
+            {
+              "type": "enemy_display_defeated_count",
+              "display_name": "Vayrax Raider",
+              "required_count": 3
+            }
+          ],
+          "operations": [
+            {
+              "op": "write_log",
+              "message": "Three Vayrax Raiders defeated around MoonPie's ancient site."
+            },
+            {
+              "op": "advance_step",
+              "next_step": "moonpie_16_relic_recovery_confirm"
+            }
+          ]
+        }
+      ]
+    },
+    "moonpie_16_relic_recovery_confirm": {
+      "objective_text": "AMI confirms that the Vayrax Raider sweep is clear.",
+      "interaction_type": "story_popup",
+      "next_step": "moonpie_17_moonpie_requests_return",
+      "on_enter": [
+        {
+          "op": "show_story_popup",
+          "title": "RAIDER SWEEP CLEAR",
+          "text": "[b]AMI CHECK[/b]\n\nVayrax Raider contacts: three defeated.\nEnemy extraction pattern: broken.\nAncient site pressure: falling.\n\nMoonPie's signal is stronger now. Not repaired. Not safe. But focused.\n\nAMI: I believe the guardian unit recognizes that the site is clear.",
+          "close_mode": "button",
+          "position": {
+            "x": -350,
+            "y": 0
+          },
+          "popup_size": {
+            "x": 580,
+            "y": 430
+          },
+          "next_step_on_close": "moonpie_17_moonpie_requests_return",
+          "images": [
+            {
+              "path": "res://images/Moonpie.png"
+            }
+          ],
+          "image_height": 150
+        }
+      ]
+    },
+    "moonpie_17_moonpie_requests_return": {
+      "objective_text": "MoonPie asks to return to the ancient site.",
+      "interaction_type": "story_popup",
+      "next_step": "moonpie_21_release_moonpie",
+      "on_enter": [
+        {
+          "op": "show_story_popup",
+          "title": "MOONPIE REQUEST",
+          "text": "MoonPie pulses from the cargo bay. The tone is soft, distorted, and insistent.\n\nhome...\nrestore...\ncarry...\nthank...\n\nAMI: I believe MoonPie is asking to be returned to the planet-side site now that the raiders are gone.\n\nTOM: Of course it is.",
+          "close_mode": "button",
+          "position": {
+            "x": -350,
+            "y": 0
+          },
+          "popup_size": {
+            "x": 580,
+            "y": 430
+          },
+          "next_step_on_close": "moonpie_21_release_moonpie",
+          "images": [
+            {
+              "path": "res://images/Moonpie.png"
+            }
+          ],
+          "image_height": 150
+        }
+      ]
+    },
+    "moonpie_21_release_moonpie": {
+      "objective_text": "Release MoonPie at the ancient site.",
+      "target_object_id": "moonpie_ancient_site_001",
+      "interaction_type": "handoff",
+      "interaction_range": 180,
+      "requires_item": "moonpie_damaged_guardian_unit",
+      "next_step": "moonpie_22_blueprint_reward",
+      "actions": [
+        {
+          "button_id": "moonpie_21_release_moonpie",
+          "label": "RELEASE MOONPIE",
+          "action_id": "download_beacon_data",
+          "range": 180
+        }
+      ]
+    },
+    "moonpie_22_blueprint_reward": {
+      "objective_text": "Receive MoonPie's defensive guardian blueprint.",
+      "target_object_id": "moonpie_ancient_site_001",
+      "interaction_type": "handoff",
+      "interaction_range": 180,
+      "gives_item": "auto_moon_pie_blueprint",
+      "next_step": "moonpie_23_goodbye",
+      "on_enter": [
+        {
+          "op": "show_story_popup",
+          "title": "RETURN HOME",
+          "text": "MoonPie drifts free beside the ancient marker. The ruined site answers with a small ring of light, then folds the guardian signal back into itself.\n\nTOM: Take care of yourself, MoonPie.\n\nAMI: It cannot understand that phrasing.\n\nMoonPie emits a soft distorted tone.\n\nAMI: Correction. It may have understood.",
+          "close_mode": "button",
+          "position": {
+            "x": -340,
+            "y": 0
+          },
+          "popup_size": {
+            "x": 600,
+            "y": 450
+          },
+          "images": [
+            {
+              "path": "res://images/Moonpie.png"
+            }
+          ],
+          "image_height": 150
+        }
+      ],
+      "actions": [
+        {
+          "button_id": "receive_auto_moon_pie_blueprint",
+          "label": "RECEIVE",
+          "action_id": "download_beacon_data",
+          "range": 180
+        }
+      ]
+    },
+    "moonpie_23_goodbye": {
+      "objective_text": "MoonPie has returned home. Review the final signal.",
+      "interaction_type": "story_popup",
+      "next_step": "moonpie_24_complete",
+      "on_enter": [
+        {
+          "op": "show_story_popup",
+          "title": "BLUEPRINT RECEIVED",
+          "text": "[b]BLUEPRINT RECEIVED[/b]\n\nAuto Moon Pie Blueprint added to inventory.\n\nAMI: The guardian unit left behind a defensive support pattern. It is not the original MoonPie. More like a small echo.\n\nTOM: Good. I like echoes that help.",
+          "close_mode": "button",
+          "position": {
+            "x": -350,
+            "y": 0
+          },
+          "popup_size": {
+            "x": 580,
+            "y": 430
+          },
+          "next_step_on_close": "moonpie_24_complete",
+          "images": [
+            {
+              "path": "res://images/Moonpie.png"
+            }
+          ],
+          "image_height": 150
+        },
+        {
+          "op": "write_log",
+          "message": "Auto Moon Pie blueprint received."
+        }
+      ]
+    },
+    "moonpie_24_complete": {
+      "objective_text": "MoonPie has returned home. Press COMPLETE to close the side quest.",
+      "target_object_id": "moonpie_ancient_site_001",
+      "interaction_type": "complete",
+      "interaction_range": 180,
+      "next_step": "completed",
+      "actions": [
+        {
+          "button_id": "complete_moonpie_guardian_recovery",
+          "label": "COMPLETE",
+          "action_id": "claim_event_reward",
+          "range": 180
+        }
+      ]
+    }
+  },
+  "dev_tool_notes": [
+    "DEV TOOL SAFE PASS: avoids unsupported give_item/give_blueprint/remove_item operations.",
+    "Uses download_beacon_data for one-item consume/give steps because current runtime supports requires_item and gives_item there.",
+    "Uses claim_event_reward only on the final COMPLETE step; reward_packet.blueprints stays empty because current reward grant processes reward_packet.items only.",
+    "MoonPie ancient site is now authored as a planet target so the sweep confirmation button range-gates to the planet itself.",
+    "Three authored enemy objects use the shared Vayrax Raider blueprint and identical display name; enemy intel counts three defeated Vayrax Raiders by display-name total while serials stay unique per spawn.",
+    "Required item DB additions: moonpie_damaged_guardian_unit, auto_moon_pie, auto_moon_pie_blueprint. Removed unauthored per-piece relic handoff items from this event path."
+  ]
+}

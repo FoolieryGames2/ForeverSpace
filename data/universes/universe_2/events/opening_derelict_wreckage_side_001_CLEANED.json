@@ -1,0 +1,486 @@
+{
+  "event_id": "opening_derelict_wreckage_side_001",
+  "display_name": "Derelict Wreckage: Dead Air",
+  "description": "Side-event derelict wreckage signal. Cleaned to use proven event JSON patterns: left-lane story popups, normal CLOSE behavior, event-operation buttons only where the Event Widget owns the action, and curiosity-focused wreckage text.",
+  "event_state": "seeded",
+  "current_step": "dead_air_distress_call",
+  "start_on_ready": false,
+  "seed_once": true,
+  "can_cancel_event": true,
+  "tier": 1,
+  "anchor_star": {
+	"star_id": "tier_1_anchor_star",
+	"star_name": "Tier 1 Star",
+	"sector_pos": [
+	  0,
+	  0,
+	  0
+	],
+	"local_pos": [
+	  500,
+	  500,
+	  500
+	],
+	"required": true,
+	"create_if_missing": false,
+	"tier": 1
+  },
+  "event_listeners": {
+	"dead_air_opening_listener_001": {
+	  "owner_type": "beacon",
+	  "object_type": "beacon",
+	  "object_id": "dead_air_opening_listener_001",
+	  "display_name": "Dead Air Signal Listener",
+	  "title": "Dead Air Signal Listener",
+	  "beacon_type": "hidden_event_listener_beacon",
+	  "position_mode": "anchor_offset",
+	  "sector_offset": [
+		0,
+		0,
+		0
+	  ],
+	  "local_offset": [
+		0,
+		0,
+		0
+	  ],
+	  "sector_pos": [
+		0,
+		0,
+		0
+	  ],
+	  "local_pos": [
+		500,
+		500,
+		500
+	  ],
+	  "listener_type": "activate_event_on_range",
+	  "trigger_event_id": "opening_derelict_wreckage_side_001",
+	  "start_step": "dead_air_distress_call",
+	  "trigger_range": 2500.0,
+	  "trigger_once": true,
+	  "triggered": false,
+	  "trigger_popup_message": "",
+	  "triggered_message": "A broken distress carrier has been logged as a side signal: Dead Air.",
+	  "suppress_trigger_popup": true,
+	  "is_visible": false,
+	  "is_discovered": false,
+	  "message": "A broken distress carrier loops under the local wake noise.",
+	  "labels": [
+		"beacon",
+		"event_listener",
+		"activate_event_on_range",
+		"side_event",
+		"dead_air",
+		"invisible_listener",
+		"hidden_listener",
+		"camouflaged_signal",
+		"tier_1",
+		"authored_object",
+        "curiosity_signal"
+	  ]
+	}
+  },
+  "event_objects": {
+	"dead_air_wreckage_001": {
+	  "owner_type": "space_object",
+	  "object_type": "wreckage",
+	  "object_id": "dead_air_wreckage_001",
+	  "id": "dead_air_wreckage_001",
+	  "display_name": "Dead Air Wreckage",
+	  "scan_name": "Dead Air Wreckage",
+	  "scan_description": "A torn hull shell tumbling near the Tier 1 opening pocket. Its registry is gone, but a loose black box is still pinging.",
+	  "position_mode": "absolute",
+	  "sector_pos": [
+		0,
+		0,
+		0
+	  ],
+	  "local_pos": [
+		885,
+		285,
+		585
+	  ],
+	  "parent_star_id": "tier_1_anchor_star",
+	  "parent_star_name": "Tier 1 Star",
+	  "tier": 1,
+	  "event_interactable": true,
+	  "event_ops_enabled": true,
+	  "interaction_type": "inspect",
+	  "danger_level": 1,
+	  "has_event": true,
+	  "event_id": "opening_derelict_wreckage_side_001",
+	  "active_event_id": "opening_derelict_wreckage_side_001",
+	  "required_step": "travel_to_dead_air_wreckage",
+	  "event_step": "travel_to_dead_air_wreckage",
+	  "is_visible": true,
+	  "is_discovered": false,
+	  "is_completed": false,
+	  "labels": [
+		"space_object",
+		"wreckage",
+		"event_object",
+		"side_event",
+		"dead_air",
+		"story_prop",
+		"derelict",
+		"tier_1",
+		"authored_object",
+		"curiosity_contact",
+        "mystery_wreckage"
+	  ],
+	  "message": "A dead hull tumbles in quiet space. The shape of the damage does not match a simple accident."
+	},
+	"dead_air_blackbox_cache_001": {
+	  "owner_type": "beacon",
+	  "object_type": "beacon",
+	  "object_id": "dead_air_blackbox_cache_001",
+	  "display_name": "Dead Air Black Box",
+	  "title": "Dead Air Black Box",
+	  "beacon_type": "event_beacon",
+	  "position_mode": "absolute",
+	  "sector_pos": [
+		0,
+		0,
+		0
+	  ],
+	  "local_pos": [
+		935,
+		325,
+		600
+	  ],
+	  "parent_star_id": "tier_1_anchor_star",
+	  "parent_star_name": "Tier 1 Star",
+	  "interaction_type": "download",
+	  "event_id": "opening_derelict_wreckage_side_001",
+	  "active_event_id": "opening_derelict_wreckage_side_001",
+	  "has_event": true,
+	  "required_step": "recover_dead_air_blackbox",
+	  "event_step": "recover_dead_air_blackbox",
+	  "spawn_on_step": "recover_dead_air_blackbox",
+	  "message": "The black box is still warm. Something else heard it wake up.",
+	  "is_visible": true,
+	  "is_discovered": false,
+	  "labels": [
+		"beacon",
+		"event_beacon",
+		"black_box",
+		"side_event",
+		"dead_air",
+		"authored_object",
+		"tier_1",
+		"curiosity_data",
+        "event_data"
+	  ]
+	},
+	"dead_air_scavenger_drone_001": {
+	  "owner_type": "enemy",
+	  "object_type": "enemy",
+	  "object_id": "dead_air_scavenger_drone_001",
+	  "enemy_id": "dead_air_scavenger_drone_001",
+	  "display_name": "Wreckage Skimmer Drone",
+	  "name": "Wreckage Skimmer Drone",
+	  "blueprint_id": "vayrax_claim_drone_001",
+	  "spawn_on_step": "battle_dead_air_scavenger",
+	  "position_mode": "absolute",
+	  "sector_pos": [
+		0,
+		0,
+		0
+	  ],
+	  "local_pos": [
+		965,
+		350,
+		610
+	  ],
+	  "parent_star_id": "tier_1_anchor_star",
+	  "parent_star_name": "Tier 1 Star",
+	  "event_id": "opening_derelict_wreckage_side_001",
+	  "active_event_id": "opening_derelict_wreckage_side_001",
+	  "required_step": "battle_dead_air_scavenger",
+	  "event_step": "battle_dead_air_scavenger",
+	  "current_step": "battle_dead_air_scavenger",
+	  "has_event": true,
+	  "is_visible": true,
+	  "labels": [
+		"enemy",
+		"event_enemy",
+		"vayrax",
+		"drone",
+		"scavenger",
+		"wreckage_guardian",
+		"side_event",
+		"dead_air",
+        "tier_1"
+	  ],
+	  "event_tags": [
+		"opening_derelict_wreckage_side_001",
+		"dead_air",
+		"wreckage_scavenger",
+        "side_event_battle"
+	  ],
+	  "overrides": {
+		"hp": 115,
+		"max_hp": 115,
+		"attack": 8,
+		"energy_max": 240,
+		"primary": "smart_guy_focus_lance",
+		"secondary": "smart_guy_calculated_rail",
+		"shield": "smart_guy_mirror_shield",
+		"consumable": "smart_guy_patch_cell",
+		"item_stacks": {
+		  "smart_guy_calculated_rounds": 14,
+		  "smart_guy_patch_cell": 1,
+		  "shield_patch_cell": 1
+		},
+		"behavior_profile": "smart_guy_survivor",
+		"behavior_values": {
+		  "decision_cooldown": 1.7,
+		  "low_hull_evade_threshold": 0.24,
+		  "repair_hull_threshold": 0.55,
+		  "low_energy_ammo_threshold": 0.45,
+		  "evade_health_threshold": 0.3,
+		  "shield_repair_threshold": 0.65,
+		  "explosive_player_threshold": 0.48,
+		  "clear_stale_loaded_consumable": true,
+		  "allow_forced_zero_energy_primary": false,
+		  "preferred_consumable_groups": [
+			"shield_repair",
+			"repair",
+			"recharge",
+			"drone",
+			"explosive"
+		  ]
+		},
+		"reward": [
+		  "iron",
+          "smart_guy_calculated_rounds"
+		],
+		"ship_name": "Wreckage Skimmer Drone"
+	  }
+	}
+  },
+  "reward_packet": {
+	"credits": 0,
+	"items": [
+	  {
+		"item_id": "credits",
+		"amount": 240
+	  }
+	],
+	"blueprints": [],
+	"lore": [],
+	"unlocks": [],
+	"message": "Dead Air side signal complete. Curiosity record secured: 240 credits."
+  },
+  "steps": {
+	"dead_air_distress_call": {
+	  "objective_text": "A broken distress call is bleeding through local static.",
+	  "interaction_type": "story_popup",
+	  "next_step": "travel_to_dead_air_wreckage",
+	  "on_enter": [
+		{
+		  "op": "show_story_popup",
+		  "title": "DISTRESS CALL: DEAD AIR",
+		  "text": "[b]SIDE SIGNAL[/b]\n\nA thin distress call rides under the local wake noise.\n\nIt is not clean enough to be human. It is not dead enough to ignore.\n\n[b]AUTO PILOT TARGET ACQUIRED[/b]\n\nA derelict hull is tumbling inside the Tier 1 opening pocket. The call repeats every few seconds, but the voice track has been scraped down to static and one word:\n\n\"...air...\"\n\nThere is something strange about the wreck. Not valuable at first glance. Not safe, either. Just strange enough to follow.",
+		  "close_mode": "button",
+		  "next_step_on_close": "travel_to_dead_air_wreckage",
+		  "position": {
+			"x": -415,
+			"y": -35
+		  },
+		  "popup_size": {
+			"x": 420,
+			"y": 520
+		  }
+		}
+	  ]
+	},
+	"travel_to_dead_air_wreckage": {
+	  "objective_text": "Use Auto Pilot to investigate the Dead Air wreckage.",
+	  "target_object_id": "dead_air_wreckage_001",
+	  "target_owner_type": "space_object",
+	  "arrival_range": 110,
+	  "interaction_type": "find",
+	  "next_step": "inspect_dead_air_wreckage",
+	  "on_arrival": [
+		{
+		  "op": "write_log",
+		  "message": "Dead Air wreckage reached. Hull is open, cold, and unrecoverable."
+		},
+		{
+		  "op": "install_event_object",
+		  "target_object_id": "dead_air_blackbox_cache_001"
+		},
+		{
+		  "op": "show_story_popup",
+		  "title": "THE WRECK IS QUIET",
+		  "text": "[b]DERELICT CONTACT[/b]\n\nThe hull is peeled open like something bit through it and hated the taste.\n\nNo reactor heat. No crew transponder. No clean registry.\n\nThe distress call is not coming from the ship anymore. It is bouncing from a black box that tore loose and drifted a little farther out.\n\nA short-range ping marks the box. It is close, but the static around it is getting louder.",
+		  "close_mode": "button",
+		  "next_step_on_close": "inspect_dead_air_wreckage",
+		  "position": {
+			"x": -415,
+			"y": -35
+		  },
+		  "popup_size": {
+			"x": 420,
+			"y": 520
+		  }
+		}
+	  ]
+	},
+	"inspect_dead_air_wreckage": {
+	  "objective_text": "Inspect the wreck before chasing the loose black box.",
+	  "target_object_id": "dead_air_wreckage_001",
+	  "target_owner_type": "space_object",
+	  "interaction_type": "inspect",
+	  "interaction_range": 120,
+	  "next_step": "recover_dead_air_blackbox",
+	  "actions": [
+		{
+		  "button_id": "scan_dead_air_wreckage",
+		  "label": "INSPECT WRECK",
+		  "action_id": "event_operations",
+		  "range": 120,
+		  "operations": [
+			{
+			  "op": "show_story_popup",
+			  "title": "WRECKAGE INSPECTION",
+			  "text": "[b]SCAN RESULT[/b]\n\nThe wreck refuses to make sense.\n\nThe outer hull is cold, but the damage pattern is fresh enough to make your sensors hesitate. Something carved through the frame, then stopped, like the ship stopped being interesting halfway through dying.\n\nOld credit tags are welded into the cargo spine. A registry hash might still be recoverable.\n\nThe loose black box is pulsing nearby.\n\nOne problem: the ping just got answered.",
+			  "close_mode": "button",
+			  "next_step_on_close": "recover_dead_air_blackbox",
+			  "position": {
+				"x": -415,
+				"y": -35
+			  },
+			  "popup_size": {
+				"x": 420,
+				"y": 520
+			  }
+			}
+		  ]
+		}
+	  ]
+	},
+	"recover_dead_air_blackbox": {
+	  "objective_text": "Recover the loose black box drifting near the wreckage.",
+	  "target_object_id": "dead_air_blackbox_cache_001",
+	  "target_owner_type": "beacon",
+	  "interaction_type": "download",
+	  "interaction_range": 90,
+	  "next_step": "dead_air_ambush_warning",
+	  "actions": [
+		{
+		  "button_id": "pull_dead_air_blackbox",
+		  "label": "PULL BLACK BOX",
+		  "action_id": "event_operations",
+		  "range": 90,
+		  "operations": [
+			{
+			  "op": "show_story_popup",
+			  "title": "BLACK BOX PULLED",
+			  "text": "[b]DATA CORE SECURED[/b]\n\nThe box snaps into your external field with a nasty little click.\n\nFor half a second, the distress signal stops.\n\nThen the quiet around the wreckage lights up with a return carrier.\n\nSomething had been waiting for someone curious enough to touch the dead ship.",
+			  "close_mode": "button",
+			  "next_step_on_close": "dead_air_ambush_warning",
+			  "position": {
+				"x": -415,
+				"y": -35
+			  },
+			  "popup_size": {
+				"x": 420,
+				"y": 520
+			  }
+			}
+		  ]
+		}
+	  ]
+	},
+	"dead_air_ambush_warning": {
+	  "objective_text": "A scavenger drone has answered the black box ping.",
+	  "interaction_type": "story_popup",
+	  "next_step": "battle_dead_air_scavenger",
+	  "on_enter": [
+		{
+		  "op": "show_story_popup",
+		  "title": "RETURN CARRIER",
+		  "text": "[b]WARNING[/b]\n\nA small drone burns out from behind the wreckage shadow.\n\nIts hull is Vayrax-pattern, but patched with scrap and old cargo plating. A scavenger. Maybe a guard. Maybe both.\n\nIt is not broadcasting a challenge.\n\nIt is already lining up a shot.",
+		  "close_mode": "button",
+		  "next_step_on_close": "battle_dead_air_scavenger",
+		  "position": {
+			"x": -415,
+			"y": -35
+		  },
+		  "popup_size": {
+			"x": 420,
+			"y": 520
+		  }
+		}
+	  ]
+	},
+	"battle_dead_air_scavenger": {
+	  "objective_text": "Defeat the Wreckage Skimmer Drone.",
+	  "target_object_id": "dead_air_scavenger_drone_001",
+	  "target_owner_type": "enemy",
+	  "enemy_id": "dead_air_scavenger_drone_001",
+	  "interaction_type": "hunt",
+	  "interaction_range": 220,
+	  "gate_range": 240,
+	  "complete_on_battle_victory": true,
+	  "next_step": "claim_dead_air_bounty",
+	  "on_enter": [
+		{
+		  "op": "start_battle",
+		  "enemy_id": "dead_air_scavenger_drone_001",
+		  "target_object_id": "dead_air_scavenger_drone_001",
+		  "interaction_range": 240,
+		  "gate_range": 240,
+		  "entry_reason": "dead_air_wreckage_scavenger",
+		  "message": "A wreckage skimmer drone intercepted the Dead Air black box recovery."
+		}
+	  ],
+	  "on_battle_victory": [
+		{
+		  "op": "write_log",
+		  "message": "Wreckage Skimmer Drone defeated. Dead Air black box record can now be claimed."
+		},
+		{
+		  "op": "show_story_popup",
+		  "title": "DEAD AIR CLEARED",
+		  "text": "[b]DRONE SIGNAL LOST[/b]\n\nThe skimmer breaks apart and the wreckage goes quiet for real.\n\nThe black box contains enough cargo hash, distress telemetry, and drone attack evidence to count as a valid recovery record.\n\nNothing heroic. Nothing clean.\n\nBut out here, a clean record and a few credits still means you won.",
+		  "close_mode": "button",
+		  "next_step_on_close": "claim_dead_air_bounty",
+		  "position": {
+			"x": -415,
+			"y": -35
+		  },
+		  "popup_size": {
+			"x": 420,
+			"y": 520
+		  }
+		}
+	  ]
+	},
+	"claim_dead_air_bounty": {
+	  "objective_text": "Claim the Dead Air recovery record.",
+	  "target_object_id": "dead_air_blackbox_cache_001",
+	  "target_owner_type": "beacon",
+	  "interaction_type": "reward",
+	  "interaction_range": 140,
+	  "actions": [
+		{
+		  "button_id": "claim_dead_air_bounty",
+		  "label": "CLAIM CREDITS",
+		  "action_id": "claim_event_reward",
+		  "range": 140
+		}
+	  ],
+	  "next_step": "completed"
+	}
+  },
+  "handoff_notes": [
+	"Cleaned pass: uses normal story popup CLOSE behavior and avoids custom popup close-label/button handling.",
+	"Left-lane side popups use center offsets {x:-415,y:-35}, resolving to about {x:25,y:105} at the 1300x800 demo viewport.",
+	"Wreckage is authored as a curiosity/story prop, not a resource object.",
+    "Battle uses an event-authored enemy with the existing Vayrax claim drone blueprint shape."
+  ]
+}

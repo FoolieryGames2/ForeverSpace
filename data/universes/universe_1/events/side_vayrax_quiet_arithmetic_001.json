@@ -1,0 +1,256 @@
+{
+  "event_id": "side_vayrax_quiet_arithmetic_001",
+  "display_name": "Vayrax Quiet Arithmetic",
+  "description": "Ambient Vayrax side battle. Wide hidden discovery listener opens a briefing popup for Vayrax Quiet Arithmetic, then switches directly into Battle V2. Placed at Aster Local 09 to avoid current chapter-touch systems.",
+  "event_state": "seeded",
+  "current_step": "discover_quiet_arithmetic",
+  "start_on_ready": false,
+  "seed_once": true,
+  "can_cancel_event": true,
+  "tier": 1,
+  "anchor_star": {
+    "star_id": "star_29_tier_1_local",
+    "star_name": "Aster Local 09",
+    "sector_pos": [
+      -2,
+      3,
+      1
+    ],
+    "local_pos": [
+      500,
+      500,
+      500
+    ],
+    "required": true,
+    "create_if_missing": false,
+    "tier": 1
+  },
+  "giver": {},
+  "event_listeners": {
+    "vayrax_quiet_arithmetic_001_wide_discovery_listener": {
+      "owner_type": "beacon",
+      "object_type": "beacon",
+      "object_id": "vayrax_quiet_arithmetic_001_wide_discovery_listener",
+      "display_name": "Vayrax Quiet Arithmetic Wide Discovery Listener",
+      "title": "Vayrax Quiet Arithmetic Wide Discovery Listener",
+      "beacon_type": "hidden_event_listener_beacon",
+      "position_mode": "absolute",
+      "sector_pos": [
+        -2,
+        3,
+        1
+      ],
+      "local_pos": [
+        870,
+        640,
+        250
+      ],
+      "parent_star_id": "star_29_tier_1_local",
+      "parent_star_name": "Aster Local 09",
+      "listener_type": "activate_event_on_range",
+      "trigger_event_id": "side_vayrax_quiet_arithmetic_001",
+      "start_step": "discover_quiet_arithmetic",
+      "trigger_range": 1000.0,
+      "trigger_once": true,
+      "triggered": false,
+      "trigger_popup_message": "",
+      "triggered_message": "Vayrax contact discovered: Vayrax Quiet Arithmetic.",
+      "suppress_trigger_popup": true,
+      "is_visible": false,
+      "is_discovered": false,
+      "message": "A camouflaged Vayrax contact field listens near Aster Local 09.",
+      "labels": [
+        "beacon",
+        "event_listener",
+        "activate_event_on_range",
+        "hidden_listener",
+        "invisible_listener",
+        "camouflaged_signal",
+        "wide_discovery",
+        "ambient_vayrax",
+        "side_battle",
+        "tier_1",
+        "post_chapter_003_world_open",
+        "star_29_tier_1_local"
+      ]
+    }
+  },
+  "event_objects": {
+    "vayrax_quiet_arithmetic_001": {
+      "owner_type": "enemy",
+      "object_type": "enemy",
+      "object_id": "vayrax_quiet_arithmetic_001",
+      "enemy_id": "vayrax_quiet_arithmetic_001",
+      "display_name": "Vayrax Quiet Arithmetic",
+      "name": "Vayrax Quiet Arithmetic",
+      "blueprint_id": "vayrax_claim_drone_001",
+      "spawn_on_step": "battle_quiet_arithmetic",
+      "position_mode": "absolute",
+      "sector_pos": [
+        -2,
+        3,
+        1
+      ],
+      "local_pos": [
+        870,
+        640,
+        250
+      ],
+      "parent_star_id": "star_29_tier_1_local",
+      "parent_star_name": "Aster Local 09",
+      "event_id": "side_vayrax_quiet_arithmetic_001",
+      "active_event_id": "side_vayrax_quiet_arithmetic_001",
+      "required_step": "battle_quiet_arithmetic",
+      "event_step": "battle_quiet_arithmetic",
+      "current_step": "battle_quiet_arithmetic",
+      "has_event": true,
+      "is_visible": true,
+      "is_discovered": false,
+      "labels": [
+        "enemy",
+        "event_enemy",
+        "vayrax",
+        "drone",
+        "ambient_vayrax",
+        "side_battle",
+        "tier_1",
+        "wide_discovery_battle",
+        "quiet_arithmetic",
+        "star_29_tier_1_local"
+      ],
+      "event_tags": [
+        "side_vayrax_quiet_arithmetic_001",
+        "vayrax",
+        "vayrax_quiet_arithmetic_001",
+        "ambient_vayrax_side_battle",
+        "smart_guy_tactician"
+      ],
+      "overrides": {
+        "hp": 185,
+        "max_hp": 185,
+        "attack": 14,
+        "energy_max": 420,
+        "primary": "smart_guy_focus_lance",
+        "secondary": "smart_guy_calculated_rail",
+        "shield": "smart_guy_mirror_shield",
+        "consumable": "smart_guy_patch_cell",
+        "item_stacks": {
+          "smart_guy_calculated_rounds": 24,
+          "smart_guy_patch_cell": 1,
+          "shield_patch_cell": 2,
+          "auto_attack_drone_test_mk1": 1
+        },
+        "behavior_profile": "smart_guy_tactician",
+        "behavior_values": {
+          "decision_cooldown": 1.35,
+          "low_hull_evade_threshold": 0.26,
+          "repair_hull_threshold": 0.44,
+          "low_energy_ammo_threshold": 0.4,
+          "evade_health_threshold": 0.24,
+          "shield_repair_threshold": 0.68,
+          "explosive_player_threshold": 0.54,
+          "clear_stale_loaded_consumable": true,
+          "allow_forced_zero_energy_primary": false,
+          "preferred_consumable_groups": [
+            "drone",
+            "shield_repair",
+            "repair",
+            "explosive",
+            "signal",
+            "recharge"
+          ]
+        },
+        "reward": [
+          "iron",
+          "cobalt",
+          "smart_guy_calculated_rounds"
+        ],
+        "battle_comment": [
+          "One hull. One mistake. One answer.",
+          "Counting ends now.",
+          "Your movement has become predictable."
+        ],
+        "ship_name": "Vayrax Quiet Arithmetic"
+      }
+    }
+  },
+  "required_items": [],
+  "reward_packet": {
+    "credits": 0,
+    "items": [],
+    "blueprints": [],
+    "lore": [],
+    "unlocks": [],
+    "message": "Ambient Vayrax contact defeated: Vayrax Quiet Arithmetic."
+  },
+  "steps": {
+    "discover_quiet_arithmetic": {
+      "objective_text": "Wide-range Vayrax contact discovered: Vayrax Quiet Arithmetic.",
+      "interaction_type": "story_popup",
+      "target_object_id": "vayrax_quiet_arithmetic_001",
+      "target_owner_type": "enemy",
+      "next_step": "battle_quiet_arithmetic",
+      "on_enter": [
+        {
+          "op": "show_story_popup",
+          "title": "VAYRAX CONTACT: VAYRAX QUIET ARITHMETIC",
+          "text": "[b]VAYRAX CONTACT DISCOVERED[/b]\n\nIdentity: Vayrax Quiet Arithmetic\nBehavior Profile: smart_guy_tactician\nLoadout: Focus Lance / Calculated Rail / Mirror Shield / Patch Cell / 2 Shield Patch Cells / Auto Attack Drone\nPersonality Twist: does not threaten; it solves.\n\n[b]Behavior Read[/b]\nA colder outer-pocket drone that waits, counts, and only then cuts.\n\nClosing this warning commits to the battle handoff.",
+          "close_mode": "button",
+          "close_label": "ENGAGE",
+          "space_close": true,
+          "next_step_on_close": "battle_quiet_arithmetic",
+          "position": {
+            "x": -410,
+            "y": -35
+          },
+          "popup_size": {
+            "x": 460,
+            "y": 520
+          }
+        }
+      ]
+    },
+    "battle_quiet_arithmetic": {
+      "objective_text": "Defeat Vayrax Quiet Arithmetic.",
+      "target_object_id": "vayrax_quiet_arithmetic_001",
+      "target_owner_type": "enemy",
+      "enemy_id": "vayrax_quiet_arithmetic_001",
+      "interaction_type": "hunt",
+      "interaction_range": 220,
+      "complete_on_battle_victory": true,
+      "next_step": "complete_quiet_arithmetic",
+      "on_enter": [
+        {
+          "op": "start_battle",
+          "enemy_id": "vayrax_quiet_arithmetic_001",
+          "entry_reason": "side_vayrax_quiet_arithmetic_001",
+          "message": "Vayrax Quiet Arithmetic engaged."
+        }
+      ],
+      "on_battle_victory": [
+        {
+          "op": "write_log",
+          "message": "Vayrax Quiet Arithmetic defeated near Aster Local 09."
+        },
+        {
+          "op": "advance_step",
+          "next_step": "complete_quiet_arithmetic"
+        }
+      ]
+    },
+    "complete_quiet_arithmetic": {
+      "objective_text": "Vayrax Quiet Arithmetic defeated.",
+      "target_object_id": "vayrax_quiet_arithmetic_001",
+      "target_owner_type": "enemy",
+      "interaction_type": "complete",
+      "is_complete_step": true,
+      "complete_event": true
+    }
+  },
+  "handoff_notes": [
+    "Ambient side-battle event. Does not touch Chapter 001, Chapter 002, Chapter 003, Human Hab, Aster Local 03, Aster Local 07, or Aster Local 10.",
+    "Uses wide activate_event_on_range listener with suppress_trigger_popup=true; first authored step opens the briefing popup.",
+    "Battle uses existing enemy blueprint_id vayrax_claim_drone_001 plus event overrides, so no new enemy_handler.gd blueprint is required for this pass.",
+    "All active loadout item IDs are already present in the item DB/source references used by current Vayrax/Smart Guy encounters."
+  ]
+}

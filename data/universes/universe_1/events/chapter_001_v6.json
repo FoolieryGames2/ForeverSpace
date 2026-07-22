@@ -1,0 +1,1800 @@
+
+
+{
+  "event_id": "opening_wake_sequence_001",
+  "display_name": "Opening Wake Sequence",
+  "description": "Version 6 of the single-file opening chain merging the wake sequence, Human Station/Hank setup, Melissa rescue handoff, first Vayrax battle, and return to the Human Station Habitat. Story text rebuilt; tutorial popups removed. Functional travel, handoff, crafting, battle, reward, NPC refresh, completion, and Chapter 002 listener behavior preserved.",
+  "event_state": "seeded",
+  "current_step": "open_dev_welcome",
+  "start_on_ready": false,
+  "seed_once": true,
+  "can_cancel_event": false,
+  "tier": 1,
+  "anchor_star": {
+	"star_id": "tier_1_anchor_star",
+	"star_name": "Tier 1 Star",
+	"sector_pos": [
+	  0,
+	  0,
+	  0
+	],
+	"local_pos": [
+	  500,
+	  500,
+	  500
+	],
+	"required": true,
+	"create_if_missing": false
+  },
+  "giver": {},
+  "event_listeners": {
+	"vayrax_territory_beacon_001": {
+	  "owner_type": "beacon",
+	  "object_type": "beacon",
+	  "object_id": "vayrax_territory_beacon_001",
+	  "display_name": "Wake Signature Echo",
+	  "beacon_type": "hidden_event_listener_beacon",
+	  "position_mode": "anchor_offset",
+	  "sector_offset": [
+		0,
+		0,
+		0
+	  ],
+	  "local_offset": [
+		0,
+		0,
+		0
+	  ],
+	  "sector_pos": [
+		0,
+		0,
+		0
+	  ],
+	  "local_pos": [
+		500,
+		500,
+		500
+	  ],
+	  "listener_type": "activate_event_on_range",
+	  "trigger_event_id": "opening_wake_sequence_001",
+	  "start_step": "open_dev_welcome",
+	  "trigger_range": 1000,
+	  "trigger_once": true,
+	  "trigger_popup_message": "",
+	  "triggered_message": "Vayrax territory marker has registered your wake signature.",
+	  "message": "A buried wake-signature listener waits inside local static.",
+	  "is_visible": false,
+	  "labels": [
+		"beacon",
+		"territory_beacon",
+		"vayrax",
+		"event_listener",
+		"activate_event_on_range",
+		"wake_start",
+		"opening_sequence",
+		"authored_object",
+		"event_discovery",
+		"invisible_listener",
+		"hidden_listener",
+		"camouflaged_signal",
+		"tier_1"
+	  ],
+	  "title": "Wake Signature Echo",
+	  "is_discovered": false,
+	  "suppress_trigger_popup": true
+	}
+  },
+  "event_objects": {
+	"human_station_habitat_beacon_001": {
+	  "owner_type": "beacon",
+	  "object_type": "beacon",
+	  "object_id": "human_station_habitat_beacon_001",
+	  "display_name": "Human Station Habitat",
+	  "title": "Human Station Habitat",
+	  "main_view_icon_id": "human_hab",
+	  "main_view_icon_path": "res://UI/PortView/main_view/icons/human_hab.png",
+	  "beacon_type": "human_habitat_station_beacon",
+	  "position_mode": "anchor_offset",
+	  "sector_offset": [
+		0,
+		0,
+		0
+	  ],
+	  "local_offset": [
+		250,
+		80,
+		20
+	  ],
+	  "sector_pos": [
+		0,
+		0,
+		0
+	  ],
+	  "local_pos": [
+		750,
+		580,
+		520
+	  ],
+	  "interaction_type": "station_habitat",
+	  "listener_type": "none",
+	  "trigger_event_id": "",
+	  "trigger_once": false,
+	  "message": "Human habitat signal detected. Docking handshake unstable but readable.",
+	  "event_id": "opening_wake_sequence_001",
+	  "active_event_id": "opening_wake_sequence_001",
+	  "has_event": true,
+	  "required_step": "travel_to_human_habitat_beacon",
+	  "event_step": "travel_to_human_habitat_beacon",
+	  "labels": [
+		"beacon",
+		"human_station",
+		"human_habitat",
+		"station_arrival",
+		"hank_story_setup",
+		"authored_object",
+		"event_object",
+		"tier_1"
+	  ],
+	  "is_visible": true
+	},
+	"melissa_active_beacon_001": {
+	  "owner_type": "beacon",
+	  "object_type": "beacon",
+	  "object_id": "melissa_active_beacon_001",
+	  "display_name": "Melissa Active Beacon",
+	  "title": "Melissa Active Beacon",
+	  "beacon_type": "human_personal_beacon",
+	  "position_mode": "anchor_offset",
+	  "sector_offset": [
+		1,
+		2,
+		1
+	  ],
+	  "local_offset": [
+		-120,
+		120,
+		60
+	  ],
+	  "sector_pos": [
+		1,
+		2,
+		1
+	  ],
+	  "local_pos": [
+		380,
+		620,
+		560
+	  ],
+	  "interaction_type": "personal_beacon",
+	  "message": "Melissa's personal beacon is active off the habitat approach line.",
+	  "event_id": "opening_wake_sequence_001",
+	  "active_event_id": "opening_wake_sequence_001",
+	  "has_event": true,
+	  "required_step": "travel_to_melissa_beacon",
+	  "event_step": "travel_to_melissa_beacon",
+	  "labels": [
+		"beacon",
+		"human_beacon",
+		"melissa_contact",
+		"authored_object",
+		"event_object",
+		"tier_1",
+		"tier_1_local_pocket",
+        "melissa_rescue_pocket"
+	  ],
+	  "is_visible": true
+	},
+	"melissa_contact_listener_001": {
+	  "owner_type": "beacon",
+	  "object_type": "beacon",
+	  "object_id": "melissa_contact_listener_001",
+	  "display_name": "Melissa Contact Listener Disabled",
+	  "beacon_type": "hidden_event_listener_beacon",
+	  "position_mode": "anchor_offset",
+	  "sector_offset": [
+		1,
+		2,
+		1
+	  ],
+	  "local_offset": [
+		-120,
+		120,
+		60
+	  ],
+	  "sector_pos": [
+		1,
+		2,
+		1
+	  ],
+	  "local_pos": [
+		380,
+		620,
+		560
+	  ],
+	  "listener_type": "none",
+	  "trigger_event_id": "",
+	  "trigger_once": false,
+	  "is_visible": false,
+	  "message": "Disabled in single-chain opening event; Melissa contact is handled inside opening_wake_sequence_001 inside Tier 1 space.",
+	  "labels": [
+		"beacon",
+		"invisible_listener",
+		"disabled_listener_override",
+		"authored_object",
+		"event_object",
+		"tier_1",
+		"tier_1_local_pocket",
+		"melissa_rescue_pocket",
+		"hidden_listener",
+        "camouflaged_signal"
+	  ],
+	  "is_discovered": false,
+	  "suppress_trigger_popup": true
+	},
+	"melissa_nudawn_001": {
+	  "owner_type": "npc",
+	  "object_type": "npc",
+	  "object_id": "melissa_nudawn_001",
+	  "npc_id": "melissa_nudawn_001",
+	  "blueprint_id": "melissa_nudawn_001",
+	  "display_name": "Melissa Nudawn",
+	  "name": "Melissa Nudawn",
+	  "main_view_icon_id": "melissa_nudawn_001",
+	  "main_view_icon_path": "res://UI/PortView/main_view/icons/melissa_nudawn_001.png",
+	  "species": "human",
+	  "role": "stranded pilot",
+	  "friendly": true,
+	  "can_trade": false,
+	  "position_mode": "anchor_offset",
+	  "sector_offset": [
+		1,
+		2,
+		1
+	  ],
+	  "local_offset": [
+		-55,
+		210,
+		100
+	  ],
+	  "sector_pos": [
+		1,
+		2,
+		1
+	  ],
+	  "local_pos": [
+		445,
+		710,
+		600
+	  ],
+	  "message": "My father sent you? Good. I need a Navigation Relay Coupler if I'm getting out of here.",
+	  "dialogue_lines": [
+		"My father sent you? Good.",
+		"I need a Navigation Relay Coupler if I'm getting out of here.",
+		"Here's the blueprint. Stay close and accept the handoff from your event panel.",
+		"There is plenty of iron around in the asteroids."
+	  ],
+	  "event_id": "opening_wake_sequence_001",
+	  "active_event_id": "opening_wake_sequence_001",
+	  "has_event": true,
+	  "event_state": "active",
+	  "required_step": "go_talk_to_melissa",
+	  "event_step": "go_talk_to_melissa",
+	  "labels": [
+		"npc",
+		"human",
+		"melissa",
+		"stranded_pilot",
+		"authored_object",
+		"event_object",
+		"tier_1",
+		"tier_1_local_pocket",
+		"melissa_rescue_pocket",
+		"event_target_npc",
+		"story_npc",
+		"melissa_nudawn_001",
+		"opening_wake_sequence_001",
+		"catalog_npc"
+	  ],
+	  "current_step": "go_talk_to_melissa",
+	  "interaction_type": "npc_contact",
+	  "is_visible": true,
+	  "id": "melissa_nudawn_001",
+	  "owner_id": "melissa_nudawn_001",
+	  "template_owner_id": "melissa_nudawn_001",
+	  "source_blueprint_id": "melissa_nudawn_001",
+	  "catalog_source": "npc_blueprints",
+	  "catalog_id": "melissa_nudawn_001"
+	},
+	"vayrax_claim_drone_001": {
+	  "owner_type": "enemy",
+	  "object_type": "enemy",
+	  "object_id": "vayrax_claim_drone_001",
+	  "display_name": "Vayrax Claim Drone",
+	  "blueprint_id": "test_smart_guy",
+	  "spawn_on_step": "battle_vayrax_claim_drone",
+	  "position_mode": "anchor_offset",
+	  "sector_offset": [
+		1,
+		2,
+		1
+	  ],
+	  "local_offset": [
+		155,
+		260,
+		-70
+	  ],
+	  "sector_pos": [
+		1,
+		2,
+		1
+	  ],
+	  "local_pos": [
+		655,
+		760,
+		430
+	  ],
+	  "event_id": "opening_wake_sequence_001",
+	  "active_event_id": "opening_wake_sequence_001",
+	  "required_step": "battle_vayrax_claim_drone",
+	  "event_step": "battle_vayrax_claim_drone",
+	  "current_step": "battle_vayrax_claim_drone",
+	  "has_event": true,
+	  "labels": [
+		"enemy",
+		"event_enemy",
+		"vayrax",
+		"claim_drone",
+		"opening_battle",
+		"tier_1",
+		"tier_1_local_pocket",
+		"melissa_rescue_pocket"
+	  ],
+	  "event_tags": [
+		"opening_wake_sequence_001",
+		"vayrax_claim_drone",
+		"opening_battle"
+	  ],
+	  "overrides": {
+		"hp": 120,
+		"max_hp": 120,
+		"attack": 10,
+		"energy_max": 180,
+		"primary": "smart_guy_focus_lance",
+		"secondary": "smart_guy_calculated_rail",
+		"shield": "smart_guy_mirror_shield",
+		"consumable": "smart_guy_patch_cell",
+		"item_stacks": {
+		  "smart_guy_calculated_rounds": 12,
+		  "smart_guy_patch_cell": 1,
+		  "shield_patch_cell": 1
+		},
+		"behavior_profile": "smart_guy_balanced",
+		"behavior_values": {
+		  "execute_player_threshold": 0.25,
+		  "critical_hull_evade_threshold": 0.2,
+		  "low_hull_evade_threshold": 0.4,
+		  "repair_hull_threshold": 0.55,
+		  "low_energy_ammo_threshold": 0.45,
+		  "evade_health_threshold": 0.28,
+		  "shield_repair_threshold": 0.65,
+		  "clear_stale_loaded_consumable": true,
+		  "allow_forced_zero_energy_primary": false,
+		  "decision_cooldown": 1.25,
+		  "preferred_consumable_groups": [
+			"shield_repair",
+			"repair",
+			"explosive"
+		  ]
+		},
+		"reward": [
+		  "iron",
+		  "cobalt",
+		  "smart_guy_calculated_rounds"
+		],
+		"ship_name": "Vayrax Claim Drone"
+	  },
+	  "is_visible": true
+	},
+	"hank_marshall_001": {
+	  "owner_type": "npc",
+	  "object_type": "npc",
+	  "object_id": "hank_marshall_001",
+	  "npc_id": "hank_marshall_001",
+	  "blueprint_id": "hank_nudawn_001",
+	  "display_name": "Hank Marshall",
+	  "name": "Hank Marshall",
+	  "main_view_icon_id": "hank_nudawn_001",
+	  "main_view_icon_path": "res://UI/PortView/main_view/icons/hank_nudawn_001.png",
+	  "species": "human",
+	  "role": "habitat mechanic",
+	  "friendly": true,
+	  "can_trade": false,
+	  "position_mode": "anchor_offset",
+	  "sector_offset": [
+		0,
+		0,
+		0
+	  ],
+	  "local_offset": [
+		210,
+		160,
+		45
+	  ],
+	  "sector_pos": [
+		0,
+		0,
+		0
+	  ],
+	  "local_pos": [
+		710,
+		660,
+		545
+	  ],
+	  "message": "You made it back. Melissa too. Good. Now maybe we can talk about what you are.",
+	  "dialogue_lines": [
+		"You made it back. Melissa too. Good.",
+		"I owe you more answers than I have ready.",
+		"Stay near the hab. We need to figure out what woke inside that hull."
+	  ],
+	  "event_id": "opening_wake_sequence_001",
+	  "active_event_id": "opening_wake_sequence_001",
+	  "has_event": true,
+	  "event_state": "active",
+	  "required_step": "melissa_contact_complete",
+	  "event_step": "melissa_contact_complete",
+	  "current_step": "melissa_contact_complete",
+	  "interaction_type": "npc_contact",
+	  "labels": [
+		"npc",
+		"human",
+		"hank",
+		"mechanic",
+		"human_station",
+		"habitat",
+		"story_npc",
+		"authored_object",
+		"event_object",
+		"tier_1",
+		"event_target_npc",
+		"hank_marshall_001",
+		"opening_wake_sequence_001",
+		"catalog_npc"
+	  ],
+	  "is_visible": true,
+	  "id": "hank_marshall_001",
+	  "owner_id": "hank_marshall_001",
+	  "template_owner_id": "hank_marshall_001",
+	  "source_blueprint_id": "hank_nudawn_001",
+	  "catalog_source": "npc_blueprints",
+	  "catalog_id": "hank_nudawn_001"
+	},
+	"human_habitat_chapter_002_listener_001": {
+	  "owner_type": "beacon",
+	  "object_type": "beacon",
+	  "object_id": "human_habitat_chapter_002_listener_001",
+	  "display_name": "Human Habitat Chapter 002 Listener",
+	  "title": "Human Habitat Chapter 002 Listener",
+	  "beacon_type": "event_listener_beacon",
+	  "position_mode": "anchor_offset",
+	  "sector_offset": [
+		0,
+		0,
+		0
+	  ],
+	  "local_offset": [
+		250,
+		80,
+		20
+	  ],
+	  "sector_pos": [
+		0,
+		0,
+		0
+	  ],
+	  "local_pos": [
+		750,
+		580,
+		520
+	  ],
+	  "spawn_on_step": "manual_complete_only",
+	  "listener_type": "activate_event_on_range",
+	  "trigger_event_id": "human_station_chapter_002",
+	  "start_step": "ch2_2_1_hank_space_chow",
+	  "trigger_range": 140,
+	  "trigger_once": true,
+	  "trigger_popup_message": "",
+	  "suppress_trigger_popup": true,
+	  "triggered_message": "Chapter 002 has started at the Human Station Habitat.",
+	  "is_visible": false,
+	  "message": "A quiet continuation hook waits at the Human Station Habitat. It is installed only when Chapter 001 COMPLETE is pressed, then it directly activates Chapter 002.",
+	  "labels": [
+		"beacon",
+		"event_listener",
+		"manual_end_of_chapter_001_install",
+		"human_station",
+		"chapter_002",
+		"authored_object",
+		"event_object",
+		"event_activation",
+		"invisible_listener",
+		"hidden_listener",
+		"camouflaged_signal",
+		"tier_1"
+	  ],
+	  "is_discovered": false
+	}
+  },
+  "reward_packet": {
+	"credits": 0,
+	"items": [],
+	"blueprints": [],
+	"lore": [],
+	"unlocks": [],
+	"message": "Opening chain complete. Human Station Habitat route cleared."
+  },
+  "steps": {
+	"open_dev_welcome": {
+	  "objective_text": "Review story beat: WELCOME TO FOREVER SPACE",
+	  "interaction_type": "story_popup",
+	  "next_step": "memory_001_feet",
+	  "on_enter": [
+		{
+		  "op": "show_story_popup",
+		  "title": "INTERFACE // WELCOME",
+		  "text": "[b]FOREVER SPACE[/b]\nDev Build: v2.3 stable\nWelcome to the current development build.\nThe optional cockpit tutorial is available in the Event Widget.",
+		  "close_mode": "button",
+		  "next_step_on_close": "memory_001_feet",
+		  "popup_size": {
+			"x": 560,
+			"y": 360
+		  }
+		}
+	  ]
+	},
+	"memory_001_feet": {
+	  "objective_text": "Review story beat: MEMORY",
+	  "interaction_type": "story_popup",
+	  "next_step": "latch_boot_sequence",
+	  "on_enter": [
+		{
+		  "op": "show_story_popup",
+		  "title": "INTERFACE // MEMORY",
+		  "text": "Where.. is.. this...\nits..beautiful.  The skys so..",
+		  "close_mode": "button",
+		  "next_step_on_close": "latch_boot_sequence",
+		  "images": [
+			{
+			  "path": "res://images/Memory_001.png"
+			}
+		  ],
+		  "image_height": 140,
+		  "popup_size": {
+			"x": 580,
+			"y": 430
+		  }
+		}
+	  ]
+	},
+	"latch_boot_sequence": {
+	  "objective_text": "Review story beat: L.A.T.C.H. BOOT SEQUENCE",
+	  "interaction_type": "story_popup",
+	  "next_step": "system_interface_sequence",
+	  "on_enter": [
+		{
+		  "op": "show_story_popup",
+		  "title": "INTERFACE // L.A.T.C.H. BOOT",
+		  "text": "[b]BOOT SEQUENCE[/b]\nBoot carrier detected.\nCompatibility layer waking.",
+		  "close_mode": "button",
+		  "next_step_on_close": "system_interface_sequence",
+		  "images": [
+			{
+			  "path": "res://images/Boot_001.png"
+			}
+		  ],
+		  "image_height": 140,
+		  "popup_size": {
+			"x": 580,
+			"y": 430
+		  }
+		}
+	  ]
+	},
+	"system_interface_sequence": {
+	  "objective_text": "Review story beat: SYSTEM INTERFACE",
+	  "interaction_type": "story_popup",
+	  "next_step": "self_image_wake_attempt",
+	  "on_enter": [
+		{
+		  "op": "show_story_popup",
+		  "title": "INTERFACE // SYSTEM DATA",
+		  "text": "[b]SYSTEM ERROR[/b]\nERROR\nMEMORY BLOCK UNAVAILABLE\nERROR\nSENSORY ARRAY OFFLINE\nERROR\nNAVIGATION SYSTEM OFFLINE\nERROR",
+		  "close_mode": "button",
+		  "next_step_on_close": "self_image_wake_attempt",
+		  "popup_size": {
+			"x": 620,
+			"y": 500
+		  }
+		}
+	  ]
+	},
+	"self_image_wake_attempt": {
+	  "objective_text": "Review story beat: PLAYER RESPONSE",
+	  "interaction_type": "story_popup",
+	  "next_step": "cells_removed_sequence",
+	  "on_enter": [
+		{
+		  "op": "show_story_popup",
+		  "title": "INTERFACE // INTERNAL",
+		  "text": "I don't understand.\nAm I dreaming?",
+		  "close_mode": "button",
+		  "next_step_on_close": "cells_removed_sequence",
+		  "images": [
+			{
+			  "path": "res://images/HOLOLOGO.png"
+			}
+		  ],
+		  "image_height": 140,
+		  "popup_size": {
+			"x": 580,
+			"y": 430
+		  }
+		}
+	  ]
+	},
+	"cells_removed_sequence": {
+	  "objective_text": "Review story beat: SYSTEM POPUP",
+	  "interaction_type": "story_popup",
+	  "next_step": "entity_reaction_sequence",
+	  "on_enter": [
+		{
+		  "op": "show_story_popup",
+		  "title": "INTERFACE // SYSTEM DATA",
+		  "text": "[b]AMI ONLINE[/b]\nYou are not dreaming.  But I do not have an awareness of our situation. \nWe appear to be in the prosses of some repair or diagnostic.",
+		  "close_mode": "button",
+		  "next_step_on_close": "entity_reaction_sequence",
+		  "images": [
+			{
+			  "path": "res://images/Cells_Removed_001.png"
+			}
+		  ],
+		  "image_height": 140,
+		  "popup_size": {
+			"x": 580,
+			"y": 430
+		  }
+		}
+	  ]
+	},
+	"entity_reaction_sequence": {
+	  "objective_text": "Review story beat: THOUGHT QUERY",
+	  "interaction_type": "story_popup",
+	  "next_step": "cells_inserted_sequence",
+	  "on_enter": [
+		{
+		  "op": "show_story_popup",
+		  "title": "INTERFACE // INTERNAL QUERY",
+		  "text": "Why can't I remember?",
+		  "close_mode": "button",
+		  "next_step_on_close": "cells_inserted_sequence",
+		  "images": [
+			{
+			  "path": "res://images/Tom_Reaction_001.png"
+			}
+		  ],
+		  "image_height": 140,
+		  "popup_size": {
+			"x": 580,
+			"y": 430
+		  }
+		}
+	  ]
+	},
+	"cells_inserted_sequence": {
+	  "objective_text": "Review story beat: SYSTEM POPUP",
+	  "interaction_type": "story_popup",
+	  "next_step": "first_space_awareness",
+	  "on_enter": [
+		{
+		  "op": "show_story_popup",
+		  "title": "INTERFACE // SYSTEM DATA",
+		  "text": "[b]AMI SYSTEMS DIAGNOSTIC[/b]\n... Many checks returned 0.\nFull report not possible.  \nIm dedecting your mem-core harness is being decuppled.\nIm pulling what I can from the damaged drive before...\nWere getting a power jump and ping for systems statis\nbut it is not from a source I reconsize.  \nPlease proceed with caution.",
+		  "close_mode": "button",
+		  "next_step_on_close": "first_space_awareness",
+		  "images": [
+			{
+			  "path": "res://images/Cells_Inserted_001.png"
+			}
+		  ],
+		  "image_height": 140,
+		  "popup_size": {
+			"x": 620,
+			"y": 500
+		  }
+		}
+	  ]
+	},
+	"first_space_awareness": {
+	  "objective_text": "Review story beat: PLAYER RESPONSE",
+	  "interaction_type": "story_popup",
+	  "next_step": "story_popup_controls_tutorial",
+	  "on_enter": [
+		{
+		  "op": "show_story_popup",
+		  "title": "INTERFACE // INTERNAL",
+		  "text": "[b]TOM[/b]\nWho or what are you and why can I hear you in my head!?\n\n[b]AMI[/b]\nIm your on board interface unit.  I exsist to help your contiousness\ncontrol your body vessel.",
+		  "close_mode": "button",
+		  "next_step_on_close": "story_popup_controls_tutorial",
+		  "images": [
+			{
+			  "path": "res://images/Tom.png"
+			}
+		  ],
+		  "image_height": 140,
+		  "popup_size": {
+			"x": 580,
+			"y": 430
+		  }
+		}
+	  ]
+	},
+	"story_popup_controls_tutorial": {
+	  "objective_text": "Review story beat: PLAYER RESPONSE",
+	  "interaction_type": "story_popup",
+	  "next_step": "hank_first_contact",
+	  "on_enter": [
+		{
+		  "op": "show_story_popup",
+		  "title": "INTERFACE // INTERNAL",
+		  "text": "[b]Tom[/b]\n\nIm a...ship?",
+		  "close_mode": "button",
+		  "close_label": "CLOSE / SPACE",
+		  "space_close": true,
+		  "next_step_on_close": "hank_first_contact",
+		  "popup_size": {
+			"x": 560,
+			"y": 300
+		  }
+		}
+	  ]
+	},
+	"hank_first_contact": {
+	  "objective_text": "Review story beat: AUDIO POPUP",
+	  "interaction_type": "story_popup",
+	  "next_step": "tom_first_reply",
+	  "on_enter": [
+		{
+		  "op": "show_story_popup",
+		  "title": "INTERFACE // LINK: UNKNOWN",
+		  "text": "[b]AMI[/b]\nWe are being probed.  Im returning the ping\nand patching the signal through your link call\ninterface.\n[b]Hank[/b]\n\"Hey, anyone home in there?\"\n\"You copy?\"",
+		  "close_mode": "button",
+		  "next_step_on_close": "tom_first_reply",
+		  "images": [
+			{
+			  "path": "res://images/Hank.png"
+			}
+		  ],
+		  "image_height": 140,
+		  "popup_size": {
+			"x": 580,
+			"y": 430
+		  }
+		}
+	  ]
+	},
+	"tom_first_reply": {
+	  "objective_text": "Review story beat: PLAYER RESPONSE",
+	  "interaction_type": "story_popup",
+	  "next_step": "hank_surprised_boot",
+	  "on_enter": [
+		{
+		  "op": "show_story_popup",
+		  "title": "INTERFACE // INTERNAL",
+		  "text": "[b]Tom[/b]\nCopy?...\nHow am I in space.  Whats happening?",
+		  "close_mode": "button",
+		  "next_step_on_close": "hank_surprised_boot",
+		  "images": [
+			{
+			  "path": "res://images/Tom.png"
+			}
+		  ],
+		  "image_height": 140,
+		  "popup_size": {
+			"x": 580,
+			"y": 430
+		  }
+		}
+	  ]
+	},
+	"hank_surprised_boot": {
+	  "objective_text": "Review story beat: AUDIO POPUP",
+	  "interaction_type": "story_popup",
+	  "next_step": "tom_confused_identity",
+	  "on_enter": [
+		{
+		  "op": "show_story_popup",
+		  "title": "INTERFACE // LINK: HANK",
+		  "text": "[b]Hank[/b]\n\"Well ok.\"\n\"Didn't think you'd actually boot, huh.\"\n\"Haha , your a LATCH ship.  You gutta be 1000 years old too\"\n\"Don't kill me is all I ask.\"\n\"I see's your brain nutts a little screwy.\"\n\"I know someone who can help with that\"",
+		  "close_mode": "button",
+		  "next_step_on_close": "tom_confused_identity",
+		  "images": [
+			{
+			  "path": "res://images/Hank.png"
+			}
+		  ],
+		  "image_height": 140,
+		  "popup_size": {
+			"x": 580,
+			"y": 430
+		  }
+		}
+	  ]
+	},
+	"tom_confused_identity": {
+	  "objective_text": "Review story beat: PLAYER RESPONSE",
+	  "interaction_type": "story_popup",
+	  "next_step": "hank_autopilot_invite",
+	  "on_enter": [
+		{
+		  "op": "show_story_popup",
+		  "title": "INTERFACE // INTERNAL",
+		  "text": "Why would I kill you?\nI'm very confused.\nI don't think I know who I am or what I'm doing out here.\nIm I not .. human.",
+		  "close_mode": "button",
+		  "next_step_on_close": "hank_autopilot_invite",
+		  "images": [
+			{
+			  "path": "res://images/Tom.png"
+			}
+		  ],
+		  "image_height": 140,
+		  "popup_size": {
+			"x": 580,
+			"y": 430
+		  }
+		}
+	  ]
+	},
+	"hank_autopilot_invite": {
+	  "objective_text": "Review story beat: AUDIO POPUP",
+	  "interaction_type": "story_popup",
+	  "next_step": "travel_to_human_habitat_beacon",
+	  "on_enter": [
+		{
+		  "op": "show_story_popup",
+		  "title": "INTERFACE // LINK: HANK",
+		  "text": "[b]Hank[/b]\nWell your a person in my book.  You talk and everything.\nIm transmitting coordinates to you.  Follow me back and well see \nif you can't be straightend out.   Boy, if I wasnt looking at you myself.\nNobodied believe a word.  Real Life LATCH Unit.",
+		  "close_mode": "button",
+		  "next_step_on_close": "travel_to_human_habitat_beacon",
+		  "images": [
+			{
+			  "path": "res://images/Hank.png"
+			}
+		  ],
+		  "image_height": 140,
+		  "popup_size": {
+			"x": 580,
+			"y": 430
+		  }
+		}
+	  ]
+	},
+	"travel_to_human_habitat_beacon": {
+	  "objective_text": "Hank transmitted a habitat location. Use the Event panel Auto Pilot route to travel directly to the Human Station Habitat.",
+	  "target_object_id": "human_station_habitat_beacon_001",
+	  "arrival_range": 140,
+	  "next_step": "station_arrival_checkin",
+	  "on_arrival": [
+		{
+		  "op": "write_log",
+		  "message": "Human Station Habitat reached."
+		},
+		{
+		  "op": "advance_step",
+		  "next_step": "station_arrival_checkin"
+		}
+	  ]
+	},
+	"station_arrival_checkin": {
+	  "objective_text": "Review story beat: HUMAN STATION HABITAT",
+	  "interaction_type": "story_popup",
+	  "next_step": "station_hank_checkin",
+	  "on_enter": [
+		{
+		  "op": "show_story_popup",
+		  "title": "INTERFACE // HABITAT RELAY",
+		  "text": "[b]AMI[/b]\n\"Im picking up a short ranged local shared channel.\"\n\"Useful.  Hanks Link call left behind the encription chain\"\n\"You now share the open link call\"",
+		  "close_mode": "button",
+		  "next_step_on_close": "station_hank_checkin",
+		  "popup_size": {
+			"x": 580,
+			"y": 430
+		  }
+		}
+	  ]
+	},
+	"station_hank_checkin": {
+	  "objective_text": "Review story beat: HUMAN STATION HABITAT",
+	  "interaction_type": "story_popup",
+	  "next_step": "melissa_missed_checkin",
+	  "on_enter": [
+		{
+		  "op": "show_story_popup",
+		  "title": "INTERFACE // HABITAT RELAY",
+		  "text": "[b]STATION RELAY[/b]\n\"You don't bring guests.\"\n\n[b]HANK[/b]\n\"I know.\"",
+		  "close_mode": "button",
+		  "next_step_on_close": "melissa_missed_checkin",
+		  "popup_size": {
+			"x": 560,
+			"y": 360
+		  }
+		}
+	  ]
+	},
+	"melissa_missed_checkin": {
+	  "objective_text": "Review story beat: STATION RELAY",
+	  "interaction_type": "story_popup",
+	  "next_step": "hank_grumbles_and_requests_help",
+	  "on_enter": [
+		{
+		  "op": "show_story_popup",
+		  "title": "INTERFACE // HABITAT RELAY",
+		  "text": "[b]STATION RELAY[/b]\n\"Hank...\"\n\"Melissa missed her check-in.\"\n\"Her beacon is active, but it hasn't nav'd sectors in the last few hours.\"\n\"Ping is holding near the outer belt.\"",
+		  "close_mode": "button",
+		  "next_step_on_close": "hank_grumbles_and_requests_help",
+		  "popup_size": {
+			"x": 560,
+			"y": 360
+		  }
+		}
+	  ]
+	},
+	"hank_grumbles_and_requests_help": {
+	  "objective_text": "Review story beat: AUDIO POPUP",
+	  "interaction_type": "story_popup",
+	  "next_step": "tom_accepts_help",
+	  "on_enter": [
+		{
+		  "op": "show_story_popup",
+		  "title": "INTERFACE // LINK: HANK",
+		  "text": "SOURCE: HANK\nSIGNAL QUALITY: CLEAR\n\"Melissa.\"\n\"Girl's gonna be the death of me.\"\n\"I was going to help sort out your memory problems first, but that plan has to wait.\"\n\"Her beacon is active, you can get there faster than I can.\"\n\"I hate asking, you dont know me, but I did patch your hide, I need your help.\"",
+		  "close_mode": "button",
+		  "next_step_on_close": "tom_accepts_help",
+		  "images": [
+			{
+			  "path": "res://images/Hank.png"
+			}
+		  ],
+		  "image_height": 140,
+		  "popup_size": {
+			"x": 620,
+			"y": 470
+		  }
+		}
+	  ]
+	},
+	"tom_accepts_help": {
+	  "objective_text": "Review story beat: PLAYER RESPONSE",
+	  "interaction_type": "story_popup",
+	  "next_step": "melissa_beacon_target_received",
+	  "on_enter": [
+		{
+		  "op": "show_story_popup",
+		  "title": "INTERFACE // INTERNAL",
+		  "text": "I don't understand all of this.\nBut someone needs help.\nSo I will help.",
+		  "close_mode": "button",
+		  "next_step_on_close": "melissa_beacon_target_received",
+		  "images": [
+			{
+			  "path": "res://images/Tom.png"
+			}
+		  ],
+		  "image_height": 140,
+		  "popup_size": {
+			"x": 580,
+			"y": 430
+		  }
+		}
+	  ]
+	},
+	"melissa_beacon_target_received": {
+	  "objective_text": "Review story beat: SYSTEM POPUP",
+	  "interaction_type": "story_popup",
+	  "next_step": "travel_to_melissa_beacon",
+	  "on_enter": [
+		{
+		  "op": "show_story_popup",
+		  "title": "INTERFACE // BEACON DATA",
+		  "text": "[b]BEACON TARGET RECEIVED[/b]\nTARGET NAME: Melissa Active Beacon\nTARGET TYPE: Human Personal Beacon\nSTATUS: Active\nROUTE STATUS: AVAILABLE",
+		  "close_mode": "button",
+		  "next_step_on_close": "travel_to_melissa_beacon",
+		  "popup_size": {
+			"x": 560,
+			"y": 360
+		  }
+		}
+	  ]
+	},
+	"travel_to_melissa_beacon": {
+	  "objective_text": "Melissa's active beacon is off the habitat approach line. Use the Event panel Auto Pilot route to travel there.",
+	  "target_object_id": "melissa_active_beacon_001",
+	  "arrival_range": 80,
+	  "next_step": "melissa_beacon_reached",
+	  "on_arrival": [
+		{
+		  "op": "write_log",
+		  "message": "Melissa's active beacon reached."
+		},
+		{
+		  "op": "advance_step",
+		  "next_step": "melissa_beacon_reached"
+		}
+	  ]
+	},
+	"melissa_beacon_reached": {
+	  "objective_text": "Review story beat: MELISSA ACTIVE BEACON",
+	  "interaction_type": "story_popup",
+	  "next_step": "asteroid_scan_notice",
+	  "on_enter": [
+		{
+		  "op": "show_story_popup",
+		  "title": "INTERFACE // BEACON DATA",
+		  "text": "Melissa's active beacon reached.",
+		  "close_mode": "button",
+		  "next_step_on_close": "asteroid_scan_notice",
+		  "popup_size": {
+			"x": 560,
+			"y": 360
+		  }
+		}
+	  ]
+	},
+	"asteroid_scan_notice": {
+	  "objective_text": "Review story beat: SCAN NOTICE",
+	  "interaction_type": "story_popup",
+	  "next_step": "tom_focuses_on_melissa",
+	  "on_enter": [
+		{
+		  "op": "show_story_popup",
+		  "title": "INTERFACE // SCAN DATA",
+		  "text": "[b]SCAN UPDATE[/b]\nYour scan has detected several asteroids.\nTheir information can be accessed via the Live Radar.\nAsteroids are orange.\nClicking an active node relays directly to your personal log\nand hand coordinates off to autopilot.",
+		  "close_mode": "button",
+		  "next_step_on_close": "tom_focuses_on_melissa",
+		  "popup_size": {
+			"x": 560,
+			"y": 360
+		  }
+		}
+	  ]
+	},
+	"tom_focuses_on_melissa": {
+	  "objective_text": "Review story beat: PLAYER RESPONSE",
+	  "interaction_type": "story_popup",
+	  "next_step": "tom_link_call_0001",
+	  "on_enter": [
+		{
+		  "op": "show_story_popup",
+		  "title": "INTERFACE // INTERNAL",
+		  "text": "That's really great. Thanks.\nBut I need to focus on helping Melissa.\nI should be able to link-call her from here...",
+		  "close_mode": "button",
+		  "next_step_on_close": "tom_link_call_0001",
+		  "images": [
+			{
+			  "path": "res://images/Tom.png"
+			}
+		  ],
+		  "image_height": 140,
+		  "popup_size": {
+			"x": 580,
+			"y": 430
+		  }
+		}
+	  ]
+	},
+	"tom_link_call_0001": {
+	  "objective_text": "Review story beat: FIRST LINK CALL WITH MELISSA",
+	  "interaction_type": "story_popup",
+	  "next_step": "go_talk_to_melissa",
+	  "on_enter": [
+		{
+		  "op": "show_story_popup",
+		  "title": "INTERFACE // LINK: MELISSA",
+		  "text": "[b]MELISSA[/b]\n\"Who are you?\"\n[b]Tom[/b]\nI'm Tom.  Im here to help.\n[b]AMI[/b]\nScan shows she has damage and is in need of repair. \nUse autopilot to get closer to Melissa.",
+		  "close_mode": "button",
+		  "next_step_on_close": "go_talk_to_melissa",
+		  "popup_size": {
+			"x": 580,
+			"y": 430
+		  }
+		}
+	  ]
+	},
+	"go_talk_to_melissa": {
+	  "objective_text": "Get close enough to Melissa to receive her blueprint handoff.",
+	  "target_object_id": "melissa_nudawn_001",
+	  "arrival_range": 95,
+	  "next_step": "accept_handoff_tutorial",
+	  "on_arrival": [
+		{
+		  "op": "show_story_popup",
+		  "title": "INTERFACE // LINK: MELISSA",
+		  "text": "[b]MELISSA[/b]\n\"My father sent you?\"\n\"fine, great..\"\n\"I need a Navigation Relay Coupler if I'm getting out of here.\"\n\"Here's the blueprint.\"\n\"Move in close — 30 units or less — and accept the handoff\"",
+		  "images": [
+			{
+			  "path": "res://images/Melissa.png"
+			}
+		  ],
+		  "image_height": 140,
+		  "popup_size": {
+			"x": 580,
+			"y": 430
+		  },
+		  "close_mode": "button",
+		  "next_step_on_close": "accept_handoff_tutorial"
+		}
+	  ]
+	},
+	"accept_handoff_tutorial": {
+	  "objective_text": "ACCEPT HANDOFF",
+	  "interaction_type": "story_popup",
+	  "next_step": "accept_melissa_repair_handoff",
+	  "on_enter": [
+		{
+		  "op": "show_story_popup",
+		  "title": "INTERFACE // INTERNAL",
+		  "text": "[b]AMI[/b]\nIt appears we will have to gather resourses from\nthe surrounding asteroids to craft the Navigation\nRelay Coupler.\nUse the interface to accept the transfer.  From there you can \nmove asteroid to asteroid using the Availible Commands or by clicking nodes \nin the live map to be more selective.  Then finish by clicking mine local.",
+		  "close_mode": "button",
+		  "popup_size": {
+			"x": 560,
+			"y": 360
+		  },
+		  "next_step_on_close": "accept_melissa_repair_handoff"
+		}
+	  ]
+	},
+	"accept_melissa_repair_handoff": {
+	  "objective_text": "Move within 30 units of Melissa and press ACCEPT in the Event panel to receive the Navigation Relay Coupler blueprint.",
+	  "target_object_id": "melissa_nudawn_001",
+	  "interaction_type": "handoff",
+	  "interaction_range": 30,
+	  "gives_item": "navigation_relay_coupler_blueprint",
+	  "next_step": "melissa_blueprint_received",
+	  "actions": [
+		{
+		  "button_id": "accept_melissa_repair_handoff",
+		  "label": "ACCEPT",
+		  "action_id": "download_beacon_data",
+		  "range": 30
+		}
+	  ],
+	  "success_text": "Navigation Relay Coupler Blueprint received."
+	},
+	"melissa_blueprint_received": {
+	  "objective_text": "Navigation Relay Coupler Blueprint received.",
+	  "interaction_type": "story_popup",
+	  "next_step": "system_navigation_scan_mine_tutorial",
+	  "on_enter": [
+		{
+		  "op": "show_story_popup",
+		  "title": "INTERFACE // BLUEPRINT DATA",
+		  "text": "[b]BLUEPRINT RECEIVED[/b]\nNavigation Relay Coupler Blueprint added to your inventory.\nYou can now gather materials and fabricate the coupler for Melissa.",
+		  "close_mode": "button",
+		  "next_step_on_close": "system_navigation_scan_mine_tutorial",
+		  "popup_size": {
+			"x": 560,
+			"y": 340
+		  }
+		}
+	  ]
+	},
+	"system_navigation_scan_mine_tutorial": {
+	  "objective_text": "SYSTEM INTERFACE",
+	  "interaction_type": "story_popup",
+	  "next_step": "blueprint_overview_tutorial",
+	  "on_enter": [
+		{
+		  "op": "update_npc_contact",
+		  "target_object_id": "melissa_nudawn_001",
+		  "npc_dialogue_lines": [
+			"OK.",
+			"I'll trust you to help me out.",
+            "If you can build that Navigation Relay Coupler, I can get this ship moving again."
+		  ],
+		  "message": "OK. I'll trust you to help me out."
+		},
+		{
+		  "op": "show_story_popup",
+		  "title": "INTERFACE // TASK DATA",
+		  "text": "[b]AMI[/b]\nBLUEPRINT REQUIREMENTS\n[b]SUGGESTED ACTIONS[/b]\nNavigate to nearby resource nodes in the live map. Or choose the nearest node in the Availible Commands\nScan objects to determine composition.\nMine required resources.\nOpen Inventory.  Crafting from blueprints is availible from the bottom panel.\n\n[b]NAVIGATION[/b]\nThe Auto Pilot can route to known targets.\n\n[b]SCAN[/b]\nScanning reveals information about objects, contacts, and resources.\n\n[b]MINING[/b]\nAsteroids may contain usable materials.\nRequired materials can be collected and stored in inventory.",
+		  "close_mode": "button",
+		  "popup_size": {
+			"x": 560,
+			"y": 360
+		  },
+		  "next_step_on_close": "blueprint_overview_tutorial"
+		}
+	  ]
+	},
+	"blueprint_overview_tutorial": {
+	  "objective_text": "SYSTEM INTERFACE",
+	  "interaction_type": "story_popup",
+	  "next_step": "tom_blueprint_acknowledgment",
+	  "on_enter": [
+		{
+		  "op": "show_story_popup",
+		  "title": "INTERFACE // BLUEPRINT DATA",
+		  "text": "[b]BLUEPRINT INFORMATION[/b]\nBlueprints contain fabrication instructions.\nRequired materials must be present before fabrication can begin.\nWhen sufficient materials are available:\nOpen the Crafting Interface.\nSelect a known blueprint.\nVerify required materials.\nFabricate the item.\nFabricated items may be delivered to NPCs, installed, traded, or stored.",
+		  "close_mode": "button",
+		  "popup_size": {
+			"x": 560,
+			"y": 360
+		  },
+		  "next_step_on_close": "tom_blueprint_acknowledgment"
+		}
+	  ]
+	},
+	"tom_blueprint_acknowledgment": {
+	  "objective_text": "Review story beat: PLAYER RESPONSE",
+	  "interaction_type": "story_popup",
+	  "next_step": "return_to_melissa_with_coupler",
+	  "on_enter": [
+		{
+		  "op": "show_story_popup",
+		  "title": "INTERFACE // INTERNAL",
+		  "text": "That's strange.\nI don't remember learning any of this.\nBut I understand it.",
+		  "close_mode": "button",
+		  "next_step_on_close": "return_to_melissa_with_coupler",
+		  "images": [
+			{
+			  "path": "res://images/Tom.png"
+			}
+		  ],
+		  "image_height": 140,
+		  "popup_size": {
+			"x": 580,
+			"y": 430
+		  }
+		}
+	  ]
+	},
+	"return_to_melissa_with_coupler": {
+	  "objective_text": "Fabricate a Navigation Relay Coupler, then deliver it to Melissa.",
+	  "target_object_id": "melissa_nudawn_001",
+	  "interaction_type": "turn_in",
+	  "interaction_range": 95,
+	  "requires_item": "navigation_relay_coupler",
+	  "next_step": "melissa_bogey_inbound",
+	  "actions": [
+		{
+		  "button_id": "deliver_navigation_relay_coupler",
+		  "label": "DELIVER",
+		  "action_id": "download_beacon_data",
+		  "range": 95
+		}
+	  ]
+	},
+	"melissa_bogey_inbound": {
+	  "objective_text": "Review story beat: MELISSA",
+	  "interaction_type": "story_popup",
+	  "next_step": "tom_asks_about_bogey",
+	  "on_enter": [
+		{
+		  "op": "show_story_popup",
+		  "title": "INTERFACE // LINK: MELISSA",
+		  "text": "[b]MELISSA[/b]\n\"Damn, Tom\"\n\"We have vayrax inbound.\"",
+		  "close_mode": "button",
+		  "next_step_on_close": "tom_asks_about_bogey",
+		  "images": [
+			{
+			  "path": "res://images/Melissa.png"
+			}
+		  ],
+		  "image_height": 140,
+		  "popup_size": {
+			"x": 580,
+			"y": 430
+		  }
+		}
+	  ]
+	},
+	"tom_asks_about_bogey": {
+	  "objective_text": "Review story beat: PLAYER RESPONSE",
+	  "interaction_type": "story_popup",
+	  "next_step": "melissa_explains_vayrax_space",
+	  "on_enter": [
+		{
+		  "op": "show_story_popup",
+		  "title": "INTERFACE // INTERNAL",
+		  "text": "A.. bogey?",
+		  "close_mode": "button",
+		  "next_step_on_close": "melissa_explains_vayrax_space",
+		  "images": [
+			{
+			  "path": "res://images/Tom.png"
+			}
+		  ],
+		  "image_height": 140,
+		  "popup_size": {
+			"x": 580,
+			"y": 430
+		  }
+		}
+	  ]
+	},
+	"melissa_explains_vayrax_space": {
+	  "objective_text": "Review story beat: MELISSA",
+	  "interaction_type": "story_popup",
+	  "next_step": "vayrax_claim_drone_warning",
+	  "on_enter": [
+		{
+		  "op": "show_story_popup",
+		  "title": "INTERFACE // LINK: MELISSA",
+		  "text": "[b]MELISSA[/b]\n\n\"This is Vayrax space.\"\n\n\"Humans are not meant to have presence here.\"\n\n\"Tell me you can fight.\"",
+		  "close_mode": "button",
+		  "next_step_on_close": "vayrax_claim_drone_warning",
+		  "images": [
+			{
+			  "path": "res://images/Melissa.png"
+			}
+		  ],
+		  "image_height": 140,
+		  "popup_size": {
+			"x": 580,
+			"y": 430
+		  }
+		}
+	  ]
+	},
+	"vayrax_claim_drone_warning": {
+	  "objective_text": "Review story beat: VAYRAX CLAIM DRONE",
+	  "interaction_type": "story_popup",
+	  "next_step": "tom_does_not_know_fight",
+	  "on_enter": [
+		{
+		  "op": "show_story_popup",
+		  "title": "INTERFACE // HOSTILE SIGNAL",
+		  "text": "[b]UNAUTHORIZED VESSEL[/b]\n\nRemain where you are.\n\nI will now destroy you.\n\nComply.",
+		  "close_mode": "button",
+		  "next_step_on_close": "tom_does_not_know_fight",
+		  "popup_size": {
+			"x": 560,
+			"y": 360
+		  }
+		}
+	  ]
+	},
+	"tom_does_not_know_fight": {
+	  "objective_text": "Review story beat: PLAYER RESPONSE",
+	  "interaction_type": "story_popup",
+	  "next_step": "latch_battle_rundown",
+	  "on_enter": [
+		{
+		  "op": "show_story_popup",
+		  "title": "INTERFACE // INTERNAL",
+		  "text": "Wait, what?\n\nI don't know how to fight.",
+		  "close_mode": "button",
+		  "next_step_on_close": "latch_battle_rundown",
+		  "images": [
+			{
+			  "path": "res://images/Tom.png"
+			}
+		  ],
+		  "image_height": 140,
+		  "popup_size": {
+			"x": 580,
+			"y": 430
+		  }
+		}
+	  ]
+	},
+	"latch_battle_rundown": {
+	  "objective_text": "Review story beat: SYSTEM INTERFACE",
+	  "interaction_type": "story_popup",
+	  "next_step": "hank_old_memory_bank_shield_blueprint",
+	  "on_enter": [
+		{
+		  "op": "show_story_popup",
+		  "title": "INTERFACE // COMBAT DATA",
+		  "text": "[b]L.A.T.C.H. RESPONSE[/b]\n\nYou are a L.A.T.C.H. ship.\n\nYou are made for battle.\n\n---\n\n[b]BASIC BATTLE RUNDOWN[/b]\n\nPrimary weapons are reliable direct attacks.\n\nSecondary weapons may use ammunition or stronger firing lanes.\n\nShields reduce incoming damage while powered.\n\nConsumables can repair, recharge, or create tactical effects.\n\nEnemies may carry weapons, shields, consumables, behavior profiles, and rewards.\n\nSurvive the enemy action cycle.\n\nDisable the hostile vessel.",
+		  "close_mode": "button",
+		  "next_step_on_close": "hank_old_memory_bank_shield_blueprint",
+		  "popup_size": {
+			"x": 620,
+			"y": 470
+		  }
+		}
+	  ]
+	},
+	"hank_old_memory_bank_shield_blueprint": {
+	  "objective_text": "Accept Hank's Basic Shield MK1 Blueprint from the old habitat memory banks before the Vayrax fight.",
+	  "target_object_id": "hank_marshall_001",
+	  "target_owner_type": "npc",
+	  "interaction_type": "handoff",
+	  "interaction_range": 9999,
+	  "gives_item": "basic_shield_mk1_blueprint",
+	  "next_step": "manage_loadout_before_vayrax_battle",
+	  "on_enter": [
+		{
+		  "op": "show_story_popup",
+		  "title": "INTERFACE // LINK: HANK",
+		  "text": "[b]HANK[/b]\n\n\"Hold up, Tom.\"\n\n\"Before you run straight at that thing, I found something in the old habitat memory banks.\"\n\n\"Shield pattern. Nothing fancy. Old, reliable, and better than taking Vayrax fire raw.\"\n\n\"I'm sending it now. Build it if you can, equip it if you can, then get yourself ready.\"\n\nAMI: Incoming fabrication data verified.\n\nRECEIVED PATTERN:\nBasic Shield MK1 Blueprint",
+		  "close_mode": "button",
+		  "popup_size": {
+			"x": 620,
+			"y": 470
+		  },
+		  "images": [
+			{
+			  "path": "res://images/Hank.png"
+			}
+		  ],
+		  "image_height": 140
+		}
+	  ],
+	  "actions": [
+		{
+		  "button_id": "accept_hank_basic_shield_mk1_blueprint",
+		  "label": "ACCEPT SHIELD DATA",
+		  "action_id": "download_beacon_data",
+		  "range": 9999
+		}
+	  ],
+	  "success_text": "Basic Shield MK1 Blueprint received."
+	},
+	"manage_loadout_before_vayrax_battle": {
+	  "objective_text": "Manage your Battle Loadout, then press READY in the Event panel to engage the Vayrax Claim Drone.",
+	  "next_step": "battle_vayrax_claim_drone",
+	  "actions": [
+		{
+		  "button_id": "ready_vayrax_claim_drone_battle",
+		  "label": "READY",
+		  "action_id": "advance_step",
+		  "next_step": "battle_vayrax_claim_drone",
+		  "range": 9999
+		}
+	  ]
+	},
+	"battle_vayrax_claim_drone": {
+	  "objective_text": "Defeat the Vayrax Claim Drone.",
+	  "target_object_id": "vayrax_claim_drone_001",
+	  "enemy_id": "vayrax_claim_drone_001",
+	  "interaction_type": "hunt",
+	  "complete_on_battle_victory": true,
+	  "next_step": "vayrax_claim_drone_reward_railgun_mk1",
+	  "on_enter": [
+		{
+		  "op": "start_battle",
+		  "enemy_id": "vayrax_claim_drone_001",
+		  "entry_reason": "opening_chain_vayrax_claim_drone",
+		  "message": "Vayrax Claim Drone engaged."
+		}
+	  ],
+	  "on_battle_victory": [
+		{
+		  "op": "write_log",
+		  "message": "Vayrax Claim Drone defeated."
+		},
+		{
+		  "op": "advance_step",
+		  "next_step": "vayrax_claim_drone_reward_railgun_mk1"
+		}
+	  ]
+	},
+	"vayrax_claim_drone_reward_railgun_mk1": {
+	  "objective_text": "Recover the Railgun MK1 Blueprint from the defeated Vayrax Claim Drone.",
+	  "target_object_id": "vayrax_claim_drone_001",
+	  "target_owner_type": "enemy",
+	  "interaction_type": "handoff",
+	  "interaction_range": 9999,
+	  "gives_item": "railgun_mk1_blueprint",
+	  "next_step": "melissa_after_battle",
+	  "on_enter": [
+		{
+		  "op": "show_story_popup",
+		  "title": "INTERFACE // RECOVERED BLUEPRINT",
+		  "text": "[b]COMBAT RECOVERY[/b]\n\nVayrax Claim Drone disabled.\n\nAMI: Weapon fragments remain inside the wreckage index. One fabrication pattern is intact.\n\nRECOVERED PATTERN:\nRailgun MK1 Blueprint\n\nTOM: That thing hit hard.\n\nAMI: Then learning from it is efficient.\n\nClaim the recovered blueprint when ready.",
+		  "close_mode": "button",
+		  "popup_size": {
+			"x": 600,
+			"y": 430
+		  },
+		  "images": [
+			{
+			  "path": "res://UI/PortView/main_view/icons/enemy.png"
+			}
+		  ],
+		  "image_height": 120
+		}
+	  ],
+	  "actions": [
+		{
+		  "button_id": "claim_railgun_mk1_blueprint_from_vayrax_claim_drone",
+		  "label": "CLAIM BLUEPRINT",
+		  "action_id": "download_beacon_data",
+		  "range": 9999
+		}
+	  ],
+	  "success_text": "Railgun MK1 Blueprint received."
+	},
+	"melissa_after_battle": {
+	  "objective_text": "Review story beat: MELISSA",
+	  "interaction_type": "story_popup",
+	  "next_step": "return_to_human_habitat",
+	  "on_enter": [
+		{
+		  "op": "show_story_popup",
+		  "title": "INTERFACE // LINK: MELISSA",
+		  "text": "[b]MELISSA[/b]\n\n\"You actually won.\"\n\n\"Okay... wow.\"\n\n\"Thank you.\"\n\n\"I'll meet you back at the hab.\"\n\n\"We have a lot to discuss.\"",
+		  "close_mode": "button",
+		  "next_step_on_close": "return_to_human_habitat",
+		  "images": [
+			{
+			  "path": "res://images/Melissa.png"
+			}
+		  ],
+		  "image_height": 140,
+		  "popup_size": {
+			"x": 580,
+			"y": 430
+		  }
+		}
+	  ]
+	},
+	"return_to_human_habitat": {
+	  "objective_text": "Return to the Human Station Habitat. Melissa and Hank will be waiting there.",
+	  "target_object_id": "human_station_habitat_beacon_001",
+	  "arrival_range": 140,
+	  "next_step": "melissa_contact_complete",
+	  "on_enter": [
+		{
+		  "op": "refresh_npc",
+		  "target_object_id": "melissa_nudawn_001",
+		  "replacement_object_id": "melissa_nudawn_001",
+		  "force_recreate": true,
+		  "store_event_object": true,
+		  "save_world": false,
+		  "updates": {
+			"display_name": "Melissa Nudawn",
+			"name": "Melissa Nudawn",
+			"main_view_icon_id": "melissa_nudawn_001",
+			"main_view_icon_path": "res://UI/PortView/main_view/icons/melissa_nudawn_001.png",
+			"species": "human",
+			"role": "rescued pilot",
+			"friendly": true,
+			"can_trade": false,
+			"position_mode": "anchor_offset",
+			"sector_offset": [
+			  0,
+			  0,
+			  0
+			],
+			"local_offset": [
+			  365,
+			  22,
+			  14
+			],
+			"sector_pos": [
+			  0,
+			  0,
+			  0
+			],
+			"local_pos": [
+			  865,
+			  522,
+			  514
+			],
+			"message": "I made it back to the hab. Thanks for not leaving me out there.",
+			"dialogue_lines": [
+			  "I made it back to the hab.",
+			  "Thanks for not leaving me out there.",
+			  "Dad is going to pretend he was not worried. He absolutely was.",
+              "We still need to talk about what you are."
+			],
+			"event_id": "opening_wake_sequence_001",
+			"active_event_id": "opening_wake_sequence_001",
+			"has_event": true,
+			"event_state": "active",
+			"required_step": "melissa_contact_complete",
+			"event_step": "melissa_contact_complete",
+			"current_step": "melissa_contact_complete",
+			"interaction_type": "npc_contact",
+			"labels": [
+			  "npc",
+			  "human",
+			  "melissa",
+			  "rescued_pilot",
+			  "human_station",
+			  "habitat",
+			  "story_npc",
+			  "authored_object",
+			  "event_object",
+			  "event_target_npc",
+			  "melissa_nudawn_001",
+			  "opening_wake_sequence_001",
+              "catalog_npc"
+			],
+			"owner_type": "npc",
+			"object_type": "npc",
+			"object_id": "melissa_nudawn_001",
+			"npc_id": "melissa_nudawn_001",
+			"id": "melissa_nudawn_001",
+			"owner_id": "melissa_nudawn_001",
+			"template_owner_id": "melissa_nudawn_001",
+			"blueprint_id": "melissa_nudawn_001",
+			"source_blueprint_id": "melissa_nudawn_001",
+			"catalog_source": "npc_blueprints",
+			"catalog_id": "melissa_nudawn_001"
+		  },
+		  "talk_meta": {
+			"message": "I made it back to the hab. Thanks for not leaving me out there.",
+			"npc_dialogue_lines": [
+			  "I made it back to the hab.",
+			  "Thanks for not leaving me out there.",
+			  "Dad is going to pretend he was not worried. He absolutely was.",
+              "We still need to talk about what you are."
+			]
+		  }
+		},
+		{
+		  "op": "spawn_npc",
+		  "target_object_id": "hank_marshall_001",
+		  "replacement_object_id": "hank_marshall_001",
+		  "force_recreate": true,
+		  "store_event_object": true,
+		  "save_world": false
+		}
+	  ],
+	  "on_arrival": [
+		{
+		  "op": "write_log",
+		  "message": "Human Station Habitat reached. Melissa and Hank are now at the hab."
+		},
+		{
+		  "op": "refresh_npc",
+		  "target_object_id": "melissa_nudawn_001",
+		  "replacement_object_id": "melissa_nudawn_001",
+		  "force_recreate": true,
+		  "store_event_object": true,
+		  "save_world": false,
+		  "updates": {
+			"display_name": "Melissa Nudawn",
+			"name": "Melissa Nudawn",
+			"main_view_icon_id": "melissa_nudawn_001",
+			"main_view_icon_path": "res://UI/PortView/main_view/icons/melissa_nudawn_001.png",
+			"species": "human",
+			"role": "rescued pilot",
+			"friendly": true,
+			"can_trade": false,
+			"position_mode": "anchor_offset",
+			"sector_offset": [
+			  0,
+			  0,
+			  0
+			],
+			"local_offset": [
+			  365,
+			  22,
+			  14
+			],
+			"sector_pos": [
+			  0,
+			  0,
+			  0
+			],
+			"local_pos": [
+			  865,
+			  522,
+			  514
+			],
+			"message": "I made it back to the hab. Thanks for not leaving me out there.",
+			"dialogue_lines": [
+			  "I made it back to the hab.",
+			  "Thanks for not leaving me out there.",
+			  "Dad is going to pretend he was not worried. He absolutely was.",
+              "We still need to talk about what you are."
+			],
+			"event_id": "opening_wake_sequence_001",
+			"active_event_id": "opening_wake_sequence_001",
+			"has_event": true,
+			"event_state": "active",
+			"required_step": "melissa_contact_complete",
+			"event_step": "melissa_contact_complete",
+			"current_step": "melissa_contact_complete",
+			"interaction_type": "npc_contact",
+			"labels": [
+			  "npc",
+			  "human",
+			  "melissa",
+			  "rescued_pilot",
+			  "human_station",
+			  "habitat",
+			  "story_npc",
+			  "authored_object",
+			  "event_object",
+			  "event_target_npc",
+			  "melissa_nudawn_001",
+			  "opening_wake_sequence_001",
+              "catalog_npc"
+			],
+			"owner_type": "npc",
+			"object_type": "npc",
+			"object_id": "melissa_nudawn_001",
+			"npc_id": "melissa_nudawn_001",
+			"id": "melissa_nudawn_001",
+			"owner_id": "melissa_nudawn_001",
+			"template_owner_id": "melissa_nudawn_001",
+			"blueprint_id": "melissa_nudawn_001",
+			"source_blueprint_id": "melissa_nudawn_001",
+			"catalog_source": "npc_blueprints",
+			"catalog_id": "melissa_nudawn_001"
+		  }
+		},
+		{
+		  "op": "spawn_npc",
+		  "target_object_id": "hank_marshall_001",
+		  "replacement_object_id": "hank_marshall_001",
+		  "force_recreate": false,
+		  "store_event_object": true,
+		  "save_world": false
+		},
+		{
+		  "op": "advance_step",
+		  "next_step": "melissa_contact_complete"
+		}
+	  ]
+	},
+	"melissa_contact_complete": {
+	  "objective_text": "Stay near Melissa and Hank at the Human Station Habitat, then continue when ready.",
+	  "target_object_id": "melissa_nudawn_001",
+	  "interaction_type": "complete",
+	  "interaction_range": 160,
+	  "next_step": "completed",
+	  "on_enter": [
+		{
+		  "op": "show_story_popup",
+		  "title": "INTERFACE // AMI QUERY",
+		  "text": "[b]INTERFACE // AMI QUERY[/b]\n\nTOM:\n\"This is all happening very fast.\"\n\n\"I can't even remember if I had a last name.\"\n\nAMI:\nLast name not found.\n\nTOM:\n\"...Right.\"\n\nAMI:\nIdentity record remains incomplete. External human contacts remain active at the habitat.\n\nTOM:\n\"Then I guess we stay close.\"\n\nAMI:\nRecommended. Continue when ready.",
+		  "popup_size": {
+			"x": 600,
+			"y": 450
+		  },
+		  "close_mode": "button",
+		  "images": [
+			{
+			  "path": "res://images/Tom.png"
+			}
+		  ],
+		  "image_height": 140
+		}
+	  ],
+	  "actions": [
+		{
+		  "button_id": "complete_opening_seed_chapter_002",
+		  "label": "CONTINUE",
+		  "action_id": "event_operations",
+		  "range": 160,
+		  "operations": [
+			{
+			  "op": "install_event_object",
+			  "target_object_id": "human_habitat_chapter_002_listener_001"
+			},
+			{
+			  "op": "advance_step",
+			  "next_step": "completed"
+			}
+		  ]
+		}
+	  ]
+	}
+  },
+  "handoff_notes": [
+	"Chapter 002 activation listener is installed only by the final COMPLETE button.",
+	"This prevents Chapter 002 activating before the Chapter 001 finale button is shown.",
+	"Order fix: the Chapter 002 listener has spawn_on_step=manual_complete_only so bulk event_object install skips it when Chapter 001 starts or restores.",
+	"Do not keep duplicate event_id JSON files in the event folder.",
+	"Chapter 002 activation listener is installed only by the final COMPLETE button.",
+	"Listener uses activate_event_on_range so Chapter 002 starts immediately from ch2_2_1_hank_space_chow after Chapter 001 is completed and the player is in range.",
+	"Listener keeps spawn_on_step=manual_complete_only so it cannot be bulk-installed early.",
+	"Chapter 001 v5: inserted Hank old memory-bank shield blueprint handoff between L.A.T.C.H. battle rundown and loadout ready step. Behavior preserved; first battle still starts from READY. Grants basic_shield_mk1_blueprint via download_beacon_data.",
+	"Chapter 001 v6: removed all tutorial-hint operations and pure tutorial popup steps. Retained the battle READY action gate without a popup. Converted the user-authored AMI handoff, task, and blueprint information steps to story_popup so their revised text remains.",
+    "Chapter 001 v6: inserted station_hank_checkin after station_arrival_checkin and tom_link_call_0001 after tom_focuses_on_melissa; all next_step and next_step_on_close routes were updated."
+  ]
+}

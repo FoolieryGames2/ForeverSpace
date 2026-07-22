@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://c5xq5f0cmwjmg"]
+
+[ext_resource type="Script" uid="uid://bgjqhulfphfkw" path="res://Scenes/start_menu.gd" id="1_ui7t5"]
+
+[node name="Node2D" type="Node2D" unique_id=917426650]
+script = ExtResource("1_ui7t5")
+
+[node name="new_game" type="Button" parent="." unique_id=2064746581]
+offset_left = 45.0
+offset_top = 75.0
+offset_right = 53.0
+offset_bottom = 83.0
+text = "new game"
+
+[node name="load_game" type="Button" parent="." unique_id=1071451290]
+offset_left = 149.0
+offset_top = 75.0
+offset_right = 157.0
+offset_bottom = 83.0
+text = "load game"
+
+[connection signal="pressed" from="new_game" to="." method="_on_new_game_pressed"]
+[connection signal="pressed" from="load_game" to="." method="_on_load_game_pressed"]

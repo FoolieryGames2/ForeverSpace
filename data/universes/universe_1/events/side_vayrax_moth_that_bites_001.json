@@ -1,0 +1,256 @@
+{
+  "event_id": "side_vayrax_moth_that_bites_001",
+  "display_name": "Vayrax Moth-That-Bites",
+  "description": "Ambient Vayrax side battle. Wide hidden discovery listener opens a briefing popup for Vayrax Moth-That-Bites, then switches directly into Battle V2. Placed at Aster Local 02 to avoid current chapter-touch systems.",
+  "event_state": "seeded",
+  "current_step": "discover_moth_that_bites",
+  "start_on_ready": false,
+  "seed_once": true,
+  "can_cancel_event": true,
+  "tier": 1,
+  "anchor_star": {
+    "star_id": "star_22_tier_1_local",
+    "star_name": "Aster Local 02",
+    "sector_pos": [
+      -1,
+      -2,
+      0
+    ],
+    "local_pos": [
+      500,
+      500,
+      500
+    ],
+    "required": true,
+    "create_if_missing": false,
+    "tier": 1
+  },
+  "giver": {},
+  "event_listeners": {
+    "vayrax_moth_that_bites_001_wide_discovery_listener": {
+      "owner_type": "beacon",
+      "object_type": "beacon",
+      "object_id": "vayrax_moth_that_bites_001_wide_discovery_listener",
+      "display_name": "Vayrax Moth-That-Bites Wide Discovery Listener",
+      "title": "Vayrax Moth-That-Bites Wide Discovery Listener",
+      "beacon_type": "hidden_event_listener_beacon",
+      "position_mode": "absolute",
+      "sector_pos": [
+        -1,
+        -2,
+        0
+      ],
+      "local_pos": [
+        180,
+        790,
+        340
+      ],
+      "parent_star_id": "star_22_tier_1_local",
+      "parent_star_name": "Aster Local 02",
+      "listener_type": "activate_event_on_range",
+      "trigger_event_id": "side_vayrax_moth_that_bites_001",
+      "start_step": "discover_moth_that_bites",
+      "trigger_range": 1000.0,
+      "trigger_once": true,
+      "triggered": false,
+      "trigger_popup_message": "",
+      "triggered_message": "Vayrax contact discovered: Vayrax Moth-That-Bites.",
+      "suppress_trigger_popup": true,
+      "is_visible": false,
+      "is_discovered": false,
+      "message": "A camouflaged Vayrax contact field listens near Aster Local 02.",
+      "labels": [
+        "beacon",
+        "event_listener",
+        "activate_event_on_range",
+        "hidden_listener",
+        "invisible_listener",
+        "camouflaged_signal",
+        "wide_discovery",
+        "ambient_vayrax",
+        "side_battle",
+        "tier_1",
+        "post_chapter_003_world_open",
+        "star_22_tier_1_local"
+      ]
+    }
+  },
+  "event_objects": {
+    "vayrax_moth_that_bites_001": {
+      "owner_type": "enemy",
+      "object_type": "enemy",
+      "object_id": "vayrax_moth_that_bites_001",
+      "enemy_id": "vayrax_moth_that_bites_001",
+      "display_name": "Vayrax Moth-That-Bites",
+      "name": "Vayrax Moth-That-Bites",
+      "blueprint_id": "vayrax_claim_drone_001",
+      "spawn_on_step": "battle_moth_that_bites",
+      "position_mode": "absolute",
+      "sector_pos": [
+        -1,
+        -2,
+        0
+      ],
+      "local_pos": [
+        180,
+        790,
+        340
+      ],
+      "parent_star_id": "star_22_tier_1_local",
+      "parent_star_name": "Aster Local 02",
+      "event_id": "side_vayrax_moth_that_bites_001",
+      "active_event_id": "side_vayrax_moth_that_bites_001",
+      "required_step": "battle_moth_that_bites",
+      "event_step": "battle_moth_that_bites",
+      "current_step": "battle_moth_that_bites",
+      "has_event": true,
+      "is_visible": true,
+      "is_discovered": false,
+      "labels": [
+        "enemy",
+        "event_enemy",
+        "vayrax",
+        "drone",
+        "ambient_vayrax",
+        "side_battle",
+        "tier_1",
+        "wide_discovery_battle",
+        "moth_that_bites",
+        "star_22_tier_1_local"
+      ],
+      "event_tags": [
+        "side_vayrax_moth_that_bites_001",
+        "vayrax",
+        "vayrax_moth_that_bites_001",
+        "ambient_vayrax_side_battle",
+        "smart_guy_pressure"
+      ],
+      "overrides": {
+        "hp": 128,
+        "max_hp": 128,
+        "attack": 12,
+        "energy_max": 360,
+        "primary": "smart_guy_focus_lance",
+        "secondary": "smart_guy_calculated_rail",
+        "shield": "smart_guy_mirror_shield",
+        "consumable": "smart_guy_patch_cell",
+        "item_stacks": {
+          "smart_guy_calculated_rounds": 20,
+          "smart_guy_patch_cell": 1,
+          "shield_patch_cell": 1,
+          "recharge_kit": 1
+        },
+        "behavior_profile": "smart_guy_pressure",
+        "behavior_values": {
+          "decision_cooldown": 1.25,
+          "low_hull_evade_threshold": 0.18,
+          "repair_hull_threshold": 0.34,
+          "low_energy_ammo_threshold": 0.35,
+          "evade_health_threshold": 0.16,
+          "shield_repair_threshold": 0.55,
+          "explosive_player_threshold": 0.5,
+          "recharge_energy_threshold": 0.32,
+          "clear_stale_loaded_consumable": true,
+          "allow_forced_zero_energy_primary": false,
+          "preferred_consumable_groups": [
+            "recharge",
+            "pulse",
+            "repair",
+            "shield_repair",
+            "explosive"
+          ]
+        },
+        "reward": [
+          "iron",
+          "cobalt",
+          "smart_guy_calculated_rounds"
+        ],
+        "battle_comment": [
+          "Bright thing. Warm thing.",
+          "Closer.",
+          "Your signal tastes awake."
+        ],
+        "ship_name": "Vayrax Moth-That-Bites"
+      }
+    }
+  },
+  "required_items": [],
+  "reward_packet": {
+    "credits": 0,
+    "items": [],
+    "blueprints": [],
+    "lore": [],
+    "unlocks": [],
+    "message": "Ambient Vayrax contact defeated: Vayrax Moth-That-Bites."
+  },
+  "steps": {
+    "discover_moth_that_bites": {
+      "objective_text": "Wide-range Vayrax contact discovered: Vayrax Moth-That-Bites.",
+      "interaction_type": "story_popup",
+      "target_object_id": "vayrax_moth_that_bites_001",
+      "target_owner_type": "enemy",
+      "next_step": "battle_moth_that_bites",
+      "on_enter": [
+        {
+          "op": "show_story_popup",
+          "title": "VAYRAX CONTACT: VAYRAX MOTH-THAT-BITES",
+          "text": "[b]VAYRAX CONTACT DISCOVERED[/b]\n\nIdentity: Vayrax Moth-That-Bites\nBehavior Profile: smart_guy_pressure\nLoadout: Focus Lance / Calculated Rail / Mirror Shield / Patch Cell / Recharge Kit\nPersonality Twist: attracted to active power signatures and too eager to close distance.\n\n[b]Behavior Read[/b]\nA fast signal-drunk drone that dives toward active ships like light.\n\nClosing this warning commits to the battle handoff.",
+          "close_mode": "button",
+          "close_label": "ENGAGE",
+          "space_close": true,
+          "next_step_on_close": "battle_moth_that_bites",
+          "position": {
+            "x": -410,
+            "y": -35
+          },
+          "popup_size": {
+            "x": 460,
+            "y": 520
+          }
+        }
+      ]
+    },
+    "battle_moth_that_bites": {
+      "objective_text": "Defeat Vayrax Moth-That-Bites.",
+      "target_object_id": "vayrax_moth_that_bites_001",
+      "target_owner_type": "enemy",
+      "enemy_id": "vayrax_moth_that_bites_001",
+      "interaction_type": "hunt",
+      "interaction_range": 220,
+      "complete_on_battle_victory": true,
+      "next_step": "complete_moth_that_bites",
+      "on_enter": [
+        {
+          "op": "start_battle",
+          "enemy_id": "vayrax_moth_that_bites_001",
+          "entry_reason": "side_vayrax_moth_that_bites_001",
+          "message": "Vayrax Moth-That-Bites engaged."
+        }
+      ],
+      "on_battle_victory": [
+        {
+          "op": "write_log",
+          "message": "Vayrax Moth-That-Bites defeated near Aster Local 02."
+        },
+        {
+          "op": "advance_step",
+          "next_step": "complete_moth_that_bites"
+        }
+      ]
+    },
+    "complete_moth_that_bites": {
+      "objective_text": "Vayrax Moth-That-Bites defeated.",
+      "target_object_id": "vayrax_moth_that_bites_001",
+      "target_owner_type": "enemy",
+      "interaction_type": "complete",
+      "is_complete_step": true,
+      "complete_event": true
+    }
+  },
+  "handoff_notes": [
+    "Ambient side-battle event. Does not touch Chapter 001, Chapter 002, Chapter 003, Human Hab, Aster Local 03, Aster Local 07, or Aster Local 10.",
+    "Uses wide activate_event_on_range listener with suppress_trigger_popup=true; first authored step opens the briefing popup.",
+    "Battle uses existing enemy blueprint_id vayrax_claim_drone_001 plus event overrides, so no new enemy_handler.gd blueprint is required for this pass.",
+    "All active loadout item IDs are already present in the item DB/source references used by current Vayrax/Smart Guy encounters."
+  ]
+}

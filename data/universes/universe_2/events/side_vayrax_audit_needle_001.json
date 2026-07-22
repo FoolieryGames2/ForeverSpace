@@ -1,0 +1,254 @@
+{
+  "event_id": "side_vayrax_audit_needle_001",
+  "display_name": "Vayrax Audit Needle",
+  "description": "Ambient Vayrax side battle. Wide hidden discovery listener opens a briefing popup for Vayrax Audit Needle, then switches directly into Battle V2. Placed at Aster Local 01 to avoid current chapter-touch systems.",
+  "event_state": "seeded",
+  "current_step": "discover_audit_needle",
+  "start_on_ready": false,
+  "seed_once": true,
+  "can_cancel_event": true,
+  "tier": 1,
+  "anchor_star": {
+    "star_id": "star_21_tier_1_local",
+    "star_name": "Aster Local 01",
+    "sector_pos": [
+      -2,
+      1,
+      0
+    ],
+    "local_pos": [
+      500,
+      500,
+      500
+    ],
+    "required": true,
+    "create_if_missing": false,
+    "tier": 1
+  },
+  "giver": {},
+  "event_listeners": {
+    "vayrax_audit_needle_001_wide_discovery_listener": {
+      "owner_type": "beacon",
+      "object_type": "beacon",
+      "object_id": "vayrax_audit_needle_001_wide_discovery_listener",
+      "display_name": "Vayrax Audit Needle Wide Discovery Listener",
+      "title": "Vayrax Audit Needle Wide Discovery Listener",
+      "beacon_type": "hidden_event_listener_beacon",
+      "position_mode": "absolute",
+      "sector_pos": [
+        -2,
+        1,
+        0
+      ],
+      "local_pos": [
+        820,
+        230,
+        720
+      ],
+      "parent_star_id": "star_21_tier_1_local",
+      "parent_star_name": "Aster Local 01",
+      "listener_type": "activate_event_on_range",
+      "trigger_event_id": "side_vayrax_audit_needle_001",
+      "start_step": "discover_audit_needle",
+      "trigger_range": 1000.0,
+      "trigger_once": true,
+      "triggered": false,
+      "trigger_popup_message": "",
+      "triggered_message": "Vayrax contact discovered: Vayrax Audit Needle.",
+      "suppress_trigger_popup": true,
+      "is_visible": false,
+      "is_discovered": false,
+      "message": "A camouflaged Vayrax contact field listens near Aster Local 01.",
+      "labels": [
+        "beacon",
+        "event_listener",
+        "activate_event_on_range",
+        "hidden_listener",
+        "invisible_listener",
+        "camouflaged_signal",
+        "wide_discovery",
+        "ambient_vayrax",
+        "side_battle",
+        "tier_1",
+        "post_chapter_003_world_open",
+        "star_21_tier_1_local"
+      ]
+    }
+  },
+  "event_objects": {
+    "vayrax_audit_needle_001": {
+      "owner_type": "enemy",
+      "object_type": "enemy",
+      "object_id": "vayrax_audit_needle_001",
+      "enemy_id": "vayrax_audit_needle_001",
+      "display_name": "Vayrax Audit Needle",
+      "name": "Vayrax Audit Needle",
+      "blueprint_id": "vayrax_claim_drone_001",
+      "spawn_on_step": "battle_audit_needle",
+      "position_mode": "absolute",
+      "sector_pos": [
+        -2,
+        1,
+        0
+      ],
+      "local_pos": [
+        820,
+        230,
+        720
+      ],
+      "parent_star_id": "star_21_tier_1_local",
+      "parent_star_name": "Aster Local 01",
+      "event_id": "side_vayrax_audit_needle_001",
+      "active_event_id": "side_vayrax_audit_needle_001",
+      "required_step": "battle_audit_needle",
+      "event_step": "battle_audit_needle",
+      "current_step": "battle_audit_needle",
+      "has_event": true,
+      "is_visible": true,
+      "is_discovered": false,
+      "labels": [
+        "enemy",
+        "event_enemy",
+        "vayrax",
+        "drone",
+        "ambient_vayrax",
+        "side_battle",
+        "tier_1",
+        "wide_discovery_battle",
+        "audit_needle",
+        "star_21_tier_1_local"
+      ],
+      "event_tags": [
+        "side_vayrax_audit_needle_001",
+        "vayrax",
+        "vayrax_audit_needle_001",
+        "ambient_vayrax_side_battle",
+        "smart_guy_tactician"
+      ],
+      "overrides": {
+        "hp": 142,
+        "max_hp": 142,
+        "attack": 10,
+        "energy_max": 300,
+        "primary": "smart_guy_focus_lance",
+        "secondary": "smart_guy_calculated_rail",
+        "shield": "smart_guy_mirror_shield",
+        "consumable": "smart_guy_patch_cell",
+        "item_stacks": {
+          "smart_guy_calculated_rounds": 18,
+          "smart_guy_patch_cell": 1,
+          "shield_patch_cell": 1
+        },
+        "behavior_profile": "smart_guy_tactician",
+        "behavior_values": {
+          "decision_cooldown": 1.55,
+          "low_hull_evade_threshold": 0.24,
+          "repair_hull_threshold": 0.42,
+          "low_energy_ammo_threshold": 0.45,
+          "evade_health_threshold": 0.22,
+          "shield_repair_threshold": 0.62,
+          "explosive_player_threshold": 0.48,
+          "clear_stale_loaded_consumable": true,
+          "allow_forced_zero_energy_primary": false,
+          "preferred_consumable_groups": [
+            "shield_repair",
+            "repair",
+            "signal",
+            "pulse",
+            "recharge"
+          ]
+        },
+        "reward": [
+          "iron",
+          "nickel",
+          "smart_guy_calculated_rounds"
+        ],
+        "battle_comment": [
+          "Irregular hull signature recorded.",
+          "Correction begins.",
+          "Your survival is not approved."
+        ],
+        "ship_name": "Vayrax Audit Needle"
+      }
+    }
+  },
+  "required_items": [],
+  "reward_packet": {
+    "credits": 0,
+    "items": [],
+    "blueprints": [],
+    "lore": [],
+    "unlocks": [],
+    "message": "Ambient Vayrax contact defeated: Vayrax Audit Needle."
+  },
+  "steps": {
+    "discover_audit_needle": {
+      "objective_text": "Wide-range Vayrax contact discovered: Vayrax Audit Needle.",
+      "interaction_type": "story_popup",
+      "target_object_id": "vayrax_audit_needle_001",
+      "target_owner_type": "enemy",
+      "next_step": "battle_audit_needle",
+      "on_enter": [
+        {
+          "op": "show_story_popup",
+          "title": "VAYRAX CONTACT: VAYRAX AUDIT NEEDLE",
+          "text": "[b]VAYRAX CONTACT DISCOVERED[/b]\n\nIdentity: Vayrax Audit Needle\nBehavior Profile: smart_guy_tactician\nLoadout: Focus Lance / Calculated Rail / Mirror Shield / Patch Cell\nPersonality Twist: treats the player as an accounting error that must be removed.\n\n[b]Behavior Read[/b]\nA cold verifier drone that fights like it is correcting a ledger error.\n\nClosing this warning commits to the battle handoff.",
+          "close_mode": "button",
+          "close_label": "ENGAGE",
+          "space_close": true,
+          "next_step_on_close": "battle_audit_needle",
+          "position": {
+            "x": -415,
+            "y": -35
+          },
+          "popup_size": {
+            "x": 460,
+            "y": 520
+          }
+        }
+      ]
+    },
+    "battle_audit_needle": {
+      "objective_text": "Defeat Vayrax Audit Needle.",
+      "target_object_id": "vayrax_audit_needle_001",
+      "target_owner_type": "enemy",
+      "enemy_id": "vayrax_audit_needle_001",
+      "interaction_type": "hunt",
+      "interaction_range": 220,
+      "complete_on_battle_victory": true,
+      "next_step": "complete_audit_needle",
+      "on_enter": [
+        {
+          "op": "start_battle",
+          "enemy_id": "vayrax_audit_needle_001",
+          "entry_reason": "side_vayrax_audit_needle_001",
+          "message": "Vayrax Audit Needle engaged."
+        }
+      ],
+      "on_battle_victory": [
+        {
+          "op": "write_log",
+          "message": "Vayrax Audit Needle defeated near Aster Local 01."
+        },
+        {
+          "op": "advance_step",
+          "next_step": "complete_audit_needle"
+        }
+      ]
+    },
+    "complete_audit_needle": {
+      "objective_text": "Vayrax Audit Needle defeated.",
+      "target_object_id": "vayrax_audit_needle_001",
+      "target_owner_type": "enemy",
+      "interaction_type": "complete",
+      "is_complete_step": true,
+      "complete_event": true
+    }
+  },
+  "handoff_notes": [
+    "Ambient side-battle event. Does not touch Chapter 001, Chapter 002, Chapter 003, Human Hab, Aster Local 03, Aster Local 07, or Aster Local 10.",
+    "Uses wide activate_event_on_range listener with suppress_trigger_popup=true; first authored step opens the briefing popup.",
+    "Battle uses existing enemy blueprint_id vayrax_claim_drone_001 plus event overrides, so no new enemy_handler.gd blueprint is required for this pass.",
+    "All active loadout item IDs are already present in the item DB/source references used by current Vayrax/Smart Guy encounters."
+  ]
+}

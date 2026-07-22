@@ -1,0 +1,360 @@
+{
+  "event_id": "vayrax_lane_009_event",
+  "display_name": "Vayrax Lane 009: Balance Node",
+  "description": "Pass 004 Vayrax lane event using the proven Lane 001/Pass 003 pattern: existing anchor copied into event_objects, one hidden 500-unit activate_event_on_range listener, explicit enemy install before profile popup, READY button with 30-unit range, battle on next step, victory popup, gives_item reward, then complete. This lane uses planned reward `plasma_arc_emitter_blueprint`.",
+  "event_state": "seeded",
+  "current_step": "vayrax_lane_009_intro_popup",
+  "start_on_ready": false,
+  "seed_once": true,
+  "can_cancel_event": true,
+  "tier": 1,
+  "anchor_star": {
+    "star_id": "star_29_tier_1_local",
+    "star_name": "Aster Local 09",
+    "sector_pos": [
+      -2,
+      3,
+      1
+    ],
+    "local_pos": [
+      500,
+      500,
+      500
+    ],
+    "required": true,
+    "create_if_missing": false,
+    "tier": 1
+  },
+  "event_listeners": {
+    "vayrax_lane_009_listener": {
+      "owner_type": "beacon",
+      "object_type": "beacon",
+      "object_id": "vayrax_lane_009_listener",
+      "display_name": "Vayrax Lane 009 Signal Listener",
+      "title": "Vayrax Lane 009 Signal Listener",
+      "beacon_type": "hidden_event_listener_beacon",
+      "position_mode": "absolute",
+      "sector_pos": [
+        -2,
+        3,
+        1
+      ],
+      "local_pos": [
+        500,
+        500,
+        500
+      ],
+      "parent_star_id": "star_29_tier_1_local",
+      "parent_star_name": "Aster Local 09",
+      "listener_type": "activate_event_on_range",
+      "trigger_event_id": "vayrax_lane_009_event",
+      "start_step": "vayrax_lane_009_intro_popup",
+      "trigger_range": 500,
+      "trigger_once": true,
+      "triggered": false,
+      "trigger_popup_message": "",
+      "suppress_trigger_popup": true,
+      "triggered_message": "Vayrax Lane 009 contact resolved near Aster Local 09.",
+      "message": "A Vayrax lane signal hides in the normal scan noise around Aster Local 09.",
+      "is_visible": false,
+      "is_discovered": false,
+      "is_completed": false,
+      "labels": [
+        "beacon",
+        "event_listener",
+        "activate_event_on_range",
+        "vayrax",
+        "vayrax_lane",
+        "vayrax_lane_009",
+        "hidden_listener",
+        "invisible_listener",
+        "camouflaged_signal",
+        "tier_1",
+        "star_29_tier_1_local",
+        "star_anchor_listener",
+        "authored_object"
+      ]
+    }
+  },
+  "event_objects": {
+    "star_29_tier_1_local": {
+      "owner_type": "star",
+      "object_type": "star",
+      "object_id": "star_29_tier_1_local",
+      "display_name": "Aster Local 09",
+      "title": "Aster Local 09",
+      "scan_name": "Aster Local 09",
+      "scan_description": "Existing anchor contact for Aster Local 09.",
+      "position_mode": "absolute",
+      "sector_pos": [
+        -2,
+        3,
+        1
+      ],
+      "local_pos": [
+        500,
+        500,
+        500
+      ],
+      "tier": 1,
+      "interaction_type": "signal_anchor",
+      "event_id": "vayrax_lane_009_event",
+      "active_event_id": "vayrax_lane_009_event",
+      "has_event": true,
+      "event_interactable": true,
+      "event_ops_enabled": true,
+      "is_visible": true,
+      "is_discovered": false,
+      "star_name": "Aster Local 09",
+      "star_type": "F",
+      "brightness": 1.18,
+      "size": 1.19,
+      "star_index": 29,
+      "anchor_role": "tier_1_local_anchor",
+      "labels": [
+        "star",
+        "world_seed",
+        "event_anchor",
+        "vayrax_lane",
+        "vayrax_lane_009",
+        "tier_1",
+        "star_29_tier_1_local",
+        "star_anchor",
+        "authored_object",
+        "event_object"
+      ]
+    },
+    "vayrax_lane_009_drone": {
+      "owner_type": "enemy",
+      "object_type": "enemy",
+      "object_id": "vayrax_lane_009_drone",
+      "enemy_id": "vayrax_lane_009_drone",
+      "display_name": "Vayrax Drone 009",
+      "name": "Vayrax Drone 009",
+      "blueprint_id": "vayrax_drone_009",
+      "spawn_on_step": "vayrax_lane_009_enemy_profile_popup",
+      "position_mode": "absolute",
+      "sector_pos": [
+        -2,
+        3,
+        1
+      ],
+      "local_pos": [
+        760.0,
+        500.0,
+        500.0
+      ],
+      "parent_star_id": "star_29_tier_1_local",
+      "parent_star_name": "Aster Local 09",
+      "event_id": "vayrax_lane_009_event",
+      "active_event_id": "vayrax_lane_009_event",
+      "required_step": "vayrax_lane_009_start_battle",
+      "event_step": "vayrax_lane_009_start_battle",
+      "current_step": "vayrax_lane_009_start_battle",
+      "has_event": true,
+      "labels": [
+        "enemy",
+        "event_enemy",
+        "vayrax",
+        "drone",
+        "vayrax_drone_009",
+        "vayrax_lane",
+        "vayrax_lane_009",
+        "tier_2",
+        "star_29_tier_1_local",
+        "near_star_29_tier_1_local"
+      ],
+      "event_tags": [
+        "vayrax_lane_009_event",
+        "vayrax",
+        "vayrax_lane_009",
+        "lane_battle"
+      ],
+      "overrides": {
+        "hp": 345,
+        "max_hp": 345,
+        "hull": 345,
+        "max_hull": 345,
+        "attack": 28,
+        "energy_max": 335.0,
+        "max_energy": 335,
+        "energy": 335,
+        "primary": "raider_arc_stinger_mk2",
+        "primary_weapon": "raider_arc_stinger_mk2",
+        "secondary": "vayrax_puncture_charge_mk1",
+        "secondary_weapon": "vayrax_puncture_charge_mk1",
+        "shield": "raider_plate_screen_mk2",
+        "shield_item": "raider_plate_screen_mk2",
+        "consumable": "recharge_kit",
+        "consumable_item": "recharge_kit",
+        "item_stacks": {
+          "large_kinetic_rounds": 4,
+          "medium_kinetic_rounds": 8,
+          "recharge_kit": 1
+        },
+        "behavior_profile": "smart_guy_balanced",
+        "behavior_values": {
+          "decision_cooldown": 1.18,
+          "low_hull_evade_threshold": 0.27,
+          "repair_hull_threshold": 0.31,
+          "recharge_energy_threshold": 0.32
+        },
+        "reward": [
+          "iron",
+          "cobalt",
+          "large_kinetic_rounds"
+        ],
+        "reward_items": [
+          "iron",
+          "cobalt",
+          "large_kinetic_rounds"
+        ],
+        "ship_name": "Vayrax Drone 009"
+      },
+      "is_visible": true,
+      "is_discovered": false
+    }
+  },
+  "required_items": [],
+  "reward_packet": {
+    "credits": 0,
+    "items": [],
+    "blueprints": [],
+    "lore": [],
+    "unlocks": [],
+    "message": "Vayrax Lane 009 complete. Reward claimed with gives_item."
+  },
+  "steps": {
+    "vayrax_lane_009_intro_popup": {
+      "objective_text": "A Vayrax lane signal has resolved near Aster Local 09.",
+      "target_object_id": "star_29_tier_1_local",
+      "target_owner_type": "star",
+      "interaction_type": "story_popup",
+      "next_step": "vayrax_lane_009_enemy_profile_popup",
+      "on_enter": [
+        {
+          "op": "show_story_popup",
+          "title": "BALANCE NODE: EFFICIENT CORRECTION",
+          "text": "[b]VAYRAX DRONE 009[/b]\n\n\"Nine balances threat against waste.\"\n\n\"Your motion has become a number.\"\n\n\"Correction remains efficient.\"",
+          "close_mode": "button",
+          "next_step_on_close": "vayrax_lane_009_enemy_profile_popup",
+          "popup_size": {
+            "x": 560,
+            "y": 360
+          }
+        }
+      ]
+    },
+    "vayrax_lane_009_enemy_profile_popup": {
+      "objective_text": "Review the Vayrax Drone 009 contact profile.",
+      "target_object_id": "vayrax_lane_009_drone",
+      "target_owner_type": "enemy",
+      "interaction_type": "story_popup",
+      "next_step": "vayrax_lane_009_ready_to_fight",
+      "on_enter": [
+        {
+          "op": "install_event_object",
+          "object_id": "vayrax_lane_009_drone"
+        },
+        {
+          "op": "show_story_popup",
+          "title": "VAYRAX CONTACT PROFILE",
+          "text": "[b]Enemy Handler Source[/b]\n`vayrax_drone_009`\n\n[b]Battle Object[/b]\n`vayrax_lane_009_drone`\n\n[b]Behavior Profile[/b]\n`smart_guy_balanced`\n\n[b]Stats[/b]\nHull: 345 / 345\nHP: 345\nEnergy Max: 335\n\n[b]Loadout[/b]\nPrimary: `raider_arc_stinger_mk2`\nSecondary: `vayrax_puncture_charge_mk1`\nShield: `raider_plate_screen_mk2`\nConsumable: `recharge_kit`\nItem Stacks: `large_kinetic_rounds` x4, `medium_kinetic_rounds` x8, `recharge_kit` x1\n\n[b]Reward On Victory[/b]\n`plasma_arc_emitter_blueprint`",
+          "close_mode": "button",
+          "next_step_on_close": "vayrax_lane_009_ready_to_fight",
+          "popup_size": {
+            "x": 620,
+            "y": 500
+          }
+        }
+      ]
+    },
+    "vayrax_lane_009_ready_to_fight": {
+      "objective_text": "Move within 30 units of Vayrax Drone 009, then press READY to engage.",
+      "target_object_id": "vayrax_lane_009_drone",
+      "target_owner_type": "enemy",
+      "interaction_type": "handoff",
+      "interaction_range": 30,
+      "next_step": "vayrax_lane_009_start_battle",
+      "actions": [
+        {
+          "button_id": "vayrax_lane_009_ready_button",
+          "label": "READY",
+          "action_id": "download_beacon_data",
+          "range": 30
+        }
+      ],
+      "success_text": "Vayrax Lane 009 engagement accepted."
+    },
+    "vayrax_lane_009_start_battle": {
+      "objective_text": "Battle: Vayrax Drone 009.",
+      "target_object_id": "vayrax_lane_009_drone",
+      "target_owner_type": "enemy",
+      "enemy_id": "vayrax_lane_009_drone",
+      "interaction_type": "hunt",
+      "interaction_range": 30,
+      "complete_on_battle_victory": true,
+      "next_step": "vayrax_lane_009_victory_popup",
+      "on_enter": [
+        {
+          "op": "start_battle",
+          "enemy_id": "vayrax_lane_009_drone",
+          "entry_reason": "vayrax_lane_009_balance_node",
+          "message": "Vayrax Drone 009 engaged."
+        }
+      ],
+      "on_battle_victory": [
+        {
+          "op": "write_log",
+          "message": "Vayrax Lane 009 defeated: Balance Node."
+        },
+        {
+          "op": "advance_step",
+          "next_step": "vayrax_lane_009_victory_popup"
+        }
+      ]
+    },
+    "vayrax_lane_009_victory_popup": {
+      "objective_text": "Review Vayrax Lane 009 victory report.",
+      "interaction_type": "story_popup",
+      "next_step": "vayrax_lane_009_claim_reward",
+      "on_enter": [
+        {
+          "op": "show_story_popup",
+          "title": "VAYRAX LANE 009 CLEARED",
+          "text": "[b]BALANCE NODE DEFEATED[/b]\n\nThe Vayrax lane signal collapses into local static.\n\nReward ready:\n`plasma_arc_emitter_blueprint`",
+          "close_mode": "button",
+          "next_step_on_close": "vayrax_lane_009_claim_reward",
+          "popup_size": {
+            "x": 560,
+            "y": 360
+          }
+        }
+      ]
+    },
+    "vayrax_lane_009_claim_reward": {
+      "objective_text": "Press COMPLETE near Aster Local 09 to claim the Plasma Arc Emitter Blueprint and clear Vayrax Lane 009.",
+      "target_object_id": "star_29_tier_1_local",
+      "target_owner_type": "star",
+      "interaction_type": "handoff",
+      "interaction_range": 9999,
+      "next_step": "completed",
+      "actions": [
+        {
+          "button_id": "vayrax_lane_009_complete_button",
+          "label": "COMPLETE",
+          "action_id": "download_beacon_data",
+          "range": 9999
+        }
+      ],
+      "gives_item": "plasma_arc_emitter_blueprint",
+      "success_text": "Plasma Arc Emitter Blueprint received. Vayrax Lane 009 complete."
+    },
+    "completed": {
+      "objective_text": "Vayrax Lane 009 complete.",
+      "interaction_type": "complete",
+      "is_complete_step": true,
+      "complete_event": true
+    }
+  }
+}

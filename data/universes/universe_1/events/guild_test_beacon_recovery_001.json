@@ -1,0 +1,232 @@
+{
+  "event_id": "guild_test_beacon_recovery_001",
+  "display_name": "Lost Beacon Recovery",
+  "event_state": "seeded",
+  "current_step": "talk_to_npc",
+  "start_on_ready": true,
+  "seed_once": true,
+  "tier": 1,
+  "anchor_star": {
+	"star_id": "tier_1_event_star_001",
+	"star_name": "Aster Gate",
+	"star_type": "K",
+	"sector_pos": [0, 0, 0],
+	"local_pos": [500, 500, 500],
+	"brightness": 1.4,
+	"size": 1.6,
+	"tier": 1,
+	"required": true,
+	"create_if_missing": true
+  },
+  "giver": {
+	"owner_type": "npc",
+	"owner_id": "guild_contact_tier_2",
+	"object_id": "guild_contact_tier_2",
+	"blueprint_id": "guild_contact_tier_2",
+	"display_name": "Guild Contact",
+	"place_near_anchor_star": true,
+	"local_offset": [20, 0, 0]
+  },
+  "event_objects": {
+	"lost_beacon_001": {
+	  "owner_type": "beacon",
+	  "object_type": "beacon",
+	  "object_id": "lost_beacon_001",
+	  "display_name": "Lost Beacon",
+	  "title": "Lost Beacon",
+	  "beacon_type": "guild_event_beacon",
+	  "place_mode": "exact",
+	  "sector_pos": [1, 0, 0],
+	  "local_pos": [400, 500, 500],
+	  "outside_normal_units": true,
+	  "message": "A cold guild signal repeats from the dark. A hostile carrier signal rides underneath it.",
+	  "interaction_type": "download",
+	  "event_id": "guild_test_beacon_recovery_001",
+	  "active_event_id": "guild_test_beacon_recovery_001",
+	  "required_step": "download_beacon_data",
+	  "event_step": "download_beacon_data",
+	  "current_step": "go_to_beacon",
+	  "has_event": true,
+	  "labels": ["beacon", "event_beacon", "guild_event", "download_target"]
+	},
+	"event_guardian_001": {
+	  "owner_type": "enemy",
+	  "object_type": "enemy",
+	  "object_id": "event_guardian_001",
+	  "display_name": "Smart Guy Signal Guardian",
+	  "blueprint_id": "test_smart_guy",
+	  "spawn_on_step": "defeat_guardian",
+	  "sector_pos": [1, 0, 0],
+	  "local_pos": [400, 500, 500],
+	  "event_id": "guild_test_beacon_recovery_001",
+	  "active_event_id": "guild_test_beacon_recovery_001",
+	  "required_step": "defeat_guardian",
+	  "event_step": "defeat_guardian",
+	  "current_step": "defeat_guardian",
+	  "has_event": true,
+	  "labels": ["enemy", "event_enemy", "event_guardian", "smart_guy"],
+	  "event_tags": ["guild_test_beacon_recovery_001", "event_guardian", "smart_guy"],
+	  "overrides": {
+		"hp": 160,
+		"max_hp": 160,
+		"attack": 12,
+		"energy_max": 5000,
+		"primary": "smart_guy_focus_lance",
+		"secondary": "smart_guy_calculated_rail",
+		"shield": "smart_guy_mirror_shield",
+		"consumable": "smart_guy_patch_cell",
+		"item_stacks": {
+		  "smart_guy_calculated_rounds": 18,
+		  "smart_guy_patch_cell": 1,
+		  "shield_patch_cell": 2,
+		  "reinforced_barrier_mk1": 1
+		},
+		"behavior_profile": "smart_guy_tactician",
+		"behavior_values": {
+		  "execute_player_threshold": 0.28,
+		  "critical_hull_evade_threshold": 0.22,
+		  "low_hull_evade_threshold": 0.45,
+		  "low_energy_ammo_threshold": 0.35,
+		  "evade_health_threshold": 0.25,
+		  "decision_cooldown": 1.25,
+		  "allow_shield_use": true,
+		  "allow_shield_repair": true,
+		  "replace_broken_shield": true,
+		  "shield_repair_threshold": 0.65,
+		  "clear_stale_loaded_consumable": true,
+		  "allow_forced_zero_energy_primary": false,
+		  "preferred_consumable_groups": [
+			"shield_repair",
+			"repair",
+			"drone",
+			"signal",
+			"pulse",
+			"explosive",
+			"recharge"
+		  ]
+		},
+		"reward": ["iron", "cobalt", "smart_guy_calculated_rounds"],
+		"ship_name": "The Correct Answer"
+	  }
+	}
+  },
+  "required_items": [],
+  "start_items": [
+	{"item_id": "data_chip_empty", "amount": 1}
+  ],
+  "reward_packet": {
+	"credits": 0,
+	"items": [
+	  {"item_id": "credits", "amount": 25},
+	  {"item_id": "iron", "amount": 120},
+	  {"item_id": "repair_kit", "amount": 2},
+	  {"item_id": "shield_patch_cell", "amount": 2}
+	],
+	"blueprints": [],
+	"lore": [],
+	"unlocks": [],
+	"message": "Guild reward received: credits, iron, repair kits, and shield patch cells."
+  },
+  "steps": {
+	"talk_to_npc": {
+	  "objective_text": "A guild contact is broadcasting near Aster Gate. Travel to the contact and speak with them.",
+	  "target_owner_id": "guild_contact_tier_2",
+	  "next_step": "go_to_beacon"
+	},
+	"go_to_beacon": {
+	  "objective_text": "Travel to the lost beacon. A carrier signal may intercept you at close range.",
+	  "target_object_id": "lost_beacon_001",
+	  "arrival_range": 500,
+	  "next_step": "defeat_guardian"
+	},
+	"defeat_guardian": {
+	  "objective_text": "Defeat the Smart Guy signal guardian before touching the beacon data.",
+	  "target_object_id": "event_guardian_001",
+	  "enemy_id": "event_guardian_001",
+	  "interaction_type": "hunt",
+	  "complete_on_battle_victory": true,
+	  "next_step": "download_beacon_data",
+	  "on_enter": [
+		{
+		  "op": "start_battle",
+		  "enemy_id": "event_guardian_001",
+		  "entry_reason": "guild_test_signal_guardian",
+		  "message": "Signal guardian intercepted the beacon link."
+		}
+	  ],
+	  "on_battle_victory": [
+		{
+		  "op": "write_log",
+		  "message": "Signal guardian defeated.\nBeacon data link is now safe to access."
+		},
+		{
+		  "op": "show_tutorial_hint",
+		  "title": "SIGNAL CLEAR",
+		  "text": "The hunt target is down. Use the event widget to download the beacon data.",
+		  "target_point_id": "event_panel",
+		  "line_to_point_id": "event_panel",
+		  "duration": 4.0,
+		  "popup_size": {"x": 300, "y": 118},
+		  "popup_offset": {"x": 30, "y": -22},
+		  "draw_line": true,
+		  "line_color": [0.3, 0.92, 1.0, 0.72],
+		  "circle_color": [0.3, 0.92, 1.0, 0.22],
+		  "circle_radius": 24.0,
+		  "accent_color": [0.3, 0.92, 1.0, 0.95]
+		},
+		{
+		  "op": "advance_step",
+		  "next_step": "download_beacon_data"
+		}
+	  ]
+	},
+	"download_beacon_data": {
+	  "objective_text": "Download the beacon data into the empty data chip.",
+	  "target_object_id": "lost_beacon_001",
+	  "interaction_type": "download",
+	  "interaction_range": 60,
+	  "requires_item": "data_chip_empty",
+	  "gives_item": "data_chip_full",
+	  "next_step": "return_to_npc",
+	  "actions": [
+		{
+		  "button_id": "read_beacon_signal",
+		  "label": "READ",
+		  "action_id": "show_story_popup",
+		  "title": "Lost Beacon Signal",
+		  "text": "[b]Guild Beacon Fragment[/b]\n\nThe carrier wave is stable now. The beacon is old, but the signature is clean enough to copy into an empty data chip.\n\nThis popup is driven from event JSON and can carry scrolling text plus up to two images.",
+		  "images": [
+			{"path": "res://images/logo-v2.png"},
+			{"path": "res://images/blue_scifi_backing.png"}
+		  ],
+		  "position": {
+		    "x": -350,
+		    "y": 0
+		  },
+		  "popup_size": {"x": 580, "y": 430}
+		},
+		{
+		  "button_id": "download_beacon_data",
+		  "label": "DOWNLOAD",
+		  "action_id": "download_beacon_data",
+		  "range": 60
+		}
+	  ]
+	},
+	"return_to_npc": {
+	  "objective_text": "Return the full data chip to the guild contact and claim the reward.",
+	  "target_owner_id": "guild_contact_tier_2",
+	  "interaction_range": 70,
+	  "requires_item": "data_chip_full",
+	  "next_step": "completed",
+	  "actions": [
+		{
+		  "button_id": "claim_event_reward",
+		  "label": "CLAIM",
+		  "action_id": "claim_event_reward",
+		  "range": 70
+		}
+	  ]
+	}
+  }
+}

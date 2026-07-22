@@ -1,0 +1,222 @@
+{
+  "anchor_star": {
+	"brightness": 1.3,
+	"create_if_missing": false,
+	"local_pos": [
+	  500.0,
+	  500.0,
+	  500.0
+	],
+	"required": true,
+	"sector_pos": [
+	  0,
+	  0,
+	  0
+	],
+	"size": 1.4,
+	"star_id": "tier_1_anchor_star",
+	"star_name": "Tier 1 Star",
+	"star_type": "K",
+	"tier": 1.0
+  },
+  "current_step": "talk_to_bill",
+  "display_name": "Check on Fred",
+  "event_id": "check_on_fred",
+  "event_listeners": {},
+  "event_objects": {
+	"fred": {
+	  "active_event_id": "check_on_fred",
+	  "blueprint_id": "fred",
+	  "chat_character_delay": 0.04,
+	  "chat_line_delay": 1.65,
+	  "current_step": "check_on_fred",
+	  "dialogue_lines": [
+		"Bill is always checking up on me.",
+		"What a swell dude.",
+        "Tell him the relay is stable, but my outgoing signal got scrambled."
+	  ],
+	  "display_name": "Fred",
+	  "event_id": "check_on_fred",
+	  "event_idle_message": "Bill was supposed to check the relay. I have not heard from him.",
+	  "event_state": "event_object",
+	  "event_step": "check_on_fred",
+	  "has_event": true,
+	  "interaction_type": "talk",
+	  "labels": [
+		"npc",
+		"event_target_npc",
+		"story_npc",
+		"fred",
+		"authored_object",
+		"tier_1",
+        "fred_relay_pocket"
+	  ],
+	  "local_offset": [
+		260.0,
+		180.0,
+		-60.0
+	  ],
+	  "object_id": "fred",
+	  "object_type": "npc",
+	  "owner_type": "npc",
+	  "position_mode": "anchor_offset",
+	  "required_step": "check_on_fred",
+	  "sector_offset": [
+		0.0,
+		0.0,
+		0.0
+	  ],
+	  "template_owner_id": "fred",
+	  "sector_pos": [
+		0,
+		0,
+		0
+	  ],
+	  "local_pos": [
+		760,
+		680,
+		440
+	  ],
+	  "is_visible": true
+	}
+  },
+  "event_state": "seeded",
+  "giver": {
+	"blueprint_id": "bill",
+	"display_name": "Bill",
+	"labels": [
+	  "npc",
+	  "event_giver",
+	  "story_npc",
+	  "bill",
+	  "authored_object",
+      "tier_1"
+	],
+	"local_offset": [
+	  180.0,
+	  -120.0,
+	  45.0
+	],
+	"object_id": "bill",
+	"owner_id": "bill",
+	"owner_type": "npc",
+	"place_near_anchor_star": true,
+	"template_owner_id": "bill",
+	"sector_offset": [
+	  0.0,
+	  0.0,
+	  0.0
+	],
+	"sector_pos": [
+	  0,
+	  0,
+	  0
+	],
+	"local_pos": [
+	  680,
+	  380,
+	  545
+	]
+  },
+  "required_items": [],
+  "reward_packet": {
+	"blueprints": [],
+	"credits": 50.0,
+	"items": [
+	  {
+		"amount": 50.0,
+		"item_id": "credits"
+	  }
+	],
+	"lore": [],
+	"message": "Bill rewards you for checking on Fred.",
+	"unlocks": []
+  },
+  "seed_once": true,
+  "start_on_ready": false,
+  "steps": {
+	"check_on_fred": {
+	  "actions": [
+		{
+		  "action_id": "event_operations",
+		  "button_id": "talk_to_fred",
+		  "label": "TALK",
+		  "operations": [
+			{
+			  "op": "show_story_popup",
+			  "position": {
+			    "x": -360,
+			    "y": 0
+			  },
+			  "text": "[b]Fred[/b]\n\nI am fine. Bill worries too much.\n\nTell him the relay is stable, but something passed through here and scrambled my outgoing signal.",
+			  "title": "Fred"
+			},
+			{
+			  "next_step": "return_to_bill",
+			  "op": "advance_step"
+			}
+		  ],
+		  "range": 70.0
+		}
+	  ],
+	  "interaction_range": 70.0,
+	  "interaction_type": "talk",
+	  "next_step": "return_to_bill",
+	  "npc_chat_character_delay": 0.04,
+	  "npc_chat_line_delay": 1.65,
+	  "npc_dialogue_lines": [
+		"I am fine. Bill worries too much.",
+		"The relay is stable.",
+        "Something passed through here and scrambled my outgoing signal."
+	  ],
+	  "objective_text": "Go check on Fred near Story Star.",
+	  "target_object_id": "fred"
+	},
+	"return_to_bill": {
+	  "actions": [
+		{
+		  "action_id": "claim_event_reward",
+		  "button_id": "claim_bill_reward",
+		  "label": "CLAIM",
+		  "range": 70.0
+		}
+	  ],
+	  "completed_npc_dialogue_lines": [
+		"Fred is safe and the relay is stable. That is enough good news for one day.",
+		"If that scrambled signal shows up again, I will have another job for you.",
+        "For now, take the reward. You earned it."
+	  ],
+	  "interaction_range": 70.0,
+	  "interaction_type": "claim",
+	  "next_step": "completed",
+	  "npc_chat_character_delay": 0.04,
+	  "npc_chat_line_delay": 1.65,
+	  "npc_dialogue_lines": [
+		"You found Fred?",
+		"Good. I was trying not to sound worried and doing a terrible job.",
+        "Tell me what happened at the relay."
+	  ],
+	  "objective_text": "Return to Bill and report that Fred is safe.",
+	  "target_owner_id": "bill"
+	},
+	"talk_to_bill": {
+	  "interaction_type": "talk",
+	  "next_step": "check_on_fred",
+	  "npc_chat_character_delay": 0.04,
+	  "npc_chat_line_delay": 1.65,
+	  "npc_dialogue_lines": [
+		"Can you go check on a friend of mine?",
+		"Fred has been gone awhile now.",
+        "He is near the relay, but I cannot get a clean answer from him."
+	  ],
+	  "npc_quest_available": true,
+	  "objective_text": "Talk to Bill near Story Star.",
+	  "step_kind": "offer",
+	  "target_owner_id": "bill"
+	}
+  },
+  "tier": 1.0,
+  "handoff_notes": [
+    "Pass 003: event listener removed from this side event so it cannot auto-build from the catalog. Chapter 002 installs the listener as a manual event object after the final reward handoff."
+  ]
+}

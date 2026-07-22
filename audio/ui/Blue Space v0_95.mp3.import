@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bx0mibxn6q8yl"
+path="res://.godot/imported/Blue Space v0_95.mp3-867d88bf1eb44bb5637184a058825607.mp3str"
+
+[deps]
+
+source_file="res://audio/ui/Blue Space v0_95.mp3"
+dest_files=["res://.godot/imported/Blue Space v0_95.mp3-867d88bf1eb44bb5637184a058825607.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

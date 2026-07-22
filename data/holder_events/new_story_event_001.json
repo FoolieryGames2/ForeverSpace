@@ -1,0 +1,389 @@
+{
+	"anchor_star": {
+		"brightness": 1.13,
+		"catalog_id": "tier_1_anchor_star",
+		"catalog_source": "world_seed",
+		"create_if_missing": true,
+		"local_pos": [
+			500.0,
+			500.0,
+			500.0
+		],
+		"required": true,
+		"sector_pos": [
+			0.0,
+			0.0,
+			0.0
+		],
+		"size": 1.27,
+		"source_seed_id": "anchor_stars_and_planets_v1",
+		"source_world_seed_object_id": "tier_1_anchor_star",
+		"star_id": "tier_1_anchor_star",
+		"star_name": "Tier 1 Star",
+		"star_type": "K",
+		"tier": 1.0
+	},
+	"current_step": "find_new_story_event_001_story_beacon_3",
+	"display_name": "New Story Event",
+	"event_id": "new_story_event_001",
+	"event_listeners": {
+		"new_story_event_001_listener_001": {
+			"beacon_type": "event_listener_beacon",
+			"display_name": "New Story Event 001 Listener 001",
+			"is_completed": false,
+			"is_discovered": false,
+			"is_visible": false,
+			"labels": [
+				"beacon",
+				"event_listener",
+				"activate_event_on_range",
+				"hidden_listener",
+				"invisible_listener",
+				"new_story_event_001",
+				"authored_object",
+				"start_event_on_range"
+			],
+			"listener_type": "start_event_on_range",
+			"local_offset": [
+				0.0,
+				0.0,
+				0.0
+			],
+			"local_pos": [
+				1.0,
+				1.0,
+				1.0
+			],
+			"message": "this is beacon message one",
+			"object_id": "new_story_event_001_listener_001",
+			"object_type": "beacon",
+			"owner_type": "beacon",
+			"parent_star_id": "tier_1_anchor_star",
+			"parent_star_name": "Tier 1 Star",
+			"position_mode": "anchor_offset",
+			"sector_offset": [
+				0.0,
+				0.0,
+				0.0
+			],
+			"start_step": "story_popup",
+			"suppress_trigger_popup": true,
+			"title": "New Story Event 001 Listener 001",
+			"trigger_event_id": "new_story_event_001",
+			"trigger_once": true,
+			"trigger_popup_message": "first pop up",
+			"trigger_range": 1001.0,
+			"triggered": false,
+			"triggered_message": "New event discovered: New Story Event."
+		}
+	},
+	"event_objects": {
+		"beacon_of_love": {
+			"active_event_id": "new_story_event_001",
+			"beacon_type": "event_beacon",
+			"display_name": "New Story Event 001 Beacon 001",
+			"event_id": "new_story_event_001",
+			"event_step": "talk_to_contact",
+			"has_event": true,
+			"interaction_type": "download",
+			"labels": [
+				"beacon",
+				"event_beacon",
+				"new_story_event_001",
+				"authored_object"
+			],
+			"local_pos": [
+				500.0,
+				500.0,
+				500.0
+			],
+			"message": "Event beacon signal is active.",
+			"object_id": "beacon_of_love",
+			"object_type": "beacon",
+			"owner_type": "beacon",
+			"required_step": "talk_to_contact",
+			"sector_pos": [
+				0.0,
+				0.0,
+				0.0
+			],
+			"spawn_on_step": "talk_to_contact"
+		},
+		"melissa": {
+			"active_event_id": "new_story_event_001",
+			"anchor_role": "tier_spine",
+			"blueprint_id": "melissa_nudawn_001",
+			"brightness": 1.13,
+			"can_trade": false,
+			"catalog_id": "melissa_nudawn_001",
+			"catalog_source": "npc_blueprints",
+			"chat_character_delay": 0.04,
+			"chat_line_delay": 1.25,
+			"dialogue_lines": [
+				"Yeah yeah, I heard it all before.",
+				"Go ahead.  lets here it.",
+				"Been a just waiting."
+			],
+			"display_name": "Melissa",
+			"event_id": "new_story_event_001",
+			"event_start_items": [
+				{
+					"amount": 1.0,
+					"item_id": "navigation_relay_coupler_blueprint"
+				}
+			],
+			"event_step": "story_popup",
+			"friendly": true,
+			"has_event": false,
+			"id": "melissa",
+			"item_list": [],
+			"labels": [
+				"star",
+				"world_seed",
+				"story_anchor",
+				"authored_object",
+				"tier_spine",
+				"tier_1",
+				"event_object",
+				"new_story_event_001_npc_001",
+				"new_story_event_001",
+				"catalog_world_seed",
+				"npc",
+				"event_target_npc",
+				"story_npc",
+				"melissa_nudawn_001",
+				"catalog_npc",
+				"melissa"
+			],
+			"local_offset": [
+				20.0,
+				80.0,
+				-79.0
+			],
+			"local_pos": [
+				500.0,
+				500.0,
+				500.0
+			],
+			"main_view_icon_id": "lady",
+			"main_view_icon_path": "res//images/lady.png",
+			"message": "I wondered if you'd show up here again.",
+			"name": "Melissa Nudawn",
+			"object_id": "melissa",
+			"object_type": "npc",
+			"offer_text": "",
+			"offer_title": "",
+			"owner_id": "melissa",
+			"owner_type": "npc",
+			"required_step": "story_popup",
+			"role": "stranded pilot",
+			"sector_pos": [
+				0.0,
+				0.0,
+				0.0
+			],
+			"size": 1.27,
+			"source_blueprint_id": "melissa_nudawn_001",
+			"source_path": "res://data/world_seeds/anchor_stars_and_planets_v1.json",
+			"source_seed_id": "anchor_stars_and_planets_v1",
+			"source_world_seed_object_id": "tier_1_anchor_star",
+			"species": "human",
+			"star_index": 1.0,
+			"star_name": "Tier 1 Star",
+			"star_type": "K",
+			"stays_after_meeting": true,
+			"success_text": "",
+			"template_owner_id": "melissa",
+			"tier": 1.0
+		},
+		"new_story_event_001_story_beacon": {
+			"active_event_id": "new_story_event_001",
+			"beacon_type": "event_beacon",
+			"display_name": "New Story Event 001 Story Beacon",
+			"event_id": "new_story_event_001",
+			"has_event": true,
+			"interaction_type": "download",
+			"labels": [
+				"beacon",
+				"event_beacon",
+				"new_story_event_001",
+				"authored_object"
+			],
+			"local_pos": [
+				500.0,
+				500.0,
+				500.0
+			],
+			"message": "Event beacon signal is active.",
+			"object_id": "new_story_event_001_story_beacon",
+			"object_type": "beacon",
+			"owner_type": "beacon",
+			"sector_pos": [
+				0.0,
+				0.0,
+				0.0
+			]
+		},
+		"new_story_event_001_story_beacon_2": {
+			"active_event_id": "new_story_event_001",
+			"anchor_role": "tier_spine",
+			"brightness": 1.13,
+			"catalog_id": "tier_1_anchor_star",
+			"catalog_source": "world_seed",
+			"display_name": "Tier 1 Star",
+			"event_id": "new_story_event_001",
+			"has_event": true,
+			"id": "new_story_event_001_story_beacon_2",
+			"labels": [
+				"star",
+				"world_seed",
+				"story_anchor",
+				"authored_object",
+				"tier_spine",
+				"tier_1",
+				"event_object",
+				"new_story_event_001_story_beacon_2",
+				"new_story_event_001",
+				"catalog_world_seed"
+			],
+			"local_offset": [
+				7.0,
+				41.0,
+				0.0
+			],
+			"local_pos": [
+				500.0,
+				500.0,
+				500.0
+			],
+			"object_id": "new_story_event_001_story_beacon_2",
+			"object_type": "star",
+			"owner_type": "star",
+			"sector_pos": [
+				0.0,
+				0.0,
+				0.0
+			],
+			"size": 1.27,
+			"source_path": "res://data/world_seeds/anchor_stars_and_planets_v1.json",
+			"source_seed_id": "anchor_stars_and_planets_v1",
+			"source_world_seed_object_id": "tier_1_anchor_star",
+			"star_index": 1.0,
+			"star_name": "Tier 1 Star",
+			"star_type": "K",
+			"tier": 1.0
+		},
+		"new_story_event_001_story_beacon_3": {
+			"active_event_id": "new_story_event_001",
+			"beacon_type": "event_beacon",
+			"display_name": "New Story Event 001 Story Beacon 3",
+			"event_id": "new_story_event_001",
+			"has_event": true,
+			"interaction_type": "download",
+			"labels": [
+				"beacon",
+				"event_beacon",
+				"new_story_event_001",
+				"authored_object"
+			],
+			"local_pos": [
+				500.0,
+				500.0,
+				500.0
+			],
+			"message": "Event beacon signal is active.",
+			"object_id": "new_story_event_001_story_beacon_3",
+			"object_type": "beacon",
+			"owner_type": "beacon",
+			"sector_pos": [
+				0.0,
+				0.0,
+				0.0
+			]
+		}
+	},
+	"event_state": "seeded",
+	"giver": {
+		"blueprint_id": "story_contact_001",
+		"display_name": "Story Contact",
+		"labels": [
+			"npc",
+			"event_giver",
+			"story_npc",
+			"story_contact_001",
+			"authored_object"
+		],
+		"local_offset": [
+			25.0,
+			0.0,
+			0.0
+		],
+		"object_id": "story_contact_001",
+		"owner_id": "story_contact_001",
+		"owner_type": "npc",
+		"place_near_anchor_star": true,
+		"template_owner_id": "story_contact_001"
+	},
+	"required_items": [],
+	"reward_packet": {
+		"blueprints": [],
+		"credits": 0.0,
+		"items": [],
+		"lore": [],
+		"message": "Story event complete.",
+		"unlocks": []
+	},
+	"seed_once": true,
+	"start_on_ready": false,
+	"steps": {
+		"find_new_story_event_001_story_beacon_3": {
+			"arrival_range": 70.0,
+			"interaction_type": "find",
+			"next_step": "story_popup",
+			"objective_text": "Find new_story_event_001_story_beacon_3.",
+			"target_object_id": "melissa"
+		},
+		"return_to_contact": {
+			"actions": [
+				{
+					"action_id": "claim_event_reward",
+					"button_id": "claim_new_story_event_001",
+					"label": "CLAIM",
+					"range": 70
+				}
+			],
+			"interaction_range": 70,
+			"next_step": "completed",
+			"objective_text": "Return to the contact and claim the reward.",
+			"target_owner_id": "story_contact_001"
+		},
+		"story_popup": {
+			"interaction_type": "story_popup",
+			"next_step": "return_to_contact",
+			"objective_text": "Read the story popup.",
+			"on_battle_victory": [
+				{
+					"next_step": "return_to_contact",
+					"op": "advance_step"
+				}
+			],
+			"on_enter": [
+				{
+					"close_mode": "button",
+					"duration": 4.0,
+					"image_height": 112.0,
+					"images": [],
+					"next_step_on_close": "return_to_contact",
+					"op": "show_story_popup",
+					"popup_size": {
+						"x": 580.0,
+						"y": 430.0
+					},
+					"text": "[b]Story beat[/b]\n\nAdd the scene text here.",
+					"title": "Story Beat"
+				}
+			]
+		}
+	},
+	"tier": 1.0
+}

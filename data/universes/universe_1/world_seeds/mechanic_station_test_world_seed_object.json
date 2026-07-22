@@ -1,0 +1,75 @@
+{
+  "aster_gate_repair_dock_001": {
+    "owner_type": "npc",
+    "object_type": "npc",
+    "object_id": "aster_gate_repair_dock_001",
+    "npc_id": "aster_gate_repair_dock_001",
+    "blueprint_id": "mechanic_station_test",
+    "display_name": "Aster Gate Repair Dock",
+    "name": "Aster Gate Repair Dock",
+    "species": "station_service",
+    "role": "mechanic_station",
+    "friendly": true,
+    "position_mode": "anchor_offset",
+    "sector_offset": [
+      0,
+      0,
+      0
+    ],
+    "local_offset": [
+      180,
+      -90,
+      65
+    ],
+    "sector_pos": [
+      0,
+      0,
+      0
+    ],
+    "local_pos": [
+      680,
+      410,
+      565
+    ],
+    "can_trade": true,
+    "trade": true,
+    "trade_completed": false,
+    "repeatable": true,
+    "retradable": true,
+    "stays_after_meeting": true,
+    "offer_title": "Hull Repair Dock",
+    "offer_text": "Trade 100 iron to restore hull integrity to full.",
+    "success_text": "Repair cycle complete. Hull integrity restored.",
+    "dialogue_lines": [
+      "Dock clamps green. Your hull looks like it argued with a meteor and lost.",
+      "One hundred iron buys a full hull patch. Future premium plating is extra.",
+      "The bonus channel is locked by service id, so no, you cannot stack the same dock blessing forever."
+    ],
+    "item_list": [
+      {
+        "item_id": "iron",
+        "amount": 100,
+        "trade_role": "want",
+        "display_name": "Iron"
+      },
+      {
+        "trade_role": "service",
+        "service_type": "repair_hull_to_full",
+        "display_name": "Full Hull Repair",
+        "bonus_hull_max_add": 0.0,
+        "bonus_apply_once": true,
+        "bonus_flag": "aster_gate_repair_dock_001_hull_bonus_v1"
+      }
+    ],
+    "labels": [
+      "npc",
+      "station",
+      "mechanic",
+      "repair_service",
+      "authored_object",
+      "tier_1",
+      "human_habitat_service_pocket"
+    ],
+    "is_visible": true
+  }
+}

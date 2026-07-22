@@ -1,0 +1,361 @@
+{
+  "event_id": "vayrax_lane_008_event",
+  "display_name": "Vayrax Lane 008: Impact Bracket",
+  "description": "Pass 004 Vayrax lane event using the proven Lane 001/Pass 003 pattern: existing anchor copied into event_objects, one hidden 500-unit activate_event_on_range listener, explicit enemy install before profile popup, READY button with 30-unit range, battle on next step, victory popup, gives_item reward, then complete. This lane uses planned reward `railgun_mk1_blueprint`.",
+  "event_state": "seeded",
+  "current_step": "vayrax_lane_008_intro_popup",
+  "start_on_ready": false,
+  "seed_once": true,
+  "can_cancel_event": true,
+  "tier": 1,
+  "anchor_star": {
+    "star_id": "star_26_tier_1_local",
+    "star_name": "Aster Local 06",
+    "sector_pos": [
+      -3,
+      -1,
+      1
+    ],
+    "local_pos": [
+      500,
+      500,
+      500
+    ],
+    "required": true,
+    "create_if_missing": false,
+    "tier": 1
+  },
+  "event_listeners": {
+    "vayrax_lane_008_listener": {
+      "owner_type": "beacon",
+      "object_type": "beacon",
+      "object_id": "vayrax_lane_008_listener",
+      "display_name": "Vayrax Lane 008 Signal Listener",
+      "title": "Vayrax Lane 008 Signal Listener",
+      "beacon_type": "hidden_event_listener_beacon",
+      "position_mode": "absolute",
+      "sector_pos": [
+        -3,
+        -1,
+        1
+      ],
+      "local_pos": [
+        500,
+        500,
+        500
+      ],
+      "parent_star_id": "star_26_tier_1_local",
+      "parent_star_name": "Aster Local 06",
+      "listener_type": "activate_event_on_range",
+      "trigger_event_id": "vayrax_lane_008_event",
+      "start_step": "vayrax_lane_008_intro_popup",
+      "trigger_range": 500,
+      "trigger_once": true,
+      "triggered": false,
+      "trigger_popup_message": "",
+      "suppress_trigger_popup": true,
+      "triggered_message": "Vayrax Lane 008 contact resolved near Aster Local 06.",
+      "message": "A Vayrax lane signal hides in the normal scan noise around Aster Local 06.",
+      "is_visible": false,
+      "is_discovered": false,
+      "is_completed": false,
+      "labels": [
+        "beacon",
+        "event_listener",
+        "activate_event_on_range",
+        "vayrax",
+        "vayrax_lane",
+        "vayrax_lane_008",
+        "hidden_listener",
+        "invisible_listener",
+        "camouflaged_signal",
+        "tier_1",
+        "star_26_tier_1_local",
+        "star_anchor_listener",
+        "authored_object"
+      ]
+    }
+  },
+  "event_objects": {
+    "star_26_tier_1_local": {
+      "owner_type": "star",
+      "object_type": "star",
+      "object_id": "star_26_tier_1_local",
+      "display_name": "Aster Local 06",
+      "title": "Aster Local 06",
+      "scan_name": "Aster Local 06",
+      "scan_description": "Existing anchor contact for Aster Local 06.",
+      "position_mode": "absolute",
+      "sector_pos": [
+        -3,
+        -1,
+        1
+      ],
+      "local_pos": [
+        500,
+        500,
+        500
+      ],
+      "tier": 1,
+      "interaction_type": "signal_anchor",
+      "event_id": "vayrax_lane_008_event",
+      "active_event_id": "vayrax_lane_008_event",
+      "has_event": true,
+      "event_interactable": true,
+      "event_ops_enabled": true,
+      "is_visible": true,
+      "is_discovered": false,
+      "star_name": "Aster Local 06",
+      "star_type": "M",
+      "brightness": 0.92,
+      "size": 1.08,
+      "star_index": 26,
+      "anchor_role": "tier_1_local_anchor",
+      "labels": [
+        "star",
+        "world_seed",
+        "event_anchor",
+        "vayrax_lane",
+        "vayrax_lane_008",
+        "tier_1",
+        "star_26_tier_1_local",
+        "star_anchor",
+        "authored_object",
+        "event_object"
+      ]
+    },
+    "vayrax_lane_008_drone": {
+      "owner_type": "enemy",
+      "object_type": "enemy",
+      "object_id": "vayrax_lane_008_drone",
+      "enemy_id": "vayrax_lane_008_drone",
+      "display_name": "Vayrax Drone 008",
+      "name": "Vayrax Drone 008",
+      "blueprint_id": "vayrax_drone_008",
+      "spawn_on_step": "vayrax_lane_008_enemy_profile_popup",
+      "position_mode": "absolute",
+      "sector_pos": [
+        -3,
+        -1,
+        1
+      ],
+      "local_pos": [
+        760.0,
+        500.0,
+        500.0
+      ],
+      "parent_star_id": "star_26_tier_1_local",
+      "parent_star_name": "Aster Local 06",
+      "event_id": "vayrax_lane_008_event",
+      "active_event_id": "vayrax_lane_008_event",
+      "required_step": "vayrax_lane_008_start_battle",
+      "event_step": "vayrax_lane_008_start_battle",
+      "current_step": "vayrax_lane_008_start_battle",
+      "has_event": true,
+      "labels": [
+        "enemy",
+        "event_enemy",
+        "vayrax",
+        "drone",
+        "vayrax_drone_008",
+        "vayrax_lane",
+        "vayrax_lane_008",
+        "tier_1",
+        "star_26_tier_1_local",
+        "near_star_26_tier_1_local"
+      ],
+      "event_tags": [
+        "vayrax_lane_008_event",
+        "vayrax",
+        "vayrax_lane_008",
+        "lane_battle"
+      ],
+      "overrides": {
+        "hp": 315,
+        "max_hp": 315,
+        "hull": 315,
+        "max_hull": 315,
+        "attack": 26,
+        "energy_max": 305.0,
+        "max_energy": 305,
+        "energy": 305,
+        "primary": "raider_arc_stinger_mk2",
+        "primary_weapon": "raider_arc_stinger_mk2",
+        "secondary": "vayrax_puncture_charge_mk1",
+        "secondary_weapon": "vayrax_puncture_charge_mk1",
+        "shield": "raider_plate_screen_mk2",
+        "shield_item": "raider_plate_screen_mk2",
+        "consumable": "repair_kit",
+        "consumable_item": "repair_kit",
+        "item_stacks": {
+          "large_kinetic_rounds": 3,
+          "medium_kinetic_rounds": 8,
+          "repair_kit": 1
+        },
+        "behavior_profile": "smart_guy_bomber",
+        "behavior_values": {
+          "decision_cooldown": 1.2,
+          "low_hull_evade_threshold": 0.26,
+          "repair_hull_threshold": 0.3,
+          "explosive_player_threshold": 0.62,
+          "execute_player_threshold": 0.48
+        },
+        "reward": [
+          "iron",
+          "cobalt",
+          "large_kinetic_rounds"
+        ],
+        "reward_items": [
+          "iron",
+          "cobalt",
+          "large_kinetic_rounds"
+        ],
+        "ship_name": "Vayrax Drone 008"
+      },
+      "is_visible": true,
+      "is_discovered": false
+    }
+  },
+  "required_items": [],
+  "reward_packet": {
+    "credits": 0,
+    "items": [],
+    "blueprints": [],
+    "lore": [],
+    "unlocks": [],
+    "message": "Vayrax Lane 008 complete. Reward claimed with gives_item."
+  },
+  "steps": {
+    "vayrax_lane_008_intro_popup": {
+      "objective_text": "A Vayrax lane signal has resolved near Aster Local 06.",
+      "target_object_id": "star_26_tier_1_local",
+      "target_owner_type": "star",
+      "interaction_type": "story_popup",
+      "next_step": "vayrax_lane_008_enemy_profile_popup",
+      "on_enter": [
+        {
+          "op": "show_story_popup",
+          "title": "IMPACT BRACKET: LOUD ANSWER",
+          "text": "[b]VAYRAX DRONE 008[/b]\n\n\"Eight carries the loud answer.\"\n\n\"Stand inside the bracket.\"\n\n\"Impact solution loaded.\"",
+          "close_mode": "button",
+          "next_step_on_close": "vayrax_lane_008_enemy_profile_popup",
+          "popup_size": {
+            "x": 560,
+            "y": 360
+          }
+        }
+      ]
+    },
+    "vayrax_lane_008_enemy_profile_popup": {
+      "objective_text": "Review the Vayrax Drone 008 contact profile.",
+      "target_object_id": "vayrax_lane_008_drone",
+      "target_owner_type": "enemy",
+      "interaction_type": "story_popup",
+      "next_step": "vayrax_lane_008_ready_to_fight",
+      "on_enter": [
+        {
+          "op": "install_event_object",
+          "object_id": "vayrax_lane_008_drone"
+        },
+        {
+          "op": "show_story_popup",
+          "title": "VAYRAX CONTACT PROFILE",
+          "text": "[b]Enemy Handler Source[/b]\n`vayrax_drone_008`\n\n[b]Battle Object[/b]\n`vayrax_lane_008_drone`\n\n[b]Behavior Profile[/b]\n`smart_guy_bomber`\n\n[b]Stats[/b]\nHull: 315 / 315\nHP: 315\nEnergy Max: 305\n\n[b]Loadout[/b]\nPrimary: `raider_arc_stinger_mk2`\nSecondary: `vayrax_puncture_charge_mk1`\nShield: `raider_plate_screen_mk2`\nConsumable: `repair_kit`\nItem Stacks: `large_kinetic_rounds` x3, `medium_kinetic_rounds` x8, `repair_kit` x1\n\n[b]Reward On Victory[/b]\n`railgun_mk1_blueprint`",
+          "close_mode": "button",
+          "next_step_on_close": "vayrax_lane_008_ready_to_fight",
+          "popup_size": {
+            "x": 620,
+            "y": 500
+          }
+        }
+      ]
+    },
+    "vayrax_lane_008_ready_to_fight": {
+      "objective_text": "Move within 30 units of Vayrax Drone 008, then press READY to engage.",
+      "target_object_id": "vayrax_lane_008_drone",
+      "target_owner_type": "enemy",
+      "interaction_type": "handoff",
+      "interaction_range": 30,
+      "next_step": "vayrax_lane_008_start_battle",
+      "actions": [
+        {
+          "button_id": "vayrax_lane_008_ready_button",
+          "label": "READY",
+          "action_id": "download_beacon_data",
+          "range": 30
+        }
+      ],
+      "success_text": "Vayrax Lane 008 engagement accepted."
+    },
+    "vayrax_lane_008_start_battle": {
+      "objective_text": "Battle: Vayrax Drone 008.",
+      "target_object_id": "vayrax_lane_008_drone",
+      "target_owner_type": "enemy",
+      "enemy_id": "vayrax_lane_008_drone",
+      "interaction_type": "hunt",
+      "interaction_range": 30,
+      "complete_on_battle_victory": true,
+      "next_step": "vayrax_lane_008_victory_popup",
+      "on_enter": [
+        {
+          "op": "start_battle",
+          "enemy_id": "vayrax_lane_008_drone",
+          "entry_reason": "vayrax_lane_008_impact_bracket",
+          "message": "Vayrax Drone 008 engaged."
+        }
+      ],
+      "on_battle_victory": [
+        {
+          "op": "write_log",
+          "message": "Vayrax Lane 008 defeated: Impact Bracket."
+        },
+        {
+          "op": "advance_step",
+          "next_step": "vayrax_lane_008_victory_popup"
+        }
+      ]
+    },
+    "vayrax_lane_008_victory_popup": {
+      "objective_text": "Review Vayrax Lane 008 victory report.",
+      "interaction_type": "story_popup",
+      "next_step": "vayrax_lane_008_claim_reward",
+      "on_enter": [
+        {
+          "op": "show_story_popup",
+          "title": "VAYRAX LANE 008 CLEARED",
+          "text": "[b]IMPACT BRACKET DEFEATED[/b]\n\nThe Vayrax lane signal collapses into local static.\n\nReward ready:\n`railgun_mk1_blueprint`",
+          "close_mode": "button",
+          "next_step_on_close": "vayrax_lane_008_claim_reward",
+          "popup_size": {
+            "x": 560,
+            "y": 360
+          }
+        }
+      ]
+    },
+    "vayrax_lane_008_claim_reward": {
+      "objective_text": "Press COMPLETE near Aster Local 06 to claim the Railgun MK1 Blueprint and clear Vayrax Lane 008.",
+      "target_object_id": "star_26_tier_1_local",
+      "target_owner_type": "star",
+      "interaction_type": "handoff",
+      "interaction_range": 9999,
+      "next_step": "completed",
+      "actions": [
+        {
+          "button_id": "vayrax_lane_008_complete_button",
+          "label": "COMPLETE",
+          "action_id": "download_beacon_data",
+          "range": 9999
+        }
+      ],
+      "gives_item": "railgun_mk1_blueprint",
+      "success_text": "Railgun MK1 Blueprint received. Vayrax Lane 008 complete."
+    },
+    "completed": {
+      "objective_text": "Vayrax Lane 008 complete.",
+      "interaction_type": "complete",
+      "is_complete_step": true,
+      "complete_event": true
+    }
+  }
+}

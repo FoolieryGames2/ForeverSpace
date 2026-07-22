@@ -1,0 +1,233 @@
+{
+	"anchor_star": {
+		"create_if_missing": false,
+		"local_pos": [
+			500.0,
+			500.0,
+			500.0
+		],
+		"required": true,
+		"sector_pos": [
+			3.0,
+			2.0,
+			-1.0
+		],
+		"star_id": "star_30_tier_1_local",
+		"star_name": "Aster Local 10"
+	},
+	"current_step": "go_to_test_wreckage",
+	"display_name": "Wreckage Listener Event Test 001",
+	"event_id": "wreckage_listener_event_test_001",
+	"event_listeners": {
+		"wreckage_listener_event_test_001_listener_001": {
+			"beacon_type": "event_listener_beacon",
+			"display_name": "Wreckage Listener Event Test 001 Listener 001",
+			"is_completed": false,
+			"is_discovered": false,
+			"is_visible": false,
+			"labels": [
+				"beacon",
+				"event_listener",
+				"activate_event_on_range",
+				"hidden_listener",
+				"invisible_listener",
+				"wreckage_listener_event_test_001",
+				"authored_object"
+			],
+			"listener_type": "activate_event_on_range",
+			"local_offset": [
+				250,
+				80,
+				20
+			],
+			"message": "wrrreeeeckage",
+			"object_id": "wreckage_listener_event_test_001_listener_001",
+			"object_type": "beacon",
+			"owner_type": "beacon",
+			"parent_star_id": "star_30_tier_1_local",
+			"parent_star_name": "Aster Local 10",
+			"position_mode": "anchor_offset",
+			"sector_offset": [
+				0,
+				0,
+				0
+			],
+			"sector_pos": [
+				3,
+				2,
+				-1
+			],
+			"start_step": "go_to_test_wreckage",
+			"suppress_trigger_popup": true,
+			"title": "Wreckage Listener Event Test 001 Listener 001",
+			"trigger_event_id": "wreckage_listener_event_test_001",
+			"trigger_once": true,
+			"trigger_popup_message": "wrechage triggered",
+			"trigger_range": 2001.0,
+			"triggered": false,
+			"triggered_message": "New event discovered: Wreckage Listener Event Test 001."
+		}
+	},
+	"event_objects": {
+		"test_wreckage_object_001": {
+			"danger_level": 0.0,
+			"display_name": "Test Drifting Wreckage",
+			"event_id": "wreckage_listener_event_test_001",
+			"event_interactable": true,
+			"event_ops_enabled": true,
+			"has_event": true,
+			"id": "test_wreckage_object_001",
+			"interaction_type": "salvage",
+			"is_completed": false,
+			"is_discovered": false,
+			"is_visible": true,
+			"labels": [
+				"space_object",
+				"wreckage",
+				"event_object",
+				"story_prop",
+				"salvageable",
+				"wreckage_test",
+				"tier_1",
+				"aster_local_10",
+				"near_star_30_tier_1_local",
+				"moved_off_opening_path"
+			],
+			"local_pos": [
+				705.0,
+				455.0,
+				560.0
+			],
+			"message": "testing wrechage",
+			"mineable": false,
+			"object_id": "test_wreckage_object_001",
+			"object_type": "wreckage",
+			"owner_type": "space_object",
+			"parent_star_id": "star_30_tier_1_local",
+			"parent_star_name": "Aster Local 10",
+			"position_mode": "absolute",
+			"required_step": "go_to_test_wreckage",
+			"resource_type": "salvage",
+			"resource_value": 1.0,
+			"scan_description": "A dead hull section drifting near Aster Local 10. It is safe to salvage, but not mineable.",
+			"scan_name": "Test Drifting Wreckage",
+			"sector_pos": [
+				3.0,
+				2.0,
+				-1.0
+			],
+			"tier": 1.0
+		},
+		"wreckage_listener_event_test_001_story_beacon": {
+			"active_event_id": "wreckage_listener_event_test_001",
+			"beacon_type": "event_beacon",
+			"display_name": "Wreckage Listener Event Test 001 Story Beacon",
+			"event_id": "wreckage_listener_event_test_001",
+			"has_event": true,
+			"interaction_type": "download",
+			"labels": [
+				"beacon",
+				"event_beacon",
+				"wreckage_listener_event_test_001",
+				"authored_object"
+			],
+			"local_pos": [
+				500,
+				500,
+				500
+			],
+			"message": "Event beacon signal is active.",
+			"object_id": "wreckage_listener_event_test_001_story_beacon",
+			"object_type": "beacon",
+			"owner_type": "beacon",
+			"sector_pos": [
+				0,
+				0,
+				0
+			]
+		}
+	},
+	"event_state": "seeded",
+	"handoff_notes": [
+		"Pass 003: event listener removed from this side event so it cannot auto-build from the catalog. Chapter 002 installs the listener as a manual event object after the final reward handoff."
+	],
+	"seed_once": true,
+	"start_on_ready": false,
+	"steps": {
+		"find_wreckage_listener_event_test_001_story_beacon": {
+			"arrival_range": 2000.0,
+			"interaction_type": "find",
+			"next_step": "go_to_test_wreckage",
+			"objective_text": "Find wreckage_listener_event_test_001_story_beacon.",
+			"on_battle_victory": [
+				{
+					"next_step": "go_to_test_wreckage",
+					"op": "advance_step"
+				}
+			],
+			"target_object_id": "wreckage_listener_event_test_001_story_beacon"
+		},
+		"go_to_test_wreckage": {
+			"arrival_range": 999.0,
+			"interaction_type": "find",
+			"next_step": "inspect_test_wreckage",
+			"objective_text": "Travel to the drifting wreckage near Aster Local 10.",
+			"on_arrival": [
+				{
+					"op": "show_story_popup",
+					"popup_size": {
+						"x": 560.0,
+						"y": 360.0
+					},
+					"text": "[b]Wreckage object reached.[/b]\n\nThis salvage contact is now placed away from the opening Human Habitat route near Aster Local 10. If this popup appears, the event can target a non-asteroid space_object without breaking the early story flow.",
+					"title": "TEST WRECKAGE CONTACT"
+				},
+				{
+					"next_step": "inspect_test_wreckage",
+					"op": "advance_step"
+				}
+			],
+			"target_object_id": "test_wreckage_object_001",
+			"target_owner_type": "space_object"
+		},
+		"inspect_test_wreckage": {
+			"actions": [
+				{
+					"action_id": "event_operations",
+					"button_id": "inspect_test_wreckage",
+					"label": "INSPECT WRECKAGE",
+					"operations": [
+						{
+							"op": "show_story_popup",
+							"popup_size": {
+								"x": 560.0,
+								"y": 360.0
+							},
+							"text": "[b]The wreckage responds as an event prop.[/b]\n\nThis confirms a space_object with object_type wreckage can be installed, targeted, saved, loaded, and interacted with by event ops.",
+							"title": "WRECKAGE INSPECTION"
+						},
+						{
+							"next_step": "wreckage_test_complete",
+							"op": "advance_step"
+						}
+					],
+					"range": 100.0
+				}
+			],
+			"interaction_range": 999.0,
+			"interaction_type": "salvage",
+			"next_step": "wreckage_test_complete",
+			"objective_text": "Inspect the drifting wreckage.",
+			"target_object_id": "test_wreckage_object_001",
+			"target_owner_type": "space_object"
+		},
+		"wreckage_test_complete": {
+			"complete_event": true,
+			"interaction_type": "complete",
+			"is_complete_step": true,
+			"objective_text": "Wreckage test complete.",
+			"target_object_id": "test_wreckage_object_001",
+			"target_owner_type": "space_object"
+		}
+	}
+}

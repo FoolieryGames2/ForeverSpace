@@ -1,0 +1,1504 @@
+{
+  "event_id": "human_station_chapter_004",
+  "display_name": "Human Station Chapter 004",
+  "description": "Chapter 004 first pass with a clean Chapter 003 handoff. The Human Station regroups after the relay crisis, refreshes the habitat NPC cast, opens wider Tier 1/Tier 2 space pressure, clears three Vayrax waste scouts, and introduces the first tier boss: Warden Bleezzee.",
+  "event_state": "seeded",
+  "current_step": "ch4_01_habitat_aftershock",
+  "start_on_ready": false,
+  "seed_once": true,
+  "can_cancel_event": false,
+  "tier": 2,
+  "anchor_star": {
+    "star_id": "tier_1_anchor_star",
+    "star_name": "Tier 1 Star",
+    "sector_pos": [
+      0,
+      0,
+      0
+    ],
+    "local_pos": [
+      500,
+      500,
+      500
+    ],
+    "required": true,
+    "create_if_missing": false
+  },
+  "giver": {
+    "owner_type": "npc",
+    "owner_id": "melissa_nudawn_001",
+    "object_id": "melissa_nudawn_001",
+    "blueprint_id": "melissa_nudawn_001",
+    "source_blueprint_id": "melissa_nudawn_001",
+    "catalog_source": "npc_blueprints",
+    "catalog_id": "melissa_nudawn_001",
+    "display_name": "Melissa Nudawn",
+    "main_view_icon_id": "melissa_nudawn_001",
+    "main_view_icon_path": "res://UI/PortView/main_view/icons/melissa_nudawn_001.png",
+    "sector_pos": [
+      0,
+      0,
+      0
+    ],
+    "local_pos": [
+      665,
+      735,
+      590
+    ],
+    "template_owner_id": "melissa_nudawn_001",
+    "message": "Tom, the relay is quiet, but something heard us.",
+    "dialogue_lines": [
+      "Tom, the relay is quiet, but something heard us.",
+      "We need the whole habitat awake now.",
+      "This is bigger than one drone."
+    ],
+    "labels": [
+      "tier_1",
+      "chapter_004",
+      "melissa"
+    ]
+  },
+  "event_listeners": {},
+  "event_objects": {
+    "human_station_habitat_beacon_001": {
+      "owner_type": "beacon",
+      "object_type": "beacon",
+      "object_id": "human_station_habitat_beacon_001",
+      "id": "human_station_habitat_beacon_001",
+      "display_name": "Human Station Habitat",
+      "title": "Human Station Habitat",
+      "main_view_icon_id": "human_hab",
+      "main_view_icon_path": "res://UI/PortView/main_view/icons/human_hab.png",
+      "beacon_type": "human_habitat_station_beacon",
+      "position_mode": "anchor_offset",
+      "sector_offset": [
+        0,
+        0,
+        0
+      ],
+      "local_offset": [
+        250,
+        80,
+        20
+      ],
+      "sector_pos": [
+        0,
+        0,
+        0
+      ],
+      "local_pos": [
+        750,
+        580,
+        520
+      ],
+      "interaction_type": "station_habitat",
+      "message": "Human habitat signal detected. Chapter 004 aftershock briefing active.",
+      "event_id": "human_station_chapter_004",
+      "active_event_id": "human_station_chapter_004",
+      "has_event": true,
+      "required_step": "ch4_01_habitat_aftershock",
+      "event_step": "ch4_01_habitat_aftershock",
+      "labels": [
+        "beacon",
+        "human_station",
+        "human_habitat",
+        "chapter_004",
+        "authored_object",
+        "event_object",
+        "tier_1"
+      ],
+      "is_visible": true
+    },
+    "melissa_nudawn_001": {
+      "owner_type": "npc",
+      "object_type": "npc",
+      "object_id": "melissa_nudawn_001",
+      "id": "melissa_nudawn_001",
+      "owner_id": "melissa_nudawn_001",
+      "npc_id": "melissa_nudawn_001",
+      "blueprint_id": "melissa_nudawn_001",
+      "source_blueprint_id": "melissa_nudawn_001",
+      "catalog_source": "npc_blueprints",
+      "catalog_id": "melissa_nudawn_001",
+      "template_owner_id": "melissa_nudawn_001",
+      "display_name": "Melissa Nudawn",
+      "name": "Melissa Nudawn",
+      "main_view_icon_id": "melissa_nudawn_001",
+      "main_view_icon_path": "res://UI/PortView/main_view/icons/melissa_nudawn_001.png",
+      "species": "human",
+      "role": "signal analyst",
+      "friendly": true,
+      "can_trade": false,
+      "position_mode": "anchor_offset",
+      "sector_offset": [
+        0,
+        0,
+        0
+      ],
+      "local_offset": [
+        165,
+        235,
+        90
+      ],
+      "sector_pos": [
+        0,
+        0,
+        0
+      ],
+      "local_pos": [
+        665,
+        735,
+        590
+      ],
+      "event_id": "human_station_chapter_004",
+      "active_event_id": "human_station_chapter_004",
+      "has_event": true,
+      "event_state": "active",
+      "required_step": "ch4_02_refresh_habitat_contacts",
+      "event_step": "ch4_02_refresh_habitat_contacts",
+      "current_step": "ch4_02_refresh_habitat_contacts",
+      "interaction_type": "npc_contact",
+      "message": "The relay is quiet, but the part that got through is enough to scare me.",
+      "dialogue_lines": [
+        "The relay is quiet, but the part that got through is enough to scare me.",
+        "Someone answered from outside our local pocket.",
+        "If we sit still, they choose the battlefield."
+      ],
+      "labels": [
+        "npc",
+        "human",
+        "melissa_nudawn_001",
+        "melissa_nudawn_001",
+        "chapter_004",
+        "human_station",
+        "habitat",
+        "story_npc",
+        "authored_object",
+        "event_object",
+        "tier_1",
+        "melissa"
+      ],
+      "is_visible": true
+    },
+    "hank_marshall_001": {
+      "owner_type": "npc",
+      "object_type": "npc",
+      "object_id": "hank_marshall_001",
+      "id": "hank_marshall_001",
+      "owner_id": "hank_marshall_001",
+      "npc_id": "hank_nudawn_001",
+      "blueprint_id": "hank_nudawn_001",
+      "source_blueprint_id": "hank_nudawn_001",
+      "catalog_source": "npc_blueprints",
+      "catalog_id": "hank_nudawn_001",
+      "template_owner_id": "hank_nudawn_001",
+      "display_name": "Hank Marshall",
+      "name": "Hank Marshall",
+      "main_view_icon_id": "hank_nudawn_001",
+      "main_view_icon_path": "res://UI/PortView/main_view/icons/hank_nudawn_001.png",
+      "species": "human",
+      "role": "station operator",
+      "friendly": true,
+      "can_trade": false,
+      "position_mode": "anchor_offset",
+      "sector_offset": [
+        0,
+        0,
+        0
+      ],
+      "local_offset": [
+        210,
+        160,
+        45
+      ],
+      "sector_pos": [
+        0,
+        0,
+        0
+      ],
+      "local_pos": [
+        710,
+        660,
+        545
+      ],
+      "event_id": "human_station_chapter_004",
+      "active_event_id": "human_station_chapter_004",
+      "has_event": true,
+      "event_state": "active",
+      "required_step": "ch4_02_refresh_habitat_contacts",
+      "event_step": "ch4_02_refresh_habitat_contacts",
+      "current_step": "ch4_02_refresh_habitat_contacts",
+      "interaction_type": "npc_contact",
+      "message": "Whole hab is awake now. Nobody likes being awake for this.",
+      "dialogue_lines": [
+        "Whole hab is awake now. Nobody likes being awake for this.",
+        "Melissa says the signal had teeth. I believe her.",
+        "Do what you do, Tom. Just come back with fewer holes than last time."
+      ],
+      "labels": [
+        "npc",
+        "human",
+        "hank_marshall_001",
+        "hank_nudawn_001",
+        "chapter_004",
+        "human_station",
+        "habitat",
+        "story_npc",
+        "authored_object",
+        "event_object",
+        "tier_1",
+        "hank",
+        "hank_marshall"
+      ],
+      "is_visible": true
+    },
+    "roino": {
+      "owner_type": "npc",
+      "object_type": "npc",
+      "object_id": "roino",
+      "id": "roino",
+      "owner_id": "roino",
+      "npc_id": "roino",
+      "blueprint_id": "roino",
+      "source_blueprint_id": "roino",
+      "catalog_source": "npc_blueprints",
+      "catalog_id": "roino",
+      "template_owner_id": "roino",
+      "display_name": "Roino",
+      "name": "Roino",
+      "main_view_icon_id": "npc",
+      "main_view_icon_path": "res://UI/PortView/main_view/icons/npc.png",
+      "species": "human",
+      "role": "mechanic_station",
+      "friendly": true,
+      "can_trade": true,
+      "position_mode": "anchor_offset",
+      "sector_offset": [
+        0,
+        0,
+        0
+      ],
+      "local_offset": [
+        310,
+        118,
+        55
+      ],
+      "sector_pos": [
+        0,
+        0,
+        0
+      ],
+      "local_pos": [
+        810,
+        618,
+        555
+      ],
+      "event_id": "human_station_chapter_004",
+      "active_event_id": "human_station_chapter_004",
+      "has_event": true,
+      "event_state": "active",
+      "required_step": "ch4_02_refresh_habitat_contacts",
+      "event_step": "ch4_02_refresh_habitat_contacts",
+      "current_step": "ch4_02_refresh_habitat_contacts",
+      "interaction_type": "npc_contact",
+      "message": "Repair dock online. If the Vayrax are coming, your hull should stop looking optional.",
+      "dialogue_lines": [
+        "Repair dock online.",
+        "If the Vayrax are coming, your hull should stop looking optional.",
+        "Iron accepted. Complaints ignored."
+      ],
+      "labels": [
+        "npc",
+        "human",
+        "roino",
+        "roino",
+        "chapter_004",
+        "human_station",
+        "habitat",
+        "story_npc",
+        "authored_object",
+        "event_object",
+        "tier_1",
+        "roino",
+        "mechanic",
+        "repair_station"
+      ],
+      "is_visible": true
+    },
+    "bill": {
+      "owner_type": "npc",
+      "object_type": "npc",
+      "object_id": "bill",
+      "id": "bill",
+      "owner_id": "bill",
+      "npc_id": "bill",
+      "blueprint_id": "bill",
+      "source_blueprint_id": "bill",
+      "catalog_source": "npc_blueprints",
+      "catalog_id": "bill",
+      "template_owner_id": "bill",
+      "display_name": "Bill",
+      "name": "Bill",
+      "main_view_icon_id": "npc",
+      "main_view_icon_path": "res://UI/PortView/main_view/icons/npc.png",
+      "species": "human",
+      "role": "habitat civilian",
+      "friendly": true,
+      "can_trade": false,
+      "position_mode": "anchor_offset",
+      "sector_offset": [
+        0,
+        0,
+        0
+      ],
+      "local_offset": [
+        95,
+        190,
+        80
+      ],
+      "sector_pos": [
+        0,
+        0,
+        0
+      ],
+      "local_pos": [
+        595,
+        690,
+        580
+      ],
+      "event_id": "human_station_chapter_004",
+      "active_event_id": "human_station_chapter_004",
+      "has_event": true,
+      "event_state": "active",
+      "required_step": "ch4_02_refresh_habitat_contacts",
+      "event_step": "ch4_02_refresh_habitat_contacts",
+      "current_step": "ch4_02_refresh_habitat_contacts",
+      "interaction_type": "npc_contact",
+      "message": "I heard the station alarm. I hate that sound.",
+      "dialogue_lines": [
+        "I heard the station alarm. I hate that sound.",
+        "If anyone asks, I was calm. Extremely calm.",
+        "Fred was less calm. Do not tell him I said that."
+      ],
+      "labels": [
+        "npc",
+        "human",
+        "bill",
+        "bill",
+        "chapter_004",
+        "human_station",
+        "habitat",
+        "story_npc",
+        "authored_object",
+        "event_object",
+        "tier_1",
+        "bill",
+        "civilian"
+      ],
+      "is_visible": true
+    },
+    "fred": {
+      "owner_type": "npc",
+      "object_type": "npc",
+      "object_id": "fred",
+      "id": "fred",
+      "owner_id": "fred",
+      "npc_id": "fred",
+      "blueprint_id": "fred",
+      "source_blueprint_id": "fred",
+      "catalog_source": "npc_blueprints",
+      "catalog_id": "fred",
+      "template_owner_id": "fred",
+      "display_name": "Fred",
+      "name": "Fred",
+      "main_view_icon_id": "npc",
+      "main_view_icon_path": "res://UI/PortView/main_view/icons/npc.png",
+      "species": "human",
+      "role": "habitat civilian",
+      "friendly": true,
+      "can_trade": false,
+      "position_mode": "anchor_offset",
+      "sector_offset": [
+        0,
+        0,
+        0
+      ],
+      "local_offset": [
+        70,
+        145,
+        72
+      ],
+      "sector_pos": [
+        0,
+        0,
+        0
+      ],
+      "local_pos": [
+        570,
+        645,
+        572
+      ],
+      "event_id": "human_station_chapter_004",
+      "active_event_id": "human_station_chapter_004",
+      "has_event": true,
+      "event_state": "active",
+      "required_step": "ch4_02_refresh_habitat_contacts",
+      "event_step": "ch4_02_refresh_habitat_contacts",
+      "current_step": "ch4_02_refresh_habitat_contacts",
+      "interaction_type": "npc_contact",
+      "message": "Bill says he was calm. He was not calm.",
+      "dialogue_lines": [
+        "Bill says he was calm. He was not calm.",
+        "I was also not calm, but I am honest about it.",
+        "Please make the loud space problem less loud."
+      ],
+      "labels": [
+        "npc",
+        "human",
+        "fred",
+        "fred",
+        "chapter_004",
+        "human_station",
+        "habitat",
+        "story_npc",
+        "authored_object",
+        "event_object",
+        "tier_1",
+        "fred",
+        "civilian"
+      ],
+      "is_visible": true
+    },
+    "ch4_signal_scar_beacon_001": {
+      "owner_type": "beacon",
+      "object_type": "beacon",
+      "object_id": "ch4_signal_scar_beacon_001",
+      "id": "ch4_signal_scar_beacon_001",
+      "display_name": "Relay Signal Scar",
+      "title": "Relay Signal Scar",
+      "main_view_icon_id": "vayrax_relay_beacon",
+      "main_view_icon_path": "res://UI/PortView/main_view/icons/vayrax_relay_beacon.png",
+      "beacon_type": "vayrax_signal_scar",
+      "position_mode": "absolute",
+      "sector_pos": [
+        1,
+        3,
+        0
+      ],
+      "local_pos": [
+        640,
+        420,
+        560
+      ],
+      "parent_star_id": "star_27_tier_1_local",
+      "parent_star_name": "Aster Local 07",
+      "interaction_type": "scan",
+      "event_id": "human_station_chapter_004",
+      "active_event_id": "human_station_chapter_004",
+      "has_event": true,
+      "spawn_on_step": "ch4_05_travel_to_signal_scar",
+      "required_step": "ch4_05_travel_to_signal_scar",
+      "event_step": "ch4_05_travel_to_signal_scar",
+      "message": "A scar of compressed Vayrax carrier noise remains where the relay signal bent through local space.",
+      "labels": [
+        "beacon",
+        "event_beacon",
+        "vayrax",
+        "signal_scar",
+        "chapter_004",
+        "authored_object",
+        "event_object",
+        "tier_2",
+        "aster_local_07"
+      ],
+      "is_visible": true,
+      "is_discovered": false
+    },
+    "ch4_waste_nest_beacon_001": {
+      "owner_type": "beacon",
+      "object_type": "beacon",
+      "object_id": "ch4_waste_nest_beacon_001",
+      "id": "ch4_waste_nest_beacon_001",
+      "display_name": "Warden Waste Nest",
+      "title": "Warden Waste Nest",
+      "main_view_icon_id": "vayrax_relay_beacon",
+      "main_view_icon_path": "res://UI/PortView/main_view/icons/vayrax_relay_beacon.png",
+      "beacon_type": "vayrax_waste_nest",
+      "position_mode": "absolute",
+      "sector_pos": [
+        2,
+        3,
+        -1
+      ],
+      "local_pos": [
+        770,
+        470,
+        590
+      ],
+      "parent_star_id": "star_27_tier_1_local",
+      "parent_star_name": "Aster Local 07",
+      "interaction_type": "hunt",
+      "event_id": "human_station_chapter_004",
+      "active_event_id": "human_station_chapter_004",
+      "has_event": true,
+      "spawn_on_step": "ch4_10_travel_to_waste_nest",
+      "required_step": "ch4_10_travel_to_waste_nest",
+      "event_step": "ch4_10_travel_to_waste_nest",
+      "message": "A heavy Vayrax waste-processing nest. Nothing here is thrown away. Everything is sorted, stripped, or eaten.",
+      "labels": [
+        "beacon",
+        "event_beacon",
+        "vayrax",
+        "waste_nest",
+        "warden_bleezzee",
+        "chapter_004",
+        "authored_object",
+        "event_object",
+        "tier_2",
+        "aster_local_07"
+      ],
+      "is_visible": true,
+      "is_discovered": false
+    },
+    "ch4_vayrax_waste_scout_001": {
+      "owner_type": "enemy",
+      "object_type": "enemy",
+      "object_id": "ch4_vayrax_waste_scout_001",
+      "id": "ch4_vayrax_waste_scout_001",
+      "enemy_id": "ch4_vayrax_waste_scout_001",
+      "display_name": "Vayrax Waste Scout",
+      "name": "Vayrax Waste Scout",
+      "title": "Vayrax Waste Scout",
+      "blueprint_id": "vayrax_drone_010",
+      "enemy_blueprint_id": "vayrax_drone_010",
+      "source_blueprint_id": "vayrax_drone_010",
+      "catalog_source": "enemy_blueprints",
+      "catalog_id": "vayrax_drone_010",
+      "template_owner_id": "ch4_vayrax_waste_scout_001",
+      "position_mode": "absolute",
+      "sector_pos": [
+        1,
+        3,
+        0
+      ],
+      "local_pos": [
+        600,
+        390,
+        545
+      ],
+      "parent_star_id": "star_27_tier_1_local",
+      "parent_star_name": "Aster Local 07",
+      "event_id": "human_station_chapter_004",
+      "active_event_id": "human_station_chapter_004",
+      "has_event": true,
+      "tier": 2,
+      "spawn_on_step": "ch4_07_vayrax_waste_scout_sweep",
+      "required_step": "ch4_07_vayrax_waste_scout_sweep",
+      "event_step": "ch4_07_vayrax_waste_scout_sweep",
+      "current_step": "ch4_07_vayrax_waste_scout_sweep",
+      "interaction_type": "hunt",
+      "main_view_icon_id": "ch4_vayrax_waste_scout_001",
+      "main_view_icon_path": "res://UI/PortView/main_view/icons/enemy.png",
+      "event_tags": [
+        "human_station_chapter_004",
+        "vayrax",
+        "chapter_004",
+        "ch4_vayrax_waste_scout_001"
+      ],
+      "labels": [
+        "enemy",
+        "event_enemy",
+        "ch4_vayrax_waste_scout_001",
+        "human_station_chapter_004",
+        "vayrax",
+        "chapter_004",
+        "authored_object",
+        "event_object",
+        "tier_2",
+        "waste_scout",
+        "scout_sweep"
+      ],
+      "overrides": {
+        "hp": 375,
+        "max_hp": 375,
+        "hull": 375,
+        "max_hull": 375,
+        "attack": 30,
+        "energy_max": 365,
+        "max_energy": 365,
+        "energy": 365,
+        "ship_name": "Vayrax Waste Scout 001",
+        "reward": [
+          "iron",
+          "cobalt",
+          "small_kinetic_rounds"
+        ],
+        "reward_items": [
+          "iron",
+          "cobalt",
+          "small_kinetic_rounds"
+        ]
+      },
+      "is_visible": true,
+      "is_discovered": false
+    },
+    "ch4_vayrax_waste_scout_002": {
+      "owner_type": "enemy",
+      "object_type": "enemy",
+      "object_id": "ch4_vayrax_waste_scout_002",
+      "id": "ch4_vayrax_waste_scout_002",
+      "enemy_id": "ch4_vayrax_waste_scout_002",
+      "display_name": "Vayrax Waste Scout",
+      "name": "Vayrax Waste Scout",
+      "title": "Vayrax Waste Scout",
+      "blueprint_id": "vayrax_drone_011",
+      "enemy_blueprint_id": "vayrax_drone_011",
+      "source_blueprint_id": "vayrax_drone_011",
+      "catalog_source": "enemy_blueprints",
+      "catalog_id": "vayrax_drone_011",
+      "template_owner_id": "ch4_vayrax_waste_scout_002",
+      "position_mode": "absolute",
+      "sector_pos": [
+        1,
+        3,
+        0
+      ],
+      "local_pos": [
+        710,
+        455,
+        610
+      ],
+      "parent_star_id": "star_27_tier_1_local",
+      "parent_star_name": "Aster Local 07",
+      "event_id": "human_station_chapter_004",
+      "active_event_id": "human_station_chapter_004",
+      "has_event": true,
+      "tier": 2,
+      "spawn_on_step": "ch4_07_vayrax_waste_scout_sweep",
+      "required_step": "ch4_07_vayrax_waste_scout_sweep",
+      "event_step": "ch4_07_vayrax_waste_scout_sweep",
+      "current_step": "ch4_07_vayrax_waste_scout_sweep",
+      "interaction_type": "hunt",
+      "main_view_icon_id": "ch4_vayrax_waste_scout_002",
+      "main_view_icon_path": "res://UI/PortView/main_view/icons/enemy.png",
+      "event_tags": [
+        "human_station_chapter_004",
+        "vayrax",
+        "chapter_004",
+        "ch4_vayrax_waste_scout_002"
+      ],
+      "labels": [
+        "enemy",
+        "event_enemy",
+        "ch4_vayrax_waste_scout_002",
+        "human_station_chapter_004",
+        "vayrax",
+        "chapter_004",
+        "authored_object",
+        "event_object",
+        "tier_2",
+        "waste_scout",
+        "scout_sweep"
+      ],
+      "overrides": {
+        "hp": 410,
+        "max_hp": 410,
+        "hull": 410,
+        "max_hull": 410,
+        "attack": 32,
+        "energy_max": 395,
+        "max_energy": 395,
+        "energy": 395,
+        "ship_name": "Vayrax Waste Scout 002",
+        "reward": [
+          "iron",
+          "nickel",
+          "medium_kinetic_rounds"
+        ],
+        "reward_items": [
+          "iron",
+          "nickel",
+          "medium_kinetic_rounds"
+        ]
+      },
+      "is_visible": true,
+      "is_discovered": false
+    },
+    "ch4_vayrax_waste_scout_003": {
+      "owner_type": "enemy",
+      "object_type": "enemy",
+      "object_id": "ch4_vayrax_waste_scout_003",
+      "id": "ch4_vayrax_waste_scout_003",
+      "enemy_id": "ch4_vayrax_waste_scout_003",
+      "display_name": "Vayrax Waste Scout",
+      "name": "Vayrax Waste Scout",
+      "title": "Vayrax Waste Scout",
+      "blueprint_id": "vayrax_drone_012",
+      "enemy_blueprint_id": "vayrax_drone_012",
+      "source_blueprint_id": "vayrax_drone_012",
+      "catalog_source": "enemy_blueprints",
+      "catalog_id": "vayrax_drone_012",
+      "template_owner_id": "ch4_vayrax_waste_scout_003",
+      "position_mode": "absolute",
+      "sector_pos": [
+        1,
+        3,
+        0
+      ],
+      "local_pos": [
+        790,
+        380,
+        520
+      ],
+      "parent_star_id": "star_27_tier_1_local",
+      "parent_star_name": "Aster Local 07",
+      "event_id": "human_station_chapter_004",
+      "active_event_id": "human_station_chapter_004",
+      "has_event": true,
+      "tier": 2,
+      "spawn_on_step": "ch4_07_vayrax_waste_scout_sweep",
+      "required_step": "ch4_07_vayrax_waste_scout_sweep",
+      "event_step": "ch4_07_vayrax_waste_scout_sweep",
+      "current_step": "ch4_07_vayrax_waste_scout_sweep",
+      "interaction_type": "hunt",
+      "main_view_icon_id": "ch4_vayrax_waste_scout_003",
+      "main_view_icon_path": "res://UI/PortView/main_view/icons/enemy.png",
+      "event_tags": [
+        "human_station_chapter_004",
+        "vayrax",
+        "chapter_004",
+        "ch4_vayrax_waste_scout_003"
+      ],
+      "labels": [
+        "enemy",
+        "event_enemy",
+        "ch4_vayrax_waste_scout_003",
+        "human_station_chapter_004",
+        "vayrax",
+        "chapter_004",
+        "authored_object",
+        "event_object",
+        "tier_2",
+        "waste_scout",
+        "scout_sweep"
+      ],
+      "overrides": {
+        "hp": 445,
+        "max_hp": 445,
+        "hull": 445,
+        "max_hull": 445,
+        "attack": 34,
+        "energy_max": 430,
+        "max_energy": 430,
+        "energy": 430,
+        "ship_name": "Vayrax Waste Scout 003",
+        "reward": [
+          "cobalt",
+          "nickel",
+          "small_kinetic_rounds"
+        ],
+        "reward_items": [
+          "cobalt",
+          "nickel",
+          "small_kinetic_rounds"
+        ]
+      },
+      "is_visible": true,
+      "is_discovered": false
+    },
+    "warden_bleezzee_001": {
+      "owner_type": "enemy",
+      "object_type": "enemy",
+      "object_id": "warden_bleezzee_001",
+      "id": "warden_bleezzee_001",
+      "enemy_id": "warden_bleezzee_001",
+      "display_name": "Warden Bleezzee",
+      "name": "Warden Bleezzee",
+      "title": "Warden Bleezzee",
+      "blueprint_id": "bleezzee_tier_2_boss",
+      "enemy_blueprint_id": "bleezzee_tier_2_boss",
+      "source_blueprint_id": "bleezzee_tier_2_boss",
+      "catalog_source": "enemy_blueprints",
+      "catalog_id": "bleezzee_tier_2_boss",
+      "template_owner_id": "warden_bleezzee_001",
+      "position_mode": "absolute",
+      "sector_pos": [
+        2,
+        3,
+        -1
+      ],
+      "local_pos": [
+        820,
+        500,
+        610
+      ],
+      "parent_star_id": "star_27_tier_1_local",
+      "parent_star_name": "Aster Local 07",
+      "event_id": "human_station_chapter_004",
+      "active_event_id": "human_station_chapter_004",
+      "has_event": true,
+      "tier": 2,
+      "spawn_on_step": "ch4_12_battle_warden_bleezzee",
+      "required_step": "ch4_12_battle_warden_bleezzee",
+      "event_step": "ch4_12_battle_warden_bleezzee",
+      "current_step": "ch4_12_battle_warden_bleezzee",
+      "interaction_type": "hunt",
+      "main_view_icon_id": "warden_bleezzee_001",
+      "main_view_icon_path": "res://UI/PortView/main_view/icons/enemy.png",
+      "event_tags": [
+        "human_station_chapter_004",
+        "vayrax",
+        "chapter_004",
+        "warden_bleezzee_001"
+      ],
+      "labels": [
+        "enemy",
+        "event_enemy",
+        "warden_bleezzee_001",
+        "human_station_chapter_004",
+        "vayrax",
+        "chapter_004",
+        "authored_object",
+        "event_object",
+        "tier_2",
+        "warden_bleezzee",
+        "tier_boss",
+        "first_tier_boss",
+        "heavy_body",
+        "wastes_nothing"
+      ],
+      "overrides": {
+        "hp": 650,
+        "max_hp": 650,
+        "hull": 650,
+        "max_hull": 650,
+        "attack": 44,
+        "attack_power": 44,
+        "energy_max": 560,
+        "max_energy": 560,
+        "energy": 560,
+        "primary": "raider_arc_stinger_mk2",
+        "primary_weapon": "raider_arc_stinger_mk2",
+        "secondary": "raider_spike_mortar_mk2",
+        "secondary_weapon": "raider_spike_mortar_mk2",
+        "shield": "raider_plate_screen_mk2",
+        "shield_item": "raider_plate_screen_mk2",
+        "consumable": "raider_hot_patch_canister_mk2",
+        "consumable_item": "raider_hot_patch_canister_mk2",
+        "item_stacks": {
+          "small_kinetic_rounds": 28,
+          "medium_kinetic_rounds": 18,
+          "large_kinetic_rounds": 10,
+          "raider_arc_stinger_mk2": 1,
+          "raider_scrap_ripper_mk2": 1,
+          "raider_spike_mortar_mk2": 1,
+          "raider_plate_screen_mk2": 1,
+          "raider_hot_patch_canister_mk2": 2
+        },
+        "behavior_profile": "smart_guy_3",
+        "behavior_values": {
+          "decision_cooldown": 0.92,
+          "repair_hull_threshold": 0.58,
+          "recharge_energy_threshold": 0.34,
+          "low_energy_ammo_threshold": 0.48,
+          "evade_health_threshold": 0.2,
+          "low_hull_evade_threshold": 0.2,
+          "critical_hull_evade_threshold": 0.16,
+          "shield_repair_threshold": 0.62,
+          "execute_player_threshold": 0.48,
+          "explosive_player_threshold": 0.52,
+          "clear_stale_loaded_consumable": true,
+          "allow_forced_zero_energy_primary": false,
+          "preferred_consumable_groups": [
+            "repair",
+            "explosive",
+            "recharge"
+          ]
+        },
+        "battle_comment": [
+          "I will find what remains of you.",
+          "I let nothing go to waste.",
+          "Scrap is only a body that has stopped lying."
+        ],
+        "reward": [
+          "iron",
+          "cobalt",
+          "nickel",
+          "large_kinetic_rounds",
+          "raider_hot_patch_canister_mk2"
+        ],
+        "reward_items": [
+          "iron",
+          "cobalt",
+          "nickel",
+          "large_kinetic_rounds",
+          "raider_hot_patch_canister_mk2"
+        ],
+        "ship_name": "Warden Bleezzee"
+      },
+      "is_visible": true,
+      "is_discovered": false
+    }
+  },
+  "required_items": [],
+  "reward_packet": {
+    "credits": 0,
+    "items": [],
+    "blueprints": [],
+    "lore": [],
+    "unlocks": [
+      "chapter_004_complete",
+      "tier_2_route_ready"
+    ],
+    "message": "Chapter 004 complete. Warden Bleezzee defeated. Wider space pressure is now open."
+  },
+  "steps": {
+    "ch4_01_habitat_aftershock": {
+      "objective_text": "Chapter 004 begins at the Human Station Habitat after the relay crisis.",
+      "target_object_id": "human_station_habitat_beacon_001",
+      "target_owner_type": "beacon",
+      "interaction_type": "story_popup",
+      "next_step": "ch4_02_refresh_habitat_contacts",
+      "on_enter": [
+        {
+          "op": "write_log",
+          "message": "Chapter 004 started from the Chapter 003 habitat listener."
+        },
+        {
+          "op": "show_story_popup",
+          "title": "INTERFACE // HABITAT RELAY",
+          "text": "[b]HUMAN STATION HABITAT[/b]\n\nThe relay is quiet.\n\nFor one breath, the habitat believes that means safety.\n\nThen every passive antenna on the hull wakes at once.\n\nAMI: Residual carrier noise detected.\n\nMELISSA: That is not residual. Something answered.",
+          "close_mode": "button",
+          "popup_size": {
+            "x": 640,
+            "y": 500
+          },
+          "next_step_on_close": "ch4_02_refresh_habitat_contacts",
+          "images": [
+            {
+              "path": "res://images/Melissa.png"
+            }
+          ],
+          "image_height": 140
+        }
+      ]
+    },
+    "ch4_02_refresh_habitat_contacts": {
+      "objective_text": "Habitat contacts are refreshing for the wider-space crisis briefing.",
+      "target_object_id": "human_station_habitat_beacon_001",
+      "interaction_type": "story_popup",
+      "next_step": "ch4_03_melissa_signal_fragment",
+      "on_enter": [
+        {
+          "op": "refresh_npc",
+          "target_object_id": "melissa_nudawn_001",
+          "replacement_object_id": "melissa_nudawn_001",
+          "force_recreate": true,
+          "store_event_object": true,
+          "save_world": true
+        },
+        {
+          "op": "refresh_npc",
+          "target_object_id": "hank_marshall_001",
+          "replacement_object_id": "hank_marshall_001",
+          "force_recreate": true,
+          "store_event_object": true,
+          "save_world": true
+        },
+        {
+          "op": "refresh_npc",
+          "target_object_id": "roino",
+          "replacement_object_id": "roino",
+          "force_recreate": true,
+          "store_event_object": true,
+          "save_world": true
+        },
+        {
+          "op": "refresh_npc",
+          "target_object_id": "bill",
+          "replacement_object_id": "bill",
+          "force_recreate": true,
+          "store_event_object": true,
+          "save_world": true
+        },
+        {
+          "op": "refresh_npc",
+          "target_object_id": "fred",
+          "replacement_object_id": "fred",
+          "force_recreate": true,
+          "store_event_object": true,
+          "save_world": true
+        },
+        {
+          "op": "write_log",
+          "message": "Chapter 004 habitat NPC context refreshed: Melissa, Hank, Roino, Bill, Fred."
+        },
+        {
+          "op": "show_story_popup",
+          "title": "INTERFACE // STATION STATUS",
+          "text": "[b]STATION STATUS[/b]\n\nMelissa pulls signal fragments into a working map. Hank opens every emergency channel he swore he would never use. Roino brings the repair dock hot. Bill and Fred stop pretending this is normal.\n\nThe habitat is no longer waiting for the next hit.\n\nIt is preparing for one.",
+          "close_mode": "button",
+          "popup_size": {
+            "x": 620,
+            "y": 470
+          },
+          "next_step_on_close": "ch4_03_melissa_signal_fragment",
+          "images": [
+            {
+              "path": "res://images/Melissa.png"
+            }
+          ],
+          "image_height": 140
+        }
+      ]
+    },
+    "ch4_03_melissa_signal_fragment": {
+      "objective_text": "Take Melissa's wider-space signal briefing.",
+      "target_object_id": "melissa_nudawn_001",
+      "target_owner_type": "npc",
+      "interaction_type": "link_call",
+      "interaction_range": 220,
+      "next_step": "ch4_04_hank_opens_the_map",
+      "actions": [
+        {
+          "button_id": "take_melissa_ch4_briefing",
+          "label": "TAKE BRIEFING",
+          "action_id": "event_operations",
+          "range": 220,
+          "operations": [
+            {
+              "op": "show_story_popup",
+              "title": "INTERFACE // LINK: MELISSA",
+              "text": "[b]MELISSA[/b]\n\n\"The relay was not the source. It was a pipe.\"\n\n\"You cut the pipe, but a piece of the signal escaped before the seal.\"\n\n\"It did not scream for an army. Not yet. It called something smaller and meaner. A collection unit. A warden.\"\n\n\"There is a scar in local space where the carrier folded. Go there first. Find what answered.\"",
+              "close_mode": "button",
+              "popup_size": {
+                "x": 640,
+                "y": 500
+              },
+              "images": [
+                {
+                  "path": "res://images/Melissa.png"
+                }
+              ],
+              "image_height": 140
+            },
+            {
+              "op": "advance_step",
+              "next_step": "ch4_04_hank_opens_the_map"
+            }
+          ]
+        }
+      ]
+    },
+    "ch4_04_hank_opens_the_map": {
+      "objective_text": "Hank opens a wider route target for the signal scar.",
+      "target_object_id": "human_station_habitat_beacon_001",
+      "interaction_type": "story_popup",
+      "next_step": "ch4_05_travel_to_signal_scar",
+      "on_enter": [
+        {
+          "op": "install_event_object",
+          "target_object_id": "ch4_signal_scar_beacon_001"
+        },
+        {
+          "op": "show_story_popup",
+          "title": "INTERFACE // LINK: HANK",
+          "text": "[b]HANK[/b]\n\n\"I pushed a wider nav pocket into your route table.\"\n\n\"Do not thank me. I hate doing this.\"\n\n\"But if Melissa is right, hiding at the habitat just lets the Vayrax pick the hour.\"\n\n\"Auto Pilot has the signal scar. Go see what answered us.\"",
+          "close_mode": "button",
+          "popup_size": {
+            "x": 620,
+            "y": 470
+          },
+          "next_step_on_close": "ch4_05_travel_to_signal_scar",
+          "images": [
+            {
+              "path": "res://images/Hank.png"
+            }
+          ],
+          "image_height": 140
+        },
+        {
+          "op": "write_log",
+          "message": "Wider route opened. Relay Signal Scar installed as Chapter 004 target."
+        }
+      ]
+    },
+    "ch4_05_travel_to_signal_scar": {
+      "objective_text": "Travel to the Relay Signal Scar and scan the response residue.",
+      "target_object_id": "ch4_signal_scar_beacon_001",
+      "target_owner_type": "beacon",
+      "interaction_type": "find",
+      "arrival_range": 180,
+      "next_step": "ch4_06_signal_scar_reached",
+      "on_arrival": [
+        {
+          "op": "write_log",
+          "message": "Relay Signal Scar reached."
+        },
+        {
+          "op": "advance_step",
+          "next_step": "ch4_06_signal_scar_reached"
+        }
+      ]
+    },
+    "ch4_06_signal_scar_reached": {
+      "objective_text": "Scan the Relay Signal Scar.",
+      "target_object_id": "ch4_signal_scar_beacon_001",
+      "target_owner_type": "beacon",
+      "interaction_type": "access",
+      "interaction_range": 140,
+      "next_step": "ch4_07_vayrax_waste_scout_sweep",
+      "actions": [
+        {
+          "button_id": "scan_ch4_signal_scar",
+          "label": "SCAN SCAR",
+          "action_id": "event_operations",
+          "range": 140,
+          "operations": [
+            {
+              "op": "show_story_popup",
+              "title": "INTERFACE // SCAN DATA",
+              "text": "[b]AMI SCAN[/b]\n\nThe carrier scar is not empty. It is lined with retrieval marks.\n\nAMI: Three Vayrax contacts are sweeping the fold residue. They are not guarding territory. They are collecting usable remains.\n\nTOM: Collecting what?\n\nAMI: Everything.",
+              "close_mode": "button",
+              "popup_size": {
+                "x": 620,
+                "y": 470
+              }
+            },
+            {
+              "op": "advance_step",
+              "next_step": "ch4_07_vayrax_waste_scout_sweep"
+            }
+          ]
+        }
+      ]
+    },
+    "ch4_07_vayrax_waste_scout_sweep": {
+      "objective_text": "Defeat three Vayrax Waste Scouts around the signal scar, then confirm the sweep at the scar marker.",
+      "target_object_id": "ch4_signal_scar_beacon_001",
+      "target_owner_type": "beacon",
+      "interaction_type": "hunt",
+      "interaction_range": 180,
+      "next_step": "ch4_08_scout_sweep_clear",
+      "on_enter": [
+        {
+          "op": "install_event_object",
+          "target_object_id": "ch4_vayrax_waste_scout_001"
+        },
+        {
+          "op": "install_event_object",
+          "target_object_id": "ch4_vayrax_waste_scout_002"
+        },
+        {
+          "op": "install_event_object",
+          "target_object_id": "ch4_vayrax_waste_scout_003"
+        },
+        {
+          "op": "write_log",
+          "message": "Three Vayrax Waste Scouts deployed around the signal scar."
+        }
+      ],
+      "actions": [
+        {
+          "button_id": "ch4_confirm_waste_scout_sweep",
+          "label": "CONFIRM SWEEP",
+          "action_id": "event_operations",
+          "target_object_id": "ch4_signal_scar_beacon_001",
+          "range": 180,
+          "requires_position_gate": true,
+          "blocked_message": "Scout sweep incomplete. Defeat three Vayrax Waste Scouts around the signal scar, then return to the marker.",
+          "conditions": [
+            {
+              "type": "enemy_display_defeated_count",
+              "display_name": "Vayrax Waste Scout",
+              "required_count": 3
+            }
+          ],
+          "operations": [
+            {
+              "op": "write_log",
+              "message": "Three Vayrax Waste Scouts defeated near the signal scar."
+            },
+            {
+              "op": "advance_step",
+              "next_step": "ch4_08_scout_sweep_clear"
+            }
+          ]
+        }
+      ]
+    },
+    "ch4_08_scout_sweep_clear": {
+      "objective_text": "The scout sweep is clear. Analyze the heavy Vayrax response signature.",
+      "target_object_id": "ch4_signal_scar_beacon_001",
+      "interaction_type": "story_popup",
+      "next_step": "ch4_09_bleezzee_first_call",
+      "on_enter": [
+        {
+          "op": "show_story_popup",
+          "title": "INTERFACE // AMI CHECK",
+          "text": "[b]AMI CHECK[/b]\n\nVayrax Waste Scout contacts: three defeated.\n\nThe scan residue begins resolving into a command identity. It is not a drone serial. It is a name carried like a rank.\n\nAMI: Warden classification detected. Heavy body. Waste-harvester authority.\n\nName translation: Bleezzee.",
+          "close_mode": "button",
+          "popup_size": {
+            "x": 620,
+            "y": 470
+          },
+          "next_step_on_close": "ch4_09_bleezzee_first_call"
+        }
+      ]
+    },
+    "ch4_09_bleezzee_first_call": {
+      "objective_text": "Warden Bleezzee has answered the broken signal.",
+      "interaction_type": "story_popup",
+      "next_step": "ch4_10_travel_to_waste_nest",
+      "on_enter": [
+        {
+          "op": "install_event_object",
+          "target_object_id": "ch4_waste_nest_beacon_001"
+        },
+        {
+          "op": "show_story_popup",
+          "title": "INTERFACE // WARDEN SIGNAL",
+          "text": "[b]VAYRAX TRANSMISSION[/b]\n\nA wet, grinding voice pushes through the scar. It sounds too large for the channel.\n\n\"I will find what remains of you.\"\n\n\"I let nothing go to waste.\"\n\nAMI: Warden Bleezzee has locked a nest coordinate to our return path.\n\nTOM: Then we do not bring that thing back to the habitat.",
+          "close_mode": "button",
+          "popup_size": {
+            "x": 640,
+            "y": 500
+          },
+          "next_step_on_close": "ch4_10_travel_to_waste_nest"
+        },
+        {
+          "op": "write_log",
+          "message": "Warden Bleezzee identified. Waste Nest target installed."
+        }
+      ]
+    },
+    "ch4_10_travel_to_waste_nest": {
+      "objective_text": "Travel to the Warden Waste Nest before Bleezzee tracks the habitat route.",
+      "target_object_id": "ch4_waste_nest_beacon_001",
+      "target_owner_type": "beacon",
+      "interaction_type": "find",
+      "arrival_range": 220,
+      "next_step": "ch4_11_ready_for_bleezzee",
+      "on_arrival": [
+        {
+          "op": "install_event_object",
+          "target_object_id": "warden_bleezzee_001"
+        },
+        {
+          "op": "write_log",
+          "message": "Warden Waste Nest reached. Warden Bleezzee contact installed."
+        },
+        {
+          "op": "advance_step",
+          "next_step": "ch4_11_ready_for_bleezzee"
+        }
+      ]
+    },
+    "ch4_11_ready_for_bleezzee": {
+      "objective_text": "Prepare your loadout, then press READY near the Warden Waste Nest to engage Bleezzee.",
+      "target_object_id": "ch4_waste_nest_beacon_001",
+      "target_owner_type": "beacon",
+      "interaction_type": "handoff",
+      "interaction_range": 220,
+      "next_step": "ch4_12_battle_warden_bleezzee",
+      "on_enter": [
+        {
+          "op": "show_story_popup",
+          "title": "INTERFACE // COMBAT ALERT",
+          "text": "[b]AMI[/b]\n\nWarden Bleezzee is not a standard drone.\n\nHeavy mass. Repair behavior likely. Salvage-pattern targeting. It may prioritize disabling systems it can reclaim.\n\nOpen Loadout before engaging. Bring repair and shield support if available.",
+          "close_mode": "button",
+          "popup_size": {
+            "x": 600,
+            "y": 450
+          }
+        }
+      ],
+      "actions": [
+        {
+          "button_id": "ready_warden_bleezzee_ch4",
+          "label": "READY",
+          "action_id": "event_operations",
+          "range": 220,
+          "operations": [
+            {
+              "op": "advance_step",
+              "next_step": "ch4_12_battle_warden_bleezzee"
+            }
+          ]
+        }
+      ]
+    },
+    "ch4_12_battle_warden_bleezzee": {
+      "objective_text": "Defeat Warden Bleezzee.",
+      "target_object_id": "warden_bleezzee_001",
+      "target_owner_type": "enemy",
+      "enemy_id": "warden_bleezzee_001",
+      "interaction_type": "hunt",
+      "interaction_range": 220,
+      "complete_on_battle_victory": true,
+      "next_step": "ch4_13_bleezzee_defeated",
+      "on_enter": [
+        {
+          "op": "start_battle",
+          "enemy_id": "warden_bleezzee_001",
+          "entry_reason": "chapter_004_warden_bleezzee_boss",
+          "message": "Warden Bleezzee engaged."
+        }
+      ],
+      "on_battle_victory": [
+        {
+          "op": "write_log",
+          "message": "Warden Bleezzee defeated."
+        },
+        {
+          "op": "advance_step",
+          "next_step": "ch4_13_bleezzee_defeated"
+        }
+      ]
+    },
+    "ch4_13_bleezzee_defeated": {
+      "objective_text": "Warden Bleezzee is down. Receive the recovered pattern and return to the habitat.",
+      "target_object_id": "ch4_waste_nest_beacon_001",
+      "interaction_type": "story_popup",
+      "next_step": "ch4_14_claim_recovered_pattern",
+      "on_enter": [
+        {
+          "op": "set_flag",
+          "flag_id": "warden_bleezzee_defeated",
+          "value": true
+        },
+        {
+          "op": "show_story_popup",
+          "title": "INTERFACE // COMBAT REPORT",
+          "text": "[b]WARDEN BLEEZZEE DEFEATED[/b]\n\nThe waste nest loses cohesion. Salvage tethers snap one by one.\n\nAMI: The warden carried a compressed fabrication pattern in its recovery core.\n\nTOM: It was going to use that on us?\n\nAMI: On what remained of us.\n\nTOM: Then we use it first.",
+          "close_mode": "button",
+          "popup_size": {
+            "x": 620,
+            "y": 470
+          },
+          "next_step_on_close": "ch4_14_claim_recovered_pattern"
+        }
+      ]
+    },
+    "ch4_14_claim_recovered_pattern": {
+      "objective_text": "Claim the recovered Phase Beam Array Blueprint from the Warden core.",
+      "target_object_id": "ch4_waste_nest_beacon_001",
+      "target_owner_type": "beacon",
+      "interaction_type": "handoff",
+      "interaction_range": 220,
+      "gives_item": "phase_beam_array_blueprint",
+      "next_step": "ch4_15_return_to_habitat",
+      "actions": [
+        {
+          "button_id": "claim_ch4_phase_beam_pattern",
+          "label": "CLAIM PATTERN",
+          "action_id": "download_beacon_data",
+          "range": 220
+        }
+      ],
+      "success_text": "Phase Beam Array Blueprint received."
+    },
+    "ch4_15_return_to_habitat": {
+      "objective_text": "Return to the Human Station Habitat and report that Bleezzee is gone.",
+      "target_object_id": "human_station_habitat_beacon_001",
+      "target_owner_type": "beacon",
+      "interaction_type": "return",
+      "arrival_range": 180,
+      "next_step": "ch4_16_habitat_report",
+      "on_enter": [
+        {
+          "op": "show_tutorial_hint",
+          "title": "RETURN TO HABITAT",
+          "text": "Warden Bleezzee is down. Auto Pilot can route you back to the Human Station Habitat.",
+          "target_point_id": "event_panel",
+          "line_to_point_id": "event_panel",
+          "duration": 5.0,
+          "popup_size": {
+            "x": 330,
+            "y": 126
+          },
+          "popup_offset": {
+            "x": 30,
+            "y": -22
+          },
+          "draw_line": true
+        }
+      ],
+      "on_arrival": [
+        {
+          "op": "write_log",
+          "message": "Human Station Habitat reached after Warden Bleezzee defeat."
+        },
+        {
+          "op": "advance_step",
+          "next_step": "ch4_16_habitat_report"
+        }
+      ]
+    },
+    "ch4_16_habitat_report": {
+      "objective_text": "Report the Warden Bleezzee victory to the habitat crew.",
+      "target_object_id": "human_station_habitat_beacon_001",
+      "interaction_type": "story_popup",
+      "next_step": "ch4_17_complete",
+      "on_enter": [
+        {
+          "op": "show_story_popup",
+          "title": "INTERFACE // HABITAT RELAY",
+          "text": "[b]MELISSA[/b]\n\n\"Bleezzee is gone. That buys us more than time. It proves the Vayrax can be hurt before they choose the battlefield.\"\n\n[b]HANK[/b]\n\n\"Do not get used to that feeling. But yes. Good work.\"\n\n[b]AMI[/b]\n\nTier route pressure has changed. Wider space is now safer to open, but not safe.",
+          "close_mode": "button",
+          "popup_size": {
+            "x": 640,
+            "y": 500
+          },
+          "next_step_on_close": "ch4_17_complete",
+          "images": [
+            {
+              "path": "res://images/Melissa.png"
+            }
+          ],
+          "image_height": 140
+        }
+      ]
+    },
+    "ch4_17_complete": {
+      "objective_text": "Chapter 004 is ready to close. Press COMPLETE at the Human Station Habitat.",
+      "target_object_id": "human_station_habitat_beacon_001",
+      "target_owner_type": "beacon",
+      "interaction_type": "complete",
+      "interaction_range": 180,
+      "next_step": "completed",
+      "on_enter": [
+        {
+          "op": "set_flag",
+          "flag_id": "chapter_004_complete",
+          "value": true
+        },
+        {
+          "op": "set_flag",
+          "flag_id": "tier_2_route_ready",
+          "value": true
+        },
+        {
+          "op": "write_log",
+          "message": "Chapter 004 completion ready. Tier 2 route flag set."
+        }
+      ],
+      "actions": [
+        {
+          "button_id": "complete_chapter_004",
+          "label": "COMPLETE",
+          "action_id": "claim_event_reward",
+          "range": 180
+        }
+      ]
+    }
+  },
+  "handoff_notes": [
+    "Starts only from human_habitat_chapter_004_listener_001 installed by Chapter 003 final COMPLETE.",
+    "Chapter 003 patched final step installs the listener with spawn_on_step=manual_complete_only so Chapter 004 cannot start early.",
+    "This pass uses the upgraded event engine condition style proven by MoonPie: enemy_display_defeated_count gates the scout sweep confirmation.",
+    "NPC refreshes are handled on Chapter 004 entry so the habitat cast is rebuilt/recontextualized at the opening of the chapter.",
+    "Bleezzee uses the authored bleezzee_tier_2_boss enemy blueprint, with tier 2 enemy kit and smart_guy_3 behavior.",
+    "No new item IDs are required; the chapter reward uses existing phase_beam_array_blueprint through download_beacon_data."
+  ]
+}

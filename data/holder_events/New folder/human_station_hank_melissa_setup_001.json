@@ -1,0 +1,686 @@
+{
+  "event_id": "human_station_hank_melissa_setup_001",
+  "display_name": "Human Station Contact",
+  "event_state": "seeded",
+  "current_step": "station_arrival_checkin",
+  "start_on_ready": false,
+  "seed_once": true,
+  "tier": 1,
+  "anchor_star": {
+	"star_id": "tier_1_spine_star",
+	"star_name": "Aster Gate",
+	"star_type": "K",
+	"sector_pos": [
+	  0,
+	  0,
+	  0
+	],
+	"local_pos": [
+	  500,
+	  500,
+	  500
+	],
+	"brightness": 1.4,
+	"size": 1.6,
+	"tier": 1,
+	"required": false,
+	"create_if_missing": false
+  },
+  "event_listeners": {
+	"human_station_habitat_beacon_001": {
+	  "owner_type": "beacon",
+	  "object_type": "beacon",
+	  "object_id": "human_station_habitat_beacon_001",
+	  "display_name": "Human Station Habitat",
+	  "title": "Human Station Habitat",
+	  "beacon_type": "human_habitat_station_beacon",
+	  "sector_pos": [
+		0,
+		0,
+		0
+	  ],
+	  "local_pos": [
+		850,
+		500,
+		500
+	  ],
+	  "message": "Human habitat signal detected. Docking handshake unstable but readable.",
+	  "triggered_message": "Human Station Habitat docking channel opened.",
+	  "listener_type": "activate_event_on_range",
+	  "trigger_event_id": "human_station_hank_melissa_setup_001",
+	  "start_step": "station_arrival_checkin",
+	  "trigger_once": true,
+	  "triggered": false,
+	  "trigger_range": 100,
+	  "trigger_popup_message": "",
+	  "has_event": false,
+	  "event_id": "",
+	  "active_event_id": "",
+	  "required_step": "",
+	  "event_step": "",
+	  "current_step": "",
+	  "is_visible": true,
+	  "is_discovered": true,
+	  "is_completed": false,
+	  "labels": [
+		"beacon",
+		"human_station",
+		"human_habitat",
+		"event_listener",
+		"activate_event_on_range",
+		"station_arrival",
+		"hank_story_setup",
+        "authored_object"
+	  ]
+	}
+  },
+  "giver": {},
+  "event_objects": {
+	"melissa_active_beacon_001": {
+	  "owner_type": "beacon",
+	  "object_type": "beacon",
+	  "object_id": "melissa_active_beacon_001",
+	  "display_name": "Melissa Active Beacon",
+	  "title": "Melissa Active Beacon",
+	  "beacon_type": "human_personal_beacon",
+	  "sector_pos": [
+		1,
+		0,
+		0
+	  ],
+	  "local_pos": [
+		320,
+		500,
+		500
+	  ],
+	  "message": "Melissa's personal beacon is still active. Check-in failed. Dock cycle missed.",
+	  "interaction_type": "search_target",
+	  "event_id": "human_station_hank_melissa_setup_001",
+	  "active_event_id": "human_station_hank_melissa_setup_001",
+	  "required_step": "travel_to_melissa_beacon",
+	  "event_step": "travel_to_melissa_beacon",
+	  "current_step": "travel_to_melissa_beacon",
+	  "has_event": true,
+	  "is_visible": true,
+	  "is_discovered": false,
+	  "is_completed": false,
+	  "labels": [
+		"beacon",
+		"melissa",
+		"human_beacon",
+		"active_beacon",
+		"missed_checkin",
+		"story_target",
+        "authored_object"
+	  ]
+	},
+	"melissa_field_iron_asteroid_001": {
+	  "owner_type": "space_object",
+	  "object_type": "asteroid",
+	  "object_id": "melissa_field_iron_asteroid_001",
+	  "display_name": "Outer Belt Iron Asteroid 01",
+	  "sector_pos": [
+		1,
+		0,
+		0
+	  ],
+	  "local_pos": [
+		245,
+		470,
+		500
+	  ],
+	  "parent_beacon_id": "melissa_active_beacon_001",
+	  "parent_beacon_name": "Melissa Active Beacon",
+	  "tier": 1,
+	  "iron_total": 420,
+	  "iron_left": 420,
+	  "mined_out": false,
+	  "has_event": false,
+	  "event_id": "",
+	  "active_event_id": "",
+	  "required_step": "",
+	  "event_step": "",
+	  "current_step": "",
+	  "is_visible": true,
+	  "is_discovered": false,
+	  "is_completed": false,
+	  "labels": [
+		"space_object",
+		"asteroid",
+		"resource_asteroid",
+		"iron_rich",
+		"melissa_field",
+        "authored_object"
+	  ]
+	},
+	"melissa_field_iron_asteroid_002": {
+	  "owner_type": "space_object",
+	  "object_type": "asteroid",
+	  "object_id": "melissa_field_iron_asteroid_002",
+	  "display_name": "Outer Belt Iron Asteroid 02",
+	  "sector_pos": [
+		1,
+		0,
+		0
+	  ],
+	  "local_pos": [
+		395,
+		530,
+		500
+	  ],
+	  "parent_beacon_id": "melissa_active_beacon_001",
+	  "parent_beacon_name": "Melissa Active Beacon",
+	  "tier": 1,
+	  "iron_total": 385,
+	  "iron_left": 385,
+	  "mined_out": false,
+	  "has_event": false,
+	  "event_id": "",
+	  "active_event_id": "",
+	  "required_step": "",
+	  "event_step": "",
+	  "current_step": "",
+	  "is_visible": true,
+	  "is_discovered": false,
+	  "is_completed": false,
+	  "labels": [
+		"space_object",
+		"asteroid",
+		"resource_asteroid",
+		"iron_rich",
+		"melissa_field",
+        "authored_object"
+	  ]
+	},
+	"melissa_field_iron_asteroid_003": {
+	  "owner_type": "space_object",
+	  "object_type": "asteroid",
+	  "object_id": "melissa_field_iron_asteroid_003",
+	  "display_name": "Outer Belt Iron Asteroid 03",
+	  "sector_pos": [
+		1,
+		0,
+		0
+	  ],
+	  "local_pos": [
+		330,
+		620,
+		485
+	  ],
+	  "parent_beacon_id": "melissa_active_beacon_001",
+	  "parent_beacon_name": "Melissa Active Beacon",
+	  "tier": 1,
+	  "iron_total": 460,
+	  "iron_left": 460,
+	  "mined_out": false,
+	  "has_event": false,
+	  "event_id": "",
+	  "active_event_id": "",
+	  "required_step": "",
+	  "event_step": "",
+	  "current_step": "",
+	  "is_visible": true,
+	  "is_discovered": false,
+	  "is_completed": false,
+	  "labels": [
+		"space_object",
+		"asteroid",
+		"resource_asteroid",
+		"iron_rich",
+		"melissa_field",
+        "authored_object"
+	  ]
+	},
+	"melissa_field_iron_asteroid_004": {
+	  "owner_type": "space_object",
+	  "object_type": "asteroid",
+	  "object_id": "melissa_field_iron_asteroid_004",
+	  "display_name": "Outer Belt Iron Asteroid 04",
+	  "sector_pos": [
+		1,
+		0,
+		0
+	  ],
+	  "local_pos": [
+		300,
+		405,
+		560
+	  ],
+	  "parent_beacon_id": "melissa_active_beacon_001",
+	  "parent_beacon_name": "Melissa Active Beacon",
+	  "tier": 1,
+	  "iron_total": 510,
+	  "iron_left": 510,
+	  "mined_out": false,
+	  "has_event": false,
+	  "event_id": "",
+	  "active_event_id": "",
+	  "required_step": "",
+	  "event_step": "",
+	  "current_step": "",
+	  "is_visible": true,
+	  "is_discovered": false,
+	  "is_completed": false,
+	  "labels": [
+		"space_object",
+		"asteroid",
+		"resource_asteroid",
+		"iron_rich",
+		"melissa_field",
+        "authored_object"
+	  ]
+	},
+	"melissa_field_iron_asteroid_005": {
+	  "owner_type": "space_object",
+	  "object_type": "asteroid",
+	  "object_id": "melissa_field_iron_asteroid_005",
+	  "display_name": "Outer Belt Iron Asteroid 05",
+	  "sector_pos": [
+		1,
+		0,
+		0
+	  ],
+	  "local_pos": [
+		450,
+		455,
+		515
+	  ],
+	  "parent_beacon_id": "melissa_active_beacon_001",
+	  "parent_beacon_name": "Melissa Active Beacon",
+	  "tier": 1,
+	  "iron_total": 375,
+	  "iron_left": 375,
+	  "mined_out": false,
+	  "has_event": false,
+	  "event_id": "",
+	  "active_event_id": "",
+	  "required_step": "",
+	  "event_step": "",
+	  "current_step": "",
+	  "is_visible": true,
+	  "is_discovered": false,
+	  "is_completed": false,
+	  "labels": [
+		"space_object",
+		"asteroid",
+		"resource_asteroid",
+		"iron_rich",
+		"melissa_field",
+        "authored_object"
+	  ]
+	},
+	"melissa_field_iron_asteroid_006": {
+	  "owner_type": "space_object",
+	  "object_type": "asteroid",
+	  "object_id": "melissa_field_iron_asteroid_006",
+	  "display_name": "Outer Belt Iron Asteroid 06",
+	  "sector_pos": [
+		1,
+		0,
+		0
+	  ],
+	  "local_pos": [
+		205,
+		560,
+		535
+	  ],
+	  "parent_beacon_id": "melissa_active_beacon_001",
+	  "parent_beacon_name": "Melissa Active Beacon",
+	  "tier": 1,
+	  "iron_total": 560,
+	  "iron_left": 560,
+	  "mined_out": false,
+	  "has_event": false,
+	  "event_id": "",
+	  "active_event_id": "",
+	  "required_step": "",
+	  "event_step": "",
+	  "current_step": "",
+	  "is_visible": true,
+	  "is_discovered": false,
+	  "is_completed": false,
+	  "labels": [
+		"space_object",
+		"asteroid",
+		"resource_asteroid",
+		"iron_rich",
+		"melissa_field",
+        "authored_object"
+	  ]
+	},
+	"melissa_field_iron_asteroid_007": {
+	  "owner_type": "space_object",
+	  "object_type": "asteroid",
+	  "object_id": "melissa_field_iron_asteroid_007",
+	  "display_name": "Outer Belt Iron Asteroid 07",
+	  "sector_pos": [
+		1,
+		0,
+		0
+	  ],
+	  "local_pos": [
+		370,
+		390,
+		455
+	  ],
+	  "parent_beacon_id": "melissa_active_beacon_001",
+	  "parent_beacon_name": "Melissa Active Beacon",
+	  "tier": 1,
+	  "iron_total": 440,
+	  "iron_left": 440,
+	  "mined_out": false,
+	  "has_event": false,
+	  "event_id": "",
+	  "active_event_id": "",
+	  "required_step": "",
+	  "event_step": "",
+	  "current_step": "",
+	  "is_visible": true,
+	  "is_discovered": false,
+	  "is_completed": false,
+	  "labels": [
+		"space_object",
+		"asteroid",
+		"resource_asteroid",
+		"iron_rich",
+		"melissa_field",
+        "authored_object"
+	  ]
+	},
+	"melissa_field_iron_asteroid_008": {
+	  "owner_type": "space_object",
+	  "object_type": "asteroid",
+	  "object_id": "melissa_field_iron_asteroid_008",
+	  "display_name": "Outer Belt Iron Asteroid 08",
+	  "sector_pos": [
+		1,
+		0,
+		0
+	  ],
+	  "local_pos": [
+		275,
+		655,
+		560
+	  ],
+	  "parent_beacon_id": "melissa_active_beacon_001",
+	  "parent_beacon_name": "Melissa Active Beacon",
+	  "tier": 1,
+	  "iron_total": 610,
+	  "iron_left": 610,
+	  "mined_out": false,
+	  "has_event": false,
+	  "event_id": "",
+	  "active_event_id": "",
+	  "required_step": "",
+	  "event_step": "",
+	  "current_step": "",
+	  "is_visible": true,
+	  "is_discovered": false,
+	  "is_completed": false,
+	  "labels": [
+		"space_object",
+		"asteroid",
+		"resource_asteroid",
+		"iron_rich",
+		"melissa_field",
+        "authored_object"
+	  ]
+	},
+	"melissa_field_iron_asteroid_009": {
+	  "owner_type": "space_object",
+	  "object_type": "asteroid",
+	  "object_id": "melissa_field_iron_asteroid_009",
+	  "display_name": "Outer Belt Iron Asteroid 09",
+	  "sector_pos": [
+		1,
+		0,
+		0
+	  ],
+	  "local_pos": [
+		470,
+		605,
+		480
+	  ],
+	  "parent_beacon_id": "melissa_active_beacon_001",
+	  "parent_beacon_name": "Melissa Active Beacon",
+	  "tier": 1,
+	  "iron_total": 395,
+	  "iron_left": 395,
+	  "mined_out": false,
+	  "has_event": false,
+	  "event_id": "",
+	  "active_event_id": "",
+	  "required_step": "",
+	  "event_step": "",
+	  "current_step": "",
+	  "is_visible": true,
+	  "is_discovered": false,
+	  "is_completed": false,
+	  "labels": [
+		"space_object",
+		"asteroid",
+		"resource_asteroid",
+		"iron_rich",
+		"melissa_field",
+        "authored_object"
+	  ]
+	},
+	"melissa_field_iron_asteroid_010": {
+	  "owner_type": "space_object",
+	  "object_type": "asteroid",
+	  "object_id": "melissa_field_iron_asteroid_010",
+	  "display_name": "Outer Belt Iron Asteroid 10",
+	  "sector_pos": [
+		1,
+		0,
+		0
+	  ],
+	  "local_pos": [
+		185,
+		435,
+		470
+	  ],
+	  "parent_beacon_id": "melissa_active_beacon_001",
+	  "parent_beacon_name": "Melissa Active Beacon",
+	  "tier": 1,
+	  "iron_total": 530,
+	  "iron_left": 530,
+	  "mined_out": false,
+	  "has_event": false,
+	  "event_id": "",
+	  "active_event_id": "",
+	  "required_step": "",
+	  "event_step": "",
+	  "current_step": "",
+	  "is_visible": true,
+	  "is_discovered": false,
+	  "is_completed": false,
+	  "labels": [
+		"space_object",
+		"asteroid",
+		"resource_asteroid",
+		"iron_rich",
+		"melissa_field",
+        "authored_object"
+	  ]
+	}
+  },
+  "required_items": [],
+  "start_items": [],
+  "reward_packet": {
+	"credits": 0,
+	"items": [],
+	"blueprints": [],
+	"lore": [],
+	"unlocks": [],
+	"message": ""
+  },
+  "steps": {
+	"station_arrival_checkin": {
+	  "objective_text": "Human Station Habitat reached. Docking channel opened.",
+	  "interaction_type": "story_popup",
+	  "next_step": "melissa_missed_checkin",
+	  "on_enter": [
+		{
+		  "op": "show_story_popup",
+		  "title": "HUMAN STATION HABITAT",
+		  "text": "[b]STATION RELAY[/b]\n\n\"Hank, docking channel open.\"\n\n\"Where have you been?\"\n\n---\n\n[b]HANK[/b]\n\n\"Long story.\"\n\n\"Got a guest.\"\n\n---\n\n[b]STATION RELAY[/b]\n\n\"You don't bring guests.\"\n\n---\n\n[b]HANK[/b]\n\n\"I know.\"",
+		  "images": [
+			{
+			  "path": "res://images/Hank.png"
+			}
+		  ],
+		  "popup_size": {
+			"x": 720,
+			"y": 560
+		  },
+		  "close_mode": "button",
+		  "next_step_on_close": "melissa_missed_checkin"
+		}
+	  ]
+	},
+	"melissa_missed_checkin": {
+	  "objective_text": "Melissa missed her check-in.",
+	  "interaction_type": "story_popup",
+	  "next_step": "hank_grumbles_and_requests_help",
+	  "on_enter": [
+		{
+		  "op": "show_story_popup",
+		  "title": "STATION RELAY",
+		  "text": "[b]STATION RELAY[/b]\n\n\"Hank...\"\n\n\"Melissa missed her check-in.\"\n\n\"Her beacon is still active, but she never made dock cycle.\"\n\n\"Last ping is holding near the outer belt.\"",
+		  "popup_size": {
+			"x": 720,
+			"y": 520
+		  },
+		  "close_mode": "button",
+		  "next_step_on_close": "hank_grumbles_and_requests_help"
+		}
+	  ]
+	},
+	"hank_grumbles_and_requests_help": {
+	  "objective_text": "Hank asks for help reaching Melissa's beacon.",
+	  "interaction_type": "story_popup",
+	  "next_step": "tom_accepts_help",
+	  "on_enter": [
+		{
+		  "op": "show_story_popup",
+		  "title": "AUDIO POPUP",
+		  "text": "[b]SOURCE:[/b] HANK\n[b]SIGNAL QUALITY:[/b] CLEAR\n\n\"Melissa.\"\n\n\"Girl's gonna be the death of me.\"\n\n\"She does this. Pushes too far, swears she has it handled, then makes everyone else sweat over the silence.\"\n\n\"I was going to help sort out your memory problems first, but that plan has to wait.\"\n\n\"Your warp signature is stronger than mine. A lot stronger.\"\n\n\"If her beacon is active, you can get there faster than I can.\"\n\n\"I hate asking this after dragging you here half-awake, but I need your help.\"",
+		  "images": [
+			{
+			  "path": "res://images/Hank.png"
+			}
+		  ],
+		  "popup_size": {
+			"x": 720,
+			"y": 580
+		  },
+		  "close_mode": "button",
+		  "next_step_on_close": "tom_accepts_help"
+		}
+	  ]
+	},
+	"tom_accepts_help": {
+	  "objective_text": "Tom chooses to help.",
+	  "interaction_type": "story_popup",
+	  "next_step": "melissa_beacon_target_received",
+	  "on_enter": [
+		{
+		  "op": "show_story_popup",
+		  "title": "PLAYER RESPONSE",
+		  "text": "I don't understand all of this.\n\nBut someone needs help.\n\nSo I will help.",
+		  "images": [
+			{
+			  "path": "res://images/Tom.png"
+			}
+		  ],
+		  "popup_size": {
+			"x": 720,
+			"y": 520
+		  },
+		  "close_mode": "button",
+		  "next_step_on_close": "melissa_beacon_target_received"
+		}
+	  ]
+	},
+	"melissa_beacon_target_received": {
+	  "objective_text": "Melissa's active beacon has been received.",
+	  "interaction_type": "story_popup",
+	  "next_step": "travel_to_melissa_beacon",
+	  "on_enter": [
+		{
+		  "op": "show_story_popup",
+		  "title": "SYSTEM POPUP",
+		  "text": "[b]BEACON TARGET RECEIVED[/b]\n\nTARGET NAME: Melissa Active Beacon\nTARGET TYPE: Human Personal Beacon\nSTATUS: Active\nCHECK-IN STATUS: Missed\nDOCK CYCLE: Missed\nROUTE STATUS: AVAILABLE",
+		  "popup_size": {
+			"x": 720,
+			"y": 520
+		  },
+		  "close_mode": "button",
+		  "next_step_on_close": "travel_to_melissa_beacon"
+		}
+	  ]
+	},
+	"travel_to_melissa_beacon": {
+	  "objective_text": "Use Auto Pilot to travel to Melissa's active beacon.",
+	  "target_object_id": "melissa_active_beacon_001",
+	  "interaction_type": "travel",
+	  "arrival_range": 30,
+	  "next_step": "melissa_beacon_reached",
+	  "on_enter": [
+		{
+		  "op": "show_tutorial_hint",
+		  "title": "AUTO PILOT TARGET RECEIVED",
+		  "text": "Melissa's active beacon is now the event target. Use the Event panel Auto Pilot route to travel there.",
+		  "target_point_id": "event_panel",
+		  "line_to_point_id": "event_panel",
+		  "duration": 5.0,
+		  "popup_size": {
+			"x": 340,
+			"y": 130
+		  },
+		  "popup_offset": {
+			"x": 30,
+			"y": -22
+		  },
+		  "draw_line": true,
+		  "line_color": [
+			0.3,
+			0.92,
+			1.0,
+			0.72
+		  ],
+		  "circle_color": [
+			0.3,
+			0.92,
+			1.0,
+			0.22
+		  ],
+		  "circle_radius": 24.0,
+		  "accent_color": [
+			0.3,
+			0.92,
+			1.0,
+			0.95
+		  ]
+		}
+	  ],
+	  "on_arrival": [
+		{
+		  "op": "write_log",
+		  "message": "Melissa's active beacon reached. Human Station Contact event complete."
+		},
+		{
+		  "op": "advance_step",
+		  "next_step": "melissa_beacon_reached"
+		}
+	  ]
+	},
+	"melissa_beacon_reached": {
+	  "objective_text": "Melissa's active beacon reached. Human Station Contact event complete.",
+	  "target_object_id": "melissa_active_beacon_001",
+	  "interaction_type": "wait",
+	  "next_step": "completed"
+	}
+  }
+}

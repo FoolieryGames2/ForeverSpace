@@ -1,0 +1,361 @@
+{
+  "event_id": "vayrax_lane_007_event",
+  "display_name": "Vayrax Lane 007: Tactician Seven",
+  "description": "Pass 004 Vayrax lane event using the proven Lane 001/Pass 003 pattern: existing anchor copied into event_objects, one hidden 500-unit activate_event_on_range listener, explicit enemy install before profile popup, READY button with 30-unit range, battle on next step, victory popup, gives_item reward, then complete. This lane uses planned reward `pulse_laser_mk1_blueprint`.",
+  "event_state": "seeded",
+  "current_step": "vayrax_lane_007_intro_popup",
+  "start_on_ready": false,
+  "seed_once": true,
+  "can_cancel_event": true,
+  "tier": 1,
+  "anchor_star": {
+    "star_id": "star_28_tier_1_local",
+    "star_name": "Aster Local 08",
+    "sector_pos": [
+      1,
+      -3,
+      0
+    ],
+    "local_pos": [
+      500,
+      500,
+      500
+    ],
+    "required": true,
+    "create_if_missing": false,
+    "tier": 1
+  },
+  "event_listeners": {
+    "vayrax_lane_007_listener": {
+      "owner_type": "beacon",
+      "object_type": "beacon",
+      "object_id": "vayrax_lane_007_listener",
+      "display_name": "Vayrax Lane 007 Signal Listener",
+      "title": "Vayrax Lane 007 Signal Listener",
+      "beacon_type": "hidden_event_listener_beacon",
+      "position_mode": "absolute",
+      "sector_pos": [
+        1,
+        -3,
+        0
+      ],
+      "local_pos": [
+        500,
+        500,
+        500
+      ],
+      "parent_star_id": "star_28_tier_1_local",
+      "parent_star_name": "Aster Local 08",
+      "listener_type": "activate_event_on_range",
+      "trigger_event_id": "vayrax_lane_007_event",
+      "start_step": "vayrax_lane_007_intro_popup",
+      "trigger_range": 500,
+      "trigger_once": true,
+      "triggered": false,
+      "trigger_popup_message": "",
+      "suppress_trigger_popup": true,
+      "triggered_message": "Vayrax Lane 007 contact resolved near Aster Local 08.",
+      "message": "A Vayrax lane signal hides in the normal scan noise around Aster Local 08.",
+      "is_visible": false,
+      "is_discovered": false,
+      "is_completed": false,
+      "labels": [
+        "beacon",
+        "event_listener",
+        "activate_event_on_range",
+        "vayrax",
+        "vayrax_lane",
+        "vayrax_lane_007",
+        "hidden_listener",
+        "invisible_listener",
+        "camouflaged_signal",
+        "tier_1",
+        "star_28_tier_1_local",
+        "star_anchor_listener",
+        "authored_object"
+      ]
+    }
+  },
+  "event_objects": {
+    "star_28_tier_1_local": {
+      "owner_type": "star",
+      "object_type": "star",
+      "object_id": "star_28_tier_1_local",
+      "display_name": "Aster Local 08",
+      "title": "Aster Local 08",
+      "scan_name": "Aster Local 08",
+      "scan_description": "Existing anchor contact for Aster Local 08.",
+      "position_mode": "absolute",
+      "sector_pos": [
+        1,
+        -3,
+        0
+      ],
+      "local_pos": [
+        500,
+        500,
+        500
+      ],
+      "tier": 1,
+      "interaction_type": "signal_anchor",
+      "event_id": "vayrax_lane_007_event",
+      "active_event_id": "vayrax_lane_007_event",
+      "has_event": true,
+      "event_interactable": true,
+      "event_ops_enabled": true,
+      "is_visible": true,
+      "is_discovered": false,
+      "star_name": "Aster Local 08",
+      "star_type": "K",
+      "brightness": 1.0,
+      "size": 1.16,
+      "star_index": 28,
+      "anchor_role": "tier_1_local_anchor",
+      "labels": [
+        "star",
+        "world_seed",
+        "event_anchor",
+        "vayrax_lane",
+        "vayrax_lane_007",
+        "tier_1",
+        "star_28_tier_1_local",
+        "star_anchor",
+        "authored_object",
+        "event_object"
+      ]
+    },
+    "vayrax_lane_007_drone": {
+      "owner_type": "enemy",
+      "object_type": "enemy",
+      "object_id": "vayrax_lane_007_drone",
+      "enemy_id": "vayrax_lane_007_drone",
+      "display_name": "Vayrax Drone 007",
+      "name": "Vayrax Drone 007",
+      "blueprint_id": "vayrax_drone_007",
+      "spawn_on_step": "vayrax_lane_007_enemy_profile_popup",
+      "position_mode": "absolute",
+      "sector_pos": [
+        1,
+        -3,
+        0
+      ],
+      "local_pos": [
+        760.0,
+        500.0,
+        500.0
+      ],
+      "parent_star_id": "star_28_tier_1_local",
+      "parent_star_name": "Aster Local 08",
+      "event_id": "vayrax_lane_007_event",
+      "active_event_id": "vayrax_lane_007_event",
+      "required_step": "vayrax_lane_007_enemy_profile_popup",
+      "event_step": "vayrax_lane_007_enemy_profile_popup",
+      "current_step": "vayrax_lane_007_enemy_profile_popup",
+      "has_event": true,
+      "labels": [
+        "enemy",
+        "event_enemy",
+        "vayrax",
+        "drone",
+        "vayrax_drone_007",
+        "vayrax_lane",
+        "vayrax_lane_007",
+        "tier_1",
+        "star_28_tier_1_local",
+        "near_star_28_tier_1_local"
+      ],
+      "event_tags": [
+        "vayrax_lane_007_event",
+        "vayrax",
+        "vayrax_lane_007",
+        "lane_battle"
+      ],
+      "overrides": {
+        "hp": 285,
+        "max_hp": 285,
+        "hull": 285,
+        "max_hull": 285,
+        "attack": 23,
+        "energy_max": 275.0,
+        "max_energy": 275,
+        "energy": 275,
+        "primary": "raider_arc_stinger_mk2",
+        "primary_weapon": "raider_arc_stinger_mk2",
+        "secondary": "raider_scrap_ripper_mk2",
+        "secondary_weapon": "raider_scrap_ripper_mk2",
+        "shield": "raider_plate_screen_mk2",
+        "shield_item": "raider_plate_screen_mk2",
+        "consumable": "repair_kit",
+        "consumable_item": "repair_kit",
+        "item_stacks": {
+          "small_kinetic_rounds": 18,
+          "medium_kinetic_rounds": 6,
+          "repair_kit": 1
+        },
+        "behavior_profile": "smart_guy_tactician",
+        "behavior_values": {
+          "decision_cooldown": 1.25,
+          "low_hull_evade_threshold": 0.3,
+          "repair_hull_threshold": 0.34,
+          "shield_switch_min_cooldown_seconds": 9.0,
+          "low_energy_secondary_threshold": 0.42
+        },
+        "reward": [
+          "iron",
+          "cobalt",
+          "medium_kinetic_rounds"
+        ],
+        "reward_items": [
+          "iron",
+          "cobalt",
+          "medium_kinetic_rounds"
+        ],
+        "ship_name": "Vayrax Drone 007"
+      },
+      "is_visible": true,
+      "is_discovered": false
+    }
+  },
+  "required_items": [],
+  "reward_packet": {
+    "credits": 0,
+    "items": [],
+    "blueprints": [],
+    "lore": [],
+    "unlocks": [],
+    "message": "Vayrax Lane 007 complete. Reward claimed with gives_item."
+  },
+  "steps": {
+    "vayrax_lane_007_intro_popup": {
+      "objective_text": "A Vayrax lane signal has resolved near Aster Local 08.",
+      "target_object_id": "star_28_tier_1_local",
+      "target_owner_type": "star",
+      "interaction_type": "story_popup",
+      "next_step": "vayrax_lane_007_enemy_profile_popup",
+      "on_enter": [
+        {
+          "op": "show_story_popup",
+          "title": "TACTICIAN SEVEN: HIGHLIGHTED MISTAKE",
+          "text": "[b]VAYRAX DRONE 007[/b]\n\n\"Pattern seven: feint, punish, repeat.\"\n\n\"You are teaching me useful things.\"\n\n\"Your next mistake is already highlighted.\"",
+          "close_mode": "button",
+          "next_step_on_close": "vayrax_lane_007_enemy_profile_popup",
+          "popup_size": {
+            "x": 560,
+            "y": 360
+          }
+        }
+      ]
+    },
+    "vayrax_lane_007_enemy_profile_popup": {
+      "objective_text": "Review the Vayrax Drone 007 contact profile.",
+      "target_object_id": "vayrax_lane_007_drone",
+      "target_owner_type": "enemy",
+      "interaction_type": "story_popup",
+      "next_step": "vayrax_lane_007_ready_to_fight",
+      "on_enter": [
+        {
+          "op": "install_event_object",
+          "object_id": "vayrax_lane_007_drone"
+        },
+        {
+          "op": "show_story_popup",
+          "title": "VAYRAX CONTACT PROFILE",
+          "text": "[b]Enemy Handler Source[/b]\n`vayrax_drone_007`\n\n[b]Battle Object[/b]\n`vayrax_lane_007_drone`\n\n[b]Behavior Profile[/b]\n`smart_guy_tactician`\n\n[b]Stats[/b]\nHull: 285 / 285\nHP: 285\nEnergy Max: 275\n\n[b]Loadout[/b]\nPrimary: `raider_arc_stinger_mk2`\nSecondary: `raider_scrap_ripper_mk2`\nShield: `raider_plate_screen_mk2`\nConsumable: `repair_kit`\nItem Stacks: `small_kinetic_rounds` x18, `medium_kinetic_rounds` x6, `repair_kit` x1\n\n[b]Reward On Victory[/b]\n`pulse_laser_mk1_blueprint`",
+          "close_mode": "button",
+          "next_step_on_close": "vayrax_lane_007_ready_to_fight",
+          "popup_size": {
+            "x": 620,
+            "y": 500
+          }
+        }
+      ]
+    },
+    "vayrax_lane_007_ready_to_fight": {
+      "objective_text": "Move within 30 units of Vayrax Drone 007, then press READY to engage.",
+      "target_object_id": "vayrax_lane_007_drone",
+      "target_owner_type": "enemy",
+      "interaction_type": "handoff",
+      "interaction_range": 30,
+      "next_step": "vayrax_lane_007_start_battle",
+      "actions": [
+        {
+          "button_id": "vayrax_lane_007_ready_button",
+          "label": "READY",
+          "action_id": "download_beacon_data",
+          "range": 30
+        }
+      ],
+      "success_text": "Vayrax Lane 007 engagement accepted."
+    },
+    "vayrax_lane_007_start_battle": {
+      "objective_text": "Battle: Vayrax Drone 007.",
+      "target_object_id": "vayrax_lane_007_drone",
+      "target_owner_type": "enemy",
+      "enemy_id": "vayrax_lane_007_drone",
+      "interaction_type": "hunt",
+      "interaction_range": 30,
+      "complete_on_battle_victory": true,
+      "next_step": "vayrax_lane_007_victory_popup",
+      "on_enter": [
+        {
+          "op": "start_battle",
+          "enemy_id": "vayrax_lane_007_drone",
+          "entry_reason": "vayrax_lane_007_tactician_seven",
+          "message": "Vayrax Drone 007 engaged."
+        }
+      ],
+      "on_battle_victory": [
+        {
+          "op": "write_log",
+          "message": "Vayrax Lane 007 defeated: Tactician Seven."
+        },
+        {
+          "op": "advance_step",
+          "next_step": "vayrax_lane_007_victory_popup"
+        }
+      ]
+    },
+    "vayrax_lane_007_victory_popup": {
+      "objective_text": "Review Vayrax Lane 007 victory report.",
+      "interaction_type": "story_popup",
+      "next_step": "vayrax_lane_007_claim_reward",
+      "on_enter": [
+        {
+          "op": "show_story_popup",
+          "title": "VAYRAX LANE 007 CLEARED",
+          "text": "[b]TACTICIAN SEVEN DEFEATED[/b]\n\nThe Vayrax lane signal collapses into local static.\n\nReward ready:\n`pulse_laser_mk1_blueprint`",
+          "close_mode": "button",
+          "next_step_on_close": "vayrax_lane_007_claim_reward",
+          "popup_size": {
+            "x": 560,
+            "y": 360
+          }
+        }
+      ]
+    },
+    "vayrax_lane_007_claim_reward": {
+      "objective_text": "Press COMPLETE near Aster Local 08 to claim the Pulse Laser MK1 Blueprint and clear Vayrax Lane 007.",
+      "target_object_id": "star_28_tier_1_local",
+      "target_owner_type": "star",
+      "interaction_type": "handoff",
+      "interaction_range": 9999,
+      "next_step": "completed",
+      "actions": [
+        {
+          "button_id": "vayrax_lane_007_complete_button",
+          "label": "COMPLETE",
+          "action_id": "download_beacon_data",
+          "range": 9999
+        }
+      ],
+      "gives_item": "pulse_laser_mk1_blueprint",
+      "success_text": "Pulse Laser MK1 Blueprint received. Vayrax Lane 007 complete."
+    },
+    "completed": {
+      "objective_text": "Vayrax Lane 007 complete.",
+      "interaction_type": "complete",
+      "is_complete_step": true,
+      "complete_event": true
+    }
+  }
+}

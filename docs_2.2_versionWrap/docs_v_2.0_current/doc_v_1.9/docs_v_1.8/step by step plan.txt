@@ -1,0 +1,437 @@
+I actually think we can do this with very low risk if we treat it as a series of UI migrations instead of a rewrite.
+
+The biggest rule I'd write at the top of the document is:
+
+Battle math, TODOs, EventManager, BattleManager, ActionManager, EnemyBattleController, and background rendering remain untouched until the new UI is fully operational.
+
+That keeps almost all of the risk out of the overhaul.
+
+Battle V2 UI Overhaul Implementation Plan
+(Forever Space - Safe Migration Plan)
+Phase 0 — Lock Current Battle Systems
+
+Goal
+
+Freeze all non-UI systems.
+
+Do NOT modify:
+
+BattleManager
+EventManager
+ActionManager
+EnemyBattleController
+EnemyLogic
+EnergyHandler
+BattleActionPacketBuilder
+Player battle packets
+Enemy battle packets
+Background rendering
+Projectile rendering
+Damage calculations
+
+These become the "protected layer."
+
+Phase 1 — Build New Layout Skeleton
+
+Do not connect anything yet.
+
+Simply build the new empty widget structure.
+
+Battle Root
+
+Player Animation Lane
+
+Enemy Animation Lane
+
+Player Stats
+
+Battle View
+
+Player TODO
+
+Enemy Stats
+
+Actions
+
+Inventory
+
+Everything can contain placeholder labels.
+
+Nothing functional.
+
+Phase 2 — Populate Read Only Widgets
+
+Safe migration.
+
+Move display only.
+
+Player stats
+
+Hull
+Shield
+Energy
+Ammo
+Active drones
+Effects later
+
+Enemy stats
+
+Hull
+Shield
+Energy
+Ammo
+Active drones
+Effects later
+
+No buttons.
+
+No interaction.
+
+Phase 3 — Move Player TODO Widget
+
+Disconnect old placement.
+
+Reconnect only the widget.
+
+Do NOT change
+
+EventManager
+TODO packets
+timing
+
+Only move its parent.
+
+Phase 4 — Build New Action Widget
+
+This becomes the player's command console.
+
+Contains
+
+Primary
+
+Secondary
+
+Consumable
+
+Execute
+
+Evade
+
+Shield Power
+
+0 1 2 3 4
+
+Initially:
+
+All buttons call the exact same functions.
+
+No logic rewrite.
+
+Only reconnect node references.
+
+Phase 5 — Move Shield Slider
+
+Current
+
+Shield widget
+    ↓
+slider
+
+New
+
+Action widget
+
+Actions
+
+Shield Power
+
+slider
+
+No shield code changes.
+
+Only reconnect references.
+
+The slider still updates
+
+shield_power_level
+
+↓
+
+EnergyHandler
+
+↓
+
+BattleManager
+
+Exactly like today.
+
+Phase 6 — Move Evade
+
+Current evade button becomes part of the Action widget.
+
+Again
+
+No logic.
+
+Reconnect only.
+
+Still calls
+
+request_evade()
+
+or existing action path.
+
+Phase 7 — Build Battle Inventory
+
+Move
+
+Reference inventory
+
+↓
+
+Battle inventory
+
+No logic changes.
+
+Drag/drop should still call current handlers.
+
+Phase 8 — Build Animation Lanes
+
+Player lane
+
+Enemy lane
+
+Initially
+
+Do nothing.
+
+Just exist.
+
+Afterwards begin routing
+
+button click
+
+↓
+
+launch animation
+
+↓
+
+TODO
+
+↓
+
+completion animation
+
+↓
+
+impact animation
+
+Visual only.
+
+Phase 9 — Connect Animation Hooks
+
+Now connect
+
+Primary
+
+Secondary
+
+Consumable
+
+Shield switch
+
+Repair
+
+Recharge
+
+Drone launch
+
+Explosive
+
+Lock
+
+Evade
+
+One at a time.
+
+Never more than one system per test.
+
+Phase 10 — Legacy UI Hide Pass
+
+Now begin hiding old UI.
+
+Not deleting.
+
+Set
+
+visible = false
+
+Candidates
+
+✓ old status panels
+
+✓ shield widget
+
+✓ old action widget
+
+✓ old inventory widget
+
+✓ old top labels
+
+✓ duplicate runtime windows
+
+✓ duplicate battle log
+
+Only after replacement is confirmed.
+
+Phase 11 — Legacy Reference Cleanup
+
+After several successful tests.
+
+Remove
+
+old references
+
+unused updates
+
+duplicate refreshes
+
+duplicate positioning
+
+Keep
+
+protected data paths.
+
+Phase 12 — Legacy UI Removal
+
+Only now
+
+Delete
+
+legacy Controls
+
+legacy Containers
+
+legacy labels
+
+legacy sizing code
+
+legacy positioning code
+
+Leave
+
+Background
+
+Projectile layer
+
+Damage layers
+
+Effect layers
+
+Animation layers
+
+Untouched.
+
+Phase 13 — Polish
+
+Only now
+
+Spacing
+
+Fonts
+
+Icons
+
+Colors
+
+Animations
+
+Glow
+
+Transitions
+
+Phase 14 — Future Expansion
+
+After stable
+
+Add
+
+Status effects
+
+Drone widgets
+
+Weapon heat
+
+Buffs
+
+Debuffs
+
+Threat indicators
+
+Better projectile timing
+
+Lane animations
+
+Legacy UI Removal Checklist
+
+Safe to retire once replacements exist
+
+Old player status panel
+
+Old enemy status panel
+
+Old shield panel
+
+Old shield slider location
+
+Old action container
+
+Old inventory/reference container
+
+Old duplicate log panel
+
+Old top labels
+
+Old misc battle labels
+
+Old runtime helper widgets
+
+Do NOT remove
+
+Battle background
+
+Ship render layer
+
+Projectile layer
+
+Damage number layer
+
+Explosion layer
+
+Effect layer
+
+Battle root
+
+Battle timers
+
+TODO system
+
+ActionManager
+
+EventManager
+
+BattleManager
+
+EnergyHandler
+Overall Risk Assessment
+
+I actually think this is a low-risk overhaul, despite how different the finished screen will look. The reason is that we're not replacing the battle system—we're replacing the presentation layer around it.
+
+Every phase leaves the game in a runnable state. If something goes wrong, we can stop after any phase, fix it, and continue. There is never a point where we need to "rewrite Battle V2."
+
+I would add one more rule to the project docs because I think it's worth treating as a design principle:
+
+Never remove a legacy UI element until its replacement has been tested through an entire battle (start → combat → victory/defeat → return to world).
+
+That one rule alone will eliminate most of the risk during this overhaul.

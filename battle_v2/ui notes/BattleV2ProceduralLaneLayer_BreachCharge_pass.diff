@@ -1,0 +1,138 @@
+--- /mnt/data/BattleV2ProceduralLaneLayer_CoilSpitter_pass.gd	2026-07-04 08:14:55.567696325 +0000
++++ /mnt/data/BattleV2ProceduralLaneLayer_BreachCharge_pass.gd	2026-07-04 08:32:36.574612596 +0000
+@@ -5,6 +5,7 @@
+ const IonThreaderMK1UIScript = preload("res://battle_v2/UI_basket/IonThreaderMK1UI.gd")
+ const DroneOrbitUIScript = preload("res://battle_v2/UI_basket/DroneOrbitUI.gd")
+ const CoilSpitterMK1UIScript = preload("res://battle_v2/UI_basket/CoilSpitterMK1UI.gd")
++const BreachChargeUIScript = preload("res://battle_v2/UI_basket/BreachChargeUI.gd")
+ 
+ const DEFAULT_SIZE := Vector2(1280, 760)
+ const PLAYER_COLOR := Color(0.10, 0.68, 1.0, 1.0)
+@@ -22,6 +23,9 @@
+ var ion_threader_mk1_ui: RefCounted = null
+ var drone_orbit_ui: RefCounted = null
+ var coil_spitter_mk1_ui: RefCounted = null
++var breach_charge_ui: RefCounted = null
++var damage_pulses: Array = []
++var slot_snapshot: Dictionary = {}
+ 
+ 
+ func _ready() -> void:
+@@ -52,6 +56,8 @@
+ 		drone_orbit_ui = DroneOrbitUIScript.new()
+ 	if coil_spitter_mk1_ui == null:
+ 		coil_spitter_mk1_ui = CoilSpitterMK1UIScript.new()
++	if breach_charge_ui == null:
++		breach_charge_ui = BreachChargeUIScript.new()
+ 
+ 
+ func set_anchor_data(new_anchors: Dictionary) -> void:
+@@ -61,6 +67,10 @@
+ 
+ func set_todo_snapshot(snapshot: Dictionary) -> void:
+ 	event_summaries.clear()
++	if typeof(snapshot.get("slots", {})) == TYPE_DICTIONARY:
++		slot_snapshot = snapshot.get("slots", {}).duplicate(true)
++	else:
++		slot_snapshot.clear()
+ 	if typeof(snapshot.get("events", [])) == TYPE_ARRAY:
+ 		for event_summary in snapshot.get("events", []):
+ 			if typeof(event_summary) == TYPE_DICTIONARY:
+@@ -88,6 +98,16 @@
+ 	queue_redraw()
+ 
+ 
++func pulse_damage(packet: Dictionary) -> void:
++	var pulse := packet.duplicate(true)
++	pulse["age"] = 0.0
++	pulse["duration"] = float(pulse.get("duration", 0.82))
++	if not pulse.has("ui_seed"):
++		pulse["ui_seed"] = build_visual_seed(str(pulse.get("event_id", "")) + str(pulse.get("item_id", "")) + str(damage_pulses.size()))
++	damage_pulses.append(pulse)
++	queue_redraw()
++
++
+ func _process(delta: float) -> void:
+ 	anim_time += delta
+ 	for i in range(action_pulses.size() - 1, -1, -1):
+@@ -97,6 +117,13 @@
+ 			action_pulses.remove_at(i)
+ 		else:
+ 			action_pulses[i] = pulse
++	for i in range(damage_pulses.size() - 1, -1, -1):
++		var damage_pulse: Dictionary = damage_pulses[i]
++		damage_pulse["age"] = float(damage_pulse.get("age", 0.0)) + delta
++		if float(damage_pulse.get("age", 0.0)) >= float(damage_pulse.get("duration", 0.82)):
++			damage_pulses.remove_at(i)
++		else:
++			damage_pulses[i] = damage_pulse
+ 	if drone_orbit_ui != null and drone_orbit_ui.has_method("process"):
+ 		drone_orbit_ui.process(delta)
+ 	queue_redraw()
+@@ -111,7 +138,9 @@
+ 	draw_actor("enemy")
+ 	draw_actor_shield_overlay("player")
+ 	draw_actor_shield_overlay("enemy")
++	draw_ready_overlays()
+ 	draw_drone_runtime()
++	draw_damage_pulses()
+ 
+ 
+ func draw_lane_field(side: String) -> void:
+@@ -200,6 +229,22 @@
+ 		drone_orbit_ui.draw_runtime(self, anchors, unit_state, anim_time)
+ 
+ 
++func draw_ready_overlays() -> void:
++	setup_ui_basket_handlers()
++	if breach_charge_ui != null and breach_charge_ui.has_method("draw_ready_overlay"):
++		breach_charge_ui.draw_ready_overlay(self, anchors, unit_state, event_summaries, anim_time)
++
++
++func draw_damage_pulses() -> void:
++	setup_ui_basket_handlers()
++	for pulse in damage_pulses:
++		if typeof(pulse) != TYPE_DICTIONARY:
++			continue
++		if breach_charge_ui != null and breach_charge_ui.has_method("draw_damage_pulse"):
++			if bool(breach_charge_ui.draw_damage_pulse(self, pulse, anchors, unit_state, anim_time)):
++				continue
++
++
+ func try_draw_ui_basket_todo_event(event_summary: Dictionary) -> bool:
+ 	setup_ui_basket_handlers()
+ 	if ion_threader_mk1_ui != null and ion_threader_mk1_ui.has_method("draw_todo_event"):
+@@ -208,6 +253,9 @@
+ 	if coil_spitter_mk1_ui != null and coil_spitter_mk1_ui.has_method("draw_todo_event"):
+ 		if bool(coil_spitter_mk1_ui.draw_todo_event(self, event_summary, anchors, unit_state, anim_time)):
+ 			return true
++	if breach_charge_ui != null and breach_charge_ui.has_method("draw_todo_event"):
++		if bool(breach_charge_ui.draw_todo_event(self, event_summary, anchors, unit_state, anim_time)):
++			return true
+ 	return false
+ 
+ 
+@@ -219,6 +267,9 @@
+ 	if coil_spitter_mk1_ui != null and coil_spitter_mk1_ui.has_method("draw_action_click"):
+ 		if bool(coil_spitter_mk1_ui.draw_action_click(self, pulse, anchors, unit_state, anim_time)):
+ 			return true
++	if breach_charge_ui != null and breach_charge_ui.has_method("draw_action_click"):
++		if bool(breach_charge_ui.draw_action_click(self, pulse, anchors, unit_state, anim_time)):
++			return true
+ 	return false
+ 
+ 
+@@ -387,6 +438,13 @@
+ 	return 2.7 if side == "enemy" else 0.0
+ 
+ 
++func build_visual_seed(value: String) -> int:
++	var hash_value := 5381
++	for i in range(value.length()):
++		hash_value = int((hash_value * 33 + value.unicode_at(i)) % 2147483647)
++	return abs(hash_value)
++
++
+ func close_points(points: PackedVector2Array) -> PackedVector2Array:
+ 	var output := PackedVector2Array(points)
+ 	if points.size() > 0:

@@ -1,0 +1,290 @@
+{
+  "event_id": "enemy_encounter_TEMPLATE_001",
+  "display_name": "Enemy Encounter Template",
+  "description": "Blank reusable enemy encounter flow. Copy this file, rename event_id/object ids, fill anchor, enemy, equipment, battle logic, victory text, and reward.",
+  "event_state": "seeded",
+  "current_step": "enemy_listener_waiting",
+  "start_on_ready": false,
+  "seed_once": true,
+  "can_cancel_event": false,
+  "tier": 1,
+
+  "story_tracking": {
+	"main_story_chapter": "CHAPTER_TEMPLATE",
+	"timeline_state": "draft",
+	"sector_id": "tier_1_spine",
+	"anchor_star_id": "tier_1_anchor_star",
+	"anchor_star_name": "Tier 1 Star",
+	"nearby_planet_id": "tier_1_anchor_star_planet_01",
+	"encounter_role": "enemy_gate",
+	"encounter_notes": "Use this block as the authoring ledger hook. Track what star/planet/sector this encounter belongs to and what story state it represents."
+  },
+
+  "anchor_star": {
+	"star_id": "tier_1_anchor_star",
+	"star_name": "Tier 1 Star",
+	"sector_pos": [0, 0, 0],
+	"local_pos": [500, 500, 500],
+	"required": true,
+	"create_if_missing": false
+  },
+
+  "giver": {},
+
+  "event_listeners": {
+	"enemy_encounter_TEMPLATE_listener_001": {
+	  "owner_type": "beacon",
+	  "object_type": "beacon",
+	  "object_id": "enemy_encounter_TEMPLATE_listener_001",
+	  "display_name": "Enemy Contact Listener",
+	  "title": "Enemy Contact Listener",
+	  "beacon_type": "event_listener_beacon",
+	  "position_mode": "anchor_offset",
+	  "sector_offset": [0, 0, 0],
+	  "local_offset": [260, 60, -25],
+	  "sector_pos": [0, 0, 0],
+	  "local_pos": [760, 560, 475],
+	  "listener_type": "activate_event_on_range",
+	  "trigger_event_id": "enemy_encounter_TEMPLATE_001",
+	  "start_step": "enemy_contact_detected",
+	  "trigger_once": true,
+	  "triggered": false,
+	  "trigger_range": 450,
+	  "trigger_popup_message": "[b]HOSTILE CONTACT[/b]\n\nA hostile signature crosses your sensor net.",
+	  "triggered_message": "Hostile contact detected.",
+	  "is_visible": false,
+	  "is_discovered": false,
+	  "is_completed": false,
+	  "labels": [
+		"beacon",
+		"event_listener",
+		"enemy_listener",
+		"activate_event_on_range",
+		"authored_object",
+        "chapter_TEMPLATE"
+	  ]
+	}
+  },
+
+  "event_objects": {
+	"enemy_encounter_TEMPLATE_enemy_001": {
+	  "owner_type": "enemy",
+	  "object_type": "enemy",
+	  "object_id": "enemy_encounter_TEMPLATE_enemy_001",
+	  "display_name": "Template Enemy Ship",
+	  "blueprint_id": "test_smart_guy",
+	  "spawn_on_step": "battle_enemy_TEMPLATE",
+	  "position_mode": "anchor_offset",
+	  "sector_offset": [0, 0, 0],
+	  "local_offset": [260, 60, -25],
+	  "sector_pos": [0, 0, 0],
+	  "local_pos": [760, 560, 475],
+	  "event_id": "enemy_encounter_TEMPLATE_001",
+	  "active_event_id": "enemy_encounter_TEMPLATE_001",
+	  "required_step": "battle_enemy_TEMPLATE",
+	  "event_step": "battle_enemy_TEMPLATE",
+	  "current_step": "battle_enemy_TEMPLATE",
+	  "has_event": true,
+	  "labels": [
+		"enemy",
+		"event_enemy",
+		"enemy_template",
+		"authored_object",
+        "chapter_TEMPLATE"
+	  ],
+	  "event_tags": [
+		"enemy_encounter_TEMPLATE_001",
+		"enemy_template",
+        "chapter_TEMPLATE"
+	  ],
+	  "overrides": {
+		"hp": 120,
+		"max_hp": 120,
+		"attack": 10,
+		"energy_max": 120,
+		"primary": "pulse_laser_mk1",
+		"secondary": "railgun_mk1",
+		"shield": "",
+		"consumable": "repair_kit",
+		"item_stacks": {
+		  "medium_kinetic_rounds": 12,
+		  "repair_kit": 1
+		},
+		"behavior_profile": "smart_guy",
+		"behavior_values": {
+		  "execute_player_threshold": 0.25,
+		  "critical_hull_evade_threshold": 0.2,
+		  "low_hull_evade_threshold": 0.4,
+		  "low_energy_secondary_threshold": 0.35,
+		  "decision_cooldown": 1.25
+		},
+		"reward": [
+		  "iron",
+		  "cobalt",
+          "medium_kinetic_rounds"
+		],
+		"ship_name": "Template Enemy Ship"
+	  }
+	}
+  },
+
+  "required_items": [],
+  "start_items": [],
+
+  "reward_packet": {
+	"credits": 0,
+	"items": [
+	  {
+		"item_id": "credits",
+		"amount": 40
+	  },
+	  {
+		"item_id": "iron",
+		"amount": 75
+	  },
+	  {
+		"item_id": "repair_kit",
+		"amount": 1
+	  }
+	],
+	"blueprints": [],
+	"lore": [],
+	"unlocks": [],
+	"message": "Enemy defeated. Salvage recovered."
+  },
+
+  "steps": {
+	"enemy_listener_waiting": {
+	  "objective_text": "A quiet hostile-listening point waits in authored space.",
+	  "interaction_type": "listener_wait",
+	  "next_step": "enemy_contact_detected"
+	},
+
+	"enemy_contact_detected": {
+	  "objective_text": "Hostile contact detected. Review the threat readout.",
+	  "target_object_id": "enemy_encounter_TEMPLATE_enemy_001",
+	  "arrival_range": 450,
+	  "interaction_type": "story_popup",
+	  "next_step": "enemy_identity_screen",
+	  "on_enter": [
+		{
+		  "op": "show_story_popup",
+		  "title": "HOSTILE CONTACT DETECTED",
+		  "text": "[b]Sensor Alert[/b]\n\nA hostile ship has crossed the listening point.\n\nIDENTITY: Template Enemy Ship\nCLASS: Light Interceptor\nHULL: 120\nATTACK: 10\nPRIMARY: Pulse Laser Mk1\nSECONDARY: Railgun Mk1\nBEHAVIOR: Smart Guy\n\nYou may add more story here, or keep this as the only pre-battle screen.",
+		  "close_mode": "button",
+		  "next_step_on_close": "enemy_identity_screen",
+		  "popup_size": {
+			"x": 620,
+			"y": 470
+		  }
+		}
+	  ]
+	},
+
+	"enemy_identity_screen": {
+	  "objective_text": "Enemy identity confirmed. Battle countdown starting.",
+	  "target_object_id": "enemy_encounter_TEMPLATE_enemy_001",
+	  "interaction_type": "story_popup",
+	  "next_step": "battle_countdown",
+	  "on_enter": [
+		{
+		  "op": "show_story_popup",
+		  "title": "ENTERING BATTLE",
+		  "text": "[b]Battle lock engaged.[/b]\n\nWeapons are hot. Combat begins in 5 seconds.",
+		  "close_mode": "timer",
+		  "duration": 5.0,
+		  "next_step_on_close": "battle_enemy_TEMPLATE",
+		  "popup_size": {
+			"x": 700,
+			"y": 520
+		  }
+		}
+	  ]
+	},
+
+	"battle_countdown": {
+	  "objective_text": "Battle countdown active.",
+	  "target_object_id": "enemy_encounter_TEMPLATE_enemy_001",
+	  "interaction_type": "battle_countdown",
+	  "next_step": "battle_enemy_TEMPLATE"
+	},
+
+	"battle_enemy_TEMPLATE": {
+	  "objective_text": "Defeat the Template Enemy Ship.",
+	  "target_object_id": "enemy_encounter_TEMPLATE_enemy_001",
+	  "enemy_id": "enemy_encounter_TEMPLATE_enemy_001",
+	  "interaction_type": "hunt",
+	  "complete_on_battle_victory": true,
+	  "next_step": "enemy_victory_popup",
+	  "on_enter": [
+		{
+		  "op": "start_battle",
+		  "enemy_id": "enemy_encounter_TEMPLATE_enemy_001",
+		  "entry_reason": "enemy_encounter_TEMPLATE",
+		  "message": "Template enemy encounter started."
+		}
+	  ],
+	  "on_battle_victory": [
+		{
+		  "op": "write_log",
+		  "message": "Template Enemy Ship defeated."
+		},
+		{
+		  "op": "show_story_popup",
+		  "title": "VICTORY",
+		  "text": "[b]Enemy defeated.[/b]\n\nThe hostile signal collapses into static.\n\nAdd your victory state, congratulations, faction reaction, or story punch here.",
+		  "close_mode": "button",
+		  "next_step_on_close": "enemy_reward_screen",
+		  "popup_size": {
+			"x": 620,
+			"y": 420
+		  }
+		},
+		{
+		  "op": "advance_step",
+		  "next_step": "enemy_reward_screen"
+		}
+	  ]
+	},
+
+	"enemy_victory_popup": {
+	  "objective_text": "Victory confirmed. Claim the reward.",
+	  "interaction_type": "story_popup",
+	  "next_step": "enemy_reward_screen",
+	  "on_enter": [
+		{
+		  "op": "show_story_popup",
+		  "title": "VICTORY CONFIRMED",
+		  "text": "[b]The area is clear.[/b]\n\nReward packet is ready.",
+		  "close_mode": "button",
+		  "next_step_on_close": "enemy_reward_screen",
+		  "popup_size": {
+			"x": 560,
+			"y": 340
+		  }
+		}
+	  ]
+	},
+
+	"enemy_reward_screen": {
+	  "objective_text": "Claim enemy encounter reward.",
+	  "interaction_type": "reward",
+	  "next_step": "completed",
+	  "actions": [
+		{
+		  "button_id": "claim_enemy_TEMPLATE_reward",
+		  "label": "CLAIM REWARD",
+		  "action_id": "claim_event_reward",
+		  "range": 999999
+		}
+	  ]
+	},
+
+	"completed": {
+	  "objective_text": "Enemy encounter complete.",
+	  "interaction_type": "complete",
+	  "is_complete_step": true,
+	  "complete_event": true
+	}
+  }
+}

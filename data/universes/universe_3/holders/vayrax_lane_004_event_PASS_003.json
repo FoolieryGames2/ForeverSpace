@@ -1,0 +1,366 @@
+{
+  "event_id": "vayrax_lane_004_event",
+  "display_name": "Vayrax Lane 004: Correction Node",
+  "description": "Pass 003 cloned Vayrax lane event using the safe Lane 001 pattern: existing anchor object, one hidden 500-unit activate_event_on_range listener, explicit enemy install before profile popup, READY button with 30-unit range, battle on next step, victory popup, gives_item reward, then complete.",
+  "event_state": "seeded",
+  "current_step": "vayrax_lane_004_intro_popup",
+  "start_on_ready": false,
+  "seed_once": true,
+  "can_cancel_event": true,
+  "tier": 1,
+  "anchor_star": {
+    "star_id": "star_24_tier_1_local",
+    "star_name": "Aster Local 04",
+    "sector_pos": [
+      2,
+      -1,
+      -1
+    ],
+    "local_pos": [
+      500,
+      500,
+      500
+    ],
+    "required": true,
+    "create_if_missing": false,
+    "tier": 1
+  },
+  "event_listeners": {
+    "vayrax_lane_004_listener": {
+      "owner_type": "beacon",
+      "object_type": "beacon",
+      "object_id": "vayrax_lane_004_listener",
+      "display_name": "Vayrax Lane 004 Signal Listener",
+      "title": "Vayrax Lane 004 Signal Listener",
+      "beacon_type": "hidden_event_listener_beacon",
+      "position_mode": "absolute",
+      "sector_pos": [
+        2,
+        -1,
+        -1
+      ],
+      "local_pos": [
+        500,
+        500,
+        500
+      ],
+      "parent_star_id": "star_24_tier_1_local",
+      "parent_star_name": "Aster Local 04",
+      "listener_type": "activate_event_on_range",
+      "trigger_event_id": "vayrax_lane_004_event",
+      "start_step": "vayrax_lane_004_intro_popup",
+      "trigger_range": 500,
+      "trigger_once": true,
+      "triggered": false,
+      "trigger_popup_message": "",
+      "suppress_trigger_popup": true,
+      "triggered_message": "Vayrax Lane 004 contact resolved near Aster Local 04.",
+      "message": "A Vayrax lane signal hides in the normal scan noise around Aster Local 04.",
+      "is_visible": false,
+      "is_discovered": false,
+      "is_completed": false,
+      "labels": [
+        "beacon",
+        "event_listener",
+        "activate_event_on_range",
+        "vayrax",
+        "vayrax_lane",
+        "vayrax_lane_004",
+        "hidden_listener",
+        "invisible_listener",
+        "camouflaged_signal",
+        "tier_1",
+        "star_24_tier_1_local",
+        "star_anchor_listener",
+        "authored_object"
+      ]
+    }
+  },
+  "event_objects": {
+    "star_24_tier_1_local": {
+      "owner_type": "star",
+      "object_type": "star",
+      "object_id": "star_24_tier_1_local",
+      "display_name": "Aster Local 04",
+      "title": "Aster Local 04",
+      "scan_name": "Aster Local 04",
+      "scan_description": "Existing anchor contact for Aster Local 04.",
+      "position_mode": "absolute",
+      "sector_pos": [
+        2,
+        -1,
+        -1
+      ],
+      "local_pos": [
+        500,
+        500,
+        500
+      ],
+      "tier": 1,
+      "interaction_type": "signal_anchor",
+      "event_id": "vayrax_lane_004_event",
+      "active_event_id": "vayrax_lane_004_event",
+      "has_event": true,
+      "event_interactable": true,
+      "event_ops_enabled": true,
+      "is_visible": true,
+      "is_discovered": false,
+      "star_name": "Aster Local 04",
+      "star_type": "F",
+      "brightness": 1.22,
+      "size": 1.17,
+      "star_index": 24,
+      "anchor_role": "tier_1_local_anchor",
+      "labels": [
+        "star",
+        "world_seed",
+        "event_anchor",
+        "vayrax_lane",
+        "vayrax_lane_004",
+        "tier_1",
+        "star_24_tier_1_local",
+        "star_anchor",
+        "authored_object",
+        "event_object"
+      ]
+    },
+    "vayrax_lane_004_drone": {
+      "owner_type": "enemy",
+      "object_type": "enemy",
+      "object_id": "vayrax_lane_004_drone",
+      "enemy_id": "vayrax_lane_004_drone",
+      "display_name": "Vayrax Drone 004",
+      "name": "Vayrax Drone 004",
+      "blueprint_id": "vayrax_drone_004",
+      "spawn_on_step": "vayrax_lane_004_enemy_profile_popup",
+      "position_mode": "absolute",
+      "sector_pos": [
+        2,
+        -1,
+        -1
+      ],
+      "local_pos": [
+        630.0,
+        510.0,
+        500.0
+      ],
+      "parent_star_id": "star_24_tier_1_local",
+      "parent_star_name": "Aster Local 04",
+      "event_id": "vayrax_lane_004_event",
+      "active_event_id": "vayrax_lane_004_event",
+      "required_step": "vayrax_lane_004_enemy_profile_popup",
+      "event_step": "vayrax_lane_004_enemy_profile_popup",
+      "current_step": "vayrax_lane_004_enemy_profile_popup",
+      "has_event": true,
+      "labels": [
+        "enemy",
+        "event_enemy",
+        "vayrax",
+        "drone",
+        "vayrax_drone_004",
+        "vayrax_lane",
+        "vayrax_lane_004",
+        "tier_1",
+        "star_24_tier_1_local",
+        "near_star_24_tier_1_local"
+      ],
+      "event_tags": [
+        "vayrax_lane_004_event",
+        "vayrax",
+        "vayrax_lane_004",
+        "lane_battle"
+      ],
+      "overrides": {
+        "hp": 215,
+        "max_hp": 215,
+        "hull": 215,
+        "max_hull": 215,
+        "attack": 17,
+        "energy_max": 205.0,
+        "max_energy": 205,
+        "energy": 205,
+        "primary": "vayrax_needler_lance_mk1",
+        "primary_weapon": "vayrax_needler_lance_mk1",
+        "secondary": "vayrax_splitter_rail_mk1",
+        "secondary_weapon": "vayrax_splitter_rail_mk1",
+        "shield": "vayrax_flicker_screen_mk1",
+        "shield_item": "vayrax_flicker_screen_mk1",
+        "consumable": "repair_kit",
+        "consumable_item": "repair_kit",
+        "item_stacks": {
+          "small_kinetic_rounds": 10,
+          "repair_kit": 1
+        },
+        "behavior_profile": "smart_guy_balanced",
+        "behavior_values": {
+          "decision_cooldown": 1.65,
+          "low_hull_evade_threshold": 0.28,
+          "repair_hull_threshold": 0.32,
+          "low_energy_secondary_threshold": 0.28
+        },
+        "reward": [
+          "iron",
+          "nickel",
+          "small_kinetic_rounds"
+        ],
+        "reward_items": [
+          "iron",
+          "nickel",
+          "small_kinetic_rounds"
+        ],
+        "ship_name": "Vayrax Drone 004"
+      },
+      "is_visible": true,
+      "is_discovered": false
+    }
+  },
+  "required_items": [],
+  "reward_packet": {
+    "credits": 0,
+    "items": [],
+    "blueprints": [],
+    "lore": [],
+    "unlocks": [],
+    "message": "Vayrax Lane 004 complete. Reward claimed with gives_item."
+  },
+  "steps": {
+    "vayrax_lane_004_intro_popup": {
+      "objective_text": "A Vayrax lane signal has resolved near Aster Local 04.",
+      "target_object_id": "star_24_tier_1_local",
+      "target_owner_type": "star",
+      "interaction_type": "story_popup",
+      "next_step": "vayrax_lane_004_enemy_profile_popup",
+      "on_enter": [
+        {
+          "op": "show_story_popup",
+          "title": "CORRECTION NODE: LOUD SIGNAL",
+          "text": "[b]VAYRAX DRONE 004[/b]\n\n\"Vayrax sequence four: correction begins.\"\n\n\"Hold still for clean indexing.\"\n\n\"Your signal is louder than your armor.\"",
+          "close_mode": "button",
+          "next_step_on_close": "vayrax_lane_004_enemy_profile_popup",
+          "popup_size": {
+            "x": 560,
+            "y": 360
+          }
+        }
+      ]
+    },
+    "vayrax_lane_004_enemy_profile_popup": {
+      "objective_text": "Review the Vayrax Drone 004 contact profile.",
+      "target_object_id": "vayrax_lane_004_drone",
+      "target_owner_type": "enemy",
+      "interaction_type": "story_popup",
+      "next_step": "vayrax_lane_004_ready_to_fight",
+      "on_enter": [
+        {
+          "op": "install_event_object",
+          "object_id": "vayrax_lane_004_drone"
+        },
+        {
+          "op": "show_story_popup",
+          "title": "VAYRAX CONTACT PROFILE",
+          "text": "[b]Enemy Handler Source[/b]\n`vayrax_drone_004`\n\n[b]Battle Object[/b]\n`vayrax_lane_004_drone`\n\n[b]Behavior Profile[/b]\n`smart_guy_balanced`\n\n[b]Stats[/b]\nHull: 215 / 215\nHP: 215\nEnergy Max: 205\n\n[b]Loadout[/b]\nPrimary: `vayrax_needler_lance_mk1`\nSecondary: `vayrax_splitter_rail_mk1`\nShield: `vayrax_flicker_screen_mk1`\nConsumable: `repair_kit`\nItem Stacks: `small_kinetic_rounds` x10, `repair_kit` x1\n\n[b]Reward On Victory[/b]\n`basic_shield_mk1_blueprint`",
+          "close_mode": "button",
+          "next_step_on_close": "vayrax_lane_004_ready_to_fight",
+          "popup_size": {
+            "x": 620,
+            "y": 500
+          }
+        }
+      ]
+    },
+    "vayrax_lane_004_ready_to_fight": {
+      "objective_text": "Move within 30 units of Vayrax Drone 004, then press READY to engage.",
+      "target_object_id": "vayrax_lane_004_drone",
+      "target_owner_type": "enemy",
+      "interaction_type": "handoff",
+      "interaction_range": 30,
+      "next_step": "vayrax_lane_004_start_battle",
+      "actions": [
+        {
+          "button_id": "vayrax_lane_004_ready_button",
+          "label": "READY",
+          "action_id": "download_beacon_data",
+          "range": 30
+        }
+      ],
+      "success_text": "Vayrax Lane 004 engagement accepted."
+    },
+    "vayrax_lane_004_start_battle": {
+      "objective_text": "Battle: Vayrax Drone 004.",
+      "target_object_id": "vayrax_lane_004_drone",
+      "target_owner_type": "enemy",
+      "enemy_id": "vayrax_lane_004_drone",
+      "interaction_type": "hunt",
+      "interaction_range": 30,
+      "complete_on_battle_victory": true,
+      "next_step": "vayrax_lane_004_victory_popup",
+      "on_enter": [
+        {
+          "op": "start_battle",
+          "enemy_id": "vayrax_lane_004_drone",
+          "entry_reason": "vayrax_lane_004_correction_node",
+          "message": "Vayrax Drone 004 engaged."
+        }
+      ],
+      "on_battle_victory": [
+        {
+          "op": "write_log",
+          "message": "Vayrax Lane 004 defeated: Correction Node."
+        },
+        {
+          "op": "advance_step",
+          "next_step": "vayrax_lane_004_victory_popup"
+        }
+      ]
+    },
+    "vayrax_lane_004_victory_popup": {
+      "objective_text": "Review Vayrax Lane 004 victory report.",
+      "interaction_type": "story_popup",
+      "next_step": "vayrax_lane_004_claim_reward",
+      "on_enter": [
+        {
+          "op": "show_story_popup",
+          "title": "VAYRAX LANE 004 CLEARED",
+          "text": "[b]CORRECTION NODE DEFEATED[/b]\n\nThe Vayrax lane signal collapses into local static.\n\nReward ready:\n`basic_shield_mk1_blueprint`",
+          "close_mode": "button",
+          "next_step_on_close": "vayrax_lane_004_claim_reward",
+          "popup_size": {
+            "x": 560,
+            "y": 360
+          }
+        }
+      ]
+    },
+    "vayrax_lane_004_claim_reward": {
+      "objective_text": "Press COMPLETE near Aster Local 04 to claim the Basic Shield MK1 Blueprint and clear Vayrax Lane 004.",
+      "target_object_id": "star_24_tier_1_local",
+      "target_owner_type": "star",
+      "interaction_type": "handoff",
+      "interaction_range": 9999,
+      "next_step": "completed",
+      "actions": [
+        {
+          "button_id": "vayrax_lane_004_complete_button",
+          "label": "COMPLETE",
+          "action_id": "download_beacon_data",
+          "range": 9999
+        }
+      ],
+      "gives_item": "basic_shield_mk1_blueprint",
+      "success_text": "Basic Shield MK1 Blueprint received. Vayrax Lane 004 complete."
+    },
+    "completed": {
+      "objective_text": "Vayrax Lane 004 complete.",
+      "interaction_type": "complete",
+      "is_complete_step": true,
+      "complete_event": true
+    }
+  },
+  "handoff_notes": [
+    "Pass 003: lane 004 generated from the tested Lane 001 Pass 002 pattern.",
+    "Uses one hidden activate_event_on_range listener at 500 units. No visible beacon anchor is created.",
+    "The existing anchor object is copied into event_objects so range checks can resolve the target.",
+    "The drone is explicitly installed with install_event_object before the profile popup.",
+    "Reward is granted by gives_item on the COMPLETE handoff step; reward_packet.blueprints intentionally remains empty."
+  ]
+}

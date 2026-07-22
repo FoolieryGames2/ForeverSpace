@@ -1,0 +1,3788 @@
+{
+  "seed_id": "anchor_stars_and_planets_v1",
+  "schema_version": 1,
+  "apply_on_new_universe": true,
+  "description": "Thirty authored anchor stars. The first eight form a straight tier spine spaced 10 sectors apart with a small up/down wobble. Existing nearby anchors are moved near their matching tier pockets. Ten new local stars are added around Tier 1 for the first playable region. Existing authored planets remain parented to their anchor stars.",
+  "objects": {
+	"tier_1_anchor_star": {
+	  "owner_type": "star",
+	  "object_id": "tier_1_anchor_star",
+	  "display_name": "Tier 1 Star",
+	  "star_name": "Tier 1 Star",
+	  "star_type": "K",
+	  "sector_pos": [
+		0,
+		0,
+		0
+	  ],
+	  "local_pos": [
+		500,
+		500,
+		500
+	  ],
+	  "brightness": 1.13,
+	  "size": 1.27,
+	  "has_event": false,
+	  "tier": 1,
+	  "star_index": 1,
+	  "anchor_role": "tier_spine",
+	  "labels": [
+		"star",
+		"world_seed",
+		"story_anchor",
+		"authored_object",
+		"tier_spine",
+        "tier_1"
+	  ]
+	},
+	"tier_2_anchor_star": {
+	  "owner_type": "star",
+	  "object_id": "tier_2_anchor_star",
+	  "display_name": "Tier 2 Star",
+	  "star_name": "Tier 2 Star",
+	  "star_type": "G",
+	  "sector_pos": [
+		10,
+		1,
+		0
+	  ],
+	  "local_pos": [
+		500,
+		500,
+		500
+	  ],
+	  "brightness": 1.21,
+	  "size": 1.39,
+	  "has_event": false,
+	  "tier": 2,
+	  "star_index": 2,
+	  "anchor_role": "tier_spine",
+	  "labels": [
+		"star",
+		"world_seed",
+		"story_anchor",
+		"authored_object",
+		"tier_spine",
+        "tier_2"
+	  ]
+	},
+	"tier_3_anchor_star": {
+	  "owner_type": "star",
+	  "object_id": "tier_3_anchor_star",
+	  "display_name": "Tier 3 Star",
+	  "star_name": "Tier 3 Star",
+	  "star_type": "M",
+	  "sector_pos": [
+		20,
+		-1,
+		0
+	  ],
+	  "local_pos": [
+		500,
+		500,
+		500
+	  ],
+	  "brightness": 1.29,
+	  "size": 1.51,
+	  "has_event": false,
+	  "tier": 3,
+	  "star_index": 3,
+	  "anchor_role": "tier_spine",
+	  "labels": [
+		"star",
+		"world_seed",
+		"story_anchor",
+		"authored_object",
+		"tier_spine",
+        "tier_3"
+	  ]
+	},
+	"tier_4_anchor_star": {
+	  "owner_type": "star",
+	  "object_id": "tier_4_anchor_star",
+	  "display_name": "Tier 4 Star",
+	  "star_name": "Tier 4 Star",
+	  "star_type": "F",
+	  "sector_pos": [
+		30,
+		2,
+		0
+	  ],
+	  "local_pos": [
+		500,
+		500,
+		500
+	  ],
+	  "brightness": 1.37,
+	  "size": 1.15,
+	  "has_event": false,
+	  "tier": 4,
+	  "star_index": 4,
+	  "anchor_role": "tier_spine",
+	  "labels": [
+		"star",
+		"world_seed",
+		"story_anchor",
+		"authored_object",
+		"tier_spine",
+        "tier_4"
+	  ]
+	},
+	"tier_5_anchor_star": {
+	  "owner_type": "star",
+	  "object_id": "tier_5_anchor_star",
+	  "display_name": "Tier 5 Star",
+	  "star_name": "Tier 5 Star",
+	  "star_type": "K",
+	  "sector_pos": [
+		40,
+		-2,
+		0
+	  ],
+	  "local_pos": [
+		500,
+		500,
+		500
+	  ],
+	  "brightness": 1.05,
+	  "size": 1.27,
+	  "has_event": false,
+	  "tier": 5,
+	  "star_index": 5,
+	  "anchor_role": "tier_spine",
+	  "labels": [
+		"star",
+		"world_seed",
+		"story_anchor",
+		"authored_object",
+		"tier_spine",
+        "tier_5"
+	  ]
+	},
+	"tier_6_anchor_star": {
+	  "owner_type": "star",
+	  "object_id": "tier_6_anchor_star",
+	  "display_name": "Tier 6 Star",
+	  "star_name": "Tier 6 Star",
+	  "star_type": "G",
+	  "sector_pos": [
+		50,
+		3,
+		0
+	  ],
+	  "local_pos": [
+		500,
+		500,
+		500
+	  ],
+	  "brightness": 1.13,
+	  "size": 1.39,
+	  "has_event": false,
+	  "tier": 6,
+	  "star_index": 6,
+	  "anchor_role": "tier_spine",
+	  "labels": [
+		"star",
+		"world_seed",
+		"story_anchor",
+		"authored_object",
+		"tier_spine",
+        "tier_6"
+	  ]
+	},
+	"tier_7_anchor_star": {
+	  "owner_type": "star",
+	  "object_id": "tier_7_anchor_star",
+	  "display_name": "Tier 7 Star",
+	  "star_name": "Tier 7 Star",
+	  "star_type": "M",
+	  "sector_pos": [
+		60,
+		-3,
+		0
+	  ],
+	  "local_pos": [
+		500,
+		500,
+		500
+	  ],
+	  "brightness": 1.21,
+	  "size": 1.51,
+	  "has_event": false,
+	  "tier": 7,
+	  "star_index": 7,
+	  "anchor_role": "tier_spine",
+	  "labels": [
+		"star",
+		"world_seed",
+		"story_anchor",
+		"authored_object",
+		"tier_spine",
+        "tier_7"
+	  ]
+	},
+	"tier_8_anchor_star": {
+	  "owner_type": "star",
+	  "object_id": "tier_8_anchor_star",
+	  "display_name": "Tier 8 Star",
+	  "star_name": "Tier 8 Star",
+	  "star_type": "A",
+	  "sector_pos": [
+		70,
+		1,
+		0
+	  ],
+	  "local_pos": [
+		500,
+		500,
+		500
+	  ],
+	  "brightness": 1.29,
+	  "size": 1.15,
+	  "has_event": false,
+	  "tier": 8,
+	  "star_index": 8,
+	  "anchor_role": "tier_spine",
+	  "labels": [
+		"star",
+		"world_seed",
+		"story_anchor",
+		"authored_object",
+		"tier_spine",
+        "tier_8"
+	  ]
+	},
+	"star_09_anchor": {
+	  "owner_type": "star",
+	  "object_id": "star_09_anchor",
+	  "display_name": "Star 9",
+	  "star_name": "Star 9",
+	  "star_type": "K",
+	  "sector_pos": [
+		2,
+		-2,
+		0
+	  ],
+	  "local_pos": [
+		500,
+		500,
+		500
+	  ],
+	  "brightness": 1.37,
+	  "size": 1.27,
+	  "has_event": false,
+	  "tier": 1,
+	  "star_index": 9,
+	  "anchor_role": "nearby_anchor",
+	  "labels": [
+		"star",
+		"world_seed",
+		"story_anchor",
+		"authored_object",
+		"nearby_anchor",
+        "near_tier_1"
+	  ]
+	},
+	"star_10_anchor": {
+	  "owner_type": "star",
+	  "object_id": "star_10_anchor",
+	  "display_name": "Star 10",
+	  "star_name": "Star 10",
+	  "star_type": "G",
+	  "sector_pos": [
+		11,
+		-2,
+		0
+	  ],
+	  "local_pos": [
+		500,
+		500,
+		500
+	  ],
+	  "brightness": 1.05,
+	  "size": 1.39,
+	  "has_event": false,
+	  "tier": 2,
+	  "star_index": 10,
+	  "anchor_role": "nearby_anchor",
+	  "labels": [
+		"star",
+		"world_seed",
+		"story_anchor",
+		"authored_object",
+		"nearby_anchor",
+        "near_tier_2"
+	  ]
+	},
+	"star_11_anchor": {
+	  "owner_type": "star",
+	  "object_id": "star_11_anchor",
+	  "display_name": "Star 11",
+	  "star_name": "Star 11",
+	  "star_type": "M",
+	  "sector_pos": [
+		21,
+		2,
+		0
+	  ],
+	  "local_pos": [
+		500,
+		500,
+		500
+	  ],
+	  "brightness": 1.13,
+	  "size": 1.51,
+	  "has_event": false,
+	  "tier": 3,
+	  "star_index": 11,
+	  "anchor_role": "nearby_anchor",
+	  "labels": [
+		"star",
+		"world_seed",
+		"story_anchor",
+		"authored_object",
+		"nearby_anchor",
+        "near_tier_3"
+	  ]
+	},
+	"star_12_anchor": {
+	  "owner_type": "star",
+	  "object_id": "star_12_anchor",
+	  "display_name": "Star 12",
+	  "star_name": "Star 12",
+	  "star_type": "F",
+	  "sector_pos": [
+		29,
+		-1,
+		0
+	  ],
+	  "local_pos": [
+		500,
+		500,
+		500
+	  ],
+	  "brightness": 1.21,
+	  "size": 1.15,
+	  "has_event": false,
+	  "tier": 4,
+	  "star_index": 12,
+	  "anchor_role": "nearby_anchor",
+	  "labels": [
+		"star",
+		"world_seed",
+		"story_anchor",
+		"authored_object",
+		"nearby_anchor",
+        "near_tier_4"
+	  ]
+	},
+	"star_13_anchor": {
+	  "owner_type": "star",
+	  "object_id": "star_13_anchor",
+	  "display_name": "Star 13",
+	  "star_name": "Star 13",
+	  "star_type": "K",
+	  "sector_pos": [
+		41,
+		1,
+		0
+	  ],
+	  "local_pos": [
+		500,
+		500,
+		500
+	  ],
+	  "brightness": 1.29,
+	  "size": 1.27,
+	  "has_event": false,
+	  "tier": 5,
+	  "star_index": 13,
+	  "anchor_role": "nearby_anchor",
+	  "labels": [
+		"star",
+		"world_seed",
+		"story_anchor",
+		"authored_object",
+		"nearby_anchor",
+        "near_tier_5"
+	  ]
+	},
+	"star_14_anchor": {
+	  "owner_type": "star",
+	  "object_id": "star_14_anchor",
+	  "display_name": "Star 14",
+	  "star_name": "Star 14",
+	  "star_type": "G",
+	  "sector_pos": [
+		52,
+		1,
+		0
+	  ],
+	  "local_pos": [
+		500,
+		500,
+		500
+	  ],
+	  "brightness": 1.37,
+	  "size": 1.39,
+	  "has_event": false,
+	  "tier": 6,
+	  "star_index": 14,
+	  "anchor_role": "nearby_anchor",
+	  "labels": [
+		"star",
+		"world_seed",
+		"story_anchor",
+		"authored_object",
+		"nearby_anchor",
+        "near_tier_6"
+	  ]
+	},
+	"star_15_anchor": {
+	  "owner_type": "star",
+	  "object_id": "star_15_anchor",
+	  "display_name": "Star 15",
+	  "star_name": "Star 15",
+	  "star_type": "M",
+	  "sector_pos": [
+		58,
+		-1,
+		0
+	  ],
+	  "local_pos": [
+		500,
+		500,
+		500
+	  ],
+	  "brightness": 1.05,
+	  "size": 1.51,
+	  "has_event": false,
+	  "tier": 7,
+	  "star_index": 15,
+	  "anchor_role": "nearby_anchor",
+	  "labels": [
+		"star",
+		"world_seed",
+		"story_anchor",
+		"authored_object",
+		"nearby_anchor",
+        "near_tier_7"
+	  ]
+	},
+	"star_16_anchor": {
+	  "owner_type": "star",
+	  "object_id": "star_16_anchor",
+	  "display_name": "Star 16",
+	  "star_name": "Star 16",
+	  "star_type": "A",
+	  "sector_pos": [
+		72,
+		3,
+		0
+	  ],
+	  "local_pos": [
+		500,
+		500,
+		500
+	  ],
+	  "brightness": 1.13,
+	  "size": 1.15,
+	  "has_event": false,
+	  "tier": 8,
+	  "star_index": 16,
+	  "anchor_role": "nearby_anchor",
+	  "labels": [
+		"star",
+		"world_seed",
+		"story_anchor",
+		"authored_object",
+		"nearby_anchor",
+        "near_tier_8"
+	  ]
+	},
+	"star_17_anchor": {
+	  "owner_type": "star",
+	  "object_id": "star_17_anchor",
+	  "display_name": "Star 17",
+	  "star_name": "Star 17",
+	  "star_type": "K",
+	  "sector_pos": [
+		12,
+		2,
+		1
+	  ],
+	  "local_pos": [
+		500,
+		500,
+		500
+	  ],
+	  "brightness": 1.21,
+	  "size": 1.27,
+	  "has_event": false,
+	  "tier": 2,
+	  "star_index": 17,
+	  "anchor_role": "nearby_anchor",
+	  "labels": [
+		"star",
+		"world_seed",
+		"story_anchor",
+		"authored_object",
+		"nearby_anchor",
+        "near_tier_2"
+	  ]
+	},
+	"star_18_anchor": {
+	  "owner_type": "star",
+	  "object_id": "star_18_anchor",
+	  "display_name": "Star 18",
+	  "star_name": "Star 18",
+	  "star_type": "G",
+	  "sector_pos": [
+		31,
+		0,
+		1
+	  ],
+	  "local_pos": [
+		500,
+		500,
+		500
+	  ],
+	  "brightness": 1.29,
+	  "size": 1.39,
+	  "has_event": false,
+	  "tier": 4,
+	  "star_index": 18,
+	  "anchor_role": "nearby_anchor",
+	  "labels": [
+		"star",
+		"world_seed",
+		"story_anchor",
+		"authored_object",
+		"nearby_anchor",
+        "near_tier_4"
+	  ]
+	},
+	"star_19_anchor": {
+	  "owner_type": "star",
+	  "object_id": "star_19_anchor",
+	  "display_name": "Star 19",
+	  "star_name": "Star 19",
+	  "star_type": "M",
+	  "sector_pos": [
+		51,
+		5,
+		-1
+	  ],
+	  "local_pos": [
+		500,
+		500,
+		500
+	  ],
+	  "brightness": 1.37,
+	  "size": 1.51,
+	  "has_event": false,
+	  "tier": 6,
+	  "star_index": 19,
+	  "anchor_role": "nearby_anchor",
+	  "labels": [
+		"star",
+		"world_seed",
+		"story_anchor",
+		"authored_object",
+		"nearby_anchor",
+        "near_tier_6"
+	  ]
+	},
+	"star_20_anchor": {
+	  "owner_type": "star",
+	  "object_id": "star_20_anchor",
+	  "display_name": "Star 20",
+	  "star_name": "Star 20",
+	  "star_type": "F",
+	  "sector_pos": [
+		69,
+		-1,
+		-1
+	  ],
+	  "local_pos": [
+		500,
+		500,
+		500
+	  ],
+	  "brightness": 1.05,
+	  "size": 1.15,
+	  "has_event": false,
+	  "tier": 8,
+	  "star_index": 20,
+	  "anchor_role": "nearby_anchor",
+	  "labels": [
+		"star",
+		"world_seed",
+		"story_anchor",
+		"authored_object",
+		"nearby_anchor",
+        "near_tier_8"
+	  ]
+	},
+	"star_21_tier_1_local": {
+	  "owner_type": "star",
+	  "object_id": "star_21_tier_1_local",
+	  "display_name": "Aster Local 01",
+	  "star_name": "Aster Local 01",
+	  "star_type": "K",
+	  "sector_pos": [
+		-2,
+		1,
+		0
+	  ],
+	  "local_pos": [
+		500,
+		500,
+		500
+	  ],
+	  "brightness": 1.08,
+	  "size": 1.18,
+	  "has_event": false,
+	  "tier": 1,
+	  "star_index": 21,
+	  "anchor_role": "tier_1_local_anchor",
+	  "labels": [
+		"star",
+		"world_seed",
+		"authored_object",
+		"tier_1_local_anchor",
+		"near_tier_1",
+        "tier_1"
+	  ]
+	},
+	"star_22_tier_1_local": {
+	  "owner_type": "star",
+	  "object_id": "star_22_tier_1_local",
+	  "display_name": "Aster Local 02",
+	  "star_name": "Aster Local 02",
+	  "star_type": "M",
+	  "sector_pos": [
+		-1,
+		-2,
+		0
+	  ],
+	  "local_pos": [
+		500,
+		500,
+		500
+	  ],
+	  "brightness": 0.96,
+	  "size": 1.05,
+	  "has_event": false,
+	  "tier": 1,
+	  "star_index": 22,
+	  "anchor_role": "tier_1_local_anchor",
+	  "labels": [
+		"star",
+		"world_seed",
+		"authored_object",
+		"tier_1_local_anchor",
+		"near_tier_1",
+        "tier_1"
+	  ]
+	},
+	"star_23_tier_1_local": {
+	  "owner_type": "star",
+	  "object_id": "star_23_tier_1_local",
+	  "display_name": "Aster Local 03",
+	  "star_name": "Aster Local 03",
+	  "star_type": "G",
+	  "sector_pos": [
+		1,
+		2,
+		1
+	  ],
+	  "local_pos": [
+		500,
+		500,
+		500
+	  ],
+	  "brightness": 1.16,
+	  "size": 1.24,
+	  "has_event": false,
+	  "tier": 1,
+	  "star_index": 23,
+	  "anchor_role": "tier_1_local_anchor",
+	  "labels": [
+		"star",
+		"world_seed",
+		"authored_object",
+		"tier_1_local_anchor",
+		"near_tier_1",
+        "tier_1"
+	  ]
+	},
+	"star_24_tier_1_local": {
+	  "owner_type": "star",
+	  "object_id": "star_24_tier_1_local",
+	  "display_name": "Aster Local 04",
+	  "star_name": "Aster Local 04",
+	  "star_type": "F",
+	  "sector_pos": [
+		2,
+		-1,
+		-1
+	  ],
+	  "local_pos": [
+		500,
+		500,
+		500
+	  ],
+	  "brightness": 1.22,
+	  "size": 1.17,
+	  "has_event": false,
+	  "tier": 1,
+	  "star_index": 24,
+	  "anchor_role": "tier_1_local_anchor",
+	  "labels": [
+		"star",
+		"world_seed",
+		"authored_object",
+		"tier_1_local_anchor",
+		"near_tier_1",
+        "tier_1"
+	  ]
+	},
+	"star_25_tier_1_local": {
+	  "owner_type": "star",
+	  "object_id": "star_25_tier_1_local",
+	  "display_name": "Aster Local 05",
+	  "star_name": "Aster Local 05",
+	  "star_type": "K",
+	  "sector_pos": [
+		3,
+		0,
+		1
+	  ],
+	  "local_pos": [
+		500,
+		500,
+		500
+	  ],
+	  "brightness": 1.04,
+	  "size": 1.21,
+	  "has_event": false,
+	  "tier": 1,
+	  "star_index": 25,
+	  "anchor_role": "tier_1_local_anchor",
+	  "labels": [
+		"star",
+		"world_seed",
+		"authored_object",
+		"tier_1_local_anchor",
+		"near_tier_1",
+        "tier_1"
+	  ]
+	},
+	"star_26_tier_1_local": {
+	  "owner_type": "star",
+	  "object_id": "star_26_tier_1_local",
+	  "display_name": "Aster Local 06",
+	  "star_name": "Aster Local 06",
+	  "star_type": "M",
+	  "sector_pos": [
+		-3,
+		-1,
+		1
+	  ],
+	  "local_pos": [
+		500,
+		500,
+		500
+	  ],
+	  "brightness": 0.92,
+	  "size": 1.08,
+	  "has_event": false,
+	  "tier": 1,
+	  "star_index": 26,
+	  "anchor_role": "tier_1_local_anchor",
+	  "labels": [
+		"star",
+		"world_seed",
+		"authored_object",
+		"tier_1_local_anchor",
+		"near_tier_1",
+        "tier_1"
+	  ]
+	},
+	"star_27_tier_1_local": {
+	  "owner_type": "star",
+	  "object_id": "star_27_tier_1_local",
+	  "display_name": "Aster Local 07",
+	  "star_name": "Aster Local 07",
+	  "star_type": "G",
+	  "sector_pos": [
+		0,
+		3,
+		-1
+	  ],
+	  "local_pos": [
+		500,
+		500,
+		500
+	  ],
+	  "brightness": 1.12,
+	  "size": 1.31,
+	  "has_event": false,
+	  "tier": 1,
+	  "star_index": 27,
+	  "anchor_role": "tier_1_local_anchor",
+	  "labels": [
+		"star",
+		"world_seed",
+		"authored_object",
+		"tier_1_local_anchor",
+		"near_tier_1",
+        "tier_1"
+	  ]
+	},
+	"star_28_tier_1_local": {
+	  "owner_type": "star",
+	  "object_id": "star_28_tier_1_local",
+	  "display_name": "Aster Local 08",
+	  "star_name": "Aster Local 08",
+	  "star_type": "K",
+	  "sector_pos": [
+		1,
+		-3,
+		0
+	  ],
+	  "local_pos": [
+		500,
+		500,
+		500
+	  ],
+	  "brightness": 1.0,
+	  "size": 1.16,
+	  "has_event": false,
+	  "tier": 1,
+	  "star_index": 28,
+	  "anchor_role": "tier_1_local_anchor",
+	  "labels": [
+		"star",
+		"world_seed",
+		"authored_object",
+		"tier_1_local_anchor",
+		"near_tier_1",
+        "tier_1"
+	  ]
+	},
+	"star_29_tier_1_local": {
+	  "owner_type": "star",
+	  "object_id": "star_29_tier_1_local",
+	  "display_name": "Aster Local 09",
+	  "star_name": "Aster Local 09",
+	  "star_type": "F",
+	  "sector_pos": [
+		-2,
+		3,
+		1
+	  ],
+	  "local_pos": [
+		500,
+		500,
+		500
+	  ],
+	  "brightness": 1.18,
+	  "size": 1.19,
+	  "has_event": false,
+	  "tier": 1,
+	  "star_index": 29,
+	  "anchor_role": "tier_1_local_anchor",
+	  "labels": [
+		"star",
+		"world_seed",
+		"authored_object",
+		"tier_1_local_anchor",
+		"near_tier_1",
+        "tier_1"
+	  ]
+	},
+	"star_30_tier_1_local": {
+	  "owner_type": "star",
+	  "object_id": "star_30_tier_1_local",
+	  "display_name": "Aster Local 10",
+	  "star_name": "Aster Local 10",
+	  "star_type": "M",
+	  "sector_pos": [
+		3,
+		2,
+		-1
+	  ],
+	  "local_pos": [
+		500,
+		500,
+		500
+	  ],
+	  "brightness": 0.98,
+	  "size": 1.09,
+	  "has_event": false,
+	  "tier": 1,
+	  "star_index": 30,
+	  "anchor_role": "tier_1_local_anchor",
+	  "labels": [
+		"star",
+		"world_seed",
+		"authored_object",
+		"tier_1_local_anchor",
+		"near_tier_1",
+        "tier_1"
+	  ]
+	},
+	"tier_1_anchor_star_planet_01": {
+	  "owner_type": "planet",
+	  "object_type": "planet",
+	  "object_id": "tier_1_anchor_star_planet_01",
+	  "display_name": "Tier 1 Star Planet 1",
+	  "title": "Tier 1 Star Planet 1",
+	  "scan_name": "Tier 1 Star Planet 1",
+	  "scan_description": "Authored anchor planet 1 orbiting Tier 1 Star.",
+	  "contact_text": "Orbital contact available. This is an authored anchor planet.",
+	  "position_mode": "anchor_offset",
+	  "anchor_star_id": "tier_1_anchor_star",
+	  "anchor_star_name": "Tier 1 Star",
+	  "parent_star_id": "tier_1_anchor_star",
+	  "parent_star_name": "Tier 1 Star",
+	  "sector_offset": [
+		0,
+		0,
+		0
+	  ],
+	  "local_offset": [
+		130.526,
+		34.426,
+		3.311
+	  ],
+	  "sector_pos": [
+		0,
+		0,
+		0
+	  ],
+	  "local_pos": [
+		630.5260000000001,
+		534.426,
+		503.311
+	  ],
+	  "tier": 1,
+	  "planet_type": "rocky",
+	  "planet_role": "anchor_planet",
+	  "population_state": "unsettled",
+	  "has_planet_interface": true,
+	  "can_land": false,
+	  "contact_range": 180,
+	  "planet_radius": 6,
+	  "orbit_radius": 140,
+	  "orbit_angle": 21.2,
+	  "services": [
+        "survey_contact"
+	  ],
+	  "labels": [
+		"planet",
+		"world_seed",
+		"story_seed",
+		"authored_object",
+		"anchor_planet",
+		"parent_tier_1_anchor_star",
+        "tier_1"
+	  ]
+	},
+	"tier_2_anchor_star_planet_01": {
+	  "owner_type": "planet",
+	  "object_type": "planet",
+	  "object_id": "tier_2_anchor_star_planet_01",
+	  "display_name": "Tier 2 Star Planet 1",
+	  "title": "Tier 2 Star Planet 1",
+	  "scan_name": "Tier 2 Star Planet 1",
+	  "scan_description": "Authored anchor planet 1 orbiting Tier 2 Star.",
+	  "contact_text": "Orbital contact available. This is an authored anchor planet.",
+	  "position_mode": "anchor_offset",
+	  "anchor_star_id": "tier_2_anchor_star",
+	  "anchor_star_name": "Tier 2 Star",
+	  "parent_star_id": "tier_2_anchor_star",
+	  "parent_star_name": "Tier 2 Star",
+	  "sector_offset": [
+		0,
+		0,
+		0
+	  ],
+	  "local_offset": [
+		103.386,
+		64.192,
+		6.509
+	  ],
+	  "sector_pos": [
+		10,
+		1,
+		0
+	  ],
+	  "local_pos": [
+		603.386,
+		564.192,
+		506.509
+	  ],
+	  "tier": 2,
+	  "planet_type": "colony_world",
+	  "planet_role": "anchor_planet",
+	  "population_state": "surveyed",
+	  "has_planet_interface": true,
+	  "can_land": false,
+	  "contact_range": 180,
+	  "planet_radius": 6,
+	  "orbit_radius": 140,
+	  "orbit_angle": 42.4,
+	  "services": [
+        "survey_contact"
+	  ],
+	  "labels": [
+		"planet",
+		"world_seed",
+		"story_seed",
+		"authored_object",
+		"anchor_planet",
+		"parent_tier_2_anchor_star",
+        "tier_2"
+	  ]
+	},
+	"tier_2_anchor_star_planet_02": {
+	  "owner_type": "planet",
+	  "object_type": "planet",
+	  "object_id": "tier_2_anchor_star_planet_02",
+	  "display_name": "Tier 2 Star Planet 2",
+	  "title": "Tier 2 Star Planet 2",
+	  "scan_name": "Tier 2 Star Planet 2",
+	  "scan_description": "Authored anchor planet 2 orbiting Tier 2 Star.",
+	  "contact_text": "Orbital contact available. This is an authored anchor planet.",
+	  "position_mode": "anchor_offset",
+	  "anchor_star_id": "tier_2_anchor_star",
+	  "anchor_star_name": "Tier 2 Star",
+	  "parent_star_id": "tier_2_anchor_star",
+	  "parent_star_name": "Tier 2 Star",
+	  "sector_offset": [
+		0,
+		0,
+		0
+	  ],
+	  "local_offset": [
+		-136.617,
+		-84.825,
+		58.782
+	  ],
+	  "sector_pos": [
+		10,
+		1,
+		0
+	  ],
+	  "local_pos": [
+		363.38300000000004,
+		415.175,
+		558.782
+	  ],
+	  "tier": 2,
+	  "planet_type": "ice",
+	  "planet_role": "anchor_planet",
+	  "population_state": "refuge",
+	  "has_planet_interface": true,
+	  "can_land": false,
+	  "contact_range": 180,
+	  "planet_radius": 7,
+	  "orbit_radius": 185,
+	  "orbit_angle": 222.4,
+	  "services": [
+        "survey_contact"
+	  ],
+	  "labels": [
+		"planet",
+		"world_seed",
+		"story_seed",
+		"authored_object",
+		"anchor_planet",
+		"parent_tier_2_anchor_star",
+        "tier_2"
+	  ]
+	},
+	"tier_3_anchor_star_planet_01": {
+	  "owner_type": "planet",
+	  "object_type": "planet",
+	  "object_id": "tier_3_anchor_star_planet_01",
+	  "display_name": "Tier 3 Star Planet 1",
+	  "title": "Tier 3 Star Planet 1",
+	  "scan_name": "Tier 3 Star Planet 1",
+	  "scan_description": "Authored anchor planet 1 orbiting Tier 3 Star.",
+	  "contact_text": "Orbital contact available. This is an authored anchor planet.",
+	  "position_mode": "anchor_offset",
+	  "anchor_star_id": "tier_3_anchor_star",
+	  "anchor_star_name": "Tier 3 Star",
+	  "parent_star_id": "tier_3_anchor_star",
+	  "parent_star_name": "Tier 3 Star",
+	  "sector_offset": [
+		0,
+		0,
+		0
+	  ],
+	  "local_offset": [
+		62.253,
+		85.271,
+		9.485
+	  ],
+	  "sector_pos": [
+		20,
+		-1,
+		0
+	  ],
+	  "local_pos": [
+		562.253,
+		585.271,
+		509.485
+	  ],
+	  "tier": 3,
+	  "planet_type": "ice",
+	  "planet_role": "anchor_planet",
+	  "population_state": "refuge",
+	  "has_planet_interface": true,
+	  "can_land": false,
+	  "contact_range": 180,
+	  "planet_radius": 6,
+	  "orbit_radius": 140,
+	  "orbit_angle": 63.6,
+	  "services": [
+        "survey_contact"
+	  ],
+	  "labels": [
+		"planet",
+		"world_seed",
+		"story_seed",
+		"authored_object",
+		"anchor_planet",
+		"parent_tier_3_anchor_star",
+        "tier_3"
+	  ]
+	},
+	"tier_3_anchor_star_planet_02": {
+	  "owner_type": "planet",
+	  "object_type": "planet",
+	  "object_id": "tier_3_anchor_star_planet_02",
+	  "display_name": "Tier 3 Star Planet 2",
+	  "title": "Tier 3 Star Planet 2",
+	  "scan_name": "Tier 3 Star Planet 2",
+	  "scan_description": "Authored anchor planet 2 orbiting Tier 3 Star.",
+	  "contact_text": "Orbital contact available. This is an authored anchor planet.",
+	  "position_mode": "anchor_offset",
+	  "anchor_star_id": "tier_3_anchor_star",
+	  "anchor_star_name": "Tier 3 Star",
+	  "parent_star_id": "tier_3_anchor_star",
+	  "parent_star_name": "Tier 3 Star",
+	  "sector_offset": [
+		0,
+		0,
+		0
+	  ],
+	  "local_offset": [
+		-184.635,
+		-7.895,
+		59.991
+	  ],
+	  "sector_pos": [
+		20,
+		-1,
+		0
+	  ],
+	  "local_pos": [
+		315.365,
+		492.105,
+		559.991
+	  ],
+	  "tier": 3,
+	  "planet_type": "desert",
+	  "planet_role": "anchor_planet",
+	  "population_state": "outpost",
+	  "has_planet_interface": true,
+	  "can_land": false,
+	  "contact_range": 180,
+	  "planet_radius": 7,
+	  "orbit_radius": 185,
+	  "orbit_angle": 183.6,
+	  "services": [
+        "survey_contact"
+	  ],
+	  "labels": [
+		"planet",
+		"world_seed",
+		"story_seed",
+		"authored_object",
+		"anchor_planet",
+		"parent_tier_3_anchor_star",
+        "tier_3"
+	  ]
+	},
+	"tier_3_anchor_star_planet_03": {
+	  "owner_type": "planet",
+	  "object_type": "planet",
+	  "object_id": "tier_3_anchor_star_planet_03",
+	  "display_name": "Tier 3 Star Planet 3",
+	  "title": "Tier 3 Star Planet 3",
+	  "scan_name": "Tier 3 Star Planet 3",
+	  "scan_description": "Authored anchor planet 3 orbiting Tier 3 Star.",
+	  "contact_text": "Orbital contact available. This is an authored anchor planet.",
+	  "position_mode": "anchor_offset",
+	  "anchor_star_id": "tier_3_anchor_star",
+	  "anchor_star_name": "Tier 3 Star",
+	  "parent_star_id": "tier_3_anchor_star",
+	  "parent_star_name": "Tier 3 Star",
+	  "sector_offset": [
+		0,
+		0,
+		0
+	  ],
+	  "local_offset": [
+		127.274,
+		-130.271,
+		-33.494
+	  ],
+	  "sector_pos": [
+		20,
+		-1,
+		0
+	  ],
+	  "local_pos": [
+		627.274,
+		369.72900000000004,
+		466.506
+	  ],
+	  "tier": 3,
+	  "planet_type": "ocean",
+	  "planet_role": "anchor_planet",
+	  "population_state": "quiet",
+	  "has_planet_interface": true,
+	  "can_land": false,
+	  "contact_range": 180,
+	  "planet_radius": 5,
+	  "orbit_radius": 230,
+	  "orbit_angle": 303.6,
+	  "services": [
+        "survey_contact"
+	  ],
+	  "labels": [
+		"planet",
+		"world_seed",
+		"story_seed",
+		"authored_object",
+		"anchor_planet",
+		"parent_tier_3_anchor_star",
+        "tier_3"
+	  ]
+	},
+	"tier_4_anchor_star_planet_01": {
+	  "owner_type": "planet",
+	  "object_type": "planet",
+	  "object_id": "tier_4_anchor_star_planet_01",
+	  "display_name": "Tier 4 Star Planet 1",
+	  "title": "Tier 4 Star Planet 1",
+	  "scan_name": "Tier 4 Star Planet 1",
+	  "scan_description": "Authored anchor planet 1 orbiting Tier 4 Star.",
+	  "contact_text": "Orbital contact available. This is an authored anchor planet.",
+	  "position_mode": "anchor_offset",
+	  "anchor_star_id": "tier_4_anchor_star",
+	  "anchor_star_name": "Tier 4 Star",
+	  "parent_star_id": "tier_4_anchor_star",
+	  "parent_star_name": "Tier 4 Star",
+	  "sector_offset": [
+		0,
+		0,
+		0
+	  ],
+	  "local_offset": [
+		12.694,
+		94.808,
+		12.137
+	  ],
+	  "sector_pos": [
+		30,
+		2,
+		0
+	  ],
+	  "local_pos": [
+		512.694,
+		594.808,
+		512.137
+	  ],
+	  "tier": 4,
+	  "planet_type": "desert",
+	  "planet_role": "anchor_planet",
+	  "population_state": "outpost",
+	  "has_planet_interface": true,
+	  "can_land": false,
+	  "contact_range": 180,
+	  "planet_radius": 6,
+	  "orbit_radius": 140,
+	  "orbit_angle": 84.8,
+	  "services": [
+        "survey_contact"
+	  ],
+	  "labels": [
+		"planet",
+		"world_seed",
+		"story_seed",
+		"authored_object",
+		"anchor_planet",
+		"parent_tier_4_anchor_star",
+        "tier_4"
+	  ]
+	},
+	"tier_4_anchor_star_planet_02": {
+	  "owner_type": "planet",
+	  "object_type": "planet",
+	  "object_id": "tier_4_anchor_star_planet_02",
+	  "display_name": "Tier 4 Star Planet 2",
+	  "title": "Tier 4 Star Planet 2",
+	  "scan_name": "Tier 4 Star Planet 2",
+	  "scan_description": "Authored anchor planet 2 orbiting Tier 4 Star.",
+	  "contact_text": "Orbital contact available. This is an authored anchor planet.",
+	  "position_mode": "anchor_offset",
+	  "anchor_star_id": "tier_4_anchor_star",
+	  "anchor_star_name": "Tier 4 Star",
+	  "parent_star_id": "tier_4_anchor_star",
+	  "parent_star_name": "Tier 4 Star",
+	  "sector_offset": [
+		0,
+		0,
+		0
+	  ],
+	  "local_offset": [
+		-184.238,
+		11.406,
+		59.981
+	  ],
+	  "sector_pos": [
+		30,
+		2,
+		0
+	  ],
+	  "local_pos": [
+		315.762,
+		511.406,
+		559.981
+	  ],
+	  "tier": 4,
+	  "planet_type": "ocean",
+	  "planet_role": "anchor_planet",
+	  "population_state": "quiet",
+	  "has_planet_interface": true,
+	  "can_land": false,
+	  "contact_range": 180,
+	  "planet_radius": 7,
+	  "orbit_radius": 185,
+	  "orbit_angle": 174.8,
+	  "services": [
+        "survey_contact"
+	  ],
+	  "labels": [
+		"planet",
+		"world_seed",
+		"story_seed",
+		"authored_object",
+		"anchor_planet",
+		"parent_tier_4_anchor_star",
+        "tier_4"
+	  ]
+	},
+	"tier_4_anchor_star_planet_03": {
+	  "owner_type": "planet",
+	  "object_type": "planet",
+	  "object_id": "tier_4_anchor_star_planet_03",
+	  "display_name": "Tier 4 Star Planet 3",
+	  "title": "Tier 4 Star Planet 3",
+	  "scan_name": "Tier 4 Star Planet 3",
+	  "scan_description": "Authored anchor planet 3 orbiting Tier 4 Star.",
+	  "contact_text": "Orbital contact available. This is an authored anchor planet.",
+	  "position_mode": "anchor_offset",
+	  "anchor_star_id": "tier_4_anchor_star",
+	  "anchor_star_name": "Tier 4 Star",
+	  "parent_star_id": "tier_4_anchor_star",
+	  "parent_star_name": "Tier 4 Star",
+	  "sector_offset": [
+		0,
+		0,
+		0
+	  ],
+	  "local_offset": [
+		-20.854,
+		-155.756,
+		-28.708
+	  ],
+	  "sector_pos": [
+		30,
+		2,
+		0
+	  ],
+	  "local_pos": [
+		479.146,
+		344.244,
+		471.29200000000003
+	  ],
+	  "tier": 4,
+	  "planet_type": "barren",
+	  "planet_role": "anchor_planet",
+	  "population_state": "frontier",
+	  "has_planet_interface": true,
+	  "can_land": false,
+	  "contact_range": 180,
+	  "planet_radius": 5,
+	  "orbit_radius": 230,
+	  "orbit_angle": 264.8,
+	  "services": [
+        "survey_contact"
+	  ],
+	  "labels": [
+		"planet",
+		"world_seed",
+		"story_seed",
+		"authored_object",
+		"anchor_planet",
+		"parent_tier_4_anchor_star",
+        "tier_4"
+	  ]
+	},
+	"tier_4_anchor_star_planet_04": {
+	  "owner_type": "planet",
+	  "object_type": "planet",
+	  "object_id": "tier_4_anchor_star_planet_04",
+	  "display_name": "Tier 4 Star Planet 4",
+	  "title": "Tier 4 Star Planet 4",
+	  "scan_name": "Tier 4 Star Planet 4",
+	  "scan_description": "Authored anchor planet 4 orbiting Tier 4 Star.",
+	  "contact_text": "Orbital contact available. This is an authored anchor planet.",
+	  "position_mode": "anchor_offset",
+	  "anchor_star_id": "tier_4_anchor_star",
+	  "anchor_star_name": "Tier 4 Star",
+	  "parent_star_id": "tier_4_anchor_star",
+	  "parent_star_name": "Tier 4 Star",
+	  "sector_offset": [
+		0,
+		0,
+		0
+	  ],
+	  "local_offset": [
+		273.867,
+		-16.956,
+		0.817
+	  ],
+	  "sector_pos": [
+		30,
+		2,
+		0
+	  ],
+	  "local_pos": [
+		773.867,
+		483.044,
+		500.817
+	  ],
+	  "tier": 4,
+	  "planet_type": "gas_giant",
+	  "planet_role": "anchor_planet",
+	  "population_state": "unsettled",
+	  "has_planet_interface": true,
+	  "can_land": false,
+	  "contact_range": 180,
+	  "planet_radius": 6,
+	  "orbit_radius": 275,
+	  "orbit_angle": 354.8,
+	  "services": [
+        "survey_contact"
+	  ],
+	  "labels": [
+		"planet",
+		"world_seed",
+		"story_seed",
+		"authored_object",
+		"anchor_planet",
+		"parent_tier_4_anchor_star",
+        "tier_4"
+	  ]
+	},
+	"tier_5_anchor_star_planet_01": {
+	  "owner_type": "planet",
+	  "object_type": "planet",
+	  "object_id": "tier_5_anchor_star_planet_01",
+	  "display_name": "Tier 5 Star Planet 1",
+	  "title": "Tier 5 Star Planet 1",
+	  "scan_name": "Tier 5 Star Planet 1",
+	  "scan_description": "Authored anchor planet 1 orbiting Tier 5 Star.",
+	  "contact_text": "Orbital contact available. This is an authored anchor planet.",
+	  "position_mode": "anchor_offset",
+	  "anchor_star_id": "tier_5_anchor_star",
+	  "anchor_star_name": "Tier 5 Star",
+	  "parent_star_id": "tier_5_anchor_star",
+	  "parent_star_name": "Tier 5 Star",
+	  "sector_offset": [
+		0,
+		0,
+		0
+	  ],
+	  "local_offset": [
+		-38.583,
+		91.513,
+		14.375
+	  ],
+	  "sector_pos": [
+		40,
+		-2,
+		0
+	  ],
+	  "local_pos": [
+		461.41700000000003,
+		591.513,
+		514.375
+	  ],
+	  "tier": 5,
+	  "planet_type": "ocean",
+	  "planet_role": "anchor_planet",
+	  "population_state": "quiet",
+	  "has_planet_interface": true,
+	  "can_land": false,
+	  "contact_range": 180,
+	  "planet_radius": 6,
+	  "orbit_radius": 140,
+	  "orbit_angle": 106.0,
+	  "services": [
+        "survey_contact"
+	  ],
+	  "labels": [
+		"planet",
+		"world_seed",
+		"story_seed",
+		"authored_object",
+		"anchor_planet",
+		"parent_tier_5_anchor_star",
+        "tier_5"
+	  ]
+	},
+	"tier_6_anchor_star_planet_01": {
+	  "owner_type": "planet",
+	  "object_type": "planet",
+	  "object_id": "tier_6_anchor_star_planet_01",
+	  "display_name": "Tier 6 Star Planet 1",
+	  "title": "Tier 6 Star Planet 1",
+	  "scan_name": "Tier 6 Star Planet 1",
+	  "scan_description": "Authored anchor planet 1 orbiting Tier 6 Star.",
+	  "contact_text": "Orbital contact available. This is an authored anchor planet.",
+	  "position_mode": "anchor_offset",
+	  "anchor_star_id": "tier_6_anchor_star",
+	  "anchor_star_name": "Tier 6 Star",
+	  "parent_star_id": "tier_6_anchor_star",
+	  "parent_star_name": "Tier 6 Star",
+	  "sector_offset": [
+		0,
+		0,
+		0
+	  ],
+	  "local_offset": [
+		-84.637,
+		75.833,
+		16.123
+	  ],
+	  "sector_pos": [
+		50,
+		3,
+		0
+	  ],
+	  "local_pos": [
+		415.363,
+		575.833,
+		516.123
+	  ],
+	  "tier": 6,
+	  "planet_type": "barren",
+	  "planet_role": "anchor_planet",
+	  "population_state": "frontier",
+	  "has_planet_interface": true,
+	  "can_land": false,
+	  "contact_range": 180,
+	  "planet_radius": 6,
+	  "orbit_radius": 140,
+	  "orbit_angle": 127.2,
+	  "services": [
+        "survey_contact"
+	  ],
+	  "labels": [
+		"planet",
+		"world_seed",
+		"story_seed",
+		"authored_object",
+		"anchor_planet",
+		"parent_tier_6_anchor_star",
+        "tier_6"
+	  ]
+	},
+	"tier_6_anchor_star_planet_02": {
+	  "owner_type": "planet",
+	  "object_type": "planet",
+	  "object_id": "tier_6_anchor_star_planet_02",
+	  "display_name": "Tier 6 Star Planet 2",
+	  "title": "Tier 6 Star Planet 2",
+	  "scan_name": "Tier 6 Star Planet 2",
+	  "scan_description": "Authored anchor planet 2 orbiting Tier 6 Star.",
+	  "contact_text": "Orbital contact available. This is an authored anchor planet.",
+	  "position_mode": "anchor_offset",
+	  "anchor_star_id": "tier_6_anchor_star",
+	  "anchor_star_name": "Tier 6 Star",
+	  "parent_star_id": "tier_6_anchor_star",
+	  "parent_star_name": "Tier 6 Star",
+	  "sector_offset": [
+		0,
+		0,
+		0
+	  ],
+	  "local_offset": [
+		111.842,
+		-100.208,
+		50.004
+	  ],
+	  "sector_pos": [
+		50,
+		3,
+		0
+	  ],
+	  "local_pos": [
+		611.842,
+		399.79200000000003,
+		550.004
+	  ],
+	  "tier": 6,
+	  "planet_type": "gas_giant",
+	  "planet_role": "anchor_planet",
+	  "population_state": "unsettled",
+	  "has_planet_interface": true,
+	  "can_land": false,
+	  "contact_range": 180,
+	  "planet_radius": 7,
+	  "orbit_radius": 185,
+	  "orbit_angle": 307.2,
+	  "services": [
+        "survey_contact"
+	  ],
+	  "labels": [
+		"planet",
+		"world_seed",
+		"story_seed",
+		"authored_object",
+		"anchor_planet",
+		"parent_tier_6_anchor_star",
+        "tier_6"
+	  ]
+	},
+	"tier_7_anchor_star_planet_01": {
+	  "owner_type": "planet",
+	  "object_type": "planet",
+	  "object_id": "tier_7_anchor_star_planet_01",
+	  "display_name": "Tier 7 Star Planet 1",
+	  "title": "Tier 7 Star Planet 1",
+	  "scan_name": "Tier 7 Star Planet 1",
+	  "scan_description": "Authored anchor planet 1 orbiting Tier 7 Star.",
+	  "contact_text": "Orbital contact available. This is an authored anchor planet.",
+	  "position_mode": "anchor_offset",
+	  "anchor_star_id": "tier_7_anchor_star",
+	  "anchor_star_name": "Tier 7 Star",
+	  "parent_star_id": "tier_7_anchor_star",
+	  "parent_star_name": "Tier 7 Star",
+	  "sector_offset": [
+		0,
+		0,
+		0
+	  ],
+	  "local_offset": [
+		-119.237,
+		49.889,
+		17.32
+	  ],
+	  "sector_pos": [
+		60,
+		-3,
+		0
+	  ],
+	  "local_pos": [
+		380.76300000000003,
+		549.889,
+		517.32
+	  ],
+	  "tier": 7,
+	  "planet_type": "gas_giant",
+	  "planet_role": "anchor_planet",
+	  "population_state": "unsettled",
+	  "has_planet_interface": true,
+	  "can_land": false,
+	  "contact_range": 180,
+	  "planet_radius": 6,
+	  "orbit_radius": 140,
+	  "orbit_angle": 148.4,
+	  "services": [
+        "survey_contact"
+	  ],
+	  "labels": [
+		"planet",
+		"world_seed",
+		"story_seed",
+		"authored_object",
+		"anchor_planet",
+		"parent_tier_7_anchor_star",
+        "tier_7"
+	  ]
+	},
+	"tier_7_anchor_star_planet_02": {
+	  "owner_type": "planet",
+	  "object_type": "planet",
+	  "object_id": "tier_7_anchor_star_planet_02",
+	  "display_name": "Tier 7 Star Planet 2",
+	  "title": "Tier 7 Star Planet 2",
+	  "scan_name": "Tier 7 Star Planet 2",
+	  "scan_description": "Authored anchor planet 2 orbiting Tier 7 Star.",
+	  "contact_text": "Orbital contact available. This is an authored anchor planet.",
+	  "position_mode": "anchor_offset",
+	  "anchor_star_id": "tier_7_anchor_star",
+	  "anchor_star_name": "Tier 7 Star",
+	  "parent_star_id": "tier_7_anchor_star",
+	  "parent_star_name": "Tier 7 Star",
+	  "sector_offset": [
+		0,
+		0,
+		0
+	  ],
+	  "local_offset": [
+		-5.178,
+		-125.751,
+		54.905
+	  ],
+	  "sector_pos": [
+		60,
+		-3,
+		0
+	  ],
+	  "local_pos": [
+		494.822,
+		374.249,
+		554.905
+	  ],
+	  "tier": 7,
+	  "planet_type": "volcanic",
+	  "planet_role": "anchor_planet",
+	  "population_state": "surveyed",
+	  "has_planet_interface": true,
+	  "can_land": false,
+	  "contact_range": 180,
+	  "planet_radius": 7,
+	  "orbit_radius": 185,
+	  "orbit_angle": 268.4,
+	  "services": [
+        "survey_contact"
+	  ],
+	  "labels": [
+		"planet",
+		"world_seed",
+		"story_seed",
+		"authored_object",
+		"anchor_planet",
+		"parent_tier_7_anchor_star",
+        "tier_7"
+	  ]
+	},
+	"tier_7_anchor_star_planet_03": {
+	  "owner_type": "planet",
+	  "object_type": "planet",
+	  "object_id": "tier_7_anchor_star_planet_03",
+	  "display_name": "Tier 7 Star Planet 3",
+	  "title": "Tier 7 Star Planet 3",
+	  "scan_name": "Tier 7 Star Planet 3",
+	  "scan_description": "Authored anchor planet 3 orbiting Tier 7 Star.",
+	  "contact_text": "Orbital contact available. This is an authored anchor planet.",
+	  "position_mode": "anchor_offset",
+	  "anchor_star_id": "tier_7_anchor_star",
+	  "anchor_star_name": "Tier 7 Star",
+	  "parent_star_id": "tier_7_anchor_star",
+	  "parent_star_name": "Tier 7 Star",
+	  "sector_offset": [
+		0,
+		0,
+		0
+	  ],
+	  "local_offset": [
+		202.327,
+		74.378,
+		-46.415
+	  ],
+	  "sector_pos": [
+		60,
+		-3,
+		0
+	  ],
+	  "local_pos": [
+		702.327,
+		574.378,
+		453.585
+	  ],
+	  "tier": 7,
+	  "planet_type": "rocky",
+	  "planet_role": "anchor_planet",
+	  "population_state": "refuge",
+	  "has_planet_interface": true,
+	  "can_land": false,
+	  "contact_range": 180,
+	  "planet_radius": 5,
+	  "orbit_radius": 230,
+	  "orbit_angle": 28.4,
+	  "services": [
+        "survey_contact"
+	  ],
+	  "labels": [
+		"planet",
+		"world_seed",
+		"story_seed",
+		"authored_object",
+		"anchor_planet",
+		"parent_tier_7_anchor_star",
+        "tier_7"
+	  ]
+	},
+	"tier_8_anchor_star_planet_01": {
+	  "owner_type": "planet",
+	  "object_type": "planet",
+	  "object_id": "tier_8_anchor_star_planet_01",
+	  "display_name": "Tier 8 Star Planet 1",
+	  "title": "Tier 8 Star Planet 1",
+	  "scan_name": "Tier 8 Star Planet 1",
+	  "scan_description": "Authored anchor planet 1 orbiting Tier 8 Star.",
+	  "contact_text": "Orbital contact available. This is an authored anchor planet.",
+	  "position_mode": "anchor_offset",
+	  "anchor_star_id": "tier_8_anchor_star",
+	  "anchor_star_name": "Tier 8 Star",
+	  "parent_star_id": "tier_8_anchor_star",
+	  "parent_star_name": "Tier 8 Star",
+	  "sector_offset": [
+		0,
+		0,
+		0
+	  ],
+	  "local_offset": [
+		-137.698,
+		17.193,
+		17.926
+	  ],
+	  "sector_pos": [
+		70,
+		1,
+		0
+	  ],
+	  "local_pos": [
+		362.302,
+		517.193,
+		517.926
+	  ],
+	  "tier": 8,
+	  "planet_type": "volcanic",
+	  "planet_role": "anchor_planet",
+	  "population_state": "surveyed",
+	  "has_planet_interface": true,
+	  "can_land": false,
+	  "contact_range": 180,
+	  "planet_radius": 6,
+	  "orbit_radius": 140,
+	  "orbit_angle": 169.6,
+	  "services": [
+        "survey_contact"
+	  ],
+	  "labels": [
+		"planet",
+		"world_seed",
+		"story_seed",
+		"authored_object",
+		"anchor_planet",
+		"parent_tier_8_anchor_star",
+        "tier_8"
+	  ]
+	},
+	"tier_8_anchor_star_planet_02": {
+	  "owner_type": "planet",
+	  "object_type": "planet",
+	  "object_id": "tier_8_anchor_star_planet_02",
+	  "display_name": "Tier 8 Star Planet 2",
+	  "title": "Tier 8 Star Planet 2",
+	  "scan_name": "Tier 8 Star Planet 2",
+	  "scan_description": "Authored anchor planet 2 orbiting Tier 8 Star.",
+	  "contact_text": "Orbital contact available. This is an authored anchor planet.",
+	  "position_mode": "anchor_offset",
+	  "anchor_star_id": "tier_8_anchor_star",
+	  "anchor_star_name": "Tier 8 Star",
+	  "parent_star_id": "tier_8_anchor_star",
+	  "parent_star_name": "Tier 8 Star",
+	  "sector_offset": [
+		0,
+		0,
+		0
+	  ],
+	  "local_offset": [
+		-33.41,
+		-123.732,
+		55.83
+	  ],
+	  "sector_pos": [
+		70,
+		1,
+		0
+	  ],
+	  "local_pos": [
+		466.59000000000003,
+		376.26800000000003,
+		555.83
+	  ],
+	  "tier": 8,
+	  "planet_type": "rocky",
+	  "planet_role": "anchor_planet",
+	  "population_state": "refuge",
+	  "has_planet_interface": true,
+	  "can_land": false,
+	  "contact_range": 180,
+	  "planet_radius": 7,
+	  "orbit_radius": 185,
+	  "orbit_angle": 259.6,
+	  "services": [
+        "survey_contact"
+	  ],
+	  "labels": [
+		"planet",
+		"world_seed",
+		"story_seed",
+		"authored_object",
+		"anchor_planet",
+		"parent_tier_8_anchor_star",
+        "tier_8"
+	  ]
+	},
+	"tier_8_anchor_star_planet_03": {
+	  "owner_type": "planet",
+	  "object_type": "planet",
+	  "object_id": "tier_8_anchor_star_planet_03",
+	  "display_name": "Tier 8 Star Planet 3",
+	  "title": "Tier 8 Star Planet 3",
+	  "scan_name": "Tier 8 Star Planet 3",
+	  "scan_description": "Authored anchor planet 3 orbiting Tier 8 Star.",
+	  "contact_text": "Orbital contact available. This is an authored anchor planet.",
+	  "position_mode": "anchor_offset",
+	  "anchor_star_id": "tier_8_anchor_star",
+	  "anchor_star_name": "Tier 8 Star",
+	  "parent_star_id": "tier_8_anchor_star",
+	  "parent_star_name": "Tier 8 Star",
+	  "sector_offset": [
+		0,
+		0,
+		0
+	  ],
+	  "local_offset": [
+		226.218,
+		-28.245,
+		-40.368
+	  ],
+	  "sector_pos": [
+		70,
+		1,
+		0
+	  ],
+	  "local_pos": [
+		726.218,
+		471.755,
+		459.632
+	  ],
+	  "tier": 8,
+	  "planet_type": "colony_world",
+	  "planet_role": "anchor_planet",
+	  "population_state": "outpost",
+	  "has_planet_interface": true,
+	  "can_land": false,
+	  "contact_range": 180,
+	  "planet_radius": 5,
+	  "orbit_radius": 230,
+	  "orbit_angle": 349.6,
+	  "services": [
+        "survey_contact"
+	  ],
+	  "labels": [
+		"planet",
+		"world_seed",
+		"story_seed",
+		"authored_object",
+		"anchor_planet",
+		"parent_tier_8_anchor_star",
+        "tier_8"
+	  ]
+	},
+	"tier_8_anchor_star_planet_04": {
+	  "owner_type": "planet",
+	  "object_type": "planet",
+	  "object_id": "tier_8_anchor_star_planet_04",
+	  "display_name": "Tier 8 Star Planet 4",
+	  "title": "Tier 8 Star Planet 4",
+	  "scan_name": "Tier 8 Star Planet 4",
+	  "scan_description": "Authored anchor planet 4 orbiting Tier 8 Star.",
+	  "contact_text": "Orbital contact available. This is an authored anchor planet.",
+	  "position_mode": "anchor_offset",
+	  "anchor_star_id": "tier_8_anchor_star",
+	  "anchor_star_name": "Tier 8 Star",
+	  "parent_star_id": "tier_8_anchor_star",
+	  "parent_star_name": "Tier 8 Star",
+	  "sector_offset": [
+		0,
+		0,
+		0
+	  ],
+	  "local_offset": [
+		49.664,
+		183.925,
+		-11.521
+	  ],
+	  "sector_pos": [
+		70,
+		1,
+		0
+	  ],
+	  "local_pos": [
+		549.664,
+		683.925,
+		488.479
+	  ],
+	  "tier": 8,
+	  "planet_type": "ice",
+	  "planet_role": "anchor_planet",
+	  "population_state": "quiet",
+	  "has_planet_interface": true,
+	  "can_land": false,
+	  "contact_range": 180,
+	  "planet_radius": 6,
+	  "orbit_radius": 275,
+	  "orbit_angle": 79.6,
+	  "services": [
+        "survey_contact"
+	  ],
+	  "labels": [
+		"planet",
+		"world_seed",
+		"story_seed",
+		"authored_object",
+		"anchor_planet",
+		"parent_tier_8_anchor_star",
+        "tier_8"
+	  ]
+	},
+	"star_09_anchor_planet_01": {
+	  "owner_type": "planet",
+	  "object_type": "planet",
+	  "object_id": "star_09_anchor_planet_01",
+	  "display_name": "Star 9 Planet 1",
+	  "title": "Star 9 Planet 1",
+	  "scan_name": "Star 9 Planet 1",
+	  "scan_description": "Authored anchor planet 1 orbiting Star 9.",
+	  "contact_text": "Orbital contact available. This is an authored anchor planet.",
+	  "position_mode": "anchor_offset",
+	  "anchor_star_id": "star_09_anchor",
+	  "anchor_star_name": "Star 9",
+	  "parent_star_id": "star_09_anchor",
+	  "parent_star_name": "Star 9",
+	  "sector_offset": [
+		0,
+		0,
+		0
+	  ],
+	  "local_offset": [
+		-137.523,
+		-17.83,
+		17.92
+	  ],
+	  "sector_pos": [
+		2,
+		-2,
+		0
+	  ],
+	  "local_pos": [
+		362.477,
+		482.17,
+		517.92
+	  ],
+	  "tier": 1,
+	  "planet_type": "rocky",
+	  "planet_role": "anchor_planet",
+	  "population_state": "refuge",
+	  "has_planet_interface": true,
+	  "can_land": false,
+	  "contact_range": 180,
+	  "planet_radius": 6,
+	  "orbit_radius": 140,
+	  "orbit_angle": 190.79,
+	  "services": [
+        "survey_contact"
+	  ],
+	  "labels": [
+		"planet",
+		"world_seed",
+		"story_seed",
+		"authored_object",
+		"anchor_planet",
+		"parent_star_09_anchor",
+        "tier_1"
+	  ]
+	},
+	"star_10_anchor_planet_01": {
+	  "owner_type": "planet",
+	  "object_type": "planet",
+	  "object_id": "star_10_anchor_planet_01",
+	  "display_name": "Star 10 Planet 1",
+	  "title": "Star 10 Planet 1",
+	  "scan_name": "Star 10 Planet 1",
+	  "scan_description": "Authored anchor planet 1 orbiting Star 10.",
+	  "contact_text": "Orbital contact available. This is an authored anchor planet.",
+	  "position_mode": "anchor_offset",
+	  "anchor_star_id": "star_10_anchor",
+	  "anchor_star_name": "Star 10",
+	  "parent_star_id": "star_10_anchor",
+	  "parent_star_name": "Star 10",
+	  "sector_offset": [
+		0,
+		0,
+		0
+	  ],
+	  "local_offset": [
+		-118.734,
+		-50.44,
+		17.303
+	  ],
+	  "sector_pos": [
+		11,
+		-2,
+		0
+	  ],
+	  "local_pos": [
+		381.266,
+		449.56,
+		517.303
+	  ],
+	  "tier": 2,
+	  "planet_type": "colony_world",
+	  "planet_role": "anchor_planet",
+	  "population_state": "outpost",
+	  "has_planet_interface": true,
+	  "can_land": false,
+	  "contact_range": 180,
+	  "planet_radius": 6,
+	  "orbit_radius": 140,
+	  "orbit_angle": 211.99,
+	  "services": [
+        "survey_contact"
+	  ],
+	  "labels": [
+		"planet",
+		"world_seed",
+		"story_seed",
+		"authored_object",
+		"anchor_planet",
+		"parent_star_10_anchor",
+        "tier_2"
+	  ]
+	},
+	"star_10_anchor_planet_02": {
+	  "owner_type": "planet",
+	  "object_type": "planet",
+	  "object_id": "star_10_anchor_planet_02",
+	  "display_name": "Star 10 Planet 2",
+	  "title": "Star 10 Planet 2",
+	  "scan_name": "Star 10 Planet 2",
+	  "scan_description": "Authored anchor planet 2 orbiting Star 10.",
+	  "contact_text": "Orbital contact available. This is an authored anchor planet.",
+	  "position_mode": "anchor_offset",
+	  "anchor_star_id": "star_10_anchor",
+	  "anchor_star_name": "Star 10",
+	  "parent_star_id": "star_10_anchor",
+	  "parent_star_name": "Star 10",
+	  "sector_offset": [
+		0,
+		0,
+		0
+	  ],
+	  "local_offset": [
+		156.899,
+		66.653,
+		37.039
+	  ],
+	  "sector_pos": [
+		11,
+		-2,
+		0
+	  ],
+	  "local_pos": [
+		656.899,
+		566.653,
+		537.039
+	  ],
+	  "tier": 2,
+	  "planet_type": "ice",
+	  "planet_role": "anchor_planet",
+	  "population_state": "quiet",
+	  "has_planet_interface": true,
+	  "can_land": false,
+	  "contact_range": 180,
+	  "planet_radius": 7,
+	  "orbit_radius": 185,
+	  "orbit_angle": 31.99,
+	  "services": [
+        "survey_contact"
+	  ],
+	  "labels": [
+		"planet",
+		"world_seed",
+		"story_seed",
+		"authored_object",
+		"anchor_planet",
+		"parent_star_10_anchor",
+        "tier_2"
+	  ]
+	},
+	"star_11_anchor_planet_01": {
+	  "owner_type": "planet",
+	  "object_type": "planet",
+	  "object_id": "star_11_anchor_planet_01",
+	  "display_name": "Star 11 Planet 1",
+	  "title": "Star 11 Planet 1",
+	  "scan_name": "Star 11 Planet 1",
+	  "scan_description": "Authored anchor planet 1 orbiting Star 11.",
+	  "contact_text": "Orbital contact available. This is an authored anchor planet.",
+	  "position_mode": "anchor_offset",
+	  "anchor_star_id": "star_11_anchor",
+	  "anchor_star_name": "Star 11",
+	  "parent_star_id": "star_11_anchor",
+	  "parent_star_name": "Star 11",
+	  "sector_offset": [
+		0,
+		0,
+		0
+	  ],
+	  "local_offset": [
+		-83.875,
+		-76.223,
+		16.095
+	  ],
+	  "sector_pos": [
+		21,
+		2,
+		0
+	  ],
+	  "local_pos": [
+		416.125,
+		423.777,
+		516.095
+	  ],
+	  "tier": 3,
+	  "planet_type": "ice",
+	  "planet_role": "anchor_planet",
+	  "population_state": "quiet",
+	  "has_planet_interface": true,
+	  "can_land": false,
+	  "contact_range": 180,
+	  "planet_radius": 6,
+	  "orbit_radius": 140,
+	  "orbit_angle": 233.19,
+	  "services": [
+        "survey_contact"
+	  ],
+	  "labels": [
+		"planet",
+		"world_seed",
+		"story_seed",
+		"authored_object",
+		"anchor_planet",
+		"parent_star_11_anchor",
+        "tier_3"
+	  ]
+	},
+	"star_11_anchor_planet_02": {
+	  "owner_type": "planet",
+	  "object_type": "planet",
+	  "object_id": "star_11_anchor_planet_02",
+	  "display_name": "Star 11 Planet 2",
+	  "title": "Star 11 Planet 2",
+	  "scan_name": "Star 11 Planet 2",
+	  "scan_description": "Authored anchor planet 2 orbiting Star 11.",
+	  "contact_text": "Orbital contact available. This is an authored anchor planet.",
+	  "position_mode": "anchor_offset",
+	  "anchor_star_id": "star_11_anchor",
+	  "anchor_star_name": "Star 11",
+	  "parent_star_id": "star_11_anchor",
+	  "parent_star_name": "Star 11",
+	  "sector_offset": [
+		0,
+		0,
+		0
+	  ],
+	  "local_offset": [
+		183.696,
+		-14.909,
+		43.068
+	  ],
+	  "sector_pos": [
+		21,
+		2,
+		0
+	  ],
+	  "local_pos": [
+		683.696,
+		485.091,
+		543.068
+	  ],
+	  "tier": 3,
+	  "planet_type": "desert",
+	  "planet_role": "anchor_planet",
+	  "population_state": "frontier",
+	  "has_planet_interface": true,
+	  "can_land": false,
+	  "contact_range": 180,
+	  "planet_radius": 7,
+	  "orbit_radius": 185,
+	  "orbit_angle": 353.19,
+	  "services": [
+        "survey_contact"
+	  ],
+	  "labels": [
+		"planet",
+		"world_seed",
+		"story_seed",
+		"authored_object",
+		"anchor_planet",
+		"parent_star_11_anchor",
+        "tier_3"
+	  ]
+	},
+	"star_11_anchor_planet_03": {
+	  "owner_type": "planet",
+	  "object_type": "planet",
+	  "object_id": "star_11_anchor_planet_03",
+	  "display_name": "Star 11 Planet 3",
+	  "title": "Star 11 Planet 3",
+	  "scan_name": "Star 11 Planet 3",
+	  "scan_description": "Authored anchor planet 3 orbiting Star 11.",
+	  "contact_text": "Orbital contact available. This is an authored anchor planet.",
+	  "position_mode": "anchor_offset",
+	  "anchor_star_id": "star_11_anchor",
+	  "anchor_star_name": "Star 11",
+	  "parent_star_id": "star_11_anchor",
+	  "parent_star_name": "Star 11",
+	  "sector_offset": [
+		0,
+		0,
+		0
+	  ],
+	  "local_offset": [
+		-90.584,
+		143.759,
+		-57.027
+	  ],
+	  "sector_pos": [
+		21,
+		2,
+		0
+	  ],
+	  "local_pos": [
+		409.416,
+		643.759,
+		442.973
+	  ],
+	  "tier": 3,
+	  "planet_type": "ocean",
+	  "planet_role": "anchor_planet",
+	  "population_state": "unsettled",
+	  "has_planet_interface": true,
+	  "can_land": false,
+	  "contact_range": 180,
+	  "planet_radius": 5,
+	  "orbit_radius": 230,
+	  "orbit_angle": 113.19,
+	  "services": [
+        "survey_contact"
+	  ],
+	  "labels": [
+		"planet",
+		"world_seed",
+		"story_seed",
+		"authored_object",
+		"anchor_planet",
+		"parent_star_11_anchor",
+        "tier_3"
+	  ]
+	},
+	"star_12_anchor_planet_01": {
+	  "owner_type": "planet",
+	  "object_type": "planet",
+	  "object_id": "star_12_anchor_planet_01",
+	  "display_name": "Star 12 Planet 1",
+	  "title": "Star 12 Planet 1",
+	  "scan_name": "Star 12 Planet 1",
+	  "scan_description": "Authored anchor planet 1 orbiting Star 12.",
+	  "contact_text": "Orbital contact available. This is an authored anchor planet.",
+	  "position_mode": "anchor_offset",
+	  "anchor_star_id": "star_12_anchor",
+	  "anchor_star_name": "Star 12",
+	  "parent_star_id": "star_12_anchor",
+	  "parent_star_name": "Star 12",
+	  "sector_offset": [
+		0,
+		0,
+		0
+	  ],
+	  "local_offset": [
+		-37.665,
+		-91.69,
+		14.338
+	  ],
+	  "sector_pos": [
+		29,
+		-1,
+		0
+	  ],
+	  "local_pos": [
+		462.335,
+		408.31,
+		514.338
+	  ],
+	  "tier": 4,
+	  "planet_type": "desert",
+	  "planet_role": "anchor_planet",
+	  "population_state": "frontier",
+	  "has_planet_interface": true,
+	  "can_land": false,
+	  "contact_range": 180,
+	  "planet_radius": 6,
+	  "orbit_radius": 140,
+	  "orbit_angle": 254.39,
+	  "services": [
+        "survey_contact"
+	  ],
+	  "labels": [
+		"planet",
+		"world_seed",
+		"story_seed",
+		"authored_object",
+		"anchor_planet",
+		"parent_star_12_anchor",
+        "tier_4"
+	  ]
+	},
+	"star_12_anchor_planet_02": {
+	  "owner_type": "planet",
+	  "object_type": "planet",
+	  "object_id": "star_12_anchor_planet_02",
+	  "display_name": "Star 12 Planet 2",
+	  "title": "Star 12 Planet 2",
+	  "scan_name": "Star 12 Planet 2",
+	  "scan_description": "Authored anchor planet 2 orbiting Star 12.",
+	  "contact_text": "Orbital contact available. This is an authored anchor planet.",
+	  "position_mode": "anchor_offset",
+	  "anchor_star_id": "star_12_anchor",
+	  "anchor_star_name": "Star 12",
+	  "parent_star_id": "star_12_anchor",
+	  "parent_star_name": "Star 12",
+	  "sector_offset": [
+		0,
+		0,
+		0
+	  ],
+	  "local_offset": [
+		178.179,
+		-33.844,
+		44.444
+	  ],
+	  "sector_pos": [
+		29,
+		-1,
+		0
+	  ],
+	  "local_pos": [
+		678.179,
+		466.156,
+		544.444
+	  ],
+	  "tier": 4,
+	  "planet_type": "ocean",
+	  "planet_role": "anchor_planet",
+	  "population_state": "unsettled",
+	  "has_planet_interface": true,
+	  "can_land": false,
+	  "contact_range": 180,
+	  "planet_radius": 7,
+	  "orbit_radius": 185,
+	  "orbit_angle": 344.39,
+	  "services": [
+        "survey_contact"
+	  ],
+	  "labels": [
+		"planet",
+		"world_seed",
+		"story_seed",
+		"authored_object",
+		"anchor_planet",
+		"parent_star_12_anchor",
+        "tier_4"
+	  ]
+	},
+	"star_12_anchor_planet_03": {
+	  "owner_type": "planet",
+	  "object_type": "planet",
+	  "object_id": "star_12_anchor_planet_03",
+	  "display_name": "Star 12 Planet 3",
+	  "title": "Star 12 Planet 3",
+	  "scan_name": "Star 12 Planet 3",
+	  "scan_description": "Authored anchor planet 3 orbiting Star 12.",
+	  "contact_text": "Orbital contact available. This is an authored anchor planet.",
+	  "position_mode": "anchor_offset",
+	  "anchor_star_id": "star_12_anchor",
+	  "anchor_star_name": "Star 12",
+	  "parent_star_id": "star_12_anchor",
+	  "parent_star_name": "Star 12",
+	  "sector_offset": [
+		0,
+		0,
+		0
+	  ],
+	  "local_offset": [
+		61.878,
+		150.634,
+		-52.882
+	  ],
+	  "sector_pos": [
+		29,
+		-1,
+		0
+	  ],
+	  "local_pos": [
+		561.878,
+		650.634,
+		447.118
+	  ],
+	  "tier": 4,
+	  "planet_type": "barren",
+	  "planet_role": "anchor_planet",
+	  "population_state": "surveyed",
+	  "has_planet_interface": true,
+	  "can_land": false,
+	  "contact_range": 180,
+	  "planet_radius": 5,
+	  "orbit_radius": 230,
+	  "orbit_angle": 74.39,
+	  "services": [
+        "survey_contact"
+	  ],
+	  "labels": [
+		"planet",
+		"world_seed",
+		"story_seed",
+		"authored_object",
+		"anchor_planet",
+		"parent_star_12_anchor",
+        "tier_4"
+	  ]
+	},
+	"star_12_anchor_planet_04": {
+	  "owner_type": "planet",
+	  "object_type": "planet",
+	  "object_id": "star_12_anchor_planet_04",
+	  "display_name": "Star 12 Planet 4",
+	  "title": "Star 12 Planet 4",
+	  "scan_name": "Star 12 Planet 4",
+	  "scan_description": "Authored anchor planet 4 orbiting Star 12.",
+	  "contact_text": "Orbital contact available. This is an authored anchor planet.",
+	  "position_mode": "anchor_offset",
+	  "anchor_star_id": "star_12_anchor",
+	  "anchor_star_name": "Star 12",
+	  "parent_star_id": "star_12_anchor",
+	  "parent_star_name": "Star 12",
+	  "sector_offset": [
+		0,
+		0,
+		0
+	  ],
+	  "local_offset": [
+		-264.861,
+		50.309,
+		-17.833
+	  ],
+	  "sector_pos": [
+		29,
+		-1,
+		0
+	  ],
+	  "local_pos": [
+		235.139,
+		550.309,
+		482.16700000000003
+	  ],
+	  "tier": 4,
+	  "planet_type": "gas_giant",
+	  "planet_role": "anchor_planet",
+	  "population_state": "refuge",
+	  "has_planet_interface": true,
+	  "can_land": false,
+	  "contact_range": 180,
+	  "planet_radius": 6,
+	  "orbit_radius": 275,
+	  "orbit_angle": 164.39,
+	  "services": [
+        "survey_contact"
+	  ],
+	  "labels": [
+		"planet",
+		"world_seed",
+		"story_seed",
+		"authored_object",
+		"anchor_planet",
+		"parent_star_12_anchor",
+        "tier_4"
+	  ]
+	},
+	"star_13_anchor_planet_01": {
+	  "owner_type": "planet",
+	  "object_type": "planet",
+	  "object_id": "star_13_anchor_planet_01",
+	  "display_name": "Star 13 Planet 1",
+	  "title": "Star 13 Planet 1",
+	  "scan_name": "Star 13 Planet 1",
+	  "scan_description": "Authored anchor planet 1 orbiting Star 13.",
+	  "contact_text": "Orbital contact available. This is an authored anchor planet.",
+	  "position_mode": "anchor_offset",
+	  "anchor_star_id": "star_13_anchor",
+	  "anchor_star_name": "Star 13",
+	  "parent_star_id": "star_13_anchor",
+	  "parent_star_name": "Star 13",
+	  "sector_offset": [
+		0,
+		0,
+		0
+	  ],
+	  "local_offset": [
+		13.644,
+		-94.747,
+		12.092
+	  ],
+	  "sector_pos": [
+		41,
+		1,
+		0
+	  ],
+	  "local_pos": [
+		513.644,
+		405.253,
+		512.092
+	  ],
+	  "tier": 5,
+	  "planet_type": "ocean",
+	  "planet_role": "anchor_planet",
+	  "population_state": "unsettled",
+	  "has_planet_interface": true,
+	  "can_land": false,
+	  "contact_range": 180,
+	  "planet_radius": 6,
+	  "orbit_radius": 140,
+	  "orbit_angle": 275.59,
+	  "services": [
+        "survey_contact"
+	  ],
+	  "labels": [
+		"planet",
+		"world_seed",
+		"story_seed",
+		"authored_object",
+		"anchor_planet",
+		"parent_star_13_anchor",
+        "tier_5"
+	  ]
+	},
+	"star_14_anchor_planet_01": {
+	  "owner_type": "planet",
+	  "object_type": "planet",
+	  "object_id": "star_14_anchor_planet_01",
+	  "display_name": "Star 14 Planet 1",
+	  "title": "Star 14 Planet 1",
+	  "scan_name": "Star 14 Planet 1",
+	  "scan_description": "Authored anchor planet 1 orbiting Star 14.",
+	  "contact_text": "Orbital contact available. This is an authored anchor planet.",
+	  "position_mode": "anchor_offset",
+	  "anchor_star_id": "star_14_anchor",
+	  "anchor_star_name": "Star 14",
+	  "parent_star_id": "star_14_anchor",
+	  "parent_star_name": "Star 14",
+	  "sector_offset": [
+		0,
+		0,
+		0
+	  ],
+	  "local_offset": [
+		63.106,
+		-84.98,
+		9.433
+	  ],
+	  "sector_pos": [
+		52,
+		1,
+		0
+	  ],
+	  "local_pos": [
+		563.106,
+		415.02,
+		509.433
+	  ],
+	  "tier": 6,
+	  "planet_type": "barren",
+	  "planet_role": "anchor_planet",
+	  "population_state": "surveyed",
+	  "has_planet_interface": true,
+	  "can_land": false,
+	  "contact_range": 180,
+	  "planet_radius": 6,
+	  "orbit_radius": 140,
+	  "orbit_angle": 296.79,
+	  "services": [
+        "survey_contact"
+	  ],
+	  "labels": [
+		"planet",
+		"world_seed",
+		"story_seed",
+		"authored_object",
+		"anchor_planet",
+		"parent_star_14_anchor",
+        "tier_6"
+	  ]
+	},
+	"star_14_anchor_planet_02": {
+	  "owner_type": "planet",
+	  "object_type": "planet",
+	  "object_id": "star_14_anchor_planet_02",
+	  "display_name": "Star 14 Planet 2",
+	  "title": "Star 14 Planet 2",
+	  "scan_name": "Star 14 Planet 2",
+	  "scan_description": "Authored anchor planet 2 orbiting Star 14.",
+	  "contact_text": "Orbital contact available. This is an authored anchor planet.",
+	  "position_mode": "anchor_offset",
+	  "anchor_star_id": "star_14_anchor",
+	  "anchor_star_name": "Star 14",
+	  "parent_star_id": "star_14_anchor",
+	  "parent_star_name": "Star 14",
+	  "sector_offset": [
+		0,
+		0,
+		0
+	  ],
+	  "local_offset": [
+		-83.39,
+		112.295,
+		26.67
+	  ],
+	  "sector_pos": [
+		52,
+		1,
+		0
+	  ],
+	  "local_pos": [
+		416.61,
+		612.295,
+		526.67
+	  ],
+	  "tier": 6,
+	  "planet_type": "gas_giant",
+	  "planet_role": "anchor_planet",
+	  "population_state": "refuge",
+	  "has_planet_interface": true,
+	  "can_land": false,
+	  "contact_range": 180,
+	  "planet_radius": 7,
+	  "orbit_radius": 185,
+	  "orbit_angle": 116.79,
+	  "services": [
+        "survey_contact"
+	  ],
+	  "labels": [
+		"planet",
+		"world_seed",
+		"story_seed",
+		"authored_object",
+		"anchor_planet",
+		"parent_star_14_anchor",
+        "tier_6"
+	  ]
+	},
+	"star_15_anchor_planet_01": {
+	  "owner_type": "planet",
+	  "object_type": "planet",
+	  "object_id": "star_15_anchor_planet_01",
+	  "display_name": "Star 15 Planet 1",
+	  "title": "Star 15 Planet 1",
+	  "scan_name": "Star 15 Planet 1",
+	  "scan_description": "Authored anchor planet 1 orbiting Star 15.",
+	  "contact_text": "Orbital contact available. This is an authored anchor planet.",
+	  "position_mode": "anchor_offset",
+	  "anchor_star_id": "star_15_anchor",
+	  "anchor_star_name": "Star 15",
+	  "parent_star_id": "star_15_anchor",
+	  "parent_star_name": "Star 15",
+	  "sector_offset": [
+		0,
+		0,
+		0
+	  ],
+	  "local_offset": [
+		104.027,
+		-63.712,
+		6.452
+	  ],
+	  "sector_pos": [
+		58,
+		-1,
+		0
+	  ],
+	  "local_pos": [
+		604.027,
+		436.288,
+		506.452
+	  ],
+	  "tier": 7,
+	  "planet_type": "gas_giant",
+	  "planet_role": "anchor_planet",
+	  "population_state": "refuge",
+	  "has_planet_interface": true,
+	  "can_land": false,
+	  "contact_range": 180,
+	  "planet_radius": 6,
+	  "orbit_radius": 140,
+	  "orbit_angle": 317.99,
+	  "services": [
+        "survey_contact"
+	  ],
+	  "labels": [
+		"planet",
+		"world_seed",
+		"story_seed",
+		"authored_object",
+		"anchor_planet",
+		"parent_star_15_anchor",
+        "tier_7"
+	  ]
+	},
+	"star_15_anchor_planet_02": {
+	  "owner_type": "planet",
+	  "object_type": "planet",
+	  "object_id": "star_15_anchor_planet_02",
+	  "display_name": "Star 15 Planet 2",
+	  "title": "Star 15 Planet 2",
+	  "scan_name": "Star 15 Planet 2",
+	  "scan_description": "Authored anchor planet 2 orbiting Star 15.",
+	  "contact_text": "Orbital contact available. This is an authored anchor planet.",
+	  "position_mode": "anchor_offset",
+	  "anchor_star_id": "star_15_anchor",
+	  "anchor_star_name": "Star 15",
+	  "parent_star_id": "star_15_anchor",
+	  "parent_star_name": "Star 15",
+	  "sector_offset": [
+		0,
+		0,
+		0
+	  ],
+	  "local_offset": [
+		38.49,
+		123.047,
+		30.673
+	  ],
+	  "sector_pos": [
+		58,
+		-1,
+		0
+	  ],
+	  "local_pos": [
+		538.49,
+		623.047,
+		530.673
+	  ],
+	  "tier": 7,
+	  "planet_type": "volcanic",
+	  "planet_role": "anchor_planet",
+	  "population_state": "outpost",
+	  "has_planet_interface": true,
+	  "can_land": false,
+	  "contact_range": 180,
+	  "planet_radius": 7,
+	  "orbit_radius": 185,
+	  "orbit_angle": 77.99,
+	  "services": [
+        "survey_contact"
+	  ],
+	  "labels": [
+		"planet",
+		"world_seed",
+		"story_seed",
+		"authored_object",
+		"anchor_planet",
+		"parent_star_15_anchor",
+        "tier_7"
+	  ]
+	},
+	"star_15_anchor_planet_03": {
+	  "owner_type": "planet",
+	  "object_type": "planet",
+	  "object_id": "star_15_anchor_planet_03",
+	  "display_name": "Star 15 Planet 3",
+	  "title": "Star 15 Planet 3",
+	  "scan_name": "Star 15 Planet 3",
+	  "scan_description": "Authored anchor planet 3 orbiting Star 15.",
+	  "contact_text": "Orbital contact available. This is an authored anchor planet.",
+	  "position_mode": "anchor_offset",
+	  "anchor_star_id": "star_15_anchor",
+	  "anchor_star_name": "Star 15",
+	  "parent_star_id": "star_15_anchor",
+	  "parent_star_name": "Star 15",
+	  "sector_offset": [
+		0,
+		0,
+		0
+	  ],
+	  "local_offset": [
+		-218.753,
+		-48.308,
+		-59.779
+	  ],
+	  "sector_pos": [
+		58,
+		-1,
+		0
+	  ],
+	  "local_pos": [
+		281.247,
+		451.692,
+		440.221
+	  ],
+	  "tier": 7,
+	  "planet_type": "rocky",
+	  "planet_role": "anchor_planet",
+	  "population_state": "quiet",
+	  "has_planet_interface": true,
+	  "can_land": false,
+	  "contact_range": 180,
+	  "planet_radius": 5,
+	  "orbit_radius": 230,
+	  "orbit_angle": 197.99,
+	  "services": [
+        "survey_contact"
+	  ],
+	  "labels": [
+		"planet",
+		"world_seed",
+		"story_seed",
+		"authored_object",
+		"anchor_planet",
+		"parent_star_15_anchor",
+        "tier_7"
+	  ]
+	},
+	"star_16_anchor_planet_01": {
+	  "owner_type": "planet",
+	  "object_type": "planet",
+	  "object_id": "star_16_anchor_planet_01",
+	  "display_name": "Star 16 Planet 1",
+	  "title": "Star 16 Planet 1",
+	  "scan_name": "Star 16 Planet 1",
+	  "scan_description": "Authored anchor planet 1 orbiting Star 16.",
+	  "contact_text": "Orbital contact available. This is an authored anchor planet.",
+	  "position_mode": "anchor_offset",
+	  "anchor_star_id": "star_16_anchor",
+	  "anchor_star_name": "Star 16",
+	  "parent_star_id": "star_16_anchor",
+	  "parent_star_name": "Star 16",
+	  "sector_offset": [
+		0,
+		0,
+		0
+	  ],
+	  "local_offset": [
+		130.868,
+		-33.82,
+		3.251
+	  ],
+	  "sector_pos": [
+		72,
+		3,
+		0
+	  ],
+	  "local_pos": [
+		630.8679999999999,
+		466.18,
+		503.251
+	  ],
+	  "tier": 8,
+	  "planet_type": "volcanic",
+	  "planet_role": "anchor_planet",
+	  "population_state": "outpost",
+	  "has_planet_interface": true,
+	  "can_land": false,
+	  "contact_range": 180,
+	  "planet_radius": 6,
+	  "orbit_radius": 140,
+	  "orbit_angle": 339.19,
+	  "services": [
+        "survey_contact"
+	  ],
+	  "labels": [
+		"planet",
+		"world_seed",
+		"story_seed",
+		"authored_object",
+		"anchor_planet",
+		"parent_star_16_anchor",
+        "tier_8"
+	  ]
+	},
+	"star_16_anchor_planet_02": {
+	  "owner_type": "planet",
+	  "object_type": "planet",
+	  "object_id": "star_16_anchor_planet_02",
+	  "display_name": "Star 16 Planet 2",
+	  "title": "Star 16 Planet 2",
+	  "scan_name": "Star 16 Planet 2",
+	  "scan_description": "Authored anchor planet 2 orbiting Star 16.",
+	  "contact_text": "Orbital contact available. This is an authored anchor planet.",
+	  "position_mode": "anchor_offset",
+	  "anchor_star_id": "star_16_anchor",
+	  "anchor_star_name": "Star 16",
+	  "parent_star_id": "star_16_anchor",
+	  "parent_star_name": "Star 16",
+	  "sector_offset": [
+		0,
+		0,
+		0
+	  ],
+	  "local_offset": [
+		65.722,
+		117.594,
+		31.78
+	  ],
+	  "sector_pos": [
+		72,
+		3,
+		0
+	  ],
+	  "local_pos": [
+		565.722,
+		617.594,
+		531.78
+	  ],
+	  "tier": 8,
+	  "planet_type": "rocky",
+	  "planet_role": "anchor_planet",
+	  "population_state": "quiet",
+	  "has_planet_interface": true,
+	  "can_land": false,
+	  "contact_range": 180,
+	  "planet_radius": 7,
+	  "orbit_radius": 185,
+	  "orbit_angle": 69.19,
+	  "services": [
+        "survey_contact"
+	  ],
+	  "labels": [
+		"planet",
+		"world_seed",
+		"story_seed",
+		"authored_object",
+		"anchor_planet",
+		"parent_star_16_anchor",
+        "tier_8"
+	  ]
+	},
+	"star_16_anchor_planet_03": {
+	  "owner_type": "planet",
+	  "object_type": "planet",
+	  "object_id": "star_16_anchor_planet_03",
+	  "display_name": "Star 16 Planet 3",
+	  "title": "Star 16 Planet 3",
+	  "scan_name": "Star 16 Planet 3",
+	  "scan_description": "Authored anchor planet 3 orbiting Star 16.",
+	  "contact_text": "Orbital contact available. This is an authored anchor planet.",
+	  "position_mode": "anchor_offset",
+	  "anchor_star_id": "star_16_anchor",
+	  "anchor_star_name": "Star 16",
+	  "parent_star_id": "star_16_anchor",
+	  "parent_star_name": "Star 16",
+	  "sector_offset": [
+		0,
+		0,
+		0
+	  ],
+	  "local_offset": [
+		-214.997,
+		55.562,
+		-59.704
+	  ],
+	  "sector_pos": [
+		72,
+		3,
+		0
+	  ],
+	  "local_pos": [
+		285.003,
+		555.562,
+		440.296
+	  ],
+	  "tier": 8,
+	  "planet_type": "colony_world",
+	  "planet_role": "anchor_planet",
+	  "population_state": "frontier",
+	  "has_planet_interface": true,
+	  "can_land": false,
+	  "contact_range": 180,
+	  "planet_radius": 5,
+	  "orbit_radius": 230,
+	  "orbit_angle": 159.19,
+	  "services": [
+        "survey_contact"
+	  ],
+	  "labels": [
+		"planet",
+		"world_seed",
+		"story_seed",
+		"authored_object",
+		"anchor_planet",
+		"parent_star_16_anchor",
+        "tier_8"
+	  ]
+	},
+	"star_16_anchor_planet_04": {
+	  "owner_type": "planet",
+	  "object_type": "planet",
+	  "object_id": "star_16_anchor_planet_04",
+	  "display_name": "Star 16 Planet 4",
+	  "title": "Star 16 Planet 4",
+	  "scan_name": "Star 16 Planet 4",
+	  "scan_description": "Authored anchor planet 4 orbiting Star 16.",
+	  "contact_text": "Orbital contact available. This is an authored anchor planet.",
+	  "position_mode": "anchor_offset",
+	  "anchor_star_id": "star_16_anchor",
+	  "anchor_star_name": "Star 16",
+	  "parent_star_id": "star_16_anchor",
+	  "parent_star_name": "Star 16",
+	  "sector_offset": [
+		0,
+		0,
+		0
+	  ],
+	  "local_offset": [
+		-97.695,
+		-174.802,
+		-14.817
+	  ],
+	  "sector_pos": [
+		72,
+		3,
+		0
+	  ],
+	  "local_pos": [
+		402.305,
+		325.198,
+		485.183
+	  ],
+	  "tier": 8,
+	  "planet_type": "ice",
+	  "planet_role": "anchor_planet",
+	  "population_state": "unsettled",
+	  "has_planet_interface": true,
+	  "can_land": false,
+	  "contact_range": 180,
+	  "planet_radius": 6,
+	  "orbit_radius": 275,
+	  "orbit_angle": 249.19,
+	  "services": [
+        "survey_contact"
+	  ],
+	  "labels": [
+		"planet",
+		"world_seed",
+		"story_seed",
+		"authored_object",
+		"anchor_planet",
+		"parent_star_16_anchor",
+        "tier_8"
+	  ]
+	},
+	"star_17_anchor_planet_01": {
+	  "owner_type": "planet",
+	  "object_type": "planet",
+	  "object_id": "star_17_anchor_planet_01",
+	  "display_name": "Star 17 Planet 1",
+	  "title": "Star 17 Planet 1",
+	  "scan_name": "Star 17 Planet 1",
+	  "scan_description": "Authored anchor planet 1 orbiting Star 17.",
+	  "contact_text": "Orbital contact available. This is an authored anchor planet.",
+	  "position_mode": "anchor_offset",
+	  "anchor_star_id": "star_17_anchor",
+	  "anchor_star_name": "Star 17",
+	  "parent_star_id": "star_17_anchor",
+	  "parent_star_name": "Star 17",
+	  "sector_offset": [
+		0,
+		0,
+		0
+	  ],
+	  "local_offset": [
+		139.997,
+		0.649,
+		-0.061
+	  ],
+	  "sector_pos": [
+		12,
+		2,
+		1
+	  ],
+	  "local_pos": [
+		639.9970000000001,
+		500.649,
+		499.939
+	  ],
+	  "tier": 2,
+	  "planet_type": "rocky",
+	  "planet_role": "anchor_planet",
+	  "population_state": "quiet",
+	  "has_planet_interface": true,
+	  "can_land": false,
+	  "contact_range": 180,
+	  "planet_radius": 6,
+	  "orbit_radius": 140,
+	  "orbit_angle": 0.39,
+	  "services": [
+        "survey_contact"
+	  ],
+	  "labels": [
+		"planet",
+		"world_seed",
+		"story_seed",
+		"authored_object",
+		"anchor_planet",
+		"parent_star_17_anchor",
+        "tier_2"
+	  ]
+	},
+	"star_18_anchor_planet_01": {
+	  "owner_type": "planet",
+	  "object_type": "planet",
+	  "object_id": "star_18_anchor_planet_01",
+	  "display_name": "Star 18 Planet 1",
+	  "title": "Star 18 Planet 1",
+	  "scan_name": "Star 18 Planet 1",
+	  "scan_description": "Authored anchor planet 1 orbiting Star 18.",
+	  "contact_text": "Orbital contact available. This is an authored anchor planet.",
+	  "position_mode": "anchor_offset",
+	  "anchor_star_id": "star_18_anchor",
+	  "anchor_star_name": "Star 18",
+	  "parent_star_id": "star_18_anchor",
+	  "parent_star_name": "Star 18",
+	  "sector_offset": [
+		0,
+		0,
+		0
+	  ],
+	  "local_offset": [
+		130.178,
+		35.03,
+		-3.371
+	  ],
+	  "sector_pos": [
+		31,
+		0,
+		1
+	  ],
+	  "local_pos": [
+		630.178,
+		535.03,
+		496.629
+	  ],
+	  "tier": 4,
+	  "planet_type": "colony_world",
+	  "planet_role": "anchor_planet",
+	  "population_state": "frontier",
+	  "has_planet_interface": true,
+	  "can_land": false,
+	  "contact_range": 180,
+	  "planet_radius": 6,
+	  "orbit_radius": 140,
+	  "orbit_angle": 21.59,
+	  "services": [
+        "survey_contact"
+	  ],
+	  "labels": [
+		"planet",
+		"world_seed",
+		"story_seed",
+		"authored_object",
+		"anchor_planet",
+		"parent_star_18_anchor",
+        "tier_4"
+	  ]
+	},
+	"star_18_anchor_planet_02": {
+	  "owner_type": "planet",
+	  "object_type": "planet",
+	  "object_id": "star_18_anchor_planet_02",
+	  "display_name": "Star 18 Planet 2",
+	  "title": "Star 18 Planet 2",
+	  "scan_name": "Star 18 Planet 2",
+	  "scan_description": "Authored anchor planet 2 orbiting Star 18.",
+	  "contact_text": "Orbital contact available. This is an authored anchor planet.",
+	  "position_mode": "anchor_offset",
+	  "anchor_star_id": "star_18_anchor",
+	  "anchor_star_name": "Star 18",
+	  "parent_star_id": "star_18_anchor",
+	  "parent_star_name": "Star 18",
+	  "sector_offset": [
+		0,
+		0,
+		0
+	  ],
+	  "local_offset": [
+		-172.021,
+		-46.289,
+		24.319
+	  ],
+	  "sector_pos": [
+		31,
+		0,
+		1
+	  ],
+	  "local_pos": [
+		327.97900000000004,
+		453.711,
+		524.319
+	  ],
+	  "tier": 4,
+	  "planet_type": "ice",
+	  "planet_role": "anchor_planet",
+	  "population_state": "unsettled",
+	  "has_planet_interface": true,
+	  "can_land": false,
+	  "contact_range": 180,
+	  "planet_radius": 7,
+	  "orbit_radius": 185,
+	  "orbit_angle": 201.59,
+	  "services": [
+        "survey_contact"
+	  ],
+	  "labels": [
+		"planet",
+		"world_seed",
+		"story_seed",
+		"authored_object",
+		"anchor_planet",
+		"parent_star_18_anchor",
+        "tier_4"
+	  ]
+	},
+	"star_19_anchor_planet_01": {
+	  "owner_type": "planet",
+	  "object_type": "planet",
+	  "object_id": "star_19_anchor_planet_01",
+	  "display_name": "Star 19 Planet 1",
+	  "title": "Star 19 Planet 1",
+	  "scan_name": "Star 19 Planet 1",
+	  "scan_description": "Authored anchor planet 1 orbiting Star 19.",
+	  "contact_text": "Orbital contact available. This is an authored anchor planet.",
+	  "position_mode": "anchor_offset",
+	  "anchor_star_id": "star_19_anchor",
+	  "anchor_star_name": "Star 19",
+	  "parent_star_id": "star_19_anchor",
+	  "parent_star_name": "Star 19",
+	  "sector_offset": [
+		0,
+		0,
+		0
+	  ],
+	  "local_offset": [
+		102.74,
+		64.67,
+		-6.566
+	  ],
+	  "sector_pos": [
+		51,
+		5,
+		-1
+	  ],
+	  "local_pos": [
+		602.74,
+		564.67,
+		493.434
+	  ],
+	  "tier": 6,
+	  "planet_type": "ice",
+	  "planet_role": "anchor_planet",
+	  "population_state": "unsettled",
+	  "has_planet_interface": true,
+	  "can_land": false,
+	  "contact_range": 180,
+	  "planet_radius": 6,
+	  "orbit_radius": 140,
+	  "orbit_angle": 42.79,
+	  "services": [
+        "survey_contact"
+	  ],
+	  "labels": [
+		"planet",
+		"world_seed",
+		"story_seed",
+		"authored_object",
+		"anchor_planet",
+		"parent_star_19_anchor",
+        "tier_6"
+	  ]
+	},
+	"star_19_anchor_planet_02": {
+	  "owner_type": "planet",
+	  "object_type": "planet",
+	  "object_id": "star_19_anchor_planet_02",
+	  "display_name": "Star 19 Planet 2",
+	  "title": "Star 19 Planet 2",
+	  "scan_name": "Star 19 Planet 2",
+	  "scan_description": "Authored anchor planet 2 orbiting Star 19.",
+	  "contact_text": "Orbital contact available. This is an authored anchor planet.",
+	  "position_mode": "anchor_offset",
+	  "anchor_star_id": "star_19_anchor",
+	  "anchor_star_name": "Star 19",
+	  "parent_star_id": "star_19_anchor",
+	  "parent_star_name": "Star 19",
+	  "sector_offset": [
+		0,
+		0,
+		0
+	  ],
+	  "local_offset": [
+		-176.716,
+		37.222,
+		24.203
+	  ],
+	  "sector_pos": [
+		51,
+		5,
+		-1
+	  ],
+	  "local_pos": [
+		323.284,
+		537.222,
+		524.203
+	  ],
+	  "tier": 6,
+	  "planet_type": "desert",
+	  "planet_role": "anchor_planet",
+	  "population_state": "surveyed",
+	  "has_planet_interface": true,
+	  "can_land": false,
+	  "contact_range": 180,
+	  "planet_radius": 7,
+	  "orbit_radius": 185,
+	  "orbit_angle": 162.79,
+	  "services": [
+        "survey_contact"
+	  ],
+	  "labels": [
+		"planet",
+		"world_seed",
+		"story_seed",
+		"authored_object",
+		"anchor_planet",
+		"parent_star_19_anchor",
+        "tier_6"
+	  ]
+	},
+	"star_19_anchor_planet_03": {
+	  "owner_type": "planet",
+	  "object_type": "planet",
+	  "object_id": "star_19_anchor_planet_03",
+	  "display_name": "Star 19 Planet 3",
+	  "title": "Star 19 Planet 3",
+	  "scan_name": "Star 19 Planet 3",
+	  "scan_description": "Authored anchor planet 3 orbiting Star 19.",
+	  "contact_text": "Orbital contact available. This is an authored anchor planet.",
+	  "position_mode": "anchor_offset",
+	  "anchor_star_id": "star_19_anchor",
+	  "anchor_star_name": "Star 19",
+	  "parent_star_id": "star_19_anchor",
+	  "parent_star_name": "Star 19",
+	  "sector_offset": [
+		0,
+		0,
+		0
+	  ],
+	  "local_offset": [
+		50.914,
+		-152.52,
+		-53.231
+	  ],
+	  "sector_pos": [
+		51,
+		5,
+		-1
+	  ],
+	  "local_pos": [
+		550.914,
+		347.48,
+		446.769
+	  ],
+	  "tier": 6,
+	  "planet_type": "ocean",
+	  "planet_role": "anchor_planet",
+	  "population_state": "refuge",
+	  "has_planet_interface": true,
+	  "can_land": false,
+	  "contact_range": 180,
+	  "planet_radius": 5,
+	  "orbit_radius": 230,
+	  "orbit_angle": 282.79,
+	  "services": [
+        "survey_contact"
+	  ],
+	  "labels": [
+		"planet",
+		"world_seed",
+		"story_seed",
+		"authored_object",
+		"anchor_planet",
+		"parent_star_19_anchor",
+        "tier_6"
+	  ]
+	},
+	"star_20_anchor_planet_01": {
+	  "owner_type": "planet",
+	  "object_type": "planet",
+	  "object_id": "star_20_anchor_planet_01",
+	  "display_name": "Star 20 Planet 1",
+	  "title": "Star 20 Planet 1",
+	  "scan_name": "Star 20 Planet 1",
+	  "scan_description": "Authored anchor planet 1 orbiting Star 20.",
+	  "contact_text": "Orbital contact available. This is an authored anchor planet.",
+	  "position_mode": "anchor_offset",
+	  "anchor_star_id": "star_20_anchor",
+	  "anchor_star_name": "Star 20",
+	  "parent_star_id": "star_20_anchor",
+	  "parent_star_name": "Star 20",
+	  "sector_offset": [
+		0,
+		0,
+		0
+	  ],
+	  "local_offset": [
+		61.397,
+		85.557,
+		-9.537
+	  ],
+	  "sector_pos": [
+		69,
+		-1,
+		-1
+	  ],
+	  "local_pos": [
+		561.397,
+		585.557,
+		490.463
+	  ],
+	  "tier": 8,
+	  "planet_type": "desert",
+	  "planet_role": "anchor_planet",
+	  "population_state": "surveyed",
+	  "has_planet_interface": true,
+	  "can_land": false,
+	  "contact_range": 180,
+	  "planet_radius": 6,
+	  "orbit_radius": 140,
+	  "orbit_angle": 63.99,
+	  "services": [
+        "survey_contact"
+	  ],
+	  "labels": [
+		"planet",
+		"world_seed",
+		"story_seed",
+		"authored_object",
+		"anchor_planet",
+		"parent_star_20_anchor",
+        "tier_8"
+	  ]
+	},
+	"star_20_anchor_planet_02": {
+	  "owner_type": "planet",
+	  "object_type": "planet",
+	  "object_id": "star_20_anchor_planet_02",
+	  "display_name": "Star 20 Planet 2",
+	  "title": "Star 20 Planet 2",
+	  "scan_name": "Star 20 Planet 2",
+	  "scan_description": "Authored anchor planet 2 orbiting Star 20.",
+	  "contact_text": "Orbital contact available. This is an authored anchor planet.",
+	  "position_mode": "anchor_offset",
+	  "anchor_star_id": "star_20_anchor",
+	  "anchor_star_name": "Star 20",
+	  "parent_star_id": "star_20_anchor",
+	  "parent_star_name": "Star 20",
+	  "sector_offset": [
+		0,
+		0,
+		0
+	  ],
+	  "local_offset": [
+		-166.261,
+		55.169,
+		24.462
+	  ],
+	  "sector_pos": [
+		69,
+		-1,
+		-1
+	  ],
+	  "local_pos": [
+		333.73900000000003,
+		555.169,
+		524.462
+	  ],
+	  "tier": 8,
+	  "planet_type": "ocean",
+	  "planet_role": "anchor_planet",
+	  "population_state": "refuge",
+	  "has_planet_interface": true,
+	  "can_land": false,
+	  "contact_range": 180,
+	  "planet_radius": 7,
+	  "orbit_radius": 185,
+	  "orbit_angle": 153.99,
+	  "services": [
+        "survey_contact"
+	  ],
+	  "labels": [
+		"planet",
+		"world_seed",
+		"story_seed",
+		"authored_object",
+		"anchor_planet",
+		"parent_star_20_anchor",
+        "tier_8"
+	  ]
+	},
+	"star_20_anchor_planet_03": {
+	  "owner_type": "planet",
+	  "object_type": "planet",
+	  "object_id": "star_20_anchor_planet_03",
+	  "display_name": "Star 20 Planet 3",
+	  "title": "Star 20 Planet 3",
+	  "scan_name": "Star 20 Planet 3",
+	  "scan_description": "Authored anchor planet 3 orbiting Star 20.",
+	  "contact_text": "Orbital contact available. This is an authored anchor planet.",
+	  "position_mode": "anchor_offset",
+	  "anchor_star_id": "star_20_anchor",
+	  "anchor_star_name": "Star 20",
+	  "parent_star_id": "star_20_anchor",
+	  "parent_star_name": "Star 20",
+	  "sector_offset": [
+		0,
+		0,
+		0
+	  ],
+	  "local_offset": [
+		-100.866,
+		-140.558,
+		-57.266
+	  ],
+	  "sector_pos": [
+		69,
+		-1,
+		-1
+	  ],
+	  "local_pos": [
+		399.134,
+		359.442,
+		442.734
+	  ],
+	  "tier": 8,
+	  "planet_type": "barren",
+	  "planet_role": "anchor_planet",
+	  "population_state": "outpost",
+	  "has_planet_interface": true,
+	  "can_land": false,
+	  "contact_range": 180,
+	  "planet_radius": 5,
+	  "orbit_radius": 230,
+	  "orbit_angle": 243.99,
+	  "services": [
+        "survey_contact"
+	  ],
+	  "labels": [
+		"planet",
+		"world_seed",
+		"story_seed",
+		"authored_object",
+		"anchor_planet",
+		"parent_star_20_anchor",
+        "tier_8"
+	  ]
+	},
+	"star_20_anchor_planet_04": {
+	  "owner_type": "planet",
+	  "object_type": "planet",
+	  "object_id": "star_20_anchor_planet_04",
+	  "display_name": "Star 20 Planet 4",
+	  "title": "Star 20 Planet 4",
+	  "scan_name": "Star 20 Planet 4",
+	  "scan_description": "Authored anchor planet 4 orbiting Star 20.",
+	  "contact_text": "Orbital contact available. This is an authored anchor planet.",
+	  "position_mode": "anchor_offset",
+	  "anchor_star_id": "star_20_anchor",
+	  "anchor_star_name": "Star 20",
+	  "parent_star_id": "star_20_anchor",
+	  "parent_star_name": "Star 20",
+	  "sector_offset": [
+		0,
+		0,
+		0
+	  ],
+	  "local_offset": [
+		247.145,
+		-82.008,
+		-4.051
+	  ],
+	  "sector_pos": [
+		69,
+		-1,
+		-1
+	  ],
+	  "local_pos": [
+		747.145,
+		417.992,
+		495.949
+	  ],
+	  "tier": 8,
+	  "planet_type": "gas_giant",
+	  "planet_role": "anchor_planet",
+	  "population_state": "quiet",
+	  "has_planet_interface": true,
+	  "can_land": false,
+	  "contact_range": 180,
+	  "planet_radius": 6,
+	  "orbit_radius": 275,
+	  "orbit_angle": 333.99,
+	  "services": [
+        "survey_contact"
+	  ],
+	  "labels": [
+		"planet",
+		"world_seed",
+		"story_seed",
+		"authored_object",
+		"anchor_planet",
+		"parent_star_20_anchor",
+        "tier_8"
+	  ]
+	}
+  }
+}
